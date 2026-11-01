@@ -42,3 +42,16 @@ Cross-class groups:
 ## Blockers
 
 - No bounding-box annotations exist. Folder names give an image-level class only; YOLO detection needs a box + class id for every object instance.
+
+## Annotation status (manual note, 2026-11-02; not produced by the audit script)
+
+| Stage | Location | Count |
+|---|---|---|
+| Original images (read-only) | `digital twin project datasets/` | 543 |
+| Staged for annotation | `annotation/batches/batch_01/`, `batch_02/` | 175 + 168 copies |
+| Machine candidates (not ground truth) | `annotation/candidates/gdino_tiny_batch01/` | 553 boxes on 175 images |
+| Human review state | `annotation/reviewed/batch_01/` | 175 images, **0 REVIEWED** |
+| Reviewed exports (training input) | `annotation/exports/` | none yet |
+
+Near-duplicate groups from this audit are written to `annotation/manifest.csv`. `prepare_dataset` keeps each group in
+a single split. The candidate-to-ground-truth workflow is described in [annotation-guide.md](annotation-guide.md).

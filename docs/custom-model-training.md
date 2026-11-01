@@ -10,10 +10,13 @@ All scripts are in `backend/app/training/` and are run as modules (`python -m ap
 | `annotation_kit.py` | CVAT / Label Studio configs, `classes.txt`, image manifest; `--check` verifies the kit |
 | `annotation_batch.py` | selects and stages a diverse, near-duplicate-free annotation batch per class |
 | `auto_annotate.py` | **candidate** boxes for review (detector → taxonomy mapping → rules → tiers), CVAT pre-annotation zips, previews, `review.html`; output refused as training data |
-| `validate_annotations.py` | validates a YOLO export against the taxonomy and the manifest |
+| `review_store.py` | human review state per batch: statuses, box provenance, sign-off rules, reviewed-only export |
+| `review_tool.py` + `review_ui.html` | CLI (`init`, `serve`, `status`, `export`, `import-yolo`, `check-cvat`) and the local browser review UI |
+| `validate_annotations.py` | validates a YOLO export against the taxonomy and the manifest (`--require-review`: review manifest and label hashes) |
 | `prepare_dataset.py` | duplicate-aware, stratified 70/20/10 split, writes `data.yaml` and reports |
 | `train.py` | workload estimate, pilot run, full run, checkpoint promotion |
-| `evaluate.py` | test-set metrics, per-class table, plots, prediction images |
+| `evaluate.py` | test-set metrics, per-class table, plots, prediction images, look-alike confusion pairs |
+| `readiness.py` | live readiness report: original images, candidates, review progress, exports, datasets, checkpoints, and the pilot gate |
 | `predict.py` | annotated predictions and optional pre-annotation proposals |
 
 ## 1. Dataset and class mapping
@@ -34,15 +37,25 @@ All scripts are in `backend/app/training/` and are run as modules (`python -m ap
 The full audit is in [dataset-audit.md](dataset-audit.md). Re-run it with `python -m app.training.audit_dataset`;
 it writes `experiments/dataset_audit/`.
 
-**Annotation status: none.** Detection training is blocked until boxes exist; see [annotation-guide.md](annotation-guide.md).
+**Annotation status (2026-11-02): 0 human-reviewed images.** `batch_01` (175 images) has 553 Grounding DINO
+candidate boxes loaded as unverified in `annotation/reviewed/batch_01/`. Training is blocked until reviewed labels
+exist; see [annotation-guide.md](annotation-guide.md).
 
 ## 2. Annotate → validate
 
+Only **human-reviewed** labels can reach training. Machine candidates (`annotation/candidates/`) are review aids.
+The full workflow is in [annotation-guide.md](annotation-guide.md#review-workflow-from-candidates-to-training-ready-labels).
+
 ```powershell
-python -m app.training.annotation_kit                # writes ../annotation/ (configs + manifest)
-# … annotate in CVAT / Label Studio, export YOLO into ../annotation/exports/<export>/ …
-python -m app.training.validate_annotations ..\annotation\exports\<export>
+python -m app.training.review_tool init --batch ..\annotation\batches\batch_01 --candidates ..\annotation\candidates\gdino_tiny_batch01   # done for batch_01
+python -m app.training.review_tool serve --review ..\annotation\reviewed\batch_01     # review in the browser, mark images REVIEWED
+python -m app.training.review_tool export --review ..\annotation\reviewed\batch_01 --out ..\annotation\exports\<export>
+python -m app.training.validate_annotations ..\annotation\exports\<export> --require-review
 ```
+
+`export` writes labels for `REVIEWED` images only, plus `review_manifest.json` (reviewer and label hash per image).
+`NOT_REVIEWED`, `IN_PROGRESS` and `NEEDS_SECOND_REVIEW` images are counted but never exported. Corrections made in
+CVAT come back through `review_tool import-yolo` and still need the sign-off.
 
 ## 3. Prepare the dataset
 
@@ -51,7 +64,11 @@ python -m app.training.prepare_dataset --labels ..\annotation\exports\<export> -
 ```
 
 What it does:
-- Validates the export first and aborts on any error.
+- Validates the export first, **requiring the review manifest**, and aborts on any error. A raw CVAT/Label Studio
+  export or a candidate run is refused.
+- Refuses to force a split when the reviewed set is too small: fewer than 30 images, a class with fewer than
+  10 boxes, an empty split, or a class with no box in train or val. It reports the limitation and writes
+  nothing. A class missing from the small test split is only reported (`limitations` in `split_report.json`).
 - Splits **by near-duplicate group**: re-captures of the same photo, found by a 256-bit content hash in the
   audit, always land in the same split. This prevents evaluation leakage. The audit found 39 such groups covering 84 images.
 - Stratifies by folder class, 70/20/10, with fixed seed 42, so the result is reproducible.
@@ -63,7 +80,21 @@ What it does:
 
 Images that aren't labelled yet are excluded and counted, so you can train on a first batch.
 
+## Readiness check (run first)
+
+```powershell
+python -m app.training.readiness            # add --write to save experiments/readiness/<timestamp>/
+```
+
+It reads the filesystem, not older reports. It prints **READY** or **BLOCKED** with each blocking reason: at least
+30 reviewed images, at least 10 reviewed boxes per class, a valid reviewed export, and a prepared dataset that
+passes the training gate. As of 2026-11-02 it reports BLOCKED: 0 of 343 staged images reviewed.
+
 ## 4. Train (CPU)
+
+The training gate (`check_training_ready`) also refuses any dataset that was not built by `prepare_dataset` from a
+human-reviewed export (`split_report.json` must name the review manifest). A hand-made `data.yaml` over unreviewed
+labels cannot be trained on.
 
 ### Workload, measured on this laptop (i7-1255U, 16 GB, 10 torch threads)
 
@@ -118,7 +149,12 @@ python -m app.training.evaluate --model models\custom\digital_twin_best.pt --dat
 ```
 
 This prints precision, recall, F1, mAP50 and mAP50-95, overall and per class. It flags classes with fewer
-than 10 test instances (unreliable) or mAP50 below 0.5 (weak), and saves the following to `experiments/evaluation/<run>/`:
+than 10 test instances (unreliable) or mAP50 below 0.5 (weak). From the confusion matrix it lists, per class:
+correct, missed, background false positives, and the classes it was confused with. It also reports the
+look-alike pairs: antenna ↔ radio unit, router ↔ PSU, battery ↔ PSU, and cabinet ↔ battery/PSU/router/radio
+unit. Cable bundle vs individual-cable behaviour must be checked in the prediction images. Validation and test
+splits come from the same catalogue-style collection, so real-site behaviour needs the separate
+[field test](bts-field-testing.md). Results are saved to `experiments/evaluation/<run>/`:
 - the confusion matrix and curves;
 - `metrics.json`;
 - annotated predictions for every test image (`test_predictions/`).
