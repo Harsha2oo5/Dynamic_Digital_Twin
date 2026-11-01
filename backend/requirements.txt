@@ -1,0 +1,19 @@
+# CPU-only PyTorch must be installed FIRST from the CPU wheel index:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+# Installing it first prevents ultralytics from pulling a CUDA build.
+
+ultralytics>=8.3.0
+opencv-python-headless>=4.10
+numpy>=1.26
+lap>=0.5.12            # linear assignment used by ByteTrack
+
+fastapi>=0.115
+uvicorn[standard]>=0.30
+python-multipart>=0.0.9
+pydantic>=2.7
+pydantic-settings>=2.3
+pyyaml>=6.0
+
+# tests
+pytest>=8.0
+httpx>=0.27
