@@ -294,7 +294,7 @@ def test_prepare_end_to_end(tmp_path, dataset, kit):
     export = _export(tmp_path, kit)
     manifest_path = tmp_path / "manifest.csv"
     out = tmp_path / "prepared"
-    summary = prepare(export, manifest_path, dataset, out, seed=42)
+    summary = prepare(export, manifest_path, dataset, out, seed=42, require_review=False, strict=False)
 
     assert summary["post_build_problems"] == []
     assert sum(summary["images"].values()) == len(kit)
@@ -307,11 +307,11 @@ def test_prepare_end_to_end(tmp_path, dataset, kit):
     assert split_of["antenna/c0_img0.png"] == split_of["antenna/c0_recapture.png"]
     assert split_of["Archive (4)/c4_img0.png"] == split_of["Archive (5)/c3_cabinet_shot.png"]
     assert " " not in "".join(p.name for p in (out / "images").rglob("*"))
-    assert check_training_ready(out / "data.yaml") == []
+    assert check_training_ready(out / "data.yaml", require_review=False) == []
     # original dataset untouched, output never overwritten
     assert (dataset / "antenna" / "c0_img0.png").is_file()
     with pytest.raises(FileExistsError):
-        prepare(export, manifest_path, dataset, out)
+        prepare(export, manifest_path, dataset, out, require_review=False, strict=False)
 
 
 def test_prepare_refuses_invalid_annotations(tmp_path, dataset, kit):
@@ -323,7 +323,7 @@ def test_prepare_refuses_invalid_annotations(tmp_path, dataset, kit):
 
 def test_verify_prepared_detects_leakage(tmp_path, dataset, kit):
     out = tmp_path / "prepared"
-    prepare(_export(tmp_path, kit), tmp_path / "manifest.csv", dataset, out)
+    prepare(_export(tmp_path, kit), tmp_path / "manifest.csv", dataset, out, require_review=False, strict=False)
     rows = list(csv.DictReader((out / "split_manifest.csv").open()))
     rows[0]["split"] = "test" if rows[0]["split"] != "test" else "train"
     group = rows[0]["near_duplicate_group"]
@@ -381,3 +381,45 @@ def test_evaluation_helpers():
     assert "unreliable" in flags["antenna"][0] and "weak" in flags["router"][0]
     assert flags["cable"] == ["no instances in this split"]
     json.dumps(flags)
+
+
+def test_confusion_analysis_reads_ultralytics_orientation():
+    from app.training.evaluate import confusion_analysis
+
+    names = dict(taxonomy.CLASS_NAMES)
+    m = [[0.0] * 8 for _ in range(8)]  # matrix[predicted][true], index 7 = background
+    m[0][0] = 5  # antenna correct
+    m[6][0] = 2  # antenna predicted as radio_unit
+    m[7][0] = 1  # antenna missed
+    m[4][3] = 3  # battery predicted as power_supply_unit
+    m[5][7] = 4  # cabinet predicted on background
+    r = confusion_analysis(m, names)
+    a = r["per_class"]["antenna"]
+    assert (a["ground_truth"], a["correct"], a["missed"], a["confused_as"]) == (8, 5, 1, {"radio_unit": 2})
+    assert r["per_class"]["equipment_cabinet"]["background_false_positives"] == 4
+    pairs = {p["pair"]: p for p in r["pairs"]}
+    assert pairs["antenna <-> radio_unit"]["antenna_predicted_as_radio_unit"] == 2
+    assert pairs["battery <-> power_supply_unit"]["battery_predicted_as_power_supply_unit"] == 3
+    assert pairs["battery <-> power_supply_unit"]["power_supply_unit_predicted_as_battery"] == 0
+
+
+def test_training_gate_requires_reviewed_provenance(tmp_path, dataset, kit):
+    out = tmp_path / "prepared"
+    prepare(_export(tmp_path, kit), tmp_path / "manifest.csv", dataset, out, require_review=False, strict=False)
+    problems = check_training_ready(out / "data.yaml")  # default: reviewed provenance required
+    assert any("human-reviewed export" in p for p in problems)
+    assert check_training_ready(out / "data.yaml", require_review=False) == []
+
+
+def test_restage_recreates_batch_from_manifest(tmp_path, dataset):
+    from app.training.annotation_batch import restage, select_batch, stage
+
+    _, records = audit(dataset)
+    out = tmp_path / "batch_x"
+    stage(select_batch(records, per_class=2, seed=3), dataset, out)
+    before = sorted(p.relative_to(out) for p in out.rglob("*.png"))
+    for p in out.rglob("*.png"):
+        p.unlink()  # a fresh clone has only batch_manifest.csv
+    assert restage(out, dataset) == len(before)
+    assert sorted(p.relative_to(out) for p in out.rglob("*.png")) == before
+    assert restage(out, dataset) == 0  # idempotent

@@ -58,8 +58,11 @@ def build_train_args(data: Path, *, epochs: int, imgsz: int, batch: int, patienc
     }
 
 
-def check_training_ready(data_yaml: Path) -> list[str]:
-    """Return blocking problems; an empty list means training may start."""
+def check_training_ready(data_yaml: Path, require_review: bool = True) -> list[str]:
+    """Return blocking problems; an empty list means training may start.
+
+    `require_review`: the dataset must have been built by prepare_dataset from a human-reviewed export
+    (split_report.json records the review manifest). Off only for unit tests on synthetic data."""
     from app.training.prepare_dataset import verify_prepared
 
     if not data_yaml.is_file():
@@ -75,6 +78,12 @@ def check_training_ready(data_yaml: Path) -> list[str]:
             problems.append(f"No labels for split '{split}' in {labels}")
     if not problems and (root / "split_manifest.csv").is_file():
         problems += verify_prepared(root)
+    if require_review:
+        report = root / "split_report.json"
+        reviewed = report.is_file() and json.loads(report.read_text(encoding="utf-8")).get("review_manifest")
+        if not reviewed:
+            problems.append("dataset was not built from a human-reviewed export (no review manifest in "
+                            "split_report.json); run review_tool export + prepare_dataset")
     return problems
 
 

@@ -23,6 +23,10 @@ from app.training.taxonomy import CLASS_NAMES
 
 MIN_TEST_INSTANCES = 10  # fewer than this -> per-class metrics are not statistically meaningful
 WEAK_MAP50 = 0.5
+# Look-alike pairs worth watching on BTS equipment (both directions are reported).
+CONFUSION_PAIRS = [("antenna", "radio_unit"), ("router", "power_supply_unit"), ("battery", "power_supply_unit"),
+                   ("equipment_cabinet", "battery"), ("equipment_cabinet", "power_supply_unit"),
+                   ("equipment_cabinet", "router"), ("equipment_cabinet", "radio_unit")]
 
 
 def f1_score(precision: float, recall: float) -> float:
@@ -44,6 +48,31 @@ def class_flags(per_class: dict[str, dict]) -> dict[str, list[str]]:
         if notes:
             flags[name] = notes
     return flags
+
+
+def confusion_analysis(matrix: list[list[float]], names: dict[int, str]) -> dict:
+    """Read an Ultralytics detection confusion matrix (matrix[predicted][true], last index = background).
+
+    Per class: ground-truth boxes, correctly classified, confused with another class, missed (no
+    prediction), background false positives (prediction with no object). Plus the look-alike pairs."""
+    nc = len(matrix) - 1
+    by_name = {n: i for i, n in names.items()}
+    per_class = {}
+    for t in range(nc):
+        gt = sum(matrix[p][t] for p in range(nc + 1))
+        confused = {names[p]: int(matrix[p][t]) for p in range(nc) if p != t and matrix[p][t]}
+        per_class[names[t]] = {"ground_truth": int(gt), "correct": int(matrix[t][t]),
+                               "confused_as": dict(sorted(confused.items(), key=lambda kv: -kv[1])),
+                               "missed": int(matrix[nc][t]), "background_false_positives": int(matrix[t][nc])}
+    pairs = []
+    for a, b in CONFUSION_PAIRS:
+        if a in by_name and b in by_name:
+            ia, ib = by_name[a], by_name[b]
+            pairs.append({"pair": f"{a} <-> {b}", f"{a}_predicted_as_{b}": int(matrix[ib][ia]),
+                          f"{b}_predicted_as_{a}": int(matrix[ia][ib])})
+    return {"per_class": per_class, "pairs": pairs,
+            "note": "Cable bundle vs individual cables is a box-granularity question the confusion matrix cannot "
+                    "show; inspect the cable prediction images."}
 
 
 def evaluate(model_path: Path, data: Path, split: str, imgsz: int, batch: int, save_predictions: bool = True) -> dict:
@@ -82,6 +111,9 @@ def evaluate(model_path: Path, data: Path, split: str, imgsz: int, batch: int, s
             "mAP50-95": round(float(ap), 4),
         }
     summary["class_flags"] = class_flags(summary["per_class"])
+    cm = getattr(metrics, "confusion_matrix", None)
+    if cm is not None and getattr(cm, "matrix", None) is not None:
+        summary["confusion"] = confusion_analysis(cm.matrix.tolist(), metrics.names)
 
     if save_predictions:
         cfg = yaml.safe_load(data.read_text(encoding="utf-8"))
@@ -113,6 +145,14 @@ def main() -> None:
               f"{m['mAP50']:>8.3f}{m['mAP50-95']:>10.3f}")
     for name, notes in s["class_flags"].items():
         print(f"  ! {name}: {'; '.join(notes)}")
+    if "confusion" in s:
+        print("Confusions (counts from the confusion matrix):")
+        for name, c in s["confusion"]["per_class"].items():
+            if c["ground_truth"] or c["background_false_positives"]:
+                print(f"  {name:<20} gt {c['ground_truth']:>4}  correct {c['correct']:>4}  missed {c['missed']:>4}  "
+                      f"background FP {c['background_false_positives']:>4}  confused as {c['confused_as'] or '-'}")
+        for pr in s["confusion"]["pairs"]:
+            print("  " + "  ".join(f"{k}: {v}" for k, v in pr.items()))
     print("Comparison with the pretrained COCO model is not meaningful for these classes: none of the seven "
           "components exist in COCO, so YOLO11n-pretrained scores 0 by construction.")
     print(f"Saved to {s['save_dir']}")
