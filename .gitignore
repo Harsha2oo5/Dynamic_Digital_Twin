@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+backend/.venv/
+backend/.env
+backend/runtime/
+
+# Models: keep the folder structure, not large weights (yolo11n.pt is re-downloadable)
+backend/models/**/*.pt
+
+# Generated datasets and experiment outputs
+backend/dataset/*/
+experiments/*/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Annotation exports (large, team-specific); the kit itself is tracked
+annotation/exports/*/
+# Staged image copies for annotation batches (batch_manifest.csv files stay tracked)
+annotation/batches/*/*/
+# Candidate/rejected run previews (regenerable)
+annotation/candidates/*/previews/
+annotation/rejected/*/previews/
