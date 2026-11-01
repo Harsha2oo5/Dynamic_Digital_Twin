@@ -1,0 +1,8 @@
+{"at": "2026-11-02T00:37:07", "action": "init", "file": null, "images": 175, "candidate_boxes": 553}
+{"at": "2026-11-02T02:27:42", "action": "set_status", "file": "Screenshot 2026-10-07 154700.png", "from": "NOT_REVIEWED", "to": "IN_PROGRESS", "reviewer": ""}
+{"at": "2026-11-02T02:27:51", "action": "set_status", "file": "Screenshot 2026-10-07 152734.png", "from": "NOT_REVIEWED", "to": "IN_PROGRESS", "reviewer": ""}
+{"at": "2026-11-02T02:28:13", "action": "set_status", "file": "Screenshot 2026-10-07 112152.png", "from": "NOT_REVIEWED", "to": "IN_PROGRESS", "reviewer": ""}
+{"at": "2026-11-02T02:28:20", "action": "set_boxes", "file": "Screenshot 2026-10-07 112152.png", "boxes": 3, "status_before": "IN_PROGRESS", "reviewer": ""}
+{"at": "2026-11-02T02:28:23", "action": "set_boxes", "file": "Screenshot 2026-10-07 112152.png", "boxes": 3, "status_before": "IN_PROGRESS", "reviewer": ""}
+{"at": "2026-11-02T02:28:26", "action": "set_boxes", "file": "Screenshot 2026-10-07 112152.png", "boxes": 3, "status_before": "IN_PROGRESS", "reviewer": ""}
+{"at": "2026-11-02T02:29:05", "action": "set_status", "file": "Screenshot 2026-10-07 112152.png", "from": "IN_PROGRESS", "to": "REVIEWED", "reviewer": "harsha"}

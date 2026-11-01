@@ -14,9 +14,12 @@ from app.training.auto_annotate import (
     MARKER,
     Candidate,
     RawCandidate,
+    LetterboxCropProposer,
     Thresholds,
+    content_box,
     image_status,
     merge_cable_bundles,
+    merge_cross_class,
     overlap_ratio,
     postprocess,
     run,
@@ -148,6 +151,8 @@ def test_run_outputs_and_ground_truth_protection(tmp_path, batch):
     with (out / "manual_review.csv").open() as f:
         assert {r["file"] for r in csv.DictReader(f)} == {"img0.png", "img2.png", "img5.png"}
     assert len(list((out / "previews" / "needs_review").glob("*.jpg"))) == 3
+    assert len(list((out / "contact_sheets").glob("*.jpg"))) == 3
+    assert sum(report["confidence_histogram"].values()) == report["candidate_boxes"]
     with pytest.raises(FileExistsError):
         run(batch_dir, StubProposer(), MAP, out, T)
 
@@ -193,7 +198,47 @@ def test_verified_negatives(tmp_path, batch):
     rep = validate_export(export, manifest)
     assert rep.ok, rep.errors
     assert rep.summary()["verified_negative_images"] == 1
-    summary = prepare(export, tmp_path / "manifest.csv", root, tmp_path / "prepared", seed=1)
+    summary = prepare(export, tmp_path / "manifest.csv", root, tmp_path / "prepared", seed=1,
+                      require_review=False, strict=False)
     assert summary["post_build_problems"] == [] and summary["verified_negative_images"] == 1
     (export / "img5.txt").write_text("5 0.5 0.5 0.2 0.2\n")
     assert any("verified negative but has" in e for e in validate_export(export, manifest).errors)
+
+
+def test_content_box_trims_letterbox_bars():
+    img = np.zeros((300, 100, 3), np.uint8)
+    img[100:200] = 255
+    img[120:180, 20:80] = np.random.default_rng(0).integers(0, 255, (60, 60, 3), dtype=np.uint8)
+    x0, y0, x1, y1 = content_box(img, pad=0)
+    assert (y0, y1) == (120, 180) and (x0, x1) == (20, 80)
+    assert content_box(np.zeros((50, 50, 3), np.uint8)) == (0, 0, 50, 50)  # nothing to keep -> full image
+
+
+def test_letterbox_crop_maps_boxes_back_to_full_image():
+    class Stub:
+        name = "stub"
+
+        def __init__(self):
+            self.seen = None
+
+        def propose(self, image):
+            self.seen = image.shape[:2]
+            return [raw("antenna", 0.9, (1, 2, 11, 12))]
+
+    img = np.zeros((300, 100, 3), np.uint8)
+    img[120:180, 20:80] = np.random.default_rng(1).integers(0, 255, (60, 60, 3), dtype=np.uint8)
+    inner = Stub()
+    out = LetterboxCropProposer(inner).propose(img)
+    x0, y0, _, _ = content_box(img)
+    assert inner.seen[0] < 300
+    assert out[0].xyxy == (1 + x0, 2 + y0, 11 + x0, 12 + y0)
+
+
+def test_cross_class_merge_keeps_one_box_and_records_alternatives():
+    t = Thresholds(merge_cross_class=True)
+    cands, _ = postprocess([raw("antenna", 0.6, (10, 10, 100, 100)), raw("cabinet", 0.4, (12, 10, 100, 102)),
+                            raw("cabinet", 0.5, (300, 300, 400, 400))], MAP, 1000, 1000, t)
+    assert sorted(c.class_name for c in cands) == ["antenna", "equipment_cabinet"]
+    a = next(c for c in cands if c.class_name == "antenna")
+    assert any(f.startswith("alt_class:equipment_cabinet") for f in a.flags) and a.tier == "low"
+    assert len(merge_cross_class([], 0.7)) == 0

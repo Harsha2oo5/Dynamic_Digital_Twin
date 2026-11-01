@@ -6,6 +6,9 @@ Checks, against the seven-class taxonomy and the annotation manifest:
   - each line has 5 values, class id in range, coordinates normalised, positive size, box inside the image
   - each image contains at least one box of its folder's class (folder = the component it was collected for)
   - empty label files, tiny boxes, duplicate boxes (warnings)
+  - review status: an export written by the review tool carries review_manifest.json; every label file must be
+    listed there as REVIEWED with a matching content hash (catches unreviewed or swapped-in candidate labels).
+    With --require-review (always on in prepare_dataset) an export without that manifest is an error.
 
 Usage:
     python -m app.training.validate_annotations ../annotation/exports/my_export [--manifest ../annotation/manifest.csv]
@@ -35,6 +38,7 @@ CANDIDATE_MARKER = "CANDIDATES_NOT_GROUND_TRUTH.txt"  # written by auto_annotate
 VERIFIED_NEGATIVES = "verified_negatives.txt"  # reviewer-confirmed images without any target component
 NON_LABEL_TXT = {"classes.txt", "train.txt", "valid.txt", "val.txt", "test.txt", "obj.names", "readme.txt",
                  "verified_negatives.txt", "candidates_not_ground_truth.txt"}
+REVIEW_MANIFEST = "review_manifest.json"  # written by review_store.export_reviewed
 
 
 @dataclass
@@ -58,6 +62,10 @@ class ValidationReport:
     images_with_class: Counter = field(default_factory=Counter)
     names_source: str | None = None
     verified_negatives: list[str] = field(default_factory=list)
+    review_manifest: str | None = None
+    images_with_errors: set[str] = field(default_factory=set)
+    invalid_annotations: int = 0
+    images_requiring_review: int | None = None  # from the review manifest (images not exported)
 
     @property
     def ok(self) -> bool:
@@ -74,6 +82,12 @@ class ValidationReport:
             "warnings": self.warnings,
             "class_names_checked_against": self.names_source,
             "verified_negative_images": len(self.verified_negatives),
+            "review_manifest": self.review_manifest,
+            "annotations": sum(self.instances.values()),
+            "invalid_annotations": self.invalid_annotations,
+            "images_ready_for_training": len(set(self.paired) - self.images_with_errors) if self.ok else 0,
+            "images_with_errors": len(self.images_with_errors),
+            "images_requiring_review": self.images_requiring_review,
             "instances_per_class": {CLASS_NAMES[c]: self.instances[c] for c in CLASS_NAMES},
             "images_per_class": {CLASS_NAMES[c]: self.images_with_class[c] for c in CLASS_NAMES},
         }
@@ -187,7 +201,40 @@ def read_verified_negatives(export_dir: Path) -> set[str]:
     return {image_key(ln.strip()) for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()}
 
 
-def validate_export(export_dir: Path, manifest: dict[str, dict], require_all: bool = False) -> ValidationReport:
+def check_review_manifest(export_dir: Path, rep: ValidationReport, require_review: bool) -> None:
+    """Every paired label file must be a REVIEWED image of the review manifest, byte-for-byte."""
+    from app.training.review_store import REVIEWED, label_sha256
+
+    path = export_dir / REVIEW_MANIFEST
+    if not path.is_file():
+        if require_review:
+            rep.errors.append(f"{export_dir} has no {REVIEW_MANIFEST}: review status cannot be verified. Export from "
+                              "the review tool (`review_tool export`); for a CVAT export, `review_tool import-yolo` it "
+                              "and sign off each image first")
+        else:
+            rep.warnings.append(f"No {REVIEW_MANIFEST}: review status not verified (prepare_dataset requires it)")
+        return
+    rep.review_manifest = str(path)
+    data = json.loads(path.read_text(encoding="utf-8"))
+    entries = data.get("images", {})
+    rep.images_requiring_review = sum(data.get("not_exported", {}).values())
+    for key, label in rep.paired.items():
+        e = entries.get(key)
+        if e is None:
+            rep.errors.append(f"{label.name}: not listed in {REVIEW_MANIFEST} (unreviewed label in a reviewed export)")
+        elif e.get("status") != REVIEWED:
+            rep.errors.append(f"{label.name}: review status {e.get('status')}, only REVIEWED images may be used")
+        elif e.get("label_sha256") != label_sha256(label.read_text(encoding="utf-8")):
+            rep.errors.append(f"{label.name}: content differs from what the reviewer signed off (hash mismatch)")
+        else:
+            continue
+        rep.images_with_errors.add(key)
+    for key in sorted(set(entries) - set(rep.paired)):
+        rep.errors.append(f"{entries[key].get('file', key)}: listed as reviewed but its label file is missing")
+
+
+def validate_export(export_dir: Path, manifest: dict[str, dict], require_all: bool = False,
+                    require_review: bool = False) -> ValidationReport:
     rep = ValidationReport()
     marker = candidate_marker(export_dir)
     if marker is not None:
@@ -230,15 +277,20 @@ def validate_export(export_dir: Path, manifest: dict[str, dict], require_all: bo
             rep.missing_labels.append(row["original_path"])
             continue
         boxes, errors, warnings = read_label_file(label)
+        rep.invalid_annotations += len(errors)
+        if errors:
+            rep.images_with_errors.add(key)
         rep.errors += [f"{row['original_path']} ({e})" for e in errors]
         rep.warnings += [f"{row['original_path']} ({w})" for w in warnings]
         if key in negatives:
             if boxes:
                 rep.errors.append(f"{row['original_path']}: listed as verified negative but has {len(boxes)} boxes")
+                rep.images_with_errors.add(key)
             continue
         if not boxes:
             rep.errors.append(f"{row['original_path']}: label file is empty; annotate it or list it in "
                               f"{VERIFIED_NEGATIVES} if a reviewer confirmed it shows none of the seven classes")
+            rep.images_with_errors.add(key)
             continue
         rep.instances.update(b.cls for b in boxes)
         rep.images_with_class.update({b.cls for b in boxes})
@@ -246,6 +298,7 @@ def validate_export(export_dir: Path, manifest: dict[str, dict], require_all: bo
         if folder_cls is not None and folder_cls not in {b.cls for b in boxes}:
             rep.errors.append(f"{row['original_path']}: no '{CLASS_NAMES[folder_cls]}' box, but the image comes from "
                               f"the {CLASS_NAMES[folder_cls]} folder")
+            rep.images_with_errors.add(key)
 
     if require_all and rep.missing_labels:
         rep.errors.append(f"{len(rep.missing_labels)} images have no label file")
@@ -253,6 +306,7 @@ def validate_export(export_dir: Path, manifest: dict[str, dict], require_all: bo
         rep.warnings.append(f"{len(rep.missing_labels)} images have no label file yet (excluded from the dataset)")
     if not rep.paired:
         rep.errors.append("No label files could be paired with dataset images")
+    check_review_manifest(export_dir, rep, require_review)
     return rep
 
 
@@ -263,14 +317,20 @@ def main() -> None:
     parser.add_argument("export_dir", type=Path)
     parser.add_argument("--manifest", type=Path, default=PROJECT_DIR / "annotation" / "manifest.csv")
     parser.add_argument("--require-all", action="store_true", help="Treat unlabelled images as an error")
+    parser.add_argument("--require-review", action="store_true",
+                        help="Error if the export has no review manifest (prepare_dataset always requires it)")
     parser.add_argument("--json", type=Path, help="Write the full report to this file")
     args = parser.parse_args()
 
     if not args.manifest.is_file():
         sys.exit(f"Manifest not found: {args.manifest} (run `python -m app.training.annotation_kit` first)")
-    rep = validate_export(args.export_dir, read_manifest(args.manifest), args.require_all)
+    rep = validate_export(args.export_dir, read_manifest(args.manifest), args.require_all, args.require_review)
     s = rep.summary()
     print(f"Label files: {s['label_files']}  paired: {s['paired_images']}  images without labels: {s['missing_labels']}")
+    print(f"Annotations: {s['annotations']}  invalid annotations: {s['invalid_annotations']}  "
+          f"images with errors: {s['images_with_errors']}  ready for training: {s['images_ready_for_training']}  "
+          f"still requiring review (review manifest): {s['images_requiring_review']}")
+    print(f"Review manifest: {s['review_manifest'] or 'none'}")
     print("Instances per class:", s["instances_per_class"])
     for e in rep.errors[:50]:
         print(f"  ERROR   {e}")

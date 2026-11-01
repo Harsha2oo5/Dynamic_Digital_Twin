@@ -1,7 +1,10 @@
 """Build the processed YOLO detection dataset (train/val/test) from validated annotations.
 
 - Original images are only READ (copied from the dataset root); labels come from the tool export.
-- Annotations are validated first; any validation error aborts.
+- Annotations are validated first; any validation error aborts. Only human-reviewed exports are accepted:
+  the export must carry the review tool's review_manifest.json and every label must be a REVIEWED image.
+- The split is not forced: too few images, a class with too few boxes, or a class missing from train/val
+  aborts with the limitation reported (strict mode, the CLI default).
 - Split 70/20/10 by *near-duplicate group* (from the annotation manifest), so re-captures of the
   same photo never end up in different splits, stratified by folder class, with a fixed seed.
 - Writes data.yaml with the seven taxonomy classes, a split manifest and a per-class report,
@@ -29,6 +32,8 @@ from app.training.validate_annotations import VERIFIED_NEGATIVES, read_label_fil
 
 SPLITS = ("train", "val", "test")
 DEFAULT_RATIOS = (0.7, 0.2, 0.1)
+MIN_IMAGES = 30  # below this a 70/20/10 split leaves val/test with a handful of images
+MIN_INSTANCES_PER_CLASS = 10  # boxes per class across the whole reviewed set
 
 
 def group_stratum(rows: list[dict]) -> int:
@@ -109,12 +114,38 @@ def verify_prepared(dataset_dir: Path) -> list[str]:
     return problems
 
 
+def split_limitations(assignment: dict[str, list[int]], groups: dict[int, list[dict]],
+                      boxes_of: dict[str, list[int]]) -> tuple[list[str], list[str]]:
+    """(blocking problems, warnings) of a proposed split. Blocking: too few images, a class with too few boxes,
+    an empty split, a class absent from train or val. Warning: a class absent from test."""
+    blocking, warnings = [], []
+    total = sum(len(g) for g in groups.values())
+    if total < MIN_IMAGES:
+        blocking.append(f"only {total} reviewed images; at least {MIN_IMAGES} are needed for a 70/20/10 split")
+    per_class = Counter(c for bs in boxes_of.values() for c in bs)
+    for cid, name in CLASS_NAMES.items():
+        if per_class[cid] < MIN_INSTANCES_PER_CLASS:
+            blocking.append(f"class {name}: {per_class[cid]} boxes, at least {MIN_INSTANCES_PER_CLASS} needed")
+    for split in SPLITS:
+        keys = [r["key"] for g in assignment[split] for r in groups[g]]
+        if not keys:
+            blocking.append(f"split {split} would be empty")
+            continue
+        present = {c for k in keys for c in boxes_of[k]}
+        for cid, name in CLASS_NAMES.items():
+            if cid not in present and per_class[cid]:
+                (warnings if split == "test" else blocking).append(f"class {name} has no box in {split}")
+    return blocking, warnings
+
+
 def prepare(labels_dir: Path, manifest_path: Path, dataset_root: Path, out: Path, seed: int = 42,
-            ratios=DEFAULT_RATIOS) -> dict:
+            ratios=DEFAULT_RATIOS, require_review: bool = True, strict: bool = True) -> dict:
+    """`require_review=False` / `strict=False` exist for unit tests of the split mechanics on tiny synthetic
+    sets; the CLI always uses both safeguards."""
     if out.exists():
         raise FileExistsError(f"Refusing to overwrite existing output directory: {out}")
     manifest = read_manifest(manifest_path)
-    report = validate_export(labels_dir, manifest)
+    report = validate_export(labels_dir, manifest, require_review=require_review)
     if not report.ok:
         raise ValueError(f"Annotation validation failed with {len(report.errors)} errors; "
                          f"run validate_annotations for details. First: {report.errors[0]}")
@@ -123,6 +154,11 @@ def prepare(labels_dir: Path, manifest_path: Path, dataset_root: Path, out: Path
     for key in report.paired:
         groups[manifest[key]["near_duplicate_group"]].append(manifest[key])
     assignment = split_groups(groups, ratios, seed)
+    boxes_of = {key: [b.cls for b in read_label_file(label)[0]] for key, label in report.paired.items()}
+    blocking, limitation_warnings = split_limitations(assignment, groups, boxes_of)
+    if strict and blocking:
+        raise ValueError("Reviewed dataset is not ready for a train/val/test split: " + "; ".join(blocking))
+    limitation_warnings = blocking + limitation_warnings  # non-strict: report everything
 
     for split in SPLITS:
         (out / "images" / split).mkdir(parents=True)
@@ -165,6 +201,8 @@ def prepare(labels_dir: Path, manifest_path: Path, dataset_root: Path, out: Path
         "excluded_unlabelled_images": len(report.missing_labels),
         "verified_negative_images": len(report.verified_negatives),
         "validation_warnings": len(report.warnings),
+        "review_manifest": report.review_manifest,
+        "limitations": limitation_warnings,
     }
     summary["post_build_problems"] = verify_prepared(out)
     (out / "split_report.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
@@ -177,6 +215,8 @@ def print_summary(s: dict) -> None:
     for name in CLASS_NAMES.values():
         im, bx = s["images_per_folder_class"][name], s["instances_per_class"][name]
         print(f"{name:<20}{'/'.join(str(im[k]) for k in SPLITS):>24}{'/'.join(str(bx[k]) for k in SPLITS):>24}")
+    for w in s.get("limitations", []):
+        print(f"  LIMITATION {w}")
     for p in s["post_build_problems"]:
         print(f"  PROBLEM {p}")
 

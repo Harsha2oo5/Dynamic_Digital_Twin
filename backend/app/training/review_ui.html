@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Annotation Review</title>
+<style>
+:root{--bg:#0b0f14;--panel:#111821;--panel2:#17202b;--line:#263241;--ink:#e6edf3;--ink2:#a4b1c0;--acc:#2fb5d2;
+--good:#3fb950;--warn:#d29922;--bad:#f85149;--purple:#a371f7}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+header{display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--panel);border-bottom:1px solid var(--line);flex-wrap:wrap}
+header h1{font-size:15px;margin:0}
+.warnline{color:var(--warn);font-size:12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 9px;color:var(--ink2);font-size:12px}
+.chip b{color:var(--ink)}
+main{flex:1;display:grid;grid-template-columns:260px 1fr 340px;min-height:0}
+aside{background:var(--panel);overflow:auto;padding:10px;min-height:0}
+aside.left{border-right:1px solid var(--line)}aside.right{border-left:1px solid var(--line)}
+h2{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink2);margin:14px 0 6px}
+h2:first-child{margin-top:0}
+label{display:flex;align-items:center;gap:6px;margin:3px 0;color:var(--ink2);cursor:pointer}
+select,input[type=text],input[type=number]{background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:4px 6px;font:inherit}
+button{background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer;font:inherit}
+button:hover:not(:disabled){border-color:var(--acc)}button:disabled{opacity:.45;cursor:not-allowed}
+button.primary{background:#12391f;border-color:var(--good)}button.warnb{background:#3a2c0b;border-color:var(--warn)}
+.list{display:flex;flex-direction:column;gap:2px}
+.item{display:flex;align-items:center;gap:6px;padding:3px 6px;border-radius:4px;cursor:pointer;color:var(--ink2);font-size:12px}
+.item:hover{background:var(--panel2)}.item.on{background:#1d2a38;color:var(--ink)}
+.item .fn{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dot{width:9px;height:9px;border-radius:50%;flex:none}
+.s-NOT_REVIEWED{background:#5b6675}.s-IN_PROGRESS{background:var(--acc)}.s-REVIEWED{background:var(--good)}.s-NEEDS_SECOND_REVIEW{background:var(--warn)}
+.badge{display:inline-block;border-radius:4px;padding:1px 6px;font-size:11px;border:1px solid var(--line);color:var(--ink2)}
+.st{font-weight:600;color:#0b0f14;border:none}
+.center{display:flex;flex-direction:column;min-width:0;min-height:0}
+.toolbar{display:flex;align-items:center;gap:8px;padding:6px 10px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
+.toolbar .idx{color:var(--ink2);min-width:120px;text-align:center}
+.stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;background:#05080b;padding:8px}
+svg#cv{max-width:100%;max-height:100%;user-select:none;touch-action:none;cursor:crosshair}
+.boxrow{border:1px solid var(--line);border-radius:6px;padding:6px;margin:5px 0;background:var(--panel2);cursor:pointer}
+.boxrow.on{border-color:var(--acc)}
+.boxrow .top{display:flex;align-items:center;gap:6px}
+.boxrow .meta{color:var(--ink2);font-size:11px;margin-top:3px}
+.sw{width:12px;height:12px;border-radius:3px;flex:none}
+.cand{color:var(--warn)}.ver{color:var(--good)}.unc{color:var(--bad)}
+.iconb{padding:2px 7px;font-size:12px}
+.blockers{color:var(--warn);font-size:12px;margin:6px 0}
+.bar{display:flex;align-items:center;gap:6px;font-size:12px;margin:2px 0}
+.bar .nm{width:118px;color:var(--ink2)}.bar .track{flex:1;height:8px;background:var(--panel2);border-radius:4px;overflow:hidden}
+.bar .fill{height:100%}.bar .n{width:52px;text-align:right;color:var(--ink2)}
+.keys{color:var(--ink2);font-size:11px;line-height:1.7}
+kbd{background:var(--panel2);border:1px solid var(--line);border-radius:3px;padding:0 4px;font-size:11px}
+#toast{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);background:var(--panel2);border:1px solid var(--line);padding:6px 14px;border-radius:6px;display:none;z-index:9}
+#toast.err{border-color:var(--bad);color:#ffb3ad}
+dialog{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:10px;max-width:520px}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+dialog label{color:var(--ink);align-items:flex-start}
+textarea{width:100%;background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:5px;font:inherit}
+</style>
+</head>
+<body>
+<header>
+  <h1>Annotation review: <span id="batch"></span></h1>
+  <span class="warnline">Dashed boxes are machine candidates, not ground truth. Only images marked REVIEWED are exported.</span>
+  <div class="chips" id="chips"></div>
+</header>
+<main>
+  <aside class="left">
+    <h2>Reviewer</h2>
+    <input type="text" id="reviewer" placeholder="your name (required to sign off)" style="width:100%">
+    <h2>Filter</h2>
+    <select id="fStatus" style="width:100%"></select>
+    <label><input type="checkbox" id="fMulti"> multiple candidate classes</label>
+    <label><input type="checkbox" id="fLow"> low-confidence candidate &lt; <input type="number" id="fLowThr" value="0.35" step="0.05" min="0" max="1" style="width:62px"></label>
+    <label><input type="checkbox" id="fNone"> no candidate boxes</label>
+    <label><input type="checkbox" id="fUnc"> has uncertain boxes</label>
+    <select id="fTask" style="width:100%;margin-top:4px"></select>
+    <h2>Images <span id="fcount"></span></h2>
+    <div class="list" id="list"></div>
+  </aside>
+  <section class="center">
+    <div class="toolbar">
+      <button id="prev" title="Previous (←)">◀ Prev</button>
+      <span class="idx" id="idx"></span>
+      <button id="next" title="Next (→)">Next ▶</button>
+      <span style="margin-left:12px;color:var(--ink2)">New box class:</span>
+      <select id="drawClass"></select>
+      <span style="color:var(--ink2);font-size:12px">drag on empty space to draw</span>
+      <span id="saveState" style="margin-left:auto;color:var(--ink2);font-size:12px"></span>
+    </div>
+    <div class="stage" id="stage"><svg id="cv" xmlns="http://www.w3.org/2000/svg"></svg></div>
+  </section>
+  <aside class="right">
+    <h2>Image</h2>
+    <div id="info"></div>
+    <div class="blockers" id="blockers"></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap" id="statusBtns"></div>
+    <h2>Boxes <span id="bcount"></span></h2>
+    <div id="boxes"></div>
+    <h2>Progress</h2>
+    <div id="summary"></div>
+    <h2>Keys</h2>
+    <div class="keys">
+      <kbd>←</kbd>/<kbd>→</kbd> image · <kbd>Tab</kbd> next box · <kbd>A</kbd> accept box ·
+      <kbd>1</kbd>–<kbd>7</kbd> set class · <kbd>U</kbd> uncertain · <kbd>Del</kbd> delete · <kbd>Esc</kbd> deselect<br>
+      drag a box to move · drag a corner to resize · drag on empty space to add a box
+    </div>
+  </aside>
+</main>
+<dialog id="dlg"><form method="dialog" id="dlgForm"></form></dialog>
+<div id="toast"></div>
+<script>
+"use strict";
+const COLORS=["#e6194b","#3cb44b","#ffe119","#4363d8","#f58231","#911eb4","#42d4f4"];
+const STATUS_COLOR={NOT_REVIEWED:"#5b6675",IN_PROGRESS:"#2fb5d2",REVIEWED:"#3fb950",NEEDS_SECOND_REVIEW:"#d29922"};
+let S=null,cur=0,filtered=[],sel=null,drag=null,saving=Promise.resolve();
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const store={get(k,d){try{return localStorage.getItem(k)??d}catch{return d}},set(k,v){try{localStorage.setItem(k,v)}catch{}}};
+function toast(msg,err){const t=$("toast");t.textContent=msg;t.className=err?"err":"";t.style.display="block";clearTimeout(t._h);t._h=setTimeout(()=>t.style.display="none",err?6000:1800)}
+async function api(method,url,body){const r=await fetch(url,{method,headers:{"Content-Type":"application/json"},body:body?JSON.stringify(body):undefined});
+  const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.detail||r.statusText);return j}
+const img=()=>S.images[cur];
+const candClasses=im=>new Set([...im.boxes,...im.rejected_candidates].filter(b=>b.candidate).map(b=>b.candidate.class_id));
+function blockers(im){const out=[];const u=im.boxes.filter(b=>!b.verified).length;if(u)out.push(`${u} candidate box(es) not yet accepted, corrected or deleted`);
+  const q=im.boxes.filter(b=>b.uncertain).length;if(q)out.push(`${q} box(es) marked uncertain: use NEEDS SECOND REVIEW`);return out}
+
+async function load(){S=await api("GET","/api/state");$("batch").textContent=S.batch;
+  $("fStatus").innerHTML=`<option value="">all statuses</option>`+S.statuses.map(s=>`<option>${s}</option>`).join("");
+  const tasks=[...new Set(S.images.map(i=>i.task))];$("fTask").innerHTML=`<option value="">all folders</option>`+tasks.map(t=>`<option>${esc(t)}</option>`).join("");
+  $("drawClass").innerHTML=S.class_names.map((n,i)=>`<option value="${i}">${i+1} ${n}</option>`).join("");
+  $("drawClass").value=store.get("drawClass","0");$("reviewer").value=store.get("reviewer","");
+  for(const id of ["fStatus","fMulti","fLow","fLowThr","fNone","fUnc","fTask"])$(id).addEventListener("change",()=>{applyFilter();render()});
+  $("reviewer").addEventListener("input",e=>store.set("reviewer",e.target.value));
+  $("drawClass").addEventListener("change",e=>store.set("drawClass",e.target.value));
+  $("prev").onclick=()=>step(-1);$("next").onclick=()=>step(1);
+  const last=parseInt(store.get("cur:"+S.batch,"0"),10);cur=Number.isInteger(last)&&last<S.images.length?last:0;
+  applyFilter();render()}
+
+function applyFilter(){const st=$("fStatus").value,thr=parseFloat($("fLowThr").value)||0,task=$("fTask").value;
+  filtered=S.images.map((im,i)=>i).filter(i=>{const im=S.images[i];
+    if(st&&im.status!==st)return false;if(task&&im.task!==task)return false;
+    if($("fMulti").checked&&candClasses(im).size<2)return false;
+    if($("fLow").checked&&!im.boxes.some(b=>!b.verified&&b.candidate&&b.candidate.confidence<thr))return false;
+    if($("fNone").checked&&im.candidate_count>0)return false;
+    if($("fUnc").checked&&!im.boxes.some(b=>b.uncertain))return false;return true});
+  if(filtered.length&&!filtered.includes(cur))cur=filtered[0]}
+function step(d){if(!filtered.length)return;const p=filtered.indexOf(cur);const n=p<0?0:Math.min(filtered.length-1,Math.max(0,p+d));go(filtered[n])}
+function go(i){cur=i;sel=null;store.set("cur:"+S.batch,String(i));render()}
+
+function render(){renderChips();renderList();renderCanvas();renderSide()}
+function renderChips(){const s=S.summary;$("chips").innerHTML=[["images",s.images],["reviewed",s.reviewed],["unreviewed",s.unreviewed],
+  ["second review",s.needs_second_review],["unverified candidates",s.remaining_candidate_boxes]].map(([k,v])=>`<span class="chip">${k} <b>${v}</b></span>`).join("")}
+function renderList(){$("fcount").textContent=`(${filtered.length})`;
+  $("list").innerHTML=filtered.map(i=>{const im=S.images[i];return `<div class="item${i===cur?" on":""}" data-i="${i}"><span class="dot s-${im.status}"></span><span class="fn" title="${esc(im.file)}">${esc(im.file)}</span><span>${im.boxes.length}</span></div>`}).join("");
+  for(const el of $("list").children)el.onclick=()=>go(+el.dataset.i);
+  const on=$("list").querySelector(".on");if(on)on.scrollIntoView({block:"nearest"})}
+
+function scale(){const r=$("cv").getBoundingClientRect(),im=img();return r.width?Math.max(im.width/r.width,im.height/r.height):1}
+function renderCanvas(){const im=img(),svg=$("cv");if(!im){svg.innerHTML="";return}
+  svg.setAttribute("viewBox",`0 0 ${im.width} ${im.height}`);svg.setAttribute("width",im.width);svg.setAttribute("height",im.height);
+  const k=scale(),fs=12*k,hs=7*k;let h=`<image href="/api/images/${cur}/file" x="0" y="0" width="${im.width}" height="${im.height}"/>`;
+  const boxes=drag&&drag.preview?drag.preview:im.boxes;
+  for(const b of boxes){const [x1,y1,x2,y2]=b.xyxy,c=COLORS[b.class_id],on=b.id===sel;
+    const dash=b.uncertain?`${6*k} ${3*k}`:(b.verified?"":`${8*k} ${5*k}`);
+    const lbl=(b.verified?"":"cand ")+S.class_names[b.class_id]+(b.verified?" ✓":(b.candidate?" "+b.candidate.confidence.toFixed(2):""))+(b.uncertain?" ?":"");
+    h+=`<g data-id="${esc(b.id)}"><rect class="box" data-id="${esc(b.id)}" x="${x1}" y="${y1}" width="${x2-x1}" height="${y2-y1}" fill="${on?c+"22":"transparent"}" stroke="${b.uncertain?"#f85149":c}" stroke-width="${(on?3:2)*k}" stroke-dasharray="${dash}" style="cursor:move"/>`;
+    h+=`<rect x="${x1}" y="${Math.max(0,y1-fs*1.4)}" width="${(lbl.length*0.6+0.8)*fs}" height="${fs*1.4}" fill="${c}" opacity="${b.verified?0.95:0.7}" pointer-events="none"/><text x="${x1+fs*0.3}" y="${Math.max(0,y1-fs*1.4)+fs*1.05}" font-size="${fs}" fill="#111" pointer-events="none">${esc(lbl)}</text>`;
+    if(on)for(const [hx,hy,cn] of [[x1,y1,"nw"],[x2,y1,"ne"],[x1,y2,"sw"],[x2,y2,"se"]])h+=`<rect class="handle" data-id="${esc(b.id)}" data-corner="${cn}" x="${hx-hs}" y="${hy-hs}" width="${hs*2}" height="${hs*2}" fill="#fff" stroke="#111" stroke-width="${k}" style="cursor:${cn==="nw"||cn==="se"?"nwse":"nesw"}-resize"/>`;
+    h+="</g>"}
+  if(drag&&drag.kind==="draw"&&drag.rect){const [x1,y1,x2,y2]=drag.rect;h+=`<rect x="${Math.min(x1,x2)}" y="${Math.min(y1,y2)}" width="${Math.abs(x2-x1)}" height="${Math.abs(y2-y1)}" fill="none" stroke="${COLORS[+$("drawClass").value]}" stroke-width="${2*k}"/>`}
+  svg.innerHTML=h}
+
+function renderSide(){const im=img();if(!im)return;
+  $("idx").textContent=`${filtered.indexOf(cur)+1} / ${filtered.length}  (#${cur+1} of ${S.images.length})`;
+  $("info").innerHTML=`<div style="font-family:monospace;word-break:break-all">${esc(im.file)}</div>
+   <div style="margin:4px 0"><span class="badge st" style="background:${STATUS_COLOR[im.status]}">${im.status.replace(/_/g," ")}</span>
+   <span class="badge">folder: ${im.folder_class_id==null?"?":esc(S.class_names[im.folder_class_id])}</span>
+   <span class="badge">${im.candidate_count} candidate box(es) originally</span></div>
+   ${im.reviewer?`<div style="color:var(--ink2);font-size:12px">signed off by ${esc(im.reviewer)} at ${esc(im.reviewed_at||"")}</div>`:""}
+   ${im.note?`<div style="color:var(--ink2);font-size:12px">note: ${esc(im.note)}</div>`:""}
+   ${im.rejected_candidates.length?`<div style="color:var(--ink2);font-size:12px">${im.rejected_candidates.length} candidate(s) deleted (kept in the audit trail)</div>`:""}`;
+  const bl=blockers(im);$("blockers").innerHTML=bl.map(esc).join("<br>");
+  const btn=(label,cls,fn,dis,title)=>{const b=document.createElement("button");b.textContent=label;if(cls)b.className=cls;b.disabled=!!dis;if(title)b.title=title;b.onclick=fn;return b};
+  const sb=$("statusBtns");sb.innerHTML="";
+  if(im.status==="NOT_REVIEWED")sb.append(btn("Start review","",()=>setStatus("IN_PROGRESS")));
+  if(im.status==="IN_PROGRESS"||im.status==="NEEDS_SECOND_REVIEW")sb.append(btn("Mark REVIEWED","primary",confirmReviewed,bl.length>0,bl.join("; ")));
+  if(im.status!=="NEEDS_SECOND_REVIEW")sb.append(btn("Needs second review","warnb",secondReview));
+  if(im.status==="REVIEWED"||im.status==="NEEDS_SECOND_REVIEW")sb.append(btn("Reopen","",()=>setStatus("IN_PROGRESS")));
+  $("bcount").textContent=`(${im.boxes.length})`;
+  $("boxes").innerHTML=im.boxes.map(b=>{const c=b.candidate;
+    return `<div class="boxrow${b.id===sel?" on":""}" data-id="${esc(b.id)}"><div class="top"><span class="sw" style="background:${COLORS[b.class_id]}"></span>
+    <select data-act="cls" data-id="${esc(b.id)}">${S.class_names.map((n,i)=>`<option value="${i}"${i===b.class_id?" selected":""}>${i+1} ${n}</option>`).join("")}</select>
+    ${b.verified?`<span class="ver" title="verified by a person">✓</span>`:`<button class="iconb" data-act="accept" data-id="${esc(b.id)}" title="Accept as is (A)">Accept</button>`}
+    <button class="iconb" data-act="unc" data-id="${esc(b.id)}" title="Uncertain (U)">${b.uncertain?"certain":"?"}</button>
+    <button class="iconb" data-act="del" data-id="${esc(b.id)}" title="Delete (Del)">✕</button></div>
+    <div class="meta">origin: ${b.origin}${c?` · <span class="cand">model said: ${esc(S.class_names[c.class_id])} ${c.confidence.toFixed(2)}${c.flags.length?" · "+esc(c.flags.join(", ")):""}</span>`:""}${b.uncertain?' · <span class="unc">uncertain</span>':""}</div></div>`}).join("")||`<div style="color:var(--ink2)">No boxes. If the image really shows none of the seven classes, marking it REVIEWED records it as a verified negative.</div>`;
+  for(const row of $("boxes").querySelectorAll(".boxrow"))row.onclick=e=>{if(e.target.closest("select,button"))return;sel=row.dataset.id;render()};
+  for(const el of $("boxes").querySelectorAll("[data-act]")){const id=el.dataset.id;
+    if(el.dataset.act==="cls")el.onchange=()=>editBox(id,b=>{b.class_id=+el.value;b.verified=true});
+    else el.onclick=()=>{if(el.dataset.act==="accept")editBox(id,b=>{b.verified=true});else if(el.dataset.act==="unc")editBox(id,b=>{b.uncertain=!b.uncertain});else deleteBox(id)}}
+  renderSummary()}
+function renderSummary(){const s=S.summary,max=Math.max(1,...Object.values(s.boxes_per_class));
+  $("summary").innerHTML=`<div style="color:var(--ink2);font-size:12px;margin-bottom:6px">${s.images} images · ${s.reviewed} reviewed · ${s.unreviewed} unreviewed · ${s.needs_second_review} second review<br>${s.boxes} boxes · ${s.remaining_candidate_boxes} unverified candidates · ${s.rejected_candidates} deleted candidates</div>`+
+  S.class_names.map((n,i)=>{const t=s.boxes_per_class[n],u=s.unverified_candidates_per_class[n];
+    return `<div class="bar"><span class="nm">${n}</span><span class="track"><span class="fill" style="display:block;width:${100*t/max}%;background:${COLORS[i]}"></span></span><span class="n" title="total / unverified">${t} / ${u}</span></div>`}).join("")+
+  `<div style="color:var(--ink2);font-size:11px;margin-top:4px">current boxes / of which still unverified candidates</div>`}
+
+// --- edits -------------------------------------------------------------------------------------
+const clone=o=>JSON.parse(JSON.stringify(o));
+function editBox(id,fn){const boxes=clone(img().boxes);const b=boxes.find(x=>x.id===id);if(!b)return;fn(b);save(boxes)}
+function deleteBox(id){const b=img().boxes.find(x=>x.id===id);if(!b)return;if(sel===id)sel=null;save(clone(img().boxes).filter(x=>x.id!==id));
+  toast(b.origin==="candidate"?"Candidate deleted (kept in the audit trail)":"Box deleted")}
+function save(boxes){const idx=cur,reviewer=$("reviewer").value;$("saveState").textContent="saving…";
+  img().boxes=boxes;renderCanvas();
+  saving=saving.then(()=>api("PUT",`/api/images/${idx}/boxes`,{boxes,reviewer})).then(r=>{S.images[idx]=r.image;S.summary=r.summary;$("saveState").textContent="saved";render()})
+   .catch(async e=>{toast("Not saved: "+e.message,true);$("saveState").textContent="error";S=await api("GET","/api/state");render()})}
+async function setStatus(status,extra={}){try{const r=await api("POST",`/api/images/${cur}/status`,{status,reviewer:$("reviewer").value,...extra});
+  S.images[cur]=r.image;S.summary=r.summary;applyFilter();render();toast("Status: "+status.replace(/_/g," "))}catch(e){toast(e.message,true)}}
+function dialog(html,onOk){const f=$("dlgForm");f.innerHTML=html+`<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px"><button value="cancel">Cancel</button><button value="ok" class="primary" id="dlgOk">OK</button></div>`;
+  const d=$("dlg");d.onclose=()=>{if(d.returnValue==="ok")onOk(f)};d.returnValue="";d.showModal()}
+function confirmReviewed(){if(!$("reviewer").value.trim()){toast("Enter your name in the Reviewer field first",true);$("reviewer").focus();return}
+  const im=img(),checks=["Every clearly visible antenna, router, cable, battery, PSU, cabinet and radio unit is boxed (not only the folder's class)",
+   "False positives are deleted and every class is correct","Boxes are tight around the component","Cable rule applied: one box per inseparable bundle, no overlapping bundle boxes",
+   "No duplicate boxes for the same physical object"];
+  dialog(`<h3 style="margin-top:0">Mark ${esc(im.file)} as REVIEWED</h3>${im.boxes.length?"":`<p class="warnline">This image has no boxes. It will be exported as a verified negative (it shows none of the seven classes).</p>`}`+
+   checks.map((c,i)=>`<label><input type="checkbox" class="ck" required> ${esc(c)}</label>`).join(""),
+   f=>{if([...f.querySelectorAll(".ck")].every(c=>c.checked))setStatus("REVIEWED",{confirm:true});else toast("Not marked: confirm every item",true)})}
+function secondReview(){dialog(`<h3 style="margin-top:0">Needs second review</h3><p style="color:var(--ink2)">What should the second reviewer look at?</p><textarea id="note" rows="3">${esc(img().note||"")}</textarea>`,
+  f=>setStatus("NEEDS_SECOND_REVIEW",{note:f.querySelector("#note").value}))}
+
+// --- mouse -------------------------------------------------------------------------------------
+function pt(e){const svg=$("cv"),p=svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;const q=p.matrixTransform(svg.getScreenCTM().inverse());const im=img();
+  return [Math.min(Math.max(q.x,0),im.width),Math.min(Math.max(q.y,0),im.height)]}
+$("cv").addEventListener("pointerdown",e=>{if(e.button!==0)return;const t=e.target,p=pt(e);$("cv").setPointerCapture(e.pointerId);
+  if(t.classList.contains("handle")){drag={kind:"resize",id:t.dataset.id,corner:t.dataset.corner,start:p,preview:clone(img().boxes)}}
+  else if(t.classList.contains("box")){sel=t.dataset.id;drag={kind:"move",id:t.dataset.id,start:p,preview:clone(img().boxes),moved:false};render()}
+  else{drag={kind:"draw",start:p,rect:null};if(sel){sel=null;render()}}});
+$("cv").addEventListener("pointermove",e=>{if(!drag)return;const p=pt(e),im=img();
+  if(drag.kind==="draw"){drag.rect=[drag.start[0],drag.start[1],p[0],p[1]];renderCanvas();return}
+  const b=drag.preview.find(x=>x.id===drag.id),o=img().boxes.find(x=>x.id===drag.id);if(!b||!o)return;
+  const dx=p[0]-drag.start[0],dy=p[1]-drag.start[1];if(Math.abs(dx)+Math.abs(dy)>1)drag.moved=true;let [x1,y1,x2,y2]=o.xyxy;
+  if(drag.kind==="move"){const w=x2-x1,h=y2-y1;x1=Math.min(Math.max(x1+dx,0),im.width-w);y1=Math.min(Math.max(y1+dy,0),im.height-h);b.xyxy=[x1,y1,x1+w,y1+h]}
+  else{const c=drag.corner;if(c.includes("w"))x1=p[0];if(c.includes("e"))x2=p[0];if(c.includes("n"))y1=p[1];if(c.includes("s"))y2=p[1];
+    b.xyxy=[Math.min(x1,x2),Math.min(y1,y2),Math.max(x1,x2),Math.max(y1,y2)];drag.moved=true}
+  renderCanvas()});
+$("cv").addEventListener("pointerup",()=>{const d=drag;drag=null;if(!d)return;
+  if(d.kind==="draw"){if(d.rect){const [a,b,c,e]=d.rect,x1=Math.min(a,c),y1=Math.min(b,e),x2=Math.max(a,c),y2=Math.max(b,e);
+      if((x2-x1)/scale()>=6&&(y2-y1)/scale()>=6){const id="h"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+        const boxes=clone(img().boxes);boxes.push({id,class_id:+$("drawClass").value,xyxy:[x1,y1,x2,y2].map(v=>Math.round(v*10)/10),origin:"human",verified:true,uncertain:false});sel=id;save(boxes);return}}
+    renderCanvas();return}
+  if(d.moved){const boxes=d.preview.map(b=>b.id===d.id?{...b,xyxy:b.xyxy.map(v=>Math.round(v*10)/10),verified:true}:b);save(boxes)}else renderCanvas()});
+window.addEventListener("resize",()=>img()&&renderCanvas());
+
+// --- keyboard ----------------------------------------------------------------------------------
+document.addEventListener("keydown",e=>{if(e.target.closest("input,select,textarea")||$("dlg").open)return;const im=img();if(!im)return;
+  if(e.key==="ArrowRight"){step(1);e.preventDefault()}else if(e.key==="ArrowLeft"){step(-1);e.preventDefault()}
+  else if(e.key==="Tab"&&im.boxes.length){const i=im.boxes.findIndex(b=>b.id===sel);sel=im.boxes[(i+(e.shiftKey?-1:1)+im.boxes.length)%im.boxes.length].id;render();e.preventDefault()}
+  else if(e.key==="Escape"){sel=null;render()}
+  else if(sel&&(e.key==="Delete"||e.key==="Backspace")){deleteBox(sel);e.preventDefault()}
+  else if(sel&&(e.key==="a"||e.key==="A"))editBox(sel,b=>{b.verified=true})
+  else if(sel&&(e.key==="u"||e.key==="U"))editBox(sel,b=>{b.uncertain=!b.uncertain})
+  else if(sel&&/^[1-7]$/.test(e.key))editBox(sel,b=>{b.class_id=+e.key-1;b.verified=true});
+  else if(!sel&&/^[1-7]$/.test(e.key)){$("drawClass").value=String(+e.key-1);store.set("drawClass",$("drawClass").value)}});
+load().catch(e=>toast("Could not load review state: "+e.message,true));
+</script>
+</body>
+</html>
