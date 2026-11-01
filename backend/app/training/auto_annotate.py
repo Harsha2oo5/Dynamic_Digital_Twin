@@ -111,6 +111,7 @@ class Thresholds:
     cable_overlap: float = 0.30  # IoU (or containment of the smaller box) above which cables form one bundle
     tiny_area: float = 0.002  # fraction of the image
     huge_area: float = 0.90
+    merge_cross_class: bool = False  # collapse different-class boxes on one object (open-vocabulary proposers)
 
 
 class Proposer(Protocol):
@@ -146,6 +147,115 @@ class UltralyticsProposer:
         r = self.model.predict(image, imgsz=self.imgsz, conf=self.conf, device=resolve_device("cpu"), verbose=False)[0]
         return [RawCandidate(r.names[int(c)], float(p), tuple(float(v) for v in b))
                 for b, c, p in zip(r.boxes.xyxy.tolist(), r.boxes.cls.tolist(), r.boxes.conf.tolist())]
+
+
+def content_box(image: np.ndarray, std_thr: float = 8.0, pad: int = 4) -> tuple[int, int, int, int]:
+    """Bounding box of the photo inside a letterboxed screenshot: rows/columns whose grey-level spread is
+    below `std_thr` (uniform black or white bars) are trimmed. Falls back to the full image."""
+    grey = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) if image.ndim == 3 else image
+    h, w = grey.shape
+    rows = np.where(grey.std(axis=1) > std_thr)[0]
+    if len(rows) == 0:
+        return 0, 0, w, h
+    # columns are measured inside the kept rows only, otherwise black-over-white bars look like content
+    cols = np.where(grey[rows[0]:rows[-1] + 1].std(axis=0) > std_thr)[0]
+    if len(cols) == 0:
+        return 0, 0, w, h
+    x0, y0 = max(0, int(cols[0]) - pad), max(0, int(rows[0]) - pad)
+    x1, y1 = min(w, int(cols[-1]) + 1 + pad), min(h, int(rows[-1]) + 1 + pad)
+    if (x1 - x0) * (y1 - y0) < 0.05 * w * h:  # implausibly small: do not trust the trim
+        return 0, 0, w, h
+    return x0, y0, x1, y1
+
+
+class LetterboxCropProposer:
+    """Runs the inner proposer on the photo content only (screenshots are up to ~80% padding) and maps
+    the boxes back to full-image pixels, so labels stay valid for the staged (uncropped) images."""
+
+    def __init__(self, inner: Proposer):
+        self.inner = inner
+        self.name = f"{inner.name} + letterbox crop"
+
+    def propose(self, image: np.ndarray) -> list[RawCandidate]:
+        x0, y0, x1, y1 = content_box(image)
+        raw = self.inner.propose(image[y0:y1, x0:x1])
+        return [RawCandidate(r.source_label, r.confidence,
+                             (r.xyxy[0] + x0, r.xyxy[1] + y0, r.xyxy[2] + x0, r.xyxy[3] + y0)) for r in raw]
+
+
+# Grounding DINO phrases; several phrases may map to one class. Short nouns ground better than descriptions.
+GDINO_PROMPTS: dict[int, list[str]] = {
+    0: ["antenna"],
+    1: ["router"],
+    2: ["cable"],
+    3: ["battery"],
+    4: ["power supply"],
+    5: ["cabinet"],
+    6: ["radio unit"],
+}
+
+
+class GroundingDinoProposer:
+    """Open-vocabulary candidates from Grounding DINO (Hugging Face transformers, CPU).
+
+    The stock label decoding concatenates every phrase whose token score passes a threshold, giving
+    labels like "power supply unit equipment cabinet". Here each query box is scored per class as the mean
+    token probability inside that class's phrase span (the max let generic tokens such as "unit" win), and
+    gets exactly one class; if the runner-up class is close (`ambiguity_ratio`), the mapping is marked
+    ambiguous so the box is always flagged for review."""
+
+    def __init__(self, model_id: str = "IDEA-Research/grounding-dino-tiny", prompts: dict[int, list[str]] | None = None,
+                 short_side: int = 512, long_side: int = 896, conf: float = 0.1, ambiguity_ratio: float = 0.8):
+        import torch
+        from transformers import AutoModelForZeroShotObjectDetection, AutoProcessor
+
+        self.torch = torch
+        self.processor = AutoProcessor.from_pretrained(model_id)
+        self.model = AutoModelForZeroShotObjectDetection.from_pretrained(model_id).eval()
+        self.name = model_id.split("/")[-1]
+        self.size = {"shortest_edge": short_side, "longest_edge": long_side}
+        self.conf, self.ambiguity_ratio = conf, ambiguity_ratio
+        prompts = prompts or GDINO_PROMPTS
+        phrases = [(cid, p.lower()) for cid, ps in prompts.items() for p in ps]
+        self.text, spans, pos = "", [], 0
+        for cid, p in phrases:
+            spans.append((cid, pos, pos + len(p)))
+            self.text += p + ". "
+            pos = len(self.text)
+        self.text = self.text.strip()
+        enc = self.processor.tokenizer(self.text, return_offsets_mapping=True)
+        self.class_tokens: dict[int, list[int]] = defaultdict(list)
+        for ti, (s, e) in enumerate(enc["offset_mapping"]):
+            for cid, a, b in spans:
+                if e > s and s >= a and e <= b:
+                    self.class_tokens[cid].append(ti)
+        self.label_map = {CLASS_NAMES[cid]: (cid, "direct") for cid in self.class_tokens}
+        self.label_map.update({f"{CLASS_NAMES[cid]}?": (cid, "ambiguous") for cid in self.class_tokens})
+
+    def propose(self, image: np.ndarray) -> list[RawCandidate]:
+        from PIL import Image
+
+        h, w = image.shape[:2]
+        pil = Image.fromarray(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+        inputs = self.processor(images=pil, text=self.text, return_tensors="pt", size=self.size)
+        with self.torch.no_grad():
+            out = self.model(**inputs)
+        probs = out.logits[0].sigmoid()  # (queries, text tokens)
+        boxes = out.pred_boxes[0]  # normalised cx, cy, w, h
+        cids = sorted(self.class_tokens)
+        per_class = self.torch.stack([probs[:, self.class_tokens[c]].mean(dim=1) for c in cids], dim=1)
+        top2 = per_class.topk(min(2, len(cids)), dim=1)
+        raw = []
+        for q in range(per_class.shape[0]):
+            score = float(top2.values[q, 0])
+            if score < self.conf:
+                continue
+            cid = cids[int(top2.indices[q, 0])]
+            ambiguous = len(cids) > 1 and float(top2.values[q, 1]) >= self.ambiguity_ratio * score
+            cx, cy, bw, bh = (float(v) for v in boxes[q])
+            xyxy = ((cx - bw / 2) * w, (cy - bh / 2) * h, (cx + bw / 2) * w, (cy + bh / 2) * h)
+            raw.append(RawCandidate(CLASS_NAMES[cid] + ("?" if ambiguous else ""), score, xyxy))
+        return raw
 
 
 # --- geometry ----------------------------------------------------------------------------------
@@ -192,6 +302,22 @@ def suppress_duplicates(cands: list[Candidate], iou_thr: float) -> list[Candidat
     for c in sorted(cands, key=lambda c: -c.confidence):
         if all(k.class_id != c.class_id or iou(k.xyxy, c.xyxy) < iou_thr for k in kept):
             kept.append(c)
+    return kept
+
+
+def merge_cross_class(cands: list[Candidate], iou_thr: float) -> list[Candidate]:
+    """One box per object: a box overlapping a higher-scoring box of another class is dropped, and its class
+    is kept on the survivor as an `alt_class` flag (survivor becomes ambiguous, so it is always reviewed)."""
+    kept: list[Candidate] = []
+    for c in sorted(cands, key=lambda c: -c.confidence):
+        owner = next((k for k in kept if k.class_id != c.class_id and iou(k.xyxy, c.xyxy) > iou_thr), None)
+        if owner is None:
+            kept.append(c)
+            continue
+        alt = f"alt_class:{c.class_name}({c.confidence:.2f})"
+        if not any(f.startswith(f"alt_class:{c.class_name}(") for f in owner.flags):
+            owner.flags.append(alt)
+        owner.mapping = "ambiguous"
     return kept
 
 
@@ -256,6 +382,8 @@ def postprocess(raw: list[RawCandidate], label_map, width: int, height: int, t: 
                 ) -> tuple[list[Candidate], Counter]:
     cands, unmapped = map_candidates(raw, label_map, t.min_conf)
     cands = suppress_duplicates(cands, t.nms_iou)
+    if t.merge_cross_class:
+        cands = merge_cross_class(cands, t.conflict_iou)
     cands = merge_cable_bundles(cands, t.cable_overlap)
     return flag_and_tier(cands, width, height, t), unmapped
 
@@ -303,6 +431,30 @@ def draw_preview(img: np.ndarray, cands: list[Candidate], title: str, max_side: 
     cv2.rectangle(out, (0, 0), (out.shape[1], 26), (20, 20, 20), -1)
     cv2.putText(out, title, (6, 18), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (240, 240, 240), 1, cv2.LINE_AA)
     return out
+
+
+def write_contact_sheets(out: Path, records: list[dict], cols: int = 5, tile: int = 320) -> list[Path]:
+    """One JPEG grid of candidate previews per batch task (folder class), for a quick visual pass."""
+    sheets = []
+    (out / "contact_sheets").mkdir(exist_ok=True)
+    by_task: dict[str, list[dict]] = defaultdict(list)
+    for r in records:
+        by_task[r["task"]].append(r)
+    for task, rs in sorted(by_task.items()):
+        rows = (len(rs) + cols - 1) // cols
+        sheet = np.full((rows * tile, cols * tile, 3), 30, np.uint8)
+        for i, r in enumerate(rs):
+            img = read_image(out / r["preview"])
+            if img is None:
+                continue
+            s = min(tile / img.shape[1], tile / img.shape[0])
+            img = cv2.resize(img, (max(1, int(img.shape[1] * s)), max(1, int(img.shape[0] * s))), interpolation=cv2.INTER_AREA)
+            y, x = (i // cols) * tile, (i % cols) * tile
+            sheet[y:y + img.shape[0], x:x + img.shape[1]] = img
+        path = out / "contact_sheets" / f"{task}.jpg"
+        cv2.imencode(".jpg", sheet, [cv2.IMWRITE_JPEG_QUALITY, 85])[1].tofile(str(path))
+        sheets.append(path)
+    return sheets
 
 
 def write_cvat_zip(path: Path, items: list[tuple[str, list[str]]]) -> None:
@@ -398,6 +550,7 @@ def run(batch_dir: Path, proposer: Proposer, label_map: dict, out: Path, t: Thre
             if r["status"] != "high_confidence":
                 w_.writerow([r["file"], r["task"], r["status"], r["multi_class"], "; ".join(r["reasons"])])
     (out / "candidates.json").write_text(json.dumps(records, indent=1), encoding="utf-8")
+    write_contact_sheets(out, records)
     (out / "review.html").write_text(
         REVIEW_HTML.replace("__RUN__", html.escape(out.name)).replace("__DATA__", json.dumps(records)), encoding="utf-8")
 
@@ -435,6 +588,9 @@ def summarize(records: list[dict], model: str, t: Thresholds, elapsed: float, un
         "candidate_boxes": len(all_c),
         "status_counts": dict(Counter(r["status"] for r in records)),
         "multi_class_images": sum(r["multi_class"] for r in records),
+        "multi_box_images": sum(len(r["candidates"]) > 1 for r in records),
+        "confidence_histogram": {f"{lo / 10:.1f}-{(lo + 1) / 10:.1f}": sum(lo <= c["confidence"] * 10 < lo + 1 for c in all_c)
+                                 for lo in range(10)},
         "images_requiring_manual_review": sum(r["status"] != "high_confidence" for r in records),
         "per_folder": per_folder,
         "per_class_candidates": per_class_candidates,
@@ -448,7 +604,10 @@ def report_markdown(r: dict) -> str:
         f"# Candidate annotation report ({r['model']})", "",
         "> Machine-generated candidates. **0 boxes are human-reviewed.** Nothing here is training data.", "",
         f"- Images: {r['images']} in {r['seconds']} s on CPU; candidate boxes: {r['candidate_boxes']}",
-        f"- Status: {r['status_counts']}; multiple-class images: {r['multi_class_images']}",
+        f"- Status: {r['status_counts']}; multiple-class images: {r['multi_class_images']}; "
+        f"images with more than one box: {r.get('multi_box_images', '?')}",
+        "- Detector confidence histogram (score, NOT accuracy): "
+        + ", ".join(f"{k}: {v}" for k, v in r.get("confidence_histogram", {}).items() if v),
         f"- Images requiring manual review (all non-high-confidence): {r['images_requiring_manual_review']}", "",
         "## Per source folder", "",
         "| Folder class | Images | High confidence | Needs review | No detection | Multi-class | Expected class proposed |",
@@ -472,8 +631,11 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Generate candidate boxes for human review (not ground truth).")
     parser.add_argument("--batch", type=Path, default=PROJECT_DIR / "annotation" / "batches" / "batch_01")
     parser.add_argument("--model", type=Path, default=BACKEND_DIR / "models" / "annotation_assist" / "yoloe-11l-seg-pf.pt")
-    parser.add_argument("--mode", choices=["vocabulary", "text", "custom"], default="vocabulary",
-                        help="vocabulary: prompt-free YOLOE map; text: open-vocabulary prompts; custom: our 7-class model")
+    parser.add_argument("--mode", choices=["vocabulary", "text", "custom", "gdino"], default="vocabulary",
+                        help="vocabulary: prompt-free YOLOE map; text: open-vocabulary prompts; custom: our 7-class model; "
+                             "gdino: Grounding DINO (transformers)")
+    parser.add_argument("--gdino-model", default="IDEA-Research/grounding-dino-tiny")
+    parser.add_argument("--no-crop", action="store_true", help="do not trim letterbox bars before proposing")
     parser.add_argument("--name", required=True)
     parser.add_argument("--imgsz", type=int, default=640)
     parser.add_argument("--min-conf", type=float, default=Thresholds.min_conf)
@@ -490,9 +652,15 @@ def main() -> None:
         except RuntimeError as exc:
             sys.exit(str(exc))
         label_map = proposer.label_map
+    elif args.mode == "gdino":
+        t.merge_cross_class = True
+        proposer = GroundingDinoProposer(args.gdino_model, conf=t.min_conf)
+        label_map = proposer.label_map
     else:
         label_map = YOLOE_PF_VOCAB_MAP
         proposer = UltralyticsProposer(args.model, label_map, args.imgsz, t.min_conf)
+    if not args.no_crop:
+        proposer = LetterboxCropProposer(proposer)
 
     out = PROJECT_DIR / "annotation" / "candidates" / args.name
     report = run(args.batch, proposer, label_map, out, t)

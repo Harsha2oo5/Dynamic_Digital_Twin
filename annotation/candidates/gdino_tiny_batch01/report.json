@@ -1,0 +1,140 @@
+{
+  "generated_at": "2026-11-02T00:20:57",
+  "model": "grounding-dino-tiny + letterbox crop",
+  "thresholds": {
+    "min_conf": 0.25,
+    "high_conf": 0.45,
+    "nms_iou": 0.6,
+    "conflict_iou": 0.7,
+    "cable_overlap": 0.3,
+    "tiny_area": 0.002,
+    "huge_area": 0.9,
+    "merge_cross_class": true
+  },
+  "images": 175,
+  "seconds": 1630.6,
+  "candidate_boxes": 553,
+  "status_counts": {
+    "needs_review": 171,
+    "high_confidence": 4
+  },
+  "multi_class_images": 129,
+  "images_requiring_manual_review": 171,
+  "per_folder": {
+    "antenna": {
+      "images": 25,
+      "high_confidence": 0,
+      "needs_review": 25,
+      "no_detection": 0,
+      "multi_class": 21,
+      "expected_class_proposed": 9
+    },
+    "router": {
+      "images": 25,
+      "high_confidence": 0,
+      "needs_review": 25,
+      "no_detection": 0,
+      "multi_class": 11,
+      "expected_class_proposed": 0
+    },
+    "cable": {
+      "images": 25,
+      "high_confidence": 0,
+      "needs_review": 25,
+      "no_detection": 0,
+      "multi_class": 23,
+      "expected_class_proposed": 14
+    },
+    "battery": {
+      "images": 25,
+      "high_confidence": 0,
+      "needs_review": 25,
+      "no_detection": 0,
+      "multi_class": 22,
+      "expected_class_proposed": 11
+    },
+    "power_supply_unit": {
+      "images": 25,
+      "high_confidence": 0,
+      "needs_review": 25,
+      "no_detection": 0,
+      "multi_class": 17,
+      "expected_class_proposed": 1
+    },
+    "equipment_cabinet": {
+      "images": 25,
+      "high_confidence": 0,
+      "needs_review": 25,
+      "no_detection": 0,
+      "multi_class": 21,
+      "expected_class_proposed": 18
+    },
+    "radio_unit": {
+      "images": 25,
+      "high_confidence": 4,
+      "needs_review": 21,
+      "no_detection": 0,
+      "multi_class": 14,
+      "expected_class_proposed": 25
+    }
+  },
+  "per_class_candidates": {
+    "antenna": {
+      "boxes": 43,
+      "high_tier": 0,
+      "low_tier": 43,
+      "images_with_candidate": 34
+    },
+    "router": {
+      "boxes": 1,
+      "high_tier": 0,
+      "low_tier": 1,
+      "images_with_candidate": 1
+    },
+    "cable": {
+      "boxes": 98,
+      "high_tier": 4,
+      "low_tier": 94,
+      "images_with_candidate": 73
+    },
+    "battery": {
+      "boxes": 61,
+      "high_tier": 4,
+      "low_tier": 57,
+      "images_with_candidate": 47
+    },
+    "power_supply_unit": {
+      "boxes": 37,
+      "high_tier": 0,
+      "low_tier": 37,
+      "images_with_candidate": 34
+    },
+    "equipment_cabinet": {
+      "boxes": 84,
+      "high_tier": 9,
+      "low_tier": 75,
+      "images_with_candidate": 55
+    },
+    "radio_unit": {
+      "boxes": 229,
+      "high_tier": 46,
+      "low_tier": 183,
+      "images_with_candidate": 167
+    }
+  },
+  "top_unmapped_detector_labels": [],
+  "human_reviewed_annotations": 0,
+  "multi_box_images": 138,
+  "confidence_histogram": {
+    "0.0-0.1": 0,
+    "0.1-0.2": 0,
+    "0.2-0.3": 176,
+    "0.3-0.4": 193,
+    "0.4-0.5": 98,
+    "0.5-0.6": 32,
+    "0.6-0.7": 37,
+    "0.7-0.8": 16,
+    "0.8-0.9": 1,
+    "0.9-1.0": 0
+  }
+}

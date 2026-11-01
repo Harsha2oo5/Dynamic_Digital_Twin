@@ -1,0 +1,5239 @@
+{
+ "note": "Machine candidates, NOT ground truth. Line numbers refer to obj_train_data/<image>.txt inside each zip.",
+ "archives": {
+  "batch_01_0_antenna.zip": {
+   "Screenshot 2026-10-07 112152.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6512,
+     "tier": "low",
+     "flags": [
+      "alt_class:battery(0.28)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.3974,
+     "tier": "low",
+     "flags": [
+      "alt_class:antenna(0.26)",
+      "ambiguous_label:power_supply_unit"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.4565,
+     "tier": "low",
+     "flags": [
+      "cable_bundle_merged(2)"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 112215.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3509,
+     "tier": "low",
+     "flags": [
+      "near_whole_image_box"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3887,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 113144.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6633,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.3463,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.3134,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.26)",
+      "ambiguous_label:antenna"
+     ]
+    },
+    {
+     "line": 4,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2659,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2624,
+     "tier": "low",
+     "flags": [
+      "tiny_box"
+     ]
+    },
+    {
+     "line": 6,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2527,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 7,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2594,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 114047.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3818,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.3612,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2781,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3871,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2834,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 114133.png": [
+    {
+     "line": 1,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.4069,
+     "tier": "low",
+     "flags": [
+      "alt_class:radio_unit(0.35)",
+      "alt_class:cable(0.26)",
+      "near_whole_image_box",
+      "ambiguous_label:power_supply_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3736,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.277,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2584,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2966,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 115241.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5388,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.29)",
+      "near_whole_image_box",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3628,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2604,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.4236,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 115639.png": [
+    {
+     "line": 1,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.4195,
+     "tier": "low",
+     "flags": [
+      "alt_class:radio_unit(0.42)",
+      "alt_class:power_supply_unit(0.35)",
+      "ambiguous_label:antenna"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.6373,
+     "tier": "high",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 115927.png": [
+    {
+     "line": 1,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3988,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.305,
+     "tier": "low",
+     "flags": [
+      "near_whole_image_box"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 120952.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4315,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.3195,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.5304,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.33)",
+      "ambiguous_label:cable"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 121020.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6582,
+     "tier": "low",
+     "flags": [
+      "alt_class:battery(0.30)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 121130.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5909,
+     "tier": "low",
+     "flags": [
+      "alt_class:battery(0.28)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 121403.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4749,
+     "tier": "low",
+     "flags": [
+      "alt_class:battery(0.34)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3446,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3122,
+     "tier": "low",
+     "flags": [
+      "near_whole_image_box"
+     ]
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3433,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 121636.png": [
+    {
+     "line": 1,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.4157,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3373,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3059,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2883,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2798,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 123451.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.434,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.36)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 123613.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3913,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3118,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2791,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.4799,
+     "tier": "low",
+     "flags": [
+      "cable_bundle_merged(2)",
+      "ambiguous_label:cable"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 123701.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5129,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.26)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.3435,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.291,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2641,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 123842.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4584,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4461,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2858,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.4258,
+     "tier": "low",
+     "flags": [
+      "cable_bundle_merged(3)"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 124006.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4777,
+     "tier": "low",
+     "flags": [
+      "alt_class:battery(0.34)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3947,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.32)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.5559,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.33)",
+      "ambiguous_label:cable"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 124310.png": [
+    {
+     "line": 1,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.3996,
+     "tier": "low",
+     "flags": [
+      "alt_class:radio_unit(0.28)",
+      "ambiguous_label:antenna"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.3273,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3224,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3035,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.4185,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3237,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 7,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2938,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 124405.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4307,
+     "tier": "low",
+     "flags": [
+      "alt_class:equipment_cabinet(0.28)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2511,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3867,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 124815.png": [
+    {
+     "line": 1,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.4604,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.39)",
+      "alt_class:radio_unit(0.39)",
+      "ambiguous_label:antenna"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 124858.png": [
+    {
+     "line": 1,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.4194,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.32)",
+      "alt_class:radio_unit(0.28)",
+      "ambiguous_label:antenna"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2707,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2672,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 125031.png": [
+    {
+     "line": 1,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.3269,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3238,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2689,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 125130.png": [
+    {
+     "line": 1,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.5054,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.30)",
+      "ambiguous_label:antenna"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4201,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3484,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2724,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 125838.png": [
+    {
+     "line": 1,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.4486,
+     "tier": "low",
+     "flags": [
+      "alt_class:radio_unit(0.36)",
+      "ambiguous_label:battery"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4213,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.35)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2913,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2805,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.4631,
+     "tier": "high",
+     "flags": []
+    }
+   ]
+  },
+  "batch_01_1_router.zip": {
+   "IMG_6354.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5057,
+     "tier": "low",
+     "flags": [
+      "alt_class:equipment_cabinet(0.27)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.3951,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.289,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2696,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2631,
+     "tier": "low",
+     "flags": [
+      "ambiguous_label:cable?"
+     ]
+    }
+   ],
+   "IMG_6355.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6407,
+     "tier": "high",
+     "flags": []
+    }
+   ],
+   "IMG_6357.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6729,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2586,
+     "tier": "low",
+     "flags": [
+      "tiny_box"
+     ]
+    }
+   ],
+   "IMG_6359.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6976,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.27)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2624,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6361.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4156,
+     "tier": "low",
+     "flags": [
+      "alt_class:battery(0.25)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3507,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3417,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3271,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.29)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 5,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2855,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6363.PNG": [
+    {
+     "line": 1,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.4078,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.27)",
+      "ambiguous_label:antenna"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4017,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2633,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6369.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4353,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.32,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.31)",
+      "alt_class:radio_unit(0.26)",
+      "ambiguous_label:battery"
+     ]
+    }
+   ],
+   "IMG_6371.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4992,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.42)",
+      "alt_class:battery(0.27)",
+      "alt_class:cable(0.26)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "IMG_6376.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4466,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.27)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "IMG_6377.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.7919,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.4521,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.4015,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3642,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.5167,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.33)",
+      "ambiguous_label:cable"
+     ]
+    },
+    {
+     "line": 6,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.483,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.42)",
+      "ambiguous_label:cable"
+     ]
+    }
+   ],
+   "IMG_6379.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5756,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.27)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "IMG_6380.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5294,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.36)",
+      "alt_class:antenna(0.27)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "IMG_6381.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.7252,
+     "tier": "high",
+     "flags": []
+    }
+   ],
+   "IMG_6382.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5714,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.38)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "IMG_6386.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6034,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.29)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "IMG_6389.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6453,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.27)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4828,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.32)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2503,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6391.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.7026,
+     "tier": "low",
+     "flags": [
+      "alt_class:battery(0.33)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "IMG_6396.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6301,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2675,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2557,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6401.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6919,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2607,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2525,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6404.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4495,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.3831,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.381,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3182,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2872,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.4075,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6408.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6335,
+     "tier": "high",
+     "flags": []
+    }
+   ],
+   "IMG_6409.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5305,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.41)",
+      "alt_class:battery(0.26)",
+      "alt_class:cable(0.26)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "IMG_6411.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6536,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.33)",
+      "alt_class:battery(0.32)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "IMG_6414.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4702,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3874,
+     "tier": "low",
+     "flags": [
+      "tiny_box"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3748,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.344,
+     "tier": "low",
+     "flags": [
+      "tiny_box"
+     ]
+    },
+    {
+     "line": 5,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3265,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6421.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.7059,
+     "tier": "high",
+     "flags": []
+    }
+   ]
+  },
+  "batch_01_2_cable.zip": {
+   "IMG_6523.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5106,
+     "tier": "low",
+     "flags": [
+      "alt_class:equipment_cabinet(0.30)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2926,
+     "tier": "low",
+     "flags": [
+      "alt_class:cable(0.29)",
+      "ambiguous_label:power_supply_unit"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2866,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2783,
+     "tier": "low",
+     "flags": [
+      "alt_class:cable(0.26)",
+      "ambiguous_label:power_supply_unit?"
+     ]
+    }
+   ],
+   "IMG_6525.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4707,
+     "tier": "low",
+     "flags": [
+      "alt_class:cable(0.30)",
+      "alt_class:power_supply_unit(0.28)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.3358,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3166,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6526.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4242,
+     "tier": "low",
+     "flags": [
+      "alt_class:cable(0.33)",
+      "alt_class:power_supply_unit(0.32)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2548,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6527.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5772,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.4184,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.32)",
+      "ambiguous_label:antenna"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.3454,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.33)",
+      "ambiguous_label:antenna"
+     ]
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.4537,
+     "tier": "high",
+     "flags": []
+    }
+   ],
+   "IMG_6532.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4648,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2562,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6533.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.353,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2915,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2839,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.275,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6534.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.426,
+     "tier": "low",
+     "flags": [
+      "alt_class:battery(0.33)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.3594,
+     "tier": "low",
+     "flags": [
+      "alt_class:antenna(0.33)",
+      "alt_class:cable(0.31)",
+      "ambiguous_label:power_supply_unit"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2993,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6536.PNG": [
+    {
+     "line": 1,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.5858,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.39)",
+      "ambiguous_label:antenna"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5376,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2836,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2699,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.265,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6537.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2857,
+     "tier": "low",
+     "flags": [
+      "alt_class:equipment_cabinet(0.28)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2718,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2665,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6538.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3553,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3362,
+     "tier": "low",
+     "flags": [
+      "alt_class:equipment_cabinet(0.29)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3189,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2584,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6542.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4462,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3159,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2993,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2788,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3347,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6545.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3877,
+     "tier": "low",
+     "flags": [
+      "alt_class:equipment_cabinet(0.31)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3053,
+     "tier": "low",
+     "flags": [
+      "alt_class:radio_unit(0.26)",
+      "ambiguous_label:battery"
+     ]
+    }
+   ],
+   "IMG_6546.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4129,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3376,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3051,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3013,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2812,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2796,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6547.PNG": [
+    {
+     "line": 1,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.3428,
+     "tier": "low",
+     "flags": [
+      "alt_class:radio_unit(0.30)",
+      "ambiguous_label:power_supply_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2908,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2668,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.257,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6548.PNG": [
+    {
+     "line": 1,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2587,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.6237,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.34)",
+      "alt_class:radio_unit(0.32)",
+      "ambiguous_label:cable"
+     ]
+    }
+   ],
+   "IMG_6550.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4046,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3656,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2561,
+     "tier": "low",
+     "flags": [
+      "ambiguous_label:power_supply_unit?"
+     ]
+    },
+    {
+     "line": 4,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2521,
+     "tier": "low",
+     "flags": [
+      "ambiguous_label:power_supply_unit?"
+     ]
+    }
+   ],
+   "IMG_6551.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3198,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.3136,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.28)",
+      "ambiguous_label:antenna"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2773,
+     "tier": "low",
+     "flags": [
+      "tiny_box"
+     ]
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.5583,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.25)",
+      "ambiguous_label:cable"
+     ]
+    }
+   ],
+   "IMG_6552.PNG": [
+    {
+     "line": 1,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.4163,
+     "tier": "low",
+     "flags": [
+      "alt_class:cable(0.32)",
+      "ambiguous_label:power_supply_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3607,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.3449,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.32)",
+      "ambiguous_label:antenna?"
+     ]
+    },
+    {
+     "line": 4,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3251,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6555.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3988,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.38)",
+      "ambiguous_label:radio_unit?"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.292,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6557.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.342,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2649,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3227,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6558.PNG": [
+    {
+     "line": 1,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3529,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3299,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3096,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6561.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3168,
+     "tier": "low",
+     "flags": [
+      "alt_class:cable(0.26)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2891,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2502,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6562.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4901,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2512,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.275,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.26)",
+      "ambiguous_label:cable"
+     ]
+    }
+   ],
+   "IMG_6563.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4309,
+     "tier": "low",
+     "flags": [
+      "alt_class:equipment_cabinet(0.27)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.422,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3425,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6567.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4128,
+     "tier": "low",
+     "flags": [
+      "alt_class:equipment_cabinet(0.32)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.268,
+     "tier": "low",
+     "flags": []
+    }
+   ]
+  },
+  "batch_01_3_battery.zip": {
+   "IMG_6293.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.7111,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.29)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "IMG_6295.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.8985,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.3803,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.3684,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3479,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6296.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4444,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.26)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "IMG_6300.PNG": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.4478,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3605,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3238,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3154,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3045,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3015,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 7,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2936,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 8,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2694,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 9,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2571,
+     "tier": "low",
+     "flags": [
+      "tiny_box"
+     ]
+    }
+   ],
+   "IMG_6301.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6312,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.30)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3218,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6302.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.72,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.30)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2975,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2804,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6305.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.77,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3562,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6310.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5045,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2631,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3665,
+     "tier": "low",
+     "flags": [
+      "cable_bundle_merged(2)",
+      "ambiguous_label:cable"
+     ]
+    }
+   ],
+   "IMG_6314.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4651,
+     "tier": "low",
+     "flags": [
+      "alt_class:equipment_cabinet(0.46)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2553,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6317.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6357,
+     "tier": "low",
+     "flags": [
+      "alt_class:battery(0.27)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.4303,
+     "tier": "low",
+     "flags": [
+      "alt_class:cable(0.34)",
+      "ambiguous_label:power_supply_unit"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2715,
+     "tier": "low",
+     "flags": [
+      "ambiguous_label:antenna?"
+     ]
+    }
+   ],
+   "IMG_6318.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6967,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.28)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.4892,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.37)",
+      "ambiguous_label:antenna"
+     ]
+    }
+   ],
+   "IMG_6329.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.357,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3167,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2928,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2871,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2842,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.277,
+     "tier": "low",
+     "flags": [
+      "tiny_box"
+     ]
+    },
+    {
+     "line": 7,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2658,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 8,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3196,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6330.PNG": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.4593,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2821,
+     "tier": "low",
+     "flags": [
+      "tiny_box"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2819,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2685,
+     "tier": "low",
+     "flags": [
+      "tiny_box"
+     ]
+    },
+    {
+     "line": 5,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2646,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.4006,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6332.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3286,
+     "tier": "low",
+     "flags": [
+      "alt_class:equipment_cabinet(0.31)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3125,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2667,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6334.PNG": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3291,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3035,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2641,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.261,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6336.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4998,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.4349,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3799,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3629,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3287,
+     "tier": "low",
+     "flags": [
+      "cable_bundle_merged(2)"
+     ]
+    }
+   ],
+   "IMG_6337.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4928,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3446,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3254,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3122,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2702,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2674,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 7,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3365,
+     "tier": "low",
+     "flags": [
+      "tiny_box"
+     ]
+    },
+    {
+     "line": 8,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2533,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6340.PNG": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.5514,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.4632,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3356,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2865,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2834,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3309,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 7,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2919,
+     "tier": "low",
+     "flags": [
+      "ambiguous_label:cable?"
+     ]
+    },
+    {
+     "line": 8,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2753,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6341.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6285,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.29)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 1,
+     "class_name": "router",
+     "confidence": 0.3453,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.27)",
+      "ambiguous_label:router"
+     ]
+    }
+   ],
+   "IMG_6342.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4064,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3954,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2571,
+     "tier": "low",
+     "flags": [
+      "alt_class:antenna(0.25)",
+      "ambiguous_label:battery?"
+     ]
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3109,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6346.PNG": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3728,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3323,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3034,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2975,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6348.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6867,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.5109,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3178,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.272,
+     "tier": "low",
+     "flags": [
+      "tiny_box"
+     ]
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.5503,
+     "tier": "high",
+     "flags": []
+    }
+   ],
+   "IMG_6349.PNG": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.4593,
+     "tier": "low",
+     "flags": [
+      "alt_class:radio_unit(0.29)",
+      "ambiguous_label:equipment_cabinet"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2587,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6352.PNG": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.4082,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6353.PNG": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.4891,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3005,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2954,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2951,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2663,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2784,
+     "tier": "low",
+     "flags": []
+    }
+   ]
+  },
+  "batch_01_4_power_supply_unit.zip": {
+   "IMG_6429.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6814,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.25)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "IMG_6432.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6282,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2869,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2784,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6433.PNG": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.4185,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4178,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3159,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6437.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6163,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2745,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6443.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4542,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.4242,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.26)",
+      "ambiguous_label:cable"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.4173,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.29)",
+      "ambiguous_label:cable"
+     ]
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3453,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.27)",
+      "ambiguous_label:cable"
+     ]
+    }
+   ],
+   "IMG_6444.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3653,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3596,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2605,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2596,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.283,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6445.PNG": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.4889,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4721,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.4663,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2947,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6451.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.7655,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.28)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.4574,
+     "tier": "high",
+     "flags": []
+    }
+   ],
+   "IMG_6458.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6121,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3252,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2728,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6460.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5475,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3041,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6462.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.7981,
+     "tier": "high",
+     "flags": []
+    }
+   ],
+   "IMG_6463.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.548,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2615,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6466.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3778,
+     "tier": "low",
+     "flags": [
+      "alt_class:equipment_cabinet(0.28)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.327,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3214,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2684,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2854,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6468.PNG": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.5085,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4089,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3239,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.307,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2854,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.281,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 7,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2614,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6474.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4275,
+     "tier": "low",
+     "flags": [
+      "alt_class:equipment_cabinet(0.41)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2784,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2654,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6476.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3745,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6477.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.433,
+     "tier": "low",
+     "flags": [
+      "alt_class:equipment_cabinet(0.36)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3367,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3548,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6479.jpg": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4148,
+     "tier": "low",
+     "flags": [
+      "near_whole_image_box"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3274,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3048,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6485.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4509,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3429,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3764,
+     "tier": "low",
+     "flags": [
+      "tiny_box"
+     ]
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2703,
+     "tier": "low",
+     "flags": [
+      "cable_bundle_merged(2)",
+      "tiny_box"
+     ]
+    }
+   ],
+   "IMG_6486.PNG": [
+    {
+     "line": 1,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3733,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.28)",
+      "ambiguous_label:battery"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3288,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.29)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3286,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3123,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.28)",
+      "ambiguous_label:battery?"
+     ]
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3131,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2995,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 7,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2684,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "IMG_6489.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5984,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.31)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3474,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.31)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "IMG_6498.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3606,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3422,
+     "tier": "low",
+     "flags": [
+      "alt_class:radio_unit(0.30)",
+      "ambiguous_label:equipment_cabinet"
+     ]
+    }
+   ],
+   "IMG_6505.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.7307,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.26)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "IMG_6508.PNG": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6139,
+     "tier": "high",
+     "flags": []
+    }
+   ],
+   "IMG_6511.PNG": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.5429,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.472,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3945,
+     "tier": "low",
+     "flags": [
+      "tiny_box"
+     ]
+    },
+    {
+     "line": 4,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3597,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2655,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2539,
+     "tier": "low",
+     "flags": []
+    }
+   ]
+  },
+  "batch_01_5_equipment_cabinet.zip": {
+   "Screenshot 2026-10-07 161052.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3496,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2932,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 161206.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4557,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.3317,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3295,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2811,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2623,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2501,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 161322.png": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3264,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3185,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.288,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2761,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2689,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2548,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 7,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2874,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 8,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2771,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 9,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2729,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 162728.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6342,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.6295,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.37)",
+      "ambiguous_label:antenna"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.4414,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 162855.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3371,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2843,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2776,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 162954.png": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.4096,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3209,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 163456.png": [
+    {
+     "line": 1,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.4391,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4049,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3971,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 163544.png": [
+    {
+     "line": 1,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.5267,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3388,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2973,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 163648.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3857,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3102,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 163718.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4322,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3703,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3367,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2536,
+     "tier": "low",
+     "flags": [
+      "ambiguous_label:antenna?"
+     ]
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.311,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3014,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 7,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2802,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 8,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2717,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 163737.png": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3675,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3293,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3274,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3107,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3103,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2654,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 7,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2506,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 163854.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5564,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2521,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 163951.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4757,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3881,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 164057.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6992,
+     "tier": "low",
+     "flags": [
+      "near_whole_image_box"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.436,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 164313.png": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.4827,
+     "tier": "low",
+     "flags": [
+      "alt_class:radio_unit(0.25)",
+      "near_whole_image_box",
+      "ambiguous_label:equipment_cabinet"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3752,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2884,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 164355.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3813,
+     "tier": "low",
+     "flags": [
+      "near_whole_image_box"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3087,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2914,
+     "tier": "low",
+     "flags": [
+      "tiny_box"
+     ]
+    },
+    {
+     "line": 4,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2511,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 164431.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4385,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3805,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.3016,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 164450.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4022,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.3319,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2692,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3394,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 164559.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4008,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.3449,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.30)",
+      "ambiguous_label:antenna"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.3437,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2898,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2548,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 164649.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6414,
+     "tier": "low",
+     "flags": [
+      "near_whole_image_box"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 164730.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.395,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.29)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3564,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2704,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 164804.png": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.4431,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4076,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2676,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 164925.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4418,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3251,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.3107,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2528,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 165054.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3347,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.313,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3037,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2872,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2506,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 165453.png": [
+    {
+     "line": 1,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.5006,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.26)",
+      "ambiguous_label:antenna"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3191,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3074,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2743,
+     "tier": "low",
+     "flags": [
+      "near_whole_image_box"
+     ]
+    },
+    {
+     "line": 5,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.2594,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 6,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2541,
+     "tier": "low",
+     "flags": []
+    }
+   ]
+  },
+  "batch_01_6_radio_unit.zip": {
+   "Screenshot 2026-10-07 130423.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.704,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.36)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 130459.png": [
+    {
+     "line": 1,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.375,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.35)",
+      "ambiguous_label:antenna"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3524,
+     "tier": "low",
+     "flags": [
+      "alt_class:battery(0.29)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3392,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.27)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 4,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3324,
+     "tier": "low",
+     "flags": [
+      "alt_class:battery(0.26)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 131240.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6895,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.26,
+     "tier": "low",
+     "flags": [
+      "ambiguous_label:cable?"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 131337.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6661,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.28)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 131728.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5163,
+     "tier": "low",
+     "flags": [
+      "near_whole_image_box"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 132159.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6531,
+     "tier": "low",
+     "flags": [
+      "near_whole_image_box"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 132300.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3935,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3624,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2886,
+     "tier": "low",
+     "flags": [
+      "ambiguous_label:power_supply_unit?"
+     ]
+    },
+    {
+     "line": 4,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2627,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 132410.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5414,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.3528,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2701,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2586,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 5,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2561,
+     "tier": "low",
+     "flags": [
+      "near_whole_image_box"
+     ]
+    },
+    {
+     "line": 6,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3369,
+     "tier": "low",
+     "flags": [
+      "cable_bundle_merged(2)"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 132449.png": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.4174,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3813,
+     "tier": "low",
+     "flags": [
+      "near_whole_image_box"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.2895,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2632,
+     "tier": "low",
+     "flags": [
+      "ambiguous_label:antenna?"
+     ]
+    },
+    {
+     "line": 5,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2863,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 140544.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.7642,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 0,
+     "class_name": "antenna",
+     "confidence": 0.2835,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.27)",
+      "ambiguous_label:antenna?"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 140729.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4103,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.25)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 140830.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6824,
+     "tier": "high",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 141004.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.7075,
+     "tier": "high",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 141021.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.7318,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.25)",
+      "ambiguous_label:radio_unit"
+     ]
+    },
+    {
+     "line": 2,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.2653,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 141234.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6667,
+     "tier": "high",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 141441.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4018,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.272,
+     "tier": "low",
+     "flags": [
+      "near_whole_image_box",
+      "ambiguous_label:power_supply_unit?"
+     ]
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3617,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 141530.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.7384,
+     "tier": "high",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 141607.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.5758,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2752,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 141711.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6319,
+     "tier": "low",
+     "flags": [
+      "near_whole_image_box"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 141811.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6041,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3806,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.29)",
+      "ambiguous_label:cable"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 141835.png": [
+    {
+     "line": 1,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3655,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.3591,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.2983,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 4,
+     "class_id": 4,
+     "class_name": "power_supply_unit",
+     "confidence": 0.2518,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 142110.png": [
+    {
+     "line": 1,
+     "class_id": 5,
+     "class_name": "equipment_cabinet",
+     "confidence": 0.4139,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.4112,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 142134.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6488,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.31)",
+      "ambiguous_label:radio_unit"
+     ]
+    }
+   ],
+   "Screenshot 2026-10-07 152734.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.7516,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 3,
+     "class_name": "battery",
+     "confidence": 0.3294,
+     "tier": "low",
+     "flags": []
+    },
+    {
+     "line": 3,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3094,
+     "tier": "low",
+     "flags": []
+    }
+   ],
+   "Screenshot 2026-10-07 154700.png": [
+    {
+     "line": 1,
+     "class_id": 6,
+     "class_name": "radio_unit",
+     "confidence": 0.6333,
+     "tier": "high",
+     "flags": []
+    },
+    {
+     "line": 2,
+     "class_id": 2,
+     "class_name": "cable",
+     "confidence": 0.3475,
+     "tier": "low",
+     "flags": [
+      "alt_class:power_supply_unit(0.32)",
+      "ambiguous_label:cable"
+     ]
+    }
+   ]
+  }
+ }
+}

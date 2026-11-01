@@ -1,0 +1,3 @@
+Files in this directory are MACHINE-GENERATED CANDIDATES, not verified annotations.
+Import them into CVAT as pre-annotations, correct every image, and export the reviewed result to
+annotation/exports/. validate_annotations and prepare_dataset refuse this directory.
