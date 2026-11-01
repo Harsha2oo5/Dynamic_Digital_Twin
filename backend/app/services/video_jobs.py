@@ -167,6 +167,7 @@ class VideoJobManager:
             logger.exception("Video job %s failed", job.job_id)
             job.status = "failed"
             job.error = str(exc)
+            self.service.record_error(source_id, f"Video job failed: {exc}")
         finally:
             if writer is not None:
                 writer.release()

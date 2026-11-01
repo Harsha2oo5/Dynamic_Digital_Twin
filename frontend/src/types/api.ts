@@ -82,6 +82,10 @@ export interface ModelInfo {
   taxonomy_match: boolean | null
   custom_model_path: string
   custom_model_available: boolean
+  /** The seven Digital Twin component classes in class-id order (from backend taxonomy.py). */
+  component_taxonomy?: string[]
+  checkpoint_size_mb?: number | null
+  checkpoint_modified?: string | null
 }
 
 export interface CheckpointInfo {
@@ -112,8 +116,43 @@ export interface DetectionStats {
   currently_tracked: number
   unique_tracks: number
   active_sources: string[]
-  class_counts: { class_name: string; count: number }[]
-  recent: { timestamp: string; inference_ms: number; detections: number }[]
+  class_counts: ClassCount[]
+  recent: PerfSample[]
+  // activity / health (added for the Overview; optional so older backends still type-check)
+  engine_state?: 'running' | 'idle' | 'error'
+  sources?: SourceState[]
+  min_inference_ms?: number | null
+  max_inference_ms?: number | null
+  latency_window?: number | null
+  session_started_at?: string | null
+  last_frame_at?: string | null
+  seconds_since_last_frame?: number | null
+  error_count?: number
+  last_error?: { message: string; source: string | null; at: string } | null
+}
+
+export interface ClassCount {
+  class_id?: number | null
+  class_name: string
+  count: number
+}
+
+export interface PerfSample {
+  timestamp: string
+  inference_ms: number
+  detections: number
+  seq?: number | null
+}
+
+export interface SourceState {
+  source_id: string
+  label: string
+  source_type: string
+  /** processing = produced a frame in the last few seconds; connected = registered, no recent frame. */
+  state: 'connected' | 'processing'
+  frames: number
+  started_at: string
+  last_frame_at: string | null
 }
 
 export interface TrackedObject {

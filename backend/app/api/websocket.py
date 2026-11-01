@@ -74,6 +74,7 @@ async def stream(ws: WebSocket):
             if not data:
                 continue
             if not service.detector.loaded:
+                service.record_error(source_id, service.detector.error or "Model is not loaded")
                 await ws.send_json({"type": "error", "message": service.detector.error or "Model is not loaded"})
                 continue
             if len(data) > MAX_FRAME_BYTES:
@@ -86,6 +87,7 @@ async def stream(ws: WebSocket):
                     processor.process, frame, frame_id, params["confidence"], params["iou"], params["image_size"]
                 )
             except InvalidMediaError as exc:
+                service.record_error(source_id, f"Frame decode failed: {exc}")
                 await ws.send_json({"type": "error", "message": str(exc)})
                 continue
             frame_id += 1
@@ -93,8 +95,9 @@ async def stream(ws: WebSocket):
             await ws.send_text(json.dumps({"type": "result", **result.model_dump(mode="json")}))
     except WebSocketDisconnect:
         pass
-    except Exception:  # noqa: BLE001
+    except Exception as exc:  # noqa: BLE001
         logger.exception("WebSocket session %s failed", session_id)
+        service.record_error(source_id, f"Stream failed: {exc}")
     finally:
         service.source_stopped(source_id)
         logger.info("WebSocket session %s closed after %d frames", session_id, frame_id)

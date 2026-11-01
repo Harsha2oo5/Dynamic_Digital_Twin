@@ -83,6 +83,10 @@ class ModelInfo(BaseModel):
     taxonomy_match: bool | None = Field(None, description="Custom model classes equal the 7-class taxonomy")
     custom_model_path: str
     custom_model_available: bool
+    component_taxonomy: list[str] = Field(default_factory=list,
+                                          description="The seven Digital Twin component classes, in class-id order")
+    checkpoint_size_mb: float | None = None
+    checkpoint_modified: datetime | None = Field(None, description="Checkpoint file modification time (version hint)")
 
 
 class CheckpointInfo(BaseModel):
@@ -103,6 +107,7 @@ class HealthResponse(BaseModel):
 
 
 class ClassCount(BaseModel):
+    class_id: int | None = None
     class_name: str
     count: int
 
@@ -111,6 +116,24 @@ class PerfSample(BaseModel):
     timestamp: datetime
     inference_ms: float
     detections: int
+    seq: int | None = Field(None, description="Frame sequence number within the stats session")
+
+
+class SourceState(BaseModel):
+    source_id: str
+    label: str
+    source_type: str
+    state: Literal["connected", "processing"] = Field(
+        description="processing = produced a frame in the last few seconds; connected = registered, no recent frame")
+    frames: int
+    started_at: datetime
+    last_frame_at: datetime | None
+
+
+class EngineError(BaseModel):
+    message: str
+    source: str | None
+    at: datetime
 
 
 class DetectionStats(BaseModel):
@@ -126,6 +149,17 @@ class DetectionStats(BaseModel):
     active_sources: list[str]
     class_counts: list[ClassCount]
     recent: list[PerfSample]
+    # activity / health (additive fields; older clients ignore them)
+    engine_state: Literal["running", "idle", "error"] = "idle"
+    sources: list[SourceState] = Field(default_factory=list)
+    min_inference_ms: float | None = None
+    max_inference_ms: float | None = None
+    latency_window: int | None = Field(None, description="Capacity of the rolling window behind recent/avg/min/max")
+    session_started_at: datetime | None = None
+    last_frame_at: datetime | None = None
+    seconds_since_last_frame: float | None = None
+    error_count: int = 0
+    last_error: EngineError | None = None
 
 
 class TrackedObject(BaseModel):

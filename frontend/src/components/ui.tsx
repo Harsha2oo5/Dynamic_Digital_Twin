@@ -24,7 +24,7 @@ export function Panel({
   return (
     <section className={cx('rounded-lg border border-line bg-surface-1', className)}>
       {(title || actions) && (
-        <header className="flex items-center justify-between gap-3 border-b border-line px-4 py-3">
+        <header className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-b border-line px-4 py-3">
           <h2 className="flex items-center gap-2 text-sm font-semibold tracking-wide text-ink">
             {Icon && <Icon size={16} className="text-ink-3" />}
             {title}
@@ -42,17 +42,20 @@ export function StatCard({
   value,
   sub,
   icon: Icon,
+  hint,
 }: {
   label: string
   value: ReactNode
   sub?: ReactNode
   icon?: LucideIcon
+  /** What the number means; shown as a tooltip on the label. */
+  hint?: string
 }) {
   return (
-    <div className="rounded-lg border border-line bg-surface-1 p-4">
-      <div className="flex items-center justify-between text-xs font-medium uppercase tracking-wider text-ink-3">
-        {label}
-        {Icon && <Icon size={15} />}
+    <div className="h-full rounded-lg border border-line bg-surface-1 p-4 transition-colors hover:border-ink-3/50">
+      <div className="flex items-center justify-between gap-2 text-xs font-medium uppercase tracking-wider text-ink-3" title={hint}>
+        <span className="truncate">{label}</span>
+        {Icon && <Icon size={15} className="shrink-0" />}
       </div>
       <div className="tabular mt-2 truncate text-2xl font-semibold text-ink">{value}</div>
       {sub && <div className="mt-1 truncate text-xs text-ink-2">{sub}</div>}

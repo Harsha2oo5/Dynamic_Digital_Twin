@@ -6,6 +6,7 @@ Created once at startup (see main.lifespan) and attached to app.state.
 import logging
 import threading
 import time
+from datetime import datetime
 from pathlib import Path
 
 from app.core.config import Settings
@@ -84,8 +85,11 @@ class DetectionService:
         return FrameProcessor(self.detector, self.classifier, tracker)
 
     def record(self, source_id: str, source_type: str, result: FrameResult) -> None:
-        self.stats.record(result)
+        self.stats.record(result, source_id)
         self.registry.update(source_id, source_type, result)
+
+    def record_error(self, source_id: str | None, message: str) -> None:
+        self.stats.record_error(message, source_id)
 
     def source_started(self, source_id: str, label: str) -> None:
         self.stats.source_started(source_id, label)
@@ -99,6 +103,7 @@ class DetectionService:
     def model_info(self) -> ModelInfo:
         d, s = self.detector, self.settings
         names = d.names
+        ckpt = self.model_path if self.model_path.is_file() else None
         return ModelInfo(
             loaded=d.loaded,
             model_name=self.model_path.name if d.loaded else None,
@@ -121,6 +126,9 @@ class DetectionService:
             taxonomy_match=self.taxonomy_match,
             custom_model_path=str(s.resolve(s.custom_model_path)),
             custom_model_available=s.resolve(s.custom_model_path).is_file(),
+            component_taxonomy=[CLASS_NAMES[k] for k in sorted(CLASS_NAMES)],
+            checkpoint_size_mb=round(ckpt.stat().st_size / 1e6, 2) if ckpt else None,
+            checkpoint_modified=datetime.fromtimestamp(ckpt.stat().st_mtime) if ckpt else None,
         )
 
     def list_checkpoints(self) -> list[CheckpointInfo]:
@@ -146,6 +154,7 @@ class DetectionService:
             model_name=self.model_path.name if self.detector.loaded else None,
             currently_tracked=active,
             unique_tracks=unique,
+            engine_state=self.stats.engine_state(self.detector.loaded),
             **snap,
         )
 

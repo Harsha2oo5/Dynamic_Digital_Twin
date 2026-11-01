@@ -26,3 +26,12 @@ export function colorFor(key: number): string {
   const hue = ((key * 0.618033988749895) % 1) * 360
   return `hsl(${hue.toFixed(0)} 85% 60%)`
 }
+
+/** "3s ago", "4m 10s ago"; '—' when unknown. */
+export function ago(seconds: number | null | undefined): string {
+  if (seconds == null || !Number.isFinite(seconds)) return '—'
+  return seconds < 1 ? 'just now' : `${duration(seconds)} ago`
+}
+
+/** power_supply_unit -> Power Supply Unit */
+export const titleCase = (name: string) => name.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
