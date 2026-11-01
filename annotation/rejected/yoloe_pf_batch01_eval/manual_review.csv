@@ -1,0 +1,176 @@
+file,task,status,multi_class,reasons
+Screenshot 2026-10-07 112152.png,0_antenna,needs_review,False,expected component 'antenna' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 112215.png,0_antenna,needs_review,False,expected component 'antenna' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 113144.png,0_antenna,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 114047.png,0_antenna,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 114133.png,0_antenna,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 115241.png,0_antenna,needs_review,False,expected component 'antenna' not proposed; 2 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 115639.png,0_antenna,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 115927.png,0_antenna,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 120952.png,0_antenna,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 121020.png,0_antenna,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 121130.png,0_antenna,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 121403.png,0_antenna,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 121636.png,0_antenna,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 123451.png,0_antenna,needs_review,False,expected component 'antenna' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 123613.png,0_antenna,needs_review,False,expected component 'antenna' not proposed; 2 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 123701.png,0_antenna,needs_review,False,expected component 'antenna' not proposed; 2 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 123842.png,0_antenna,needs_review,False,expected component 'antenna' not proposed; 4 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 124006.png,0_antenna,needs_review,False,expected component 'antenna' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 124310.png,0_antenna,needs_review,False,expected component 'antenna' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 124405.png,0_antenna,needs_review,False,expected component 'antenna' not proposed; 2 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 124815.png,0_antenna,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 124858.png,0_antenna,needs_review,False,expected component 'antenna' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 125031.png,0_antenna,needs_review,False,expected component 'antenna' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 125130.png,0_antenna,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 125838.png,0_antenna,needs_review,False,expected component 'antenna' not proposed; 1 low-confidence/flagged candidate(s)
+IMG_6354.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6355.PNG,1_router,needs_review,False,expected component 'router' not proposed; 1 low-confidence/flagged candidate(s)
+IMG_6357.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6359.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6361.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6363.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6369.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6371.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6376.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6377.PNG,1_router,needs_review,False,expected component 'router' not proposed; 1 low-confidence/flagged candidate(s)
+IMG_6379.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6380.PNG,1_router,needs_review,False,expected component 'router' not proposed; 2 low-confidence/flagged candidate(s)
+IMG_6381.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6382.PNG,1_router,needs_review,False,expected component 'router' not proposed; 2 low-confidence/flagged candidate(s)
+IMG_6386.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6389.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6391.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6396.PNG,1_router,needs_review,False,expected component 'router' not proposed; 1 low-confidence/flagged candidate(s)
+IMG_6401.PNG,1_router,needs_review,False,expected component 'router' not proposed; 1 low-confidence/flagged candidate(s)
+IMG_6404.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6408.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6409.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6411.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6414.PNG,1_router,needs_review,False,expected component 'router' not proposed; 3 low-confidence/flagged candidate(s)
+IMG_6421.PNG,1_router,no_detection,False,no candidate for any of the seven classes
+IMG_6523.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6525.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6526.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6527.PNG,2_cable,needs_review,False,1 low-confidence/flagged candidate(s)
+IMG_6532.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6533.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6534.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6536.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6537.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6538.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6542.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6545.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6546.PNG,2_cable,needs_review,False,expected component 'cable' not proposed; 2 low-confidence/flagged candidate(s)
+IMG_6547.PNG,2_cable,needs_review,False,1 low-confidence/flagged candidate(s)
+IMG_6548.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6550.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6551.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6552.PNG,2_cable,needs_review,True,2 low-confidence/flagged candidate(s)
+IMG_6555.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6557.PNG,2_cable,needs_review,False,3 low-confidence/flagged candidate(s)
+IMG_6558.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6561.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6562.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6563.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6567.PNG,2_cable,no_detection,False,no candidate for any of the seven classes
+IMG_6293.PNG,3_battery,no_detection,False,no candidate for any of the seven classes
+IMG_6295.PNG,3_battery,needs_review,False,expected component 'battery' not proposed; 1 low-confidence/flagged candidate(s)
+IMG_6296.PNG,3_battery,needs_review,False,expected component 'battery' not proposed; 1 low-confidence/flagged candidate(s)
+IMG_6300.PNG,3_battery,no_detection,False,no candidate for any of the seven classes
+IMG_6301.PNG,3_battery,needs_review,False,expected component 'battery' not proposed; 1 low-confidence/flagged candidate(s)
+IMG_6302.PNG,3_battery,no_detection,False,no candidate for any of the seven classes
+IMG_6305.PNG,3_battery,no_detection,False,no candidate for any of the seven classes
+IMG_6310.PNG,3_battery,needs_review,False,expected component 'battery' not proposed; 1 low-confidence/flagged candidate(s)
+IMG_6314.PNG,3_battery,no_detection,False,no candidate for any of the seven classes
+IMG_6317.PNG,3_battery,no_detection,False,no candidate for any of the seven classes
+IMG_6318.PNG,3_battery,no_detection,False,no candidate for any of the seven classes
+IMG_6329.PNG,3_battery,no_detection,False,no candidate for any of the seven classes
+IMG_6330.PNG,3_battery,needs_review,False,1 low-confidence/flagged candidate(s)
+IMG_6332.PNG,3_battery,needs_review,False,expected component 'battery' not proposed; 1 low-confidence/flagged candidate(s)
+IMG_6334.PNG,3_battery,needs_review,True,expected component 'battery' not proposed; 2 low-confidence/flagged candidate(s)
+IMG_6336.PNG,3_battery,needs_review,False,1 low-confidence/flagged candidate(s)
+IMG_6337.PNG,3_battery,no_detection,False,no candidate for any of the seven classes
+IMG_6340.PNG,3_battery,no_detection,False,no candidate for any of the seven classes
+IMG_6341.PNG,3_battery,needs_review,False,expected component 'battery' not proposed; 2 low-confidence/flagged candidate(s)
+IMG_6342.PNG,3_battery,no_detection,False,no candidate for any of the seven classes
+IMG_6346.PNG,3_battery,no_detection,False,no candidate for any of the seven classes
+IMG_6348.PNG,3_battery,needs_review,False,expected component 'battery' not proposed
+IMG_6349.PNG,3_battery,no_detection,False,no candidate for any of the seven classes
+IMG_6352.PNG,3_battery,no_detection,False,no candidate for any of the seven classes
+IMG_6353.PNG,3_battery,no_detection,False,no candidate for any of the seven classes
+IMG_6429.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6432.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6433.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6437.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6443.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6444.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6445.PNG,4_power_supply_unit,needs_review,False,expected component 'power_supply_unit' not proposed; 2 low-confidence/flagged candidate(s)
+IMG_6451.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6458.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6460.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6462.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6463.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6466.PNG,4_power_supply_unit,needs_review,False,expected component 'power_supply_unit' not proposed; 2 low-confidence/flagged candidate(s)
+IMG_6468.PNG,4_power_supply_unit,needs_review,False,expected component 'power_supply_unit' not proposed; 3 low-confidence/flagged candidate(s)
+IMG_6474.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6476.PNG,4_power_supply_unit,needs_review,False,expected component 'power_supply_unit' not proposed; 1 low-confidence/flagged candidate(s)
+IMG_6477.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6479.jpg,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6485.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6486.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6489.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6498.PNG,4_power_supply_unit,needs_review,False,expected component 'power_supply_unit' not proposed; 1 low-confidence/flagged candidate(s)
+IMG_6505.PNG,4_power_supply_unit,no_detection,False,no candidate for any of the seven classes
+IMG_6508.PNG,4_power_supply_unit,needs_review,False,expected component 'power_supply_unit' not proposed; 1 low-confidence/flagged candidate(s)
+IMG_6511.PNG,4_power_supply_unit,needs_review,False,expected component 'power_supply_unit' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 161052.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 161206.png,5_equipment_cabinet,needs_review,False,expected component 'equipment_cabinet' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 161322.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 162728.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 162855.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 162954.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 163456.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 163544.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 163648.png,5_equipment_cabinet,needs_review,False,1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 163718.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 163737.png,5_equipment_cabinet,needs_review,False,2 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 163854.png,5_equipment_cabinet,needs_review,True,2 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 163951.png,5_equipment_cabinet,needs_review,False,expected component 'equipment_cabinet' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 164057.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 164313.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 164355.png,5_equipment_cabinet,needs_review,True,2 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 164431.png,5_equipment_cabinet,needs_review,False,expected component 'equipment_cabinet' not proposed; 2 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 164450.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 164559.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 164649.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 164730.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 164804.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 164925.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 165054.png,5_equipment_cabinet,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 165453.png,5_equipment_cabinet,needs_review,False,expected component 'equipment_cabinet' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 130423.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 130459.png,6_radio_unit,needs_review,False,expected component 'radio_unit' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 131240.png,6_radio_unit,needs_review,True,expected component 'radio_unit' not proposed; 2 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 131337.png,6_radio_unit,needs_review,False,expected component 'radio_unit' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 131728.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 132159.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 132300.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 132410.png,6_radio_unit,needs_review,False,expected component 'radio_unit' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 132449.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 140544.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 140729.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 140830.png,6_radio_unit,needs_review,True,expected component 'radio_unit' not proposed; 3 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 141004.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 141021.png,6_radio_unit,needs_review,False,expected component 'radio_unit' not proposed; 2 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 141234.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 141441.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 141530.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 141607.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 141711.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 141811.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 141835.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 142110.png,6_radio_unit,no_detection,False,no candidate for any of the seven classes
+Screenshot 2026-10-07 142134.png,6_radio_unit,needs_review,False,expected component 'radio_unit' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 152734.png,6_radio_unit,needs_review,False,expected component 'radio_unit' not proposed; 1 low-confidence/flagged candidate(s)
+Screenshot 2026-10-07 154700.png,6_radio_unit,needs_review,False,expected component 'radio_unit' not proposed; 2 low-confidence/flagged candidate(s)

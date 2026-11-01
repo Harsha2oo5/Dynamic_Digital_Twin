@@ -1,0 +1,44 @@
+[
+  {
+    "name": "antenna",
+    "color": "#e6194b",
+    "type": "rectangle",
+    "attributes": []
+  },
+  {
+    "name": "router",
+    "color": "#3cb44b",
+    "type": "rectangle",
+    "attributes": []
+  },
+  {
+    "name": "cable",
+    "color": "#ffe119",
+    "type": "rectangle",
+    "attributes": []
+  },
+  {
+    "name": "battery",
+    "color": "#4363d8",
+    "type": "rectangle",
+    "attributes": []
+  },
+  {
+    "name": "power_supply_unit",
+    "color": "#f58231",
+    "type": "rectangle",
+    "attributes": []
+  },
+  {
+    "name": "equipment_cabinet",
+    "color": "#911eb4",
+    "type": "rectangle",
+    "attributes": []
+  },
+  {
+    "name": "radio_unit",
+    "color": "#42d4f4",
+    "type": "rectangle",
+    "attributes": []
+  }
+]

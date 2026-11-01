@@ -1,0 +1,12 @@
+<View>
+  <Image name="image" value="$image" zoom="true" zoomControl="true" rotateControl="false"/>
+  <RectangleLabels name="label" toName="image" strokeWidth="2" canRotate="false">
+    <Label value="antenna" background="#e6194b"/>
+    <Label value="router" background="#3cb44b"/>
+    <Label value="cable" background="#ffe119"/>
+    <Label value="battery" background="#4363d8"/>
+    <Label value="power_supply_unit" background="#f58231"/>
+    <Label value="equipment_cabinet" background="#911eb4"/>
+    <Label value="radio_unit" background="#42d4f4"/>
+  </RectangleLabels>
+</View>

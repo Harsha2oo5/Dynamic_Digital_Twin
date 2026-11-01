@@ -1,0 +1,4069 @@
+[
+ {
+  "file": "Screenshot 2026-10-07 112152.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'antenna' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 112152.jpg",
+  "width": 841,
+  "height": 841,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.3432,
+    "xyxy": [
+     225.6,
+     770.8,
+     507.0,
+     832.1
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "cable_bundle_merged(2)",
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 112215.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'antenna' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 112215.jpg",
+  "width": 795,
+  "height": 796,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.2208,
+    "xyxy": [
+     318.5,
+     593.8,
+     366.6,
+     680.9
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 113144.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 113144.jpg",
+  "width": 766,
+  "height": 715,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 114047.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 114047.jpg",
+  "width": 604,
+  "height": 778,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 114133.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 114133.jpg",
+  "width": 399,
+  "height": 466,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 115241.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'antenna' not proposed",
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 115241.jpg",
+  "width": 364,
+  "height": 414,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.4261,
+    "xyxy": [
+     217.2,
+     268.0,
+     257.3,
+     309.9
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.4951,
+    "xyxy": [
+     193.4,
+     152.4,
+     296.8,
+     265.7
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "cable_bundle_merged(2)",
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 115639.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 115639.jpg",
+  "width": 433,
+  "height": 438,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 115927.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 115927.jpg",
+  "width": 1251,
+  "height": 738,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 120952.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 120952.jpg",
+  "width": 346,
+  "height": 343,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 121020.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 121020.jpg",
+  "width": 343,
+  "height": 357,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 121130.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 121130.jpg",
+  "width": 240,
+  "height": 343,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 121403.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 121403.jpg",
+  "width": 556,
+  "height": 367,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 121636.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 121636.jpg",
+  "width": 1216,
+  "height": 576,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 123451.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'antenna' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 123451.jpg",
+  "width": 361,
+  "height": 447,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.2483,
+    "xyxy": [
+     77.7,
+     72.1,
+     131.8,
+     329.9
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 123613.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'antenna' not proposed",
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 123613.jpg",
+  "width": 312,
+  "height": 276,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1576,
+    "xyxy": [
+     218.3,
+     157.6,
+     244.2,
+     188.5
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1425,
+    "xyxy": [
+     282.7,
+     160.2,
+     301.3,
+     176.6
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 123701.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'antenna' not proposed",
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 123701.jpg",
+  "width": 336,
+  "height": 472,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.3184,
+    "xyxy": [
+     48.4,
+     170.0,
+     80.1,
+     203.5
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1919,
+    "xyxy": [
+     37.1,
+     344.7,
+     299.8,
+     466.6
+    ],
+    "source_label": "wire",
+    "mapping": "direct",
+    "tier": "low",
+    "flags": []
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 123842.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'antenna' not proposed",
+   "4 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 123842.jpg",
+  "width": 447,
+  "height": 430,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.7077,
+    "xyxy": [
+     404.1,
+     309.7,
+     427.3,
+     334.0
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.3079,
+    "xyxy": [
+     303.4,
+     307.1,
+     358.0,
+     375.7
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.3006,
+    "xyxy": [
+     178.8,
+     309.2,
+     201.7,
+     333.6
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.2927,
+    "xyxy": [
+     82.8,
+     305.5,
+     137.1,
+     375.5
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 124006.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'antenna' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 124006.jpg",
+  "width": 379,
+  "height": 408,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.7152,
+    "xyxy": [
+     305.6,
+     259.6,
+     343.5,
+     314.9
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "cable_bundle_merged(2)",
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 124310.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'antenna' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 124310.jpg",
+  "width": 378,
+  "height": 370,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.5292,
+    "xyxy": [
+     214.4,
+     226.6,
+     225.1,
+     239.4
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "tiny_box",
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 124405.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'antenna' not proposed",
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 124405.jpg",
+  "width": 306,
+  "height": 379,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.618,
+    "xyxy": [
+     125.1,
+     333.9,
+     148.5,
+     350.1
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.2066,
+    "xyxy": [
+     92.1,
+     68.6,
+     241.5,
+     194.7
+    ],
+    "source_label": "wire",
+    "mapping": "direct",
+    "tier": "low",
+    "flags": []
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 124815.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 124815.jpg",
+  "width": 493,
+  "height": 442,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 124858.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'antenna' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 124858.jpg",
+  "width": 241,
+  "height": 364,
+  "candidates": [
+   {
+    "class_id": 3,
+    "class_name": "battery",
+    "confidence": 0.3377,
+    "xyxy": [
+     83.5,
+     143.5,
+     122.0,
+     217.1
+    ],
+    "source_label": "solar battery",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:solar battery"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 125031.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'antenna' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 125031.jpg",
+  "width": 348,
+  "height": 363,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.221,
+    "xyxy": [
+     173.0,
+     121.1,
+     193.0,
+     153.3
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 125130.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 125130.jpg",
+  "width": 397,
+  "height": 468,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 125838.png",
+  "task": "0_antenna",
+  "folder_class": "antenna",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'antenna' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 125838.jpg",
+  "width": 303,
+  "height": 348,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1286,
+    "xyxy": [
+     28.0,
+     114.6,
+     128.1,
+     167.5
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6354.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6354.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6355.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'router' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6355.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1057,
+    "xyxy": [
+     1129.7,
+     1221.2,
+     1198.9,
+     1429.1
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6357.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6357.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6359.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6359.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6361.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6361.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6363.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6363.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6369.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6369.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6371.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6371.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6376.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6376.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6377.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'router' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6377.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 3,
+    "class_name": "battery",
+    "confidence": 0.2304,
+    "xyxy": [
+     806.5,
+     1254.7,
+     913.8,
+     1356.6
+    ],
+    "source_label": "battery",
+    "mapping": "direct",
+    "tier": "low",
+    "flags": []
+   }
+  ]
+ },
+ {
+  "file": "IMG_6379.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6379.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6380.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'router' not proposed",
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6380.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.244,
+    "xyxy": [
+     23.2,
+     1251.2,
+     74.3,
+     1359.2
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "tiny_box",
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1555,
+    "xyxy": [
+     1133.9,
+     1251.2,
+     1178.9,
+     1360.1
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "tiny_box",
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6381.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6381.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6382.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'router' not proposed",
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6382.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1741,
+    "xyxy": [
+     989.4,
+     1283.1,
+     1030.4,
+     1355.3
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "tiny_box",
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1162,
+    "xyxy": [
+     176.1,
+     1281.3,
+     242.2,
+     1355.7
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "tiny_box",
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6386.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6386.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6389.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6389.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6391.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6391.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6396.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'router' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6396.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1794,
+    "xyxy": [
+     302.7,
+     972.7,
+     659.3,
+     1156.5
+    ],
+    "source_label": "wire",
+    "mapping": "direct",
+    "tier": "low",
+    "flags": []
+   }
+  ]
+ },
+ {
+  "file": "IMG_6401.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'router' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6401.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 3,
+    "class_name": "battery",
+    "confidence": 0.6375,
+    "xyxy": [
+     11.3,
+     1108.3,
+     1129.0,
+     1447.2
+    ],
+    "source_label": "car battery",
+    "mapping": "direct",
+    "tier": "high",
+    "flags": []
+   },
+   {
+    "class_id": 3,
+    "class_name": "battery",
+    "confidence": 0.1325,
+    "xyxy": [
+     15.1,
+     1238.4,
+     1121.9,
+     1443.0
+    ],
+    "source_label": "car battery",
+    "mapping": "direct",
+    "tier": "low",
+    "flags": []
+   }
+  ]
+ },
+ {
+  "file": "IMG_6404.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6404.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6408.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6408.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6409.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6409.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6411.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6411.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6414.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'router' not proposed",
+   "3 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6414.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.329,
+    "xyxy": [
+     208.8,
+     1439.5,
+     365.2,
+     1540.9
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1412,
+    "xyxy": [
+     77.6,
+     1151.1,
+     170.8,
+     1236.7
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1153,
+    "xyxy": [
+     321.4,
+     1319.3,
+     375.5,
+     1455.0
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6421.PNG",
+  "task": "1_router",
+  "folder_class": "router",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6421.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6523.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6523.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6525.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6525.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6526.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6526.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6527.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "needs_review",
+  "reasons": [
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6527.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1153,
+    "xyxy": [
+     655.4,
+     1607.1,
+     780.4,
+     1769.7
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6532.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6532.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6533.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6533.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6534.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6534.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6536.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6536.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6537.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6537.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6538.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6538.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6542.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6542.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6545.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6545.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6546.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'cable' not proposed",
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6546.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.4587,
+    "xyxy": [
+     123.3,
+     515.7,
+     658.6,
+     1627.9
+    ],
+    "source_label": "cabinet",
+    "mapping": "direct",
+    "tier": "low",
+    "flags": []
+   },
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.1218,
+    "xyxy": [
+     1106.4,
+     666.8,
+     1205.9,
+     1115.8
+    ],
+    "source_label": "side cabinet",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:side cabinet"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6547.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "needs_review",
+  "reasons": [
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6547.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1444,
+    "xyxy": [
+     627.2,
+     1571.3,
+     1205.2,
+     1839.6
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6548.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6548.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6550.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6550.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6551.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6551.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6552.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "needs_review",
+  "reasons": [
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": true,
+  "preview": "previews/needs_review/IMG_6552.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 3,
+    "class_name": "battery",
+    "confidence": 0.4176,
+    "xyxy": [
+     699.9,
+     1032.9,
+     982.2,
+     1229.3
+    ],
+    "source_label": "battery",
+    "mapping": "direct",
+    "tier": "low",
+    "flags": []
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.4425,
+    "xyxy": [
+     607.4,
+     1379.3,
+     907.0,
+     1607.8
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6555.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6555.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6557.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "needs_review",
+  "reasons": [
+   "3 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6557.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.4186,
+    "xyxy": [
+     511.0,
+     1133.5,
+     670.2,
+     1340.3
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.2547,
+    "xyxy": [
+     717.7,
+     1311.6,
+     849.3,
+     1606.0
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.156,
+    "xyxy": [
+     284.5,
+     1274.4,
+     397.1,
+     1408.4
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "cable_bundle_merged(2)",
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6558.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6558.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6561.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6561.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6562.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6562.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6563.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6563.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6567.PNG",
+  "task": "2_cable",
+  "folder_class": "cable",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6567.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6293.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6293.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6295.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'battery' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6295.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.1382,
+    "xyxy": [
+     0.0,
+     1578.3,
+     228.0,
+     1909.7
+    ],
+    "source_label": "cabinet",
+    "mapping": "direct",
+    "tier": "low",
+    "flags": []
+   }
+  ]
+ },
+ {
+  "file": "IMG_6296.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'battery' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6296.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1493,
+    "xyxy": [
+     716.5,
+     1324.9,
+     798.6,
+     1554.1
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6300.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6300.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6301.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'battery' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6301.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.2335,
+    "xyxy": [
+     40.4,
+     1193.5,
+     83.1,
+     1450.5
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6302.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6302.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6305.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6305.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6310.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'battery' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6310.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.3794,
+    "xyxy": [
+     550.4,
+     907.2,
+     889.8,
+     1705.1
+    ],
+    "source_label": "locker",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:locker"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6314.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6314.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6317.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6317.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6318.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6318.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6329.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6329.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6330.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "needs_review",
+  "reasons": [
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6330.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 3,
+    "class_name": "battery",
+    "confidence": 0.1026,
+    "xyxy": [
+     795.2,
+     1531.7,
+     1031.6,
+     1621.4
+    ],
+    "source_label": "battery",
+    "mapping": "direct",
+    "tier": "low",
+    "flags": []
+   }
+  ]
+ },
+ {
+  "file": "IMG_6332.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'battery' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6332.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.3953,
+    "xyxy": [
+     1008.9,
+     1144.7,
+     1069.8,
+     1262.0
+    ],
+    "source_label": "side cabinet",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:side cabinet"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6334.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'battery' not proposed",
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": true,
+  "preview": "previews/needs_review/IMG_6334.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.6186,
+    "xyxy": [
+     237.2,
+     502.6,
+     1206.0,
+     2104.6
+    ],
+    "source_label": "locker",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:locker"
+    ]
+   },
+   {
+    "class_id": 1,
+    "class_name": "router",
+    "confidence": 0.2061,
+    "xyxy": [
+     969.9,
+     1396.2,
+     1079.4,
+     1578.3
+    ],
+    "source_label": "switch",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:switch"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6336.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "needs_review",
+  "reasons": [
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6336.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 3,
+    "class_name": "battery",
+    "confidence": 0.4147,
+    "xyxy": [
+     267.2,
+     966.6,
+     1007.1,
+     1473.5
+    ],
+    "source_label": "car battery",
+    "mapping": "direct",
+    "tier": "low",
+    "flags": []
+   }
+  ]
+ },
+ {
+  "file": "IMG_6337.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6337.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6340.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6340.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6341.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'battery' not proposed",
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6341.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.2399,
+    "xyxy": [
+     52.5,
+     1111.5,
+     168.7,
+     1255.3
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1327,
+    "xyxy": [
+     1003.7,
+     1142.5,
+     1080.6,
+     1377.3
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6342.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6342.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6346.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6346.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6348.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'battery' not proposed"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6348.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.6838,
+    "xyxy": [
+     400.5,
+     963.7,
+     878.1,
+     1576.4
+    ],
+    "source_label": "cabinet",
+    "mapping": "direct",
+    "tier": "high",
+    "flags": []
+   }
+  ]
+ },
+ {
+  "file": "IMG_6349.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6349.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6352.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6352.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6353.PNG",
+  "task": "3_battery",
+  "folder_class": "battery",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6353.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6429.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6429.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6432.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6432.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6433.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6433.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6437.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6437.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6443.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6443.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6444.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6444.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6445.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'power_supply_unit' not proposed",
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6445.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.5981,
+    "xyxy": [
+     819.3,
+     1246.7,
+     1043.6,
+     1566.9
+    ],
+    "source_label": "locker",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:locker"
+    ]
+   },
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.3036,
+    "xyxy": [
+     335.3,
+     1295.1,
+     458.9,
+     1480.1
+    ],
+    "source_label": "side cabinet",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:side cabinet"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6451.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6451.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6458.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6458.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6460.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6460.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6462.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6462.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6463.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6463.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6466.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'power_supply_unit' not proposed",
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6466.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.2461,
+    "xyxy": [
+     213.6,
+     804.0,
+     524.3,
+     1504.6
+    ],
+    "source_label": "locker",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:locker"
+    ]
+   },
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.2367,
+    "xyxy": [
+     220.9,
+     1387.5,
+     484.0,
+     1786.9
+    ],
+    "source_label": "side cabinet",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:side cabinet"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6468.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'power_supply_unit' not proposed",
+   "3 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6468.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.1519,
+    "xyxy": [
+     1161.2,
+     1314.2,
+     1206.0,
+     1472.0
+    ],
+    "source_label": "side cabinet",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:side cabinet"
+    ]
+   },
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.1421,
+    "xyxy": [
+     0.9,
+     1110.5,
+     81.0,
+     1486.1
+    ],
+    "source_label": "cabinet",
+    "mapping": "direct",
+    "tier": "low",
+    "flags": []
+   },
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.1232,
+    "xyxy": [
+     1153.7,
+     1123.3,
+     1205.9,
+     1475.4
+    ],
+    "source_label": "cabinet",
+    "mapping": "direct",
+    "tier": "low",
+    "flags": []
+   }
+  ]
+ },
+ {
+  "file": "IMG_6474.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6474.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6476.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'power_supply_unit' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6476.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.313,
+    "xyxy": [
+     104.5,
+     957.9,
+     271.9,
+     1704.7
+    ],
+    "source_label": "locker",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:locker"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6477.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6477.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6479.jpg",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6479.jpg",
+  "width": 643,
+  "height": 673,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6485.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6485.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6486.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6486.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6489.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6489.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6498.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'power_supply_unit' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6498.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.2183,
+    "xyxy": [
+     3.2,
+     1620.7,
+     75.5,
+     1730.9
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6505.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/IMG_6505.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": []
+ },
+ {
+  "file": "IMG_6508.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'power_supply_unit' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6508.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.8491,
+    "xyxy": [
+     85.1,
+     828.3,
+     1123.1,
+     1787.5
+    ],
+    "source_label": "locker",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:locker"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "IMG_6511.PNG",
+  "task": "4_power_supply_unit",
+  "folder_class": "power_supply_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'power_supply_unit' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/IMG_6511.jpg",
+  "width": 1206,
+  "height": 2622,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.1206,
+    "xyxy": [
+     303.2,
+     1082.5,
+     646.8,
+     1595.8
+    ],
+    "source_label": "cabinet",
+    "mapping": "direct",
+    "tier": "low",
+    "flags": []
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 161052.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 161052.jpg",
+  "width": 354,
+  "height": 435,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 161206.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'equipment_cabinet' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 161206.jpg",
+  "width": 394,
+  "height": 469,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1307,
+    "xyxy": [
+     172.9,
+     287.9,
+     234.3,
+     306.9
+    ],
+    "source_label": "extension cord",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:extension cord"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 161322.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 161322.jpg",
+  "width": 403,
+  "height": 378,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 162728.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 162728.jpg",
+  "width": 361,
+  "height": 289,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 162855.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 162855.jpg",
+  "width": 262,
+  "height": 373,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 162954.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 162954.jpg",
+  "width": 280,
+  "height": 366,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 163456.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 163456.jpg",
+  "width": 347,
+  "height": 456,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 163544.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 163544.jpg",
+  "width": 289,
+  "height": 369,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 163648.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "needs_review",
+  "reasons": [
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 163648.jpg",
+  "width": 277,
+  "height": 426,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.7283,
+    "xyxy": [
+     23.2,
+     30.8,
+     255.4,
+     408.1
+    ],
+    "source_label": "locker",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:locker"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 163718.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 163718.jpg",
+  "width": 364,
+  "height": 445,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 163737.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "needs_review",
+  "reasons": [
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 163737.jpg",
+  "width": 367,
+  "height": 465,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.3507,
+    "xyxy": [
+     4.3,
+     176.4,
+     53.7,
+     334.5
+    ],
+    "source_label": "cabinet",
+    "mapping": "direct",
+    "tier": "low",
+    "flags": []
+   },
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.1582,
+    "xyxy": [
+     4.7,
+     0.5,
+     52.9,
+     333.3
+    ],
+    "source_label": "cabinet",
+    "mapping": "direct",
+    "tier": "low",
+    "flags": []
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 163854.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "needs_review",
+  "reasons": [
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": true,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 163854.jpg",
+  "width": 435,
+  "height": 412,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.2724,
+    "xyxy": [
+     162.3,
+     43.6,
+     434.3,
+     411.0
+    ],
+    "source_label": "locker",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:locker"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1152,
+    "xyxy": [
+     57.7,
+     239.9,
+     79.1,
+     254.9
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "tiny_box",
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 163951.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'equipment_cabinet' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 163951.jpg",
+  "width": 385,
+  "height": 327,
+  "candidates": [
+   {
+    "class_id": 3,
+    "class_name": "battery",
+    "confidence": 0.1022,
+    "xyxy": [
+     76.0,
+     49.0,
+     174.5,
+     69.1
+    ],
+    "source_label": "solar battery",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:solar battery"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 164057.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 164057.jpg",
+  "width": 178,
+  "height": 241,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 164313.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 164313.jpg",
+  "width": 268,
+  "height": 514,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 164355.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "needs_review",
+  "reasons": [
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": true,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 164355.jpg",
+  "width": 238,
+  "height": 357,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.4586,
+    "xyxy": [
+     3.4,
+     0.9,
+     151.2,
+     340.6
+    ],
+    "source_label": "locker",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:locker"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.4777,
+    "xyxy": [
+     201.4,
+     314.1,
+     213.4,
+     328.3
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 164431.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'equipment_cabinet' not proposed",
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 164431.jpg",
+  "width": 267,
+  "height": 460,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.2458,
+    "xyxy": [
+     139.6,
+     185.1,
+     192.1,
+     197.8
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.2327,
+    "xyxy": [
+     99.6,
+     340.7,
+     111.7,
+     351.0
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "tiny_box",
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 164450.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 164450.jpg",
+  "width": 298,
+  "height": 414,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 164559.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 164559.jpg",
+  "width": 372,
+  "height": 360,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 164649.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 164649.jpg",
+  "width": 202,
+  "height": 327,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 164730.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 164730.jpg",
+  "width": 316,
+  "height": 468,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 164804.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 164804.jpg",
+  "width": 315,
+  "height": 412,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 164925.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 164925.jpg",
+  "width": 231,
+  "height": 417,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 165054.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 165054.jpg",
+  "width": 230,
+  "height": 466,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 165453.png",
+  "task": "5_equipment_cabinet",
+  "folder_class": "equipment_cabinet",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'equipment_cabinet' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 165453.jpg",
+  "width": 523,
+  "height": 319,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.3614,
+    "xyxy": [
+     498.4,
+     155.9,
+     511.3,
+     189.6
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 130423.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 130423.jpg",
+  "width": 733,
+  "height": 310,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 130459.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'radio_unit' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 130459.jpg",
+  "width": 766,
+  "height": 543,
+  "candidates": [
+   {
+    "class_id": 3,
+    "class_name": "battery",
+    "confidence": 0.2181,
+    "xyxy": [
+     330.2,
+     132.0,
+     572.2,
+     379.9
+    ],
+    "source_label": "solar battery",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:solar battery"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 131240.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'radio_unit' not proposed",
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": true,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 131240.jpg",
+  "width": 268,
+  "height": 316,
+  "candidates": [
+   {
+    "class_id": 3,
+    "class_name": "battery",
+    "confidence": 0.4262,
+    "xyxy": [
+     32.3,
+     270.2,
+     76.9,
+     308.6
+    ],
+    "source_label": "solar battery",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:solar battery"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1941,
+    "xyxy": [
+     189.4,
+     49.8,
+     241.0,
+     313.3
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "cable_bundle_merged(4)",
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 131337.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'radio_unit' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 131337.jpg",
+  "width": 400,
+  "height": 348,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.2931,
+    "xyxy": [
+     266.0,
+     248.6,
+     345.8,
+     323.7
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 131728.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 131728.jpg",
+  "width": 387,
+  "height": 453,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 132159.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 132159.jpg",
+  "width": 347,
+  "height": 314,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 132300.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 132300.jpg",
+  "width": 450,
+  "height": 600,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 132410.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'radio_unit' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 132410.jpg",
+  "width": 462,
+  "height": 322,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1436,
+    "xyxy": [
+     185.9,
+     162.0,
+     213.2,
+     183.9
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 132449.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 132449.jpg",
+  "width": 286,
+  "height": 448,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 140544.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 140544.jpg",
+  "width": 442,
+  "height": 411,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 140729.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 140729.jpg",
+  "width": 328,
+  "height": 367,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 140830.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'radio_unit' not proposed",
+   "3 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": true,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 140830.jpg",
+  "width": 420,
+  "height": 306,
+  "candidates": [
+   {
+    "class_id": 3,
+    "class_name": "battery",
+    "confidence": 0.2797,
+    "xyxy": [
+     56.1,
+     64.9,
+     188.5,
+     85.7
+    ],
+    "source_label": "solar battery",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:solar battery"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1822,
+    "xyxy": [
+     306.6,
+     211.8,
+     322.7,
+     227.5
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "tiny_box",
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.2249,
+    "xyxy": [
+     17.8,
+     132.0,
+     49.4,
+     254.1
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "cable_bundle_merged(3)",
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 141004.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 141004.jpg",
+  "width": 340,
+  "height": 226,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 141021.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'radio_unit' not proposed",
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 141021.jpg",
+  "width": 471,
+  "height": 295,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.2079,
+    "xyxy": [
+     66.4,
+     120.4,
+     96.1,
+     138.8
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1481,
+    "xyxy": [
+     88.8,
+     128.8,
+     116.9,
+     149.0
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 141234.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 141234.jpg",
+  "width": 388,
+  "height": 420,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 141441.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 141441.jpg",
+  "width": 376,
+  "height": 462,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 141530.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 141530.jpg",
+  "width": 459,
+  "height": 340,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 141607.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 141607.jpg",
+  "width": 475,
+  "height": 438,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 141711.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 141711.jpg",
+  "width": 462,
+  "height": 402,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 141811.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 141811.jpg",
+  "width": 232,
+  "height": 283,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 141835.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 141835.jpg",
+  "width": 273,
+  "height": 418,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 142110.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "no_detection",
+  "reasons": [
+   "no candidate for any of the seven classes"
+  ],
+  "multi_class": false,
+  "preview": "previews/no_detection/Screenshot 2026-10-07 142110.jpg",
+  "width": 198,
+  "height": 232,
+  "candidates": []
+ },
+ {
+  "file": "Screenshot 2026-10-07 142134.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'radio_unit' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 142134.jpg",
+  "width": 223,
+  "height": 258,
+  "candidates": [
+   {
+    "class_id": 3,
+    "class_name": "battery",
+    "confidence": 0.129,
+    "xyxy": [
+     65.9,
+     194.4,
+     89.7,
+     217.3
+    ],
+    "source_label": "solar battery",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:solar battery"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 152734.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'radio_unit' not proposed",
+   "1 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 152734.jpg",
+  "width": 343,
+  "height": 409,
+  "candidates": [
+   {
+    "class_id": 5,
+    "class_name": "equipment_cabinet",
+    "confidence": 0.7704,
+    "xyxy": [
+     31.1,
+     61.7,
+     294.0,
+     386.6
+    ],
+    "source_label": "locker",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:locker"
+    ]
+   }
+  ]
+ },
+ {
+  "file": "Screenshot 2026-10-07 154700.png",
+  "task": "6_radio_unit",
+  "folder_class": "radio_unit",
+  "status": "needs_review",
+  "reasons": [
+   "expected component 'radio_unit' not proposed",
+   "2 low-confidence/flagged candidate(s)"
+  ],
+  "multi_class": false,
+  "preview": "previews/needs_review/Screenshot 2026-10-07 154700.jpg",
+  "width": 453,
+  "height": 439,
+  "candidates": [
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1845,
+    "xyxy": [
+     411.8,
+     273.3,
+     445.7,
+     356.9
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   },
+   {
+    "class_id": 2,
+    "class_name": "cable",
+    "confidence": 0.1267,
+    "xyxy": [
+     418.3,
+     101.4,
+     453.0,
+     149.1
+    ],
+    "source_label": "connector",
+    "mapping": "ambiguous",
+    "tier": "low",
+    "flags": [
+     "ambiguous_label:connector"
+    ]
+   }
+  ]
+ }
+]

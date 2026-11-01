@@ -1,0 +1,176 @@
+class_id,class_name,file_name,original_path,near_duplicate_group,width,height,min_distance_to_batch
+0,antenna,Screenshot 2026-10-07 112152.png,antenna/antenna/Screenshot 2026-10-07 112152.png,1,841,841,107
+0,antenna,Screenshot 2026-10-07 112215.png,antenna/antenna/Screenshot 2026-10-07 112215.png,2,795,796,115
+0,antenna,Screenshot 2026-10-07 113144.png,antenna/antenna/Screenshot 2026-10-07 113144.png,6,766,715,107
+0,antenna,Screenshot 2026-10-07 114047.png,antenna/antenna/Screenshot 2026-10-07 114047.png,13,604,778,120
+0,antenna,Screenshot 2026-10-07 114133.png,antenna/antenna/Screenshot 2026-10-07 114133.png,14,399,466,109
+0,antenna,Screenshot 2026-10-07 115241.png,antenna/antenna/Screenshot 2026-10-07 115241.png,17,364,414,-1
+0,antenna,Screenshot 2026-10-07 115639.png,antenna/antenna/Screenshot 2026-10-07 115639.png,22,433,438,106
+0,antenna,Screenshot 2026-10-07 115927.png,antenna/antenna/Screenshot 2026-10-07 115927.png,26,1251,738,124
+0,antenna,Screenshot 2026-10-07 120952.png,antenna/antenna/Screenshot 2026-10-07 120952.png,39,346,343,129
+0,antenna,Screenshot 2026-10-07 121020.png,antenna/antenna/Screenshot 2026-10-07 121020.png,40,343,357,162
+0,antenna,Screenshot 2026-10-07 121130.png,antenna/antenna/Screenshot 2026-10-07 121130.png,41,240,343,124
+0,antenna,Screenshot 2026-10-07 121403.png,antenna/antenna/Screenshot 2026-10-07 121403.png,43,556,367,125
+0,antenna,Screenshot 2026-10-07 121636.png,antenna/antenna/Screenshot 2026-10-07 121636.png,45,1216,576,118
+0,antenna,Screenshot 2026-10-07 123451.png,antenna/antenna/Screenshot 2026-10-07 123451.png,67,361,447,107
+0,antenna,Screenshot 2026-10-07 123613.png,antenna/antenna/Screenshot 2026-10-07 123613.png,69,312,276,110
+0,antenna,Screenshot 2026-10-07 123701.png,antenna/antenna/Screenshot 2026-10-07 123701.png,70,336,472,111
+0,antenna,Screenshot 2026-10-07 123842.png,antenna/antenna/Screenshot 2026-10-07 123842.png,72,447,430,110
+0,antenna,Screenshot 2026-10-07 124006.png,antenna/antenna/Screenshot 2026-10-07 124006.png,74,379,408,112
+0,antenna,Screenshot 2026-10-07 124310.png,antenna/antenna/Screenshot 2026-10-07 124310.png,77,378,370,108
+0,antenna,Screenshot 2026-10-07 124405.png,antenna/antenna/Screenshot 2026-10-07 124405.png,78,306,379,117
+0,antenna,Screenshot 2026-10-07 124815.png,antenna/antenna/Screenshot 2026-10-07 124815.png,85,493,442,108
+0,antenna,Screenshot 2026-10-07 124858.png,antenna/antenna/Screenshot 2026-10-07 124858.png,86,241,364,134
+0,antenna,Screenshot 2026-10-07 125031.png,antenna/antenna/Screenshot 2026-10-07 125031.png,88,348,363,117
+0,antenna,Screenshot 2026-10-07 125130.png,antenna/antenna/Screenshot 2026-10-07 125130.png,89,397,468,108
+0,antenna,Screenshot 2026-10-07 125838.png,antenna/antenna/Screenshot 2026-10-07 125838.png,98,303,348,120
+1,router,IMG_6354.PNG,Archive (7)/IMG_6354.PNG,277,1206,2622,111
+1,router,IMG_6355.PNG,Archive (7)/IMG_6355.PNG,278,1206,2622,-1
+1,router,IMG_6357.PNG,Archive (7)/IMG_6357.PNG,280,1206,2622,133
+1,router,IMG_6359.PNG,Archive (7)/IMG_6359.PNG,282,1206,2622,131
+1,router,IMG_6361.PNG,Archive (7)/IMG_6361.PNG,284,1206,2622,112
+1,router,IMG_6363.PNG,Archive (7)/IMG_6363.PNG,285,1206,2622,122
+1,router,IMG_6369.PNG,Archive (7)/IMG_6369.PNG,291,1206,2622,111
+1,router,IMG_6371.PNG,Archive (7)/IMG_6371.PNG,293,1206,2622,122
+1,router,IMG_6376.PNG,Archive (7)/IMG_6376.PNG,298,1206,2622,128
+1,router,IMG_6377.PNG,Archive (7)/IMG_6377.PNG,299,1206,2622,113
+1,router,IMG_6379.PNG,Archive (7)/IMG_6379.PNG,301,1206,2622,113
+1,router,IMG_6380.PNG,Archive (7)/IMG_6380.PNG,302,1206,2622,110
+1,router,IMG_6381.PNG,Archive (7)/IMG_6381.PNG,303,1206,2622,115
+1,router,IMG_6382.PNG,Archive (7)/IMG_6382.PNG,304,1206,2622,118
+1,router,IMG_6386.PNG,Archive (7)/IMG_6386.PNG,306,1206,2622,110
+1,router,IMG_6389.PNG,Archive (7)/IMG_6389.PNG,309,1206,2622,129
+1,router,IMG_6391.PNG,Archive (7)/IMG_6391.PNG,310,1206,2622,118
+1,router,IMG_6396.PNG,Archive (7)/IMG_6396.PNG,313,1206,2622,115
+1,router,IMG_6401.PNG,Archive (7)/IMG_6401.PNG,317,1206,2622,111
+1,router,IMG_6404.PNG,Archive (7)/IMG_6404.PNG,319,1206,2622,115
+1,router,IMG_6408.PNG,Archive (7)/IMG_6408.PNG,321,1206,2622,152
+1,router,IMG_6409.PNG,Archive (7)/IMG_6409.PNG,322,1206,2622,119
+1,router,IMG_6411.PNG,Archive (7)/IMG_6411.PNG,323,1206,2622,118
+1,router,IMG_6414.PNG,Archive (7)/IMG_6414.PNG,325,1206,2622,116
+1,router,IMG_6421.PNG,Archive (7)/IMG_6421.PNG,329,1206,2622,109
+2,cable,IMG_6523.PNG,Archive (6)/IMG_6523.PNG,236,1206,2622,115
+2,cable,IMG_6525.PNG,Archive (6)/IMG_6525.PNG,238,1206,2622,120
+2,cable,IMG_6526.PNG,Archive (6)/IMG_6526.PNG,239,1206,2622,111
+2,cable,IMG_6527.PNG,Archive (6)/IMG_6527.PNG,240,1206,2622,118
+2,cable,IMG_6532.PNG,Archive (6)/IMG_6532.PNG,243,1206,2622,118
+2,cable,IMG_6533.PNG,Archive (6)/IMG_6533.PNG,244,1206,2622,145
+2,cable,IMG_6534.PNG,Archive (6)/IMG_6534.PNG,245,1206,2622,123
+2,cable,IMG_6536.PNG,Archive (6)/IMG_6536.PNG,247,1206,2622,121
+2,cable,IMG_6537.PNG,Archive (6)/IMG_6537.PNG,248,1206,2622,111
+2,cable,IMG_6538.PNG,Archive (6)/IMG_6538.PNG,249,1206,2622,118
+2,cable,IMG_6542.PNG,Archive (6)/IMG_6542.PNG,253,1206,2622,117
+2,cable,IMG_6545.PNG,Archive (6)/IMG_6545.PNG,256,1206,2622,112
+2,cable,IMG_6546.PNG,Archive (6)/IMG_6546.PNG,257,1206,2622,114
+2,cable,IMG_6547.PNG,Archive (6)/IMG_6547.PNG,258,1206,2622,115
+2,cable,IMG_6548.PNG,Archive (6)/IMG_6548.PNG,259,1206,2622,113
+2,cable,IMG_6550.PNG,Archive (6)/IMG_6550.PNG,261,1206,2622,125
+2,cable,IMG_6551.PNG,Archive (6)/IMG_6551.PNG,262,1206,2622,130
+2,cable,IMG_6552.PNG,Archive (6)/IMG_6552.PNG,263,1206,2622,113
+2,cable,IMG_6555.PNG,Archive (6)/IMG_6555.PNG,265,1206,2622,116
+2,cable,IMG_6557.PNG,Archive (6)/IMG_6557.PNG,267,1206,2622,133
+2,cable,IMG_6558.PNG,Archive (6)/IMG_6558.PNG,268,1206,2622,116
+2,cable,IMG_6561.PNG,Archive (6)/IMG_6561.PNG,271,1206,2622,120
+2,cable,IMG_6562.PNG,Archive (6)/IMG_6562.PNG,272,1206,2622,112
+2,cable,IMG_6563.PNG,Archive (6)/IMG_6563.PNG,273,1206,2622,134
+2,cable,IMG_6567.PNG,Archive (6)/IMG_6567.PNG,276,1206,2622,-1
+3,battery,IMG_6293.PNG,Archive (5)/IMG_6293.PNG,186,1206,2622,112
+3,battery,IMG_6295.PNG,Archive (5)/IMG_6295.PNG,188,1206,2622,-1
+3,battery,IMG_6296.PNG,Archive (5)/IMG_6296.PNG,189,1206,2622,139
+3,battery,IMG_6300.PNG,Archive (5)/IMG_6300.PNG,193,1206,2622,118
+3,battery,IMG_6301.PNG,Archive (5)/IMG_6301.PNG,194,1206,2622,113
+3,battery,IMG_6302.PNG,Archive (5)/IMG_6302.PNG,195,1206,2622,117
+3,battery,IMG_6305.PNG,Archive (5)/IMG_6305.PNG,197,1206,2622,108
+3,battery,IMG_6310.PNG,Archive (5)/IMG_6310.PNG,145,1206,2622,128
+3,battery,IMG_6314.PNG,Archive (5)/IMG_6314.PNG,204,1206,2622,116
+3,battery,IMG_6317.PNG,Archive (5)/IMG_6317.PNG,206,1206,2622,148
+3,battery,IMG_6318.PNG,Archive (5)/IMG_6318.PNG,207,1206,2622,116
+3,battery,IMG_6329.PNG,Archive (5)/IMG_6329.PNG,216,1206,2622,112
+3,battery,IMG_6330.PNG,Archive (5)/IMG_6330.PNG,217,1206,2622,106
+3,battery,IMG_6332.PNG,Archive (5)/IMG_6332.PNG,218,1206,2622,119
+3,battery,IMG_6334.PNG,Archive (5)/IMG_6334.PNG,220,1206,2622,106
+3,battery,IMG_6336.PNG,Archive (5)/IMG_6336.PNG,222,1206,2622,109
+3,battery,IMG_6337.PNG,Archive (5)/IMG_6337.PNG,223,1206,2622,107
+3,battery,IMG_6340.PNG,Archive (5)/IMG_6340.PNG,224,1206,2622,106
+3,battery,IMG_6341.PNG,Archive (5)/IMG_6341.PNG,225,1206,2622,109
+3,battery,IMG_6342.PNG,Archive (5)/IMG_6342.PNG,226,1206,2622,110
+3,battery,IMG_6346.PNG,Archive (5)/IMG_6346.PNG,229,1206,2622,130
+3,battery,IMG_6348.PNG,Archive (5)/IMG_6348.PNG,231,1206,2622,112
+3,battery,IMG_6349.PNG,Archive (5)/IMG_6349.PNG,232,1206,2622,107
+3,battery,IMG_6352.PNG,Archive (5)/IMG_6352.PNG,235,1206,2622,128
+3,battery,IMG_6353.PNG,Archive (5)/IMG_6353.PNG,182,1206,2622,113
+4,power_supply_unit,IMG_6429.PNG,Archive (4)/IMG_6429.PNG,100,1206,2622,116
+4,power_supply_unit,IMG_6432.PNG,Archive (4)/IMG_6432.PNG,103,1206,2622,129
+4,power_supply_unit,IMG_6433.PNG,Archive (4)/IMG_6433.PNG,104,1206,2622,135
+4,power_supply_unit,IMG_6437.PNG,Archive (4)/IMG_6437.PNG,108,1206,2622,108
+4,power_supply_unit,IMG_6443.PNG,Archive (4)/IMG_6443.PNG,114,1206,2622,108
+4,power_supply_unit,IMG_6444.PNG,Archive (4)/IMG_6444.PNG,115,1206,2622,143
+4,power_supply_unit,IMG_6445.PNG,Archive (4)/IMG_6445.PNG,116,1206,2622,119
+4,power_supply_unit,IMG_6451.PNG,Archive (4)/IMG_6451.PNG,122,1206,2622,113
+4,power_supply_unit,IMG_6458.PNG,Archive (4)/IMG_6458.PNG,129,1206,2622,126
+4,power_supply_unit,IMG_6460.PNG,Archive (4)/IMG_6460.PNG,131,1206,2622,-1
+4,power_supply_unit,IMG_6462.PNG,Archive (4)/IMG_6462.PNG,133,1206,2622,151
+4,power_supply_unit,IMG_6463.PNG,Archive (4)/IMG_6463.PNG,134,1206,2622,111
+4,power_supply_unit,IMG_6466.PNG,Archive (4)/IMG_6466.PNG,137,1206,2622,114
+4,power_supply_unit,IMG_6468.PNG,Archive (4)/IMG_6468.PNG,139,1206,2622,110
+4,power_supply_unit,IMG_6474.PNG,Archive (4)/IMG_6474.PNG,144,1206,2622,111
+4,power_supply_unit,IMG_6476.PNG,Archive (4)/IMG_6476.PNG,146,1206,2622,109
+4,power_supply_unit,IMG_6477.PNG,Archive (4)/IMG_6477.PNG,147,1206,2622,122
+4,power_supply_unit,IMG_6479.jpg,Archive (4)/IMG_6479.jpg,149,643,673,108
+4,power_supply_unit,IMG_6485.PNG,Archive (4)/IMG_6485.PNG,155,1206,2622,112
+4,power_supply_unit,IMG_6486.PNG,Archive (4)/IMG_6486.PNG,156,1206,2622,117
+4,power_supply_unit,IMG_6489.PNG,Archive (4)/IMG_6489.PNG,159,1206,2622,111
+4,power_supply_unit,IMG_6498.PNG,Archive (4)/IMG_6498.PNG,167,1206,2622,113
+4,power_supply_unit,IMG_6505.PNG,Archive (4)/IMG_6505.PNG,173,1206,2622,120
+4,power_supply_unit,IMG_6508.PNG,Archive (4)/IMG_6508.PNG,176,1206,2622,120
+4,power_supply_unit,IMG_6511.PNG,Archive (4)/IMG_6511.PNG,178,1206,2622,124
+5,equipment_cabinet,Screenshot 2026-10-07 161052.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 161052.png,336,354,435,156
+5,equipment_cabinet,Screenshot 2026-10-07 161206.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 161206.png,338,394,469,120
+5,equipment_cabinet,Screenshot 2026-10-07 161322.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 161322.png,340,403,378,115
+5,equipment_cabinet,Screenshot 2026-10-07 162728.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 162728.png,346,361,289,115
+5,equipment_cabinet,Screenshot 2026-10-07 162855.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 162855.png,350,262,373,113
+5,equipment_cabinet,Screenshot 2026-10-07 162954.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 162954.png,352,280,366,123
+5,equipment_cabinet,Screenshot 2026-10-07 163456.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163456.png,360,347,456,113
+5,equipment_cabinet,Screenshot 2026-10-07 163544.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163544.png,361,289,369,117
+5,equipment_cabinet,Screenshot 2026-10-07 163648.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163648.png,363,277,426,110
+5,equipment_cabinet,Screenshot 2026-10-07 163718.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163718.png,364,364,445,112
+5,equipment_cabinet,Screenshot 2026-10-07 163737.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163737.png,365,367,465,116
+5,equipment_cabinet,Screenshot 2026-10-07 163854.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163854.png,368,435,412,-1
+5,equipment_cabinet,Screenshot 2026-10-07 163951.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163951.png,371,385,327,113
+5,equipment_cabinet,Screenshot 2026-10-07 164057.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164057.png,373,178,241,138
+5,equipment_cabinet,Screenshot 2026-10-07 164313.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164313.png,378,268,514,111
+5,equipment_cabinet,Screenshot 2026-10-07 164355.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164355.png,379,238,357,117
+5,equipment_cabinet,Screenshot 2026-10-07 164431.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164431.png,380,267,460,114
+5,equipment_cabinet,Screenshot 2026-10-07 164450.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164450.png,381,298,414,127
+5,equipment_cabinet,Screenshot 2026-10-07 164559.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164559.png,383,372,360,113
+5,equipment_cabinet,Screenshot 2026-10-07 164649.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164649.png,385,202,327,117
+5,equipment_cabinet,Screenshot 2026-10-07 164730.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164730.png,387,316,468,114
+5,equipment_cabinet,Screenshot 2026-10-07 164804.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164804.png,388,315,412,124
+5,equipment_cabinet,Screenshot 2026-10-07 164925.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164925.png,391,231,417,116
+5,equipment_cabinet,Screenshot 2026-10-07 165054.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 165054.png,395,230,466,122
+5,equipment_cabinet,Screenshot 2026-10-07 165453.png,Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 165453.png,401,523,319,125
+6,radio_unit,Screenshot 2026-10-07 130423.png,radio unit/radio unit/Screenshot 2026-10-07 130423.png,406,733,310,125
+6,radio_unit,Screenshot 2026-10-07 130459.png,radio unit/radio unit/Screenshot 2026-10-07 130459.png,407,766,543,111
+6,radio_unit,Screenshot 2026-10-07 131240.png,radio unit/radio unit/Screenshot 2026-10-07 131240.png,420,268,316,111
+6,radio_unit,Screenshot 2026-10-07 131337.png,radio unit/radio unit/Screenshot 2026-10-07 131337.png,422,400,348,124
+6,radio_unit,Screenshot 2026-10-07 131728.png,radio unit/radio unit/Screenshot 2026-10-07 131728.png,431,387,453,-1
+6,radio_unit,Screenshot 2026-10-07 132159.png,radio unit/radio unit/Screenshot 2026-10-07 132159.png,442,347,314,113
+6,radio_unit,Screenshot 2026-10-07 132300.png,radio unit/radio unit/Screenshot 2026-10-07 132300.png,444,450,600,119
+6,radio_unit,Screenshot 2026-10-07 132410.png,radio unit/radio unit/Screenshot 2026-10-07 132410.png,446,462,322,119
+6,radio_unit,Screenshot 2026-10-07 132449.png,radio unit/radio unit/Screenshot 2026-10-07 132449.png,448,286,448,124
+6,radio_unit,Screenshot 2026-10-07 140544.png,radio unit/radio unit/Screenshot 2026-10-07 140544.png,453,442,411,109
+6,radio_unit,Screenshot 2026-10-07 140729.png,radio unit/radio unit/Screenshot 2026-10-07 140729.png,456,328,367,111
+6,radio_unit,Screenshot 2026-10-07 140830.png,radio unit/radio unit/Screenshot 2026-10-07 140830.png,459,420,306,115
+6,radio_unit,Screenshot 2026-10-07 141004.png,radio unit/radio unit/Screenshot 2026-10-07 141004.png,436,340,226,112
+6,radio_unit,Screenshot 2026-10-07 141021.png,radio unit/radio unit/Screenshot 2026-10-07 141021.png,437,471,295,115
+6,radio_unit,Screenshot 2026-10-07 141234.png,radio unit/radio unit/Screenshot 2026-10-07 141234.png,465,388,420,118
+6,radio_unit,Screenshot 2026-10-07 141441.png,radio unit/radio unit/Screenshot 2026-10-07 141441.png,468,376,462,116
+6,radio_unit,Screenshot 2026-10-07 141530.png,radio unit/radio unit/Screenshot 2026-10-07 141530.png,469,459,340,152
+6,radio_unit,Screenshot 2026-10-07 141607.png,radio unit/radio unit/Screenshot 2026-10-07 141607.png,470,475,438,116
+6,radio_unit,Screenshot 2026-10-07 141711.png,radio unit/radio unit/Screenshot 2026-10-07 141711.png,473,462,402,136
+6,radio_unit,Screenshot 2026-10-07 141811.png,radio unit/radio unit/Screenshot 2026-10-07 141811.png,475,232,283,118
+6,radio_unit,Screenshot 2026-10-07 141835.png,radio unit/radio unit/Screenshot 2026-10-07 141835.png,476,273,418,115
+6,radio_unit,Screenshot 2026-10-07 142110.png,radio unit/radio unit/Screenshot 2026-10-07 142110.png,480,198,232,119
+6,radio_unit,Screenshot 2026-10-07 142134.png,radio unit/radio unit/Screenshot 2026-10-07 142134.png,481,223,258,111
+6,radio_unit,Screenshot 2026-10-07 152734.png,radio unit/radio unit/Screenshot 2026-10-07 152734.png,485,343,409,130
+6,radio_unit,Screenshot 2026-10-07 154700.png,radio unit/radio unit/Screenshot 2026-10-07 154700.png,491,453,439,111
