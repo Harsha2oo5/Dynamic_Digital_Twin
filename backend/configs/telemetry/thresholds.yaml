@@ -1,0 +1,119 @@
+# Threshold rules for telemetry monitoring. Values are in each metric's canonical unit (GET /api/telemetry/metrics).
+#
+#   above / below      warning and/or critical level; "above" fires when value > level, "below" when value < level
+#   hysteresis         an active alert clears only when the value is back past the warning level by this margin
+#   for_s              the condition must hold this long (measurement time) before an alert opens; 0 = immediately
+#   categories         restrict the rule to sensors of these equipment categories ("site" = site-level sensors)
+#
+# An alert is a DETECTED CONDITION that needs investigation, not a diagnosis that a component is faulty.
+# These defaults are generic starting points for a -48 V DC telecom site; adjust them to the site's equipment specs.
+
+rules:
+  - id: battery_temperature_high
+    metric: battery_temperature
+    above: {warning: 40, critical: 50}
+    hysteresis: 2
+    for_s: 60
+  - id: battery_voltage_low
+    metric: battery_voltage
+    below: {warning: 47.0, critical: 45.0}
+    hysteresis: 0.5
+    for_s: 30
+  - id: battery_soc_low
+    metric: state_of_charge
+    below: {warning: 50, critical: 30}
+    hysteresis: 3
+  - id: battery_soh_low
+    metric: state_of_health
+    below: {warning: 80, critical: 70}
+    hysteresis: 1
+  - id: psu_output_voltage_abnormal_low
+    metric: output_voltage
+    below: {warning: 50.0, critical: 47.0}
+    hysteresis: 0.5
+    for_s: 30
+  - id: psu_output_voltage_abnormal_high
+    metric: output_voltage
+    above: {warning: 56.5, critical: 57.5}
+    hysteresis: 0.3
+    for_s: 30
+  - id: psu_temperature_high
+    metric: temperature
+    categories: [power_supply_unit]
+    above: {warning: 55, critical: 65}
+    hysteresis: 2
+    for_s: 60
+  - id: radio_unit_temperature_high
+    metric: temperature
+    categories: [radio_unit]
+    above: {warning: 70, critical: 80}
+    hysteresis: 2
+    for_s: 60
+  - id: router_temperature_high
+    metric: temperature
+    categories: [router]
+    above: {warning: 60, critical: 70}
+    hysteresis: 2
+    for_s: 60
+  - id: radio_unit_power_abnormal
+    metric: power_consumption
+    categories: [radio_unit]
+    above: {warning: 650, critical: 800}
+    hysteresis: 20
+    for_s: 120
+  - id: router_power_abnormal
+    metric: power_consumption
+    categories: [router]
+    above: {warning: 150, critical: 200}
+    hysteresis: 5
+    for_s: 120
+  - id: cabinet_temperature_high
+    metric: internal_temperature
+    above: {warning: 40, critical: 50}
+    hysteresis: 1.5
+    for_s: 60
+  - id: cabinet_humidity_high
+    metric: humidity
+    above: {warning: 80, critical: 90}
+    hysteresis: 3
+    for_s: 120
+  - id: cabinet_smoke
+    metric: smoke_detected
+    above: {critical: 0.5}
+  - id: cabinet_door_open
+    metric: door_open
+    above: {warning: 0.5}
+    for_s: 300
+  - id: cabinet_fan_off
+    metric: fan_status
+    below: {warning: 0.5}
+    for_s: 120
+  - id: equipment_down
+    metric: operational_status
+    below: {critical: 0.5}
+  - id: network_unavailable
+    metric: network_available
+    below: {critical: 0.5}
+    for_s: 30
+  - id: vswr_high
+    metric: vswr
+    above: {warning: 1.5, critical: 2.0}
+    hysteresis: 0.05
+    for_s: 60
+  - id: ambient_temperature_high
+    metric: ambient_temperature
+    above: {warning: 40, critical: 45}
+    hysteresis: 1
+    for_s: 300
+  - id: mains_power_lost
+    metric: mains_available
+    below: {warning: 0.5}
+  - id: on_backup_power
+    metric: backup_power_active
+    above: {warning: 0.5}
+
+# Sensor communication: a sensor that stops reporting gets a warning when it goes offline and is escalated to
+# critical if it stays offline this long. The alert clears when the sensor reports again.
+communication:
+  enabled: true
+  critical_after_s: 900

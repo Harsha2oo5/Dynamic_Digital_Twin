@@ -18,6 +18,7 @@ def make_settings(tmp_path: Path, **overrides) -> Settings:
         output_dir=tmp_path / "outputs",
         dataset_root=tmp_path / "dataset",
         warmup=False,
+        telemetry_sqlite_fallback=tmp_path / "telemetry.db",  # never the real runtime/ database
     )
     values.update(overrides)
     return Settings(_env_file=None, **values)

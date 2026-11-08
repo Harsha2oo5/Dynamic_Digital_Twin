@@ -1,0 +1,69 @@
+# Simulated BTS site for development and demonstrations. Every device here is registered with
+# data_source=simulated and protocol=simulator; its IDs start with SIM-. The simulator never starts by itself unless
+# SIMULATOR_AUTOSTART=true, and it refuses to run when APP_ENV=production.
+#
+# Values come from a simple physical model of the site (see app/telemetry/simulator.py), not from free random numbers:
+# daily ambient cycle, traffic-driven radio/router load, rectifier-fed -48 V DC bus, a 24-cell lead-acid battery
+# string whose state of charge follows the charge/discharge current, and a cabinet that heats up with lag.
+
+utc_offset_h: 5.5            # local time of the simulated site (daily cycles)
+ambient: {mean_c: 27.0, daily_amplitude_c: 6.0, humidity_mean: 65.0, humidity_amplitude: 15.0}
+battery: {capacity_ah: 200.0, initial_soc: 96.0, state_of_health: 94.0, max_charge_a: 20.0}
+
+events:                      # random events (per simulated day / hour); set to 0 to disable
+  mains_outages_per_day: 1.5
+  mains_outage_minutes: [10, 45]
+  door_openings_per_day: 2.0
+  door_open_minutes: [3, 15]
+  sensor_dropouts_per_hour: 0.15   # per sensor
+  sensor_dropout_seconds: [45, 600]
+
+equipment:
+  - id: SIM-CAB-001
+    category: equipment_cabinet
+    name: Simulated outdoor cabinet
+    zone: Cabinet A
+    sensors:
+      - {id: SIM-CAB-001-TH, type: environment, metrics: [internal_temperature, humidity], interval_s: 10}
+      - {id: SIM-CAB-001-DOOR, type: door, metrics: [door_open, smoke_detected, fan_status], interval_s: 10}
+  - id: SIM-PSU-001
+    category: power_supply_unit
+    name: Simulated rectifier shelf
+    zone: Cabinet A
+    sensors:
+      - {id: SIM-PSU-001-MON, type: psu_monitor, interval_s: 10,
+         metrics: [input_voltage, output_voltage, output_current, power_consumption, temperature, operational_status]}
+  - id: SIM-BAT-001
+    category: battery
+    name: Simulated 48 V battery string
+    zone: Cabinet A
+    sensors:
+      - {id: SIM-BAT-001-VOLT, type: voltage, metrics: [battery_voltage], interval_s: 5}
+      - {id: SIM-BAT-001-CUR, type: current, metrics: [battery_current, battery_state], interval_s: 5}
+      - {id: SIM-BAT-001-TEMP, type: temperature, metrics: [battery_temperature], interval_s: 15}
+      - {id: SIM-BAT-001-BMS, type: battery_monitor, metrics: [state_of_charge, state_of_health], interval_s: 30}
+  - id: SIM-RTR-001
+    category: router
+    name: Simulated cell-site router
+    zone: Cabinet A
+    sensors:
+      - {id: SIM-RTR-001-MON, type: multi, interval_s: 10,
+         metrics: [temperature, power_consumption, supply_voltage, operational_status, network_available]}
+  - id: SIM-RRU-001
+    category: radio_unit
+    name: Simulated radio unit, sector 1
+    zone: Tower
+    sensors:
+      - {id: SIM-RRU-001-MON, type: multi, interval_s: 10,
+         metrics: [temperature, power_consumption, supply_voltage, operational_status, network_available, vswr]}
+  - id: SIM-RRU-002
+    category: radio_unit
+    name: Simulated radio unit, sector 2
+    zone: Tower
+    sensors:
+      - {id: SIM-RRU-002-MON, type: multi, interval_s: 10,
+         metrics: [temperature, power_consumption, supply_voltage, operational_status, network_available, vswr]}
+
+site_sensors:
+  - {id: SIM-SITE-ENV, type: environment, metrics: [ambient_temperature, ambient_humidity], interval_s: 30}
+  - {id: SIM-SITE-PWR, type: power, metrics: [mains_available, backup_power_active, power_consumption], interval_s: 10}
