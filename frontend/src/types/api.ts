@@ -15,7 +15,18 @@ export interface Detection {
   confidence: number
   bbox: BBox
   component_type: string | null
+  /** Tracking lifecycle (absent when tracking is off): new = tentative, active = confirmed. */
+  track_state?: TrackState | null
+  /** Confidence-weighted class vote over the whole track. */
+  stable_class?: string | null
+  class_consistency?: number | null
+  smoothed_confidence?: number | null
+  track_age_s?: number | null
+  /** Session-level equipment ID (e.g. RU-003@a1b2c3d4); not a permanent component ID. */
+  equipment_id?: string | null
 }
+
+export type TrackState = 'new' | 'active' | 'lost' | 'removed'
 
 export interface FrameResult {
   frame_id: number
@@ -173,6 +184,79 @@ export interface TrackedObject {
   last_bbox: BBox
   frame_width: number
   frame_height: number
+  equipment_id?: string | null
+  track_ids?: number[]
+  track_state?: TrackState | null
+  class_consistency?: number | null
+  duration_s?: number | null
+  relinked?: number
+}
+
+export interface SessionInfo {
+  source_id: string
+  source_type: string
+  label: string | null
+  live: boolean
+  started_at: string | null
+  last_seen: string | null
+  equipment_items: number
+  active_items: number
+  observations: number
+  class_counts: Record<string, number>
+  tracking: Record<string, number>
+}
+
+export interface InventorySummary {
+  note: string
+  total_items: number
+  active_items: number
+  by_class: { class_name: string; items: number; active: number }[]
+  sessions: number
+}
+
+export interface ModelCard {
+  version?: number
+  label_source?: string
+  ground_truth?: boolean | null
+  created_at?: string
+  architecture?: string
+  pseudo_run?: string | null
+  dataset?: { images?: Record<string, number> | null }
+  training?: { run?: string; mode?: string; duration_s?: number; epochs_completed?: number; imgsz?: number }
+  validation_metrics?: Record<string, number> | null
+  metrics_meaning?: string
+  limitations?: string[]
+  sha256?: string
+}
+
+export interface ModelEntry {
+  model_id: string
+  name: string
+  model_type: 'pretrained' | 'custom' | 'unknown'
+  version: number | null
+  label_source: string | null
+  ground_truth: boolean | null
+  size_mb: number
+  active: boolean
+  has_model_card: boolean
+  model_card: ModelCard | null
+}
+
+export interface ModelPerformance {
+  model: string
+  model_type: string
+  label_source: string
+  runtime: {
+    frames_processed: number
+    avg_inference_ms: number | null
+    avg_inference_fps: number | null
+    min_inference_ms: number | null
+    max_inference_ms: number | null
+    avg_confidence: number | null
+  }
+  offline_metrics: Record<string, number> | null
+  metrics_meaning: string | null
+  limitations: string[]
 }
 
 export interface DatasetFolder {

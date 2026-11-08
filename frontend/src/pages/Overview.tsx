@@ -23,6 +23,7 @@ import { ago, dateTime, duration, int, num, pct, time, titleCase } from '../lib/
 import { api } from '../services/api'
 import type { ClassCount, DetectionStats, Health, ModelInfo } from '../types/api'
 import { HealthOverview } from './overview/HealthOverview'
+import { EquipmentTracking } from './overview/EquipmentTracking'
 import { SiteTelemetry } from './overview/SiteTelemetry'
 
 const AXIS = { stroke: 'var(--color-ink-3)', fontSize: 11, tickLine: false, axisLine: false } as const
@@ -363,6 +364,7 @@ export function Overview() {
         <ComponentDistribution model={m} counts={s?.class_counts ?? []} />
       </div>
 
+      <EquipmentTracking />
       <HealthOverview />
       <SiteTelemetry />
 

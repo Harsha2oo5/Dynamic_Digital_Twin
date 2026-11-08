@@ -14,6 +14,9 @@ interface Props {
 }
 
 /**
+ * Boxes: solid = confirmed track, dashed = tentative (new) or lost. `*` after the class = the track's voted
+ * (stable) class differs from this frame's raw class.
+ *
  * Canvas overlay that sits exactly on top of an `object-contain` image/video element.
  * Boxes are mapped: frame px -> media px -> letterboxed display px.
  */
@@ -54,11 +57,18 @@ export function DetectionOverlay({ detections, frameWidth, frameHeight, mediaWid
         const h = (d.bbox.y2 - d.bbox.y1) * sy
         const highlighted = highlightTrack != null && d.track_id === highlightTrack
 
+        // tentative (new) or lost tracks are dashed; confirmed tracks solid
+        const tentative = d.track_state === 'new' || d.track_state === 'lost'
         ctx.lineWidth = highlighted ? 3 : 2
         ctx.strokeStyle = color
+        ctx.setLineDash(tentative ? [6, 4] : [])
         ctx.strokeRect(x, y, w, h)
+        ctx.setLineDash([])
 
-        const label = `${d.track_id != null ? `#${d.track_id} ` : ''}${d.class_name} ${Math.round(d.confidence * 100)}%`
+        // confirmed items show their session equipment ID (without the session suffix) and the voted class
+        const ident = d.equipment_id ? `${d.equipment_id.split('@')[0]} ` : d.track_id != null ? `#${d.track_id} ` : ''
+        const cls = d.stable_class && d.stable_class !== d.class_name ? `${d.stable_class}*` : d.class_name
+        const label = `${ident}${cls} ${Math.round(d.confidence * 100)}%`
         const tw = ctx.measureText(label).width + 8
         const th = 18
         const ly = y - th >= oy ? y - th : y // keep the label inside the media area

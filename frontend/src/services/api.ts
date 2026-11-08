@@ -4,7 +4,11 @@ import type {
   DetectionStats,
   Health,
   ImageDetectionResponse,
+  InventorySummary,
+  ModelEntry,
   ModelInfo,
+  ModelPerformance,
+  SessionInfo,
   RuntimeConfig,
   TrackedObject,
   VideoJobResults,
@@ -70,7 +74,21 @@ export const api = {
   models: () => request<CheckpointInfo[]>('/api/models'),
   config: () => request<RuntimeConfig>('/api/config'),
   stats: () => request<DetectionStats>('/api/detection/stats'),
-  objects: () => request<TrackedObject[]>('/api/objects'),
+  objects: (filters: { status?: string; class?: string; session?: string } = {}) => {
+    const q = new URLSearchParams(Object.entries(filters).filter(([, v]) => v) as [string, string][]).toString()
+    return request<TrackedObject[]>(`/api/objects${q ? `?${q}` : ''}`)
+  },
+  inventorySummary: () => request<InventorySummary>('/api/inventory/summary'),
+  sessions: () => request<SessionInfo[]>('/api/sessions'),
+  sessionTracks: (id: string) => request<TrackedObject[]>(`/api/sessions/${encodeURIComponent(id)}/tracks`),
+  modelVersions: () => request<ModelEntry[]>('/api/model/versions'),
+  selectModel: (modelId: string) =>
+    request<ModelEntry>('/api/model/select', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model_id: modelId }),
+    }),
+  modelPerformance: () => request<ModelPerformance>('/api/model/performance'),
   clearObjects: () => request<void>('/api/objects', { method: 'DELETE' }),
   dataset: (refresh = false) => request<DatasetSummary>(`/api/dataset/summary?refresh=${refresh}`),
 
