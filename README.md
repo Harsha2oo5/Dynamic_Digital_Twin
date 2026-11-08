@@ -1,148 +1,112 @@
 # Dynamic Digital Twin: BTS Vision and Telemetry Console
 
-A CPU-only monitoring console for telecom base-station (BTS) sites. It detects and tracks equipment in images,
-videos and a laptop webcam (YOLO11n + ByteTrack), and collects operational telemetry from sensors (HTTP, MQTT or a
-built-in simulator) with live updates, history and threshold alerts. An analytics layer detects anomalies, scores
-equipment health and flags degradation trends for inspection, all in one React dashboard.
+A CPU-only monitoring platform for telecom base-station (BTS) sites. It combines three layers in one web dashboard:
 
-| Capability | Status |
-|---|---|
-| Image / video / webcam ingestion (OpenCV, browser camera) | ✅ |
-| Object detection (pretrained YOLO11n, CPU) | ✅ |
-| Bounding boxes, class names, confidence | ✅ |
-| Multi-object tracking (tuned ByteTrack / BoT-SORT, per-session state), track lifecycle, class voting | ✅ ([docs/vision-tracking.md](docs/vision-tracking.md)) |
-| Session-level equipment identity with re-linking; inventory with one row per item, sessions, class summary | ✅ checked on synthetic sequences; IDs are not permanent |
-| Overview dashboard: backend / engine / source / model health, latency window, component distribution | ✅ |
-| Annotation review tool (browser, human sign-off, audit log, reviewed-only export) | ✅ |
-| Custom 7-class component model (fine-tuned YOLO) | 🧩 `digital_twin_v2.pt` trained on automatic pseudo-labels (441/543 images): test mAP50 0.45 **as agreement with pseudo-labels, not accuracy**; weak on battery, PSU and cable ([docs/custom-model-training.md](docs/custom-model-training.md#8-training-on-automatic-pseudo-labels-2026-11-08)) |
-| Model versions with model cards, runtime model switching | ✅ |
-| Sensor registry, equipment identity, telemetry ingestion (HTTP, MQTT), PostgreSQL storage, live dashboard, threshold alerts | ✅ ([docs/sensor-integration.md](docs/sensor-integration.md)); demonstrated with the labelled simulator, no physical sensors connected yet |
-| Telemetry simulator (battery, PSU, cabinet, router, radio units, site) | ✅ clearly labelled SIMULATED everywhere |
-| Anomaly detection (robust statistics, Holt forecast, Isolation Forest), explainable equipment health, trend-based maintenance recommendations | ✅ ([docs/anomaly-detection.md](docs/anomaly-detection.md)); validated on simulated scenarios only ([docs/anomaly-validation.md](docs/anomaly-validation.md)) |
-| 3D | ⏳ later milestone |
+- **Computer vision.** Detects, tracks and inventories site equipment in images, video files and a live webcam
+  stream (YOLO11n, ByteTrack / BoT-SORT).
+- **Telemetry.** Collects operational sensor data over HTTP, MQTT or a built-in simulator, with live updates,
+  history and threshold alerts.
+- **Analytics.** Detects anomalies, computes an explainable equipment health index, and flags degradation trends
+  for inspection.
 
-> **Helping with annotation review?** Skip to [Helping with annotation review](#helping-with-annotation-review).
-> It takes about 15 minutes to set up, and no ML experience is needed.
+No GPU, CUDA or NVIDIA driver is required. PyTorch is installed from the CPU wheel index, and the backend never
+selects CUDA, even when a GPU is present (`backend/app/core/device.py`).
 
-**No GPU, CUDA or NVIDIA drivers are needed.** PyTorch is installed from the CPU wheel index, and the backend
-never selects CUDA, even when a GPU is present (`backend/app/core/device.py`).
+## Contents
 
----
+- [Project status](#project-status)
+- [Architecture](#architecture)
+- [Repository layout](#repository-layout)
+- [Installation](#installation)
+- [Running the application](#running-the-application)
+- [Dashboard](#dashboard)
+- [API reference](#api-reference)
+- [Configuration](#configuration)
+- [Performance](#performance)
+- [Testing](#testing)
+- [Custom component model](#custom-component-model)
+- [Contributing annotation reviews](#contributing-annotation-reviews)
+- [Known limitations](#known-limitations)
+- [Documentation](#documentation)
+- [License](#license)
 
-## Helping with annotation review
+## Project status
 
-We are training our own YOLO model to recognise seven kinds of telecom base-station (BTS) equipment. A model
-already drew *candidate* boxes, but many have the wrong class (it calls most equipment "radio unit"). A person
-has to check every image. That's the job: open an image in the browser, fix the boxes, and mark it reviewed.
-
-### One-time setup (Windows, about 15 minutes)
-
-You need **Git**, **Python 3.12** ([python.org](https://www.python.org/downloads/), tick *Add to PATH*), and about 3 GB of disk.
-
-```powershell
-git clone https://github.com/Harsha2oo5/Dynamic_Digital_Twin.git
-cd Dynamic_Digital_Twin\backend
-py -3.12 -m venv .venv
-.venv\Scripts\python.exe -m pip install --upgrade pip
-.venv\Scripts\python.exe -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-.venv\Scripts\python.exe -m pip install -r requirements.txt
-
-# the images to review are copies of the dataset; re-create them after cloning
-.venv\Scripts\python.exe -m app.training.annotation_batch --name batch_01 --restage
-.venv\Scripts\python.exe -m app.training.annotation_batch --name batch_02 --restage
-```
-
-### Who reviews what
-
-**Only one person works on a batch at a time.** The review state of a batch is one file
-(`annotation/reviewed/<batch>/review_state.json`), and two people editing it at once will conflict in Git.
-
-| Batch | Images | Starts with | Reviewer |
-|---|---|---|---|
-| `batch_01` | 175 (25 per class) | machine candidate boxes to correct | *(assign)* |
-| `batch_02` | 168 | no boxes: draw them | *(assign)* |
-
-### Each review session
-
-```powershell
-cd Dynamic_Digital_Twin
-git pull                                           # get everyone's latest reviews first
-cd backend
-.venv\Scripts\python.exe -m app.training.review_tool serve --review ..\annotation\reviewed\batch_01
-# open http://127.0.0.1:8765, type your name in "Reviewer", review; Ctrl+C in the terminal when done
-```
-
-Every change is saved immediately. Then share your work:
-
-```powershell
-cd ..
-git add annotation/reviewed
-git commit -m "Review batch_01: <how many> images"
-git push
-```
-
-### How to review an image
-
-1. **Dashed boxes are the model's guesses.** For each one: if it's right, press **Accept** (`A`). If the class is
-   wrong, pick the right one from the dropdown (keys `1`–`7`). If the box is loose, drag its corners. If there's
-   no such object, delete it (**✕** / `Del`).
-2. **Add what the model missed:** choose the class at the top (*New box class*) and drag on empty space.
-3. **Box every one of the seven components you can see,** not only the one the folder is named after. An open
-   cabinet usually also contains batteries, PSUs and cables.
-4. **Cables:** one box around a bundle you can't tell apart; separate boxes only for clearly separate cables.
-5. **Not sure?** Mark the box with **?** (`U`) and press **Needs second review**, with a note. Don't guess.
-6. When the image is complete, press **Mark REVIEWED** and tick the checklist. An image with nothing to box can be
-   marked reviewed with no boxes.
-
-| Key | Class | What it looks like |
+| Area | Capability | Status |
 |---|---|---|
-| 1 | antenna | panel or mast antennas (usually white or grey, flat and tall) |
-| 2 | router | transmission / router chassis with ports and line cards (e.g. Huawei ATN) |
-| 3 | cable | feeders, jumpers, power and fibre cables |
-| 4 | battery | battery blocks or modules |
-| 5 | power_supply_unit | rectifier / PSU shelves and modules |
-| 6 | equipment_cabinet | the whole indoor or outdoor cabinet enclosure |
-| 7 | radio_unit | RRU / radio units (finned metal boxes with connectors at the bottom) |
+| Vision | Image, video and webcam ingestion (OpenCV, browser camera) | Complete |
+| Vision | Object detection with the pretrained YOLO11n model on CPU | Complete |
+| Vision | Multi-object tracking (tuned ByteTrack, optional BoT-SORT with camera-motion compensation), track lifecycle, class voting | Complete; see [vision-tracking.md](docs/vision-tracking.md) |
+| Vision | Session-level equipment identity with re-linking; inventory with one entry per item | Complete; verified on synthetic sequences only. IDs are not permanent |
+| Vision | Custom seven-class component model | Trained on automatic pseudo-labels (`digital_twin_v2`); not yet validated against human-reviewed labels |
+| Vision | Model versioning with model cards and runtime model switching | Complete |
+| Vision | Browser-based annotation review tool (human sign-off, audit log, reviewed-only export) | Complete |
+| Telemetry | Sensor registry, ingestion (HTTP, MQTT), PostgreSQL storage, live dashboard, threshold alerts | Complete; see [sensor-integration.md](docs/sensor-integration.md). No physical sensors connected yet |
+| Telemetry | Site simulator (battery, PSU, cabinet, router, radio units, site environment) | Complete; all simulated data is labelled as such |
+| Analytics | Anomaly detection, explainable health index, trend-based maintenance recommendations | Complete; see [anomaly-detection.md](docs/anomaly-detection.md). Validated on simulated scenarios only |
+| 3D | 3D site model | Planned for a later milestone |
 
-The full rules are in [docs/annotation-guide.md](docs/annotation-guide.md#annotation-rules). Expect about 1.5–3
-minutes per image. Progress at any time: `.venv\Scripts\python.exe -m app.training.review_tool status --review ..\annotation\reviewed\batch_01`.
+## Architecture
 
----
+```
+ Browser (React dashboard)                     Backend (FastAPI, CPU)
+ ─────────────────────────                     ──────────────────────
+ Webcam  ── JPEG frames ──►  WS /ws/stream ─────┐
+ Image   ── multipart ────►  POST /api/detect/image ─┤──► FrameProcessor (one per session / request)
+ Video   ── multipart ────►  POST /api/detect/video ─┘      ├─ Detector (shared YOLO model, CPU)
+                                                            ├─ TrackingSession (tracker, lifecycle, identity)
+                                                            └─ ComponentClassifier
+                                                                   │
+                                     StatsCollector, ObjectRegistry ◄┘
+ Sensors ── HTTP / MQTT ──►  Telemetry ingestion ──► PostgreSQL / SQLite ──► Analytics engine
+                                                                              (anomalies, health, maintenance)
+ Dashboard ◄── REST polling and WebSocket events ── /api/*, /ws/telemetry
+```
+
+Key design decisions:
+- **Shared model.** The model loads once and is shared, with access serialised by a lock.
+- **Per-session tracking.** Every stream and video job owns its own tracking state.
+- **Coordinates.** All box coordinates are original-frame pixels.
+- **Provenance.** The provenance of training labels (human-reviewed or automatic) travels with every dataset and
+  model.
+
+Further detail is in [docs/architecture.md](docs/architecture.md).
 
 ## Repository layout
 
 ```
 dynamic_digital_twin/
-├── backend/                  FastAPI + YOLO + ByteTrack (Python 3.12)
+├── backend/                      FastAPI service (Python 3.12)
 │   ├── app/
-│   │   ├── core/             config (.env), CPU device policy, logging
-│   │   ├── camera/           OpenCV ingestion: images, video files, webcams (RTSP-ready)
-│   │   ├── vision/           preprocessing, detector, tracker, processor, visualization
-│   │   ├── identification/   component classification layer (active for custom models)
-│   │   ├── services/         detection service, stats, object registry, video jobs
-│   │   ├── api/              REST routes + WebSocket
-│   │   ├── schemas/          Pydantic models (the JSON contract)
-│   │   ├── telemetry/        sensor registry, ingestion, storage (SQLAlchemy + Alembic), alerts, MQTT, simulator
-│   │   ├── analytics/        features, detectors, anomaly engine, health, maintenance, training, validation
-│   │   └── training/         taxonomy, audit, annotation kit/validation, pseudo_label/, prepare, train, evaluate
-│   ├── configs/              pseudo_label/, telemetry/ (thresholds, simulator), analytics/anomaly.yaml
-│   ├── models/pretrained/    yolo11n.pt
-│   ├── models/custom/        digital_twin_vN.pt + model cards (train --promote-versioned)
-│   ├── dataset/              generated YOLO datasets (train/val/test)
-│   ├── tests/                pytest suite
+│   │   ├── core/                 configuration, CPU device policy, logging
+│   │   ├── camera/               image / video / webcam ingestion, frame-source interface
+│   │   ├── vision/               detector, tracker, track lifecycle, processor, benchmark
+│   │   ├── identification/       component classification, session-level equipment identity
+│   │   ├── services/             detection service, model manager, statistics, inventory, video jobs
+│   │   ├── api/                  REST routes and WebSocket endpoints
+│   │   ├── schemas/              Pydantic models (the JSON contract)
+│   │   ├── telemetry/            sensor registry, ingestion, storage (SQLAlchemy, Alembic), alerts, MQTT, simulator
+│   │   ├── analytics/            features, detectors, anomaly engine, health, maintenance, validation
+│   │   └── training/             taxonomy, dataset audit, annotation tooling, pseudo-labelling, train, evaluate
+│   ├── configs/                  tracker, pseudo-label, telemetry and analytics configuration
+│   ├── models/                   pretrained/ and custom/ checkpoints (weights are not versioned), model cards
+│   ├── tests/                    pytest suite
 │   └── requirements.txt
-├── frontend/                 React 19 + TypeScript + Vite + Tailwind 4 + Recharts
-├── digital twin project datasets/   collected images (READ-ONLY, never modified)
-├── annotation/               annotation kit (CVAT/Label Studio configs, manifest); exports/ for YOLO exports
-├── docs/                     architecture, dataset audit, annotation guide, training guide
-└── experiments/              training/evaluation runs (created by the scripts)
+├── frontend/                     React 19, TypeScript, Vite, Tailwind CSS 4, Recharts
+├── annotation/                   annotation kit, review state, pseudo-label runs
+├── digital twin project datasets/   collected images (read-only)
+├── docs/                         design, training, telemetry and analytics documentation
+└── experiments/                  experiment code; generated runs are not versioned
 ```
 
----
+## Installation
 
-## 1. Setup
+**Prerequisites:**
+- Python 3.12
+- Node.js 22
+- about 3 GB of free disk space
 
-Prerequisites: **Python 3.12** (3.13 is not used here, to stay on well-supported wheels), **Node.js 22**.
+The commands below are for Windows PowerShell.
 
 ### Backend
 
@@ -151,235 +115,363 @@ cd backend
 py -3.12 -m venv .venv
 .venv\Scripts\python.exe -m pip install --upgrade pip
 
-# CPU-only PyTorch FIRST, so nothing pulls a CUDA build
+# Install the CPU build of PyTorch first so that no CUDA build is pulled in
 .venv\Scripts\python.exe -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 .venv\Scripts\python.exe -m pip install -r requirements.txt
 
-copy .env.example .env     # optional: adjust settings
+copy .env.example .env
 ```
 
-Verify:
+**Verify the CPU-only installation:**
 
 ```powershell
 .venv\Scripts\python.exe -c "import torch; print(torch.__version__, torch.cuda.is_available())"
-# 2.x.x+cpu False
+# expected: 2.x.x+cpu False
 ```
 
-`models/pretrained/yolo11n.pt` is included. If it is missing, download it:
-`.venv\Scripts\python.exe -c "from ultralytics import YOLO; YOLO('yolo11n.pt')"` and move it to that folder.
+**Model weights are not stored in the repository.**
+- **Pretrained model:** download it once and place it in `backend/models/pretrained/`:
+
+  ```powershell
+  .venv\Scripts\python.exe -c "from ultralytics import YOLO; YOLO('yolo11n.pt')"
+  move yolo11n.pt models\pretrained\
+  ```
+
+- **Custom models:** reproduce them with the training guide. Their model cards are versioned in
+  `backend/models/custom/`.
 
 ### Frontend
 
 ```powershell
 cd frontend
-npm.cmd install        # npm.cmd avoids PowerShell's npm.ps1 execution-policy block
+npm.cmd install
 ```
 
-## 2. Run
+(`npm.cmd` avoids the PowerShell execution-policy restriction on `npm.ps1`.)
 
-Use two terminals:
+## Running the application
+
+Start the backend and the frontend in two terminals:
 
 ```powershell
-# terminal 1 — API on http://127.0.0.1:8000  (docs at /docs)
+# Terminal 1: API on http://127.0.0.1:8000 (interactive documentation at /docs)
 cd backend
 .venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 
-# terminal 2 — dashboard on http://localhost:5173
+# Terminal 2: dashboard on http://localhost:5173
 cd frontend
 npm.cmd run dev
 ```
 
-The Vite dev server proxies `/api` and `/ws` to the backend, so there's no CORS setup to do. To point the UI at another
-backend, set `BACKEND_URL` for the dev proxy, or `VITE_API_BASE` for a production build.
+The Vite development server proxies `/api` and `/ws` to the backend, so no CORS configuration is needed. To use a
+different backend, set `BACKEND_URL` for the development proxy or `VITE_API_BASE` for a production build.
 
-## 3. Using the dashboard
+## Dashboard
 
-- **Overview**: health strip (backend online/offline, detection engine running/idle/error, camera or video
-  source processing/connected/disconnected, model loaded/failed), model information, eight metrics (detections,
-  frames, current and unique tracks, FPS, latency, confidence, processing errors), a latency chart over the last
-  120 frames with avg/min/max, and the component distribution. The distribution counts the seven components only
-  when a matching custom model is loaded; with the pretrained model it shows its COCO classes separately.
-  Every number comes from real inference, and a dash (—) is shown until data exists.
-- **Live Monitoring**
-  - *Image*: upload a JPG/PNG. Boxes are drawn over the original image. You can switch to the
-    server-annotated JPEG.
-  - *Video file*: upload MP4/AVI/MOV/MKV/WEBM and press **Run detection**. The backend processes it
-    frame-by-frame with tracking as a background job, and the UI shows progress. Afterwards the video plays
-    with the overlay synced to the playback position (seek and pause work). If your browser can't play a codec
-    (e.g. AVI, or OpenCV `mp4v`), use **Annotated frames** to step through server-rendered frames, or
-    download the annotated MP4.
-  - *Webcam*: **Start** captures the laptop camera in the browser and streams JPEG frames over the WebSocket.
-    Only one frame is in flight at a time, so the CPU never builds a backlog. Threshold changes apply live, and
-    **Reset IDs** restarts tracking.
-  - Controls: confidence, IoU (NMS), inference resolution, frame skip (video), tracking on/off (webcam).
-- **Object Inventory**: one row per equipment item identified in a session (e.g. `RU-003`), with class and class
-  consistency, confidence, duration, observations, lifecycle (new / active / lost / removed) and status, plus
-  per-class totals and a session list. Click a row for details, tracker IDs and re-links.
-- **Model Management**: model versions with label source (reviewed / pseudo / COCO) and model card, a
-  **Use this model** switch that takes effect without a restart, runtime performance, and the class list.
-- **Dataset Management**: a read-only scan of the collected dataset (counts, formats, resolutions,
-  annotation status, issues).
-- **Settings**: client defaults (stored in the browser) and the backend's runtime configuration.
-- **Equipment Monitoring**: each registered equipment item (stable IDs such as `BAT-001`) with its sensors, live
-  readings, connection status and active conditions, plus a site environment/power card.
-- **Sensor Management**: register sensors, associate them with equipment, see status and latest readings, and
-  start or stop the simulator and its scenarios (mains outage, sensor dropout, open door, fan failure, heat wave).
-- **Telemetry Analytics**: history charts for 15 min to 7 days (only for metrics that have data) and sensor availability.
-- **Alerts**: active conditions with acknowledgement, alert history and the configured threshold rules.
-- **Equipment Health**: explainable 0–100 health index per equipment item with its penalty breakdown, coverage, data
-  quality and a 24 h trend (unknown when data is insufficient).
-- **Anomaly Monitoring**: live anomaly feed and records with evidence; acknowledge and resolve.
-- **Predictive Maintenance**: degradation trends and recurring anomalies with evidence levels and supporting charts.
-- **Equipment details** (`#details/<id>`): visual links, identity, sensors, telemetry history, anomalies, health and
-  recommendations in one view.
-- Telemetry values from stale or offline sensors are shown as *last known* with their age, and every simulated value
-  carries a **SIMULATED** badge.
+| Page | Purpose |
+|---|---|
+| Overview | System health (backend, detection engine, sources, model), key metrics, latency chart, component distribution, equipment tracking summary, equipment health and site telemetry |
+| Live Monitoring | Image upload, video processing with a synchronised overlay, and live webcam detection. Confirmed tracks are drawn solid; tentative or lost tracks are dashed |
+| Object Inventory | One entry per equipment item identified in a session, with class consistency, duration, observations and lifecycle state; per-class totals and session history |
+| Model Management | Model versions with label source and model card, runtime model switching, runtime performance and class list |
+| Dataset Management | Read-only scan of the collected dataset |
+| Equipment Monitoring | Registered equipment with sensors, live readings, connection status and active conditions |
+| Sensor Management | Sensor registration and association, status, and simulator control |
+| Telemetry Analytics | Historical charts (15 minutes to 7 days) and sensor availability |
+| Alerts | Active conditions with acknowledgement, alert history and threshold rules |
+| Equipment Health | Explainable 0–100 health index with penalty breakdown, coverage and data quality |
+| Anomaly Monitoring | Live anomaly feed with evidence; acknowledge and resolve |
+| Predictive Maintenance | Degradation trends and recurring anomalies with evidence levels |
+| Equipment Details | Identity, visual observations, sensors, history, anomalies, health and recommendations for one item |
+| Settings | Client defaults and the backend's effective runtime configuration |
 
-> **IDs are not permanent.** Tracker IDs are temporary. Equipment IDs (`RU-003@<session>`) are stable within one
-> stream or video, surviving tracker-ID changes through re-linking, but the same item in another session gets
-> another ID. A permanent component registry is a later milestone.
+**What the dashboard shows:**
+- **Measured values only.** Every value comes from real inference or ingested telemetry. Missing data is shown
+  as a dash, never estimated.
+- **Simulated data is marked.** Every simulated value carries a SIMULATED label.
+- **Identifiers are scoped.**
+  - Tracker IDs are temporary.
+  - Equipment IDs such as `RU-003@<session>` are stable within one stream or video, but not across sessions.
+  - A permanent component registry is planned for a later milestone.
 
-## 4. API
+## API reference
+
+Vision and model management:
 
 | Method | Path | Purpose |
 |---|---|---|
-| GET | `/api/health` | status, model loaded, device, torch version |
-| GET | `/api/model/info` | model, type, classes, thresholds, load status |
-| GET | `/api/models` | checkpoints in `backend/models/` |
-| GET | `/api/config` | effective runtime configuration |
-| POST | `/api/detect/image` | multipart `file` (+ `confidence`, `iou`, `image_size`, `annotate`) → detections |
-| POST | `/api/detect/video` | multipart `file` (+ `frame_skip`, …) → 202 + job |
-| GET | `/api/detect/video/{id}` | job status/progress |
-| GET | `/api/detect/video/{id}/results` | per-frame detections |
-| GET | `/api/detect/video/{id}/annotated` | annotated MP4 |
-| GET | `/api/detect/video/{id}/frames/{n}` | annotated JPEG of the n-th processed frame |
-| POST | `/api/detect/video/{id}/cancel` | cancel a job |
-| GET | `/api/detection/stats` | aggregate statistics |
-| GET / DELETE | `/api/objects?status=&class=&session=`, `/api/objects/{id}` | equipment inventory |
-| GET | `/api/inventory/summary`, `/api/sessions`, `/api/sessions/{id}/tracks` | class totals, sessions, per-session items |
-| GET / POST | `/api/model/versions`, `/api/model/select`, `/api/model/performance` | model versions + cards, runtime switch, performance |
-| GET | `/api/dataset/summary?refresh=` | dataset validation report |
-| WS | `/ws/stream` | binary JPEG frames in → `FrameResult` JSON out |
-| * | `/api/telemetry/...`, WS `/ws/telemetry` | sensors, equipment, ingestion, latest/history, alerts, simulator; see [docs/sensor-integration.md](docs/sensor-integration.md#api) |
-| * | `/api/analytics/...` | health, anomalies (ack/resolve), maintenance recommendations, configuration, models; see [docs/anomaly-detection.md](docs/anomaly-detection.md#data-model-and-api) |
+| GET | `/api/health` | Service status, model state, device |
+| GET | `/api/model/info` | Active model, classes, thresholds, load status |
+| GET | `/api/model/versions` | Checkpoints with version, label source and model card |
+| POST | `/api/model/select` | Switch the detection model at runtime |
+| GET | `/api/model/performance` | Runtime latency of the active model and its offline metrics |
+| GET | `/api/models` | Checkpoint files in `backend/models/` |
+| GET | `/api/config` | Effective runtime configuration |
+| POST | `/api/detect/image` | Detect objects in an uploaded image |
+| POST | `/api/detect/video` | Start a background video detection and tracking job (returns 202) |
+| GET | `/api/detect/video/{id}`, `/results`, `/annotated`, `/frames/{n}` | Job status, per-frame results, annotated MP4, annotated frame |
+| POST | `/api/detect/video/{id}/cancel` | Cancel a video job |
+| GET | `/api/detection/stats` | Aggregate detection statistics |
+| GET, DELETE | `/api/objects`, `/api/objects/{id}` | Equipment inventory (filters: `status`, `class`, `session`) |
+| GET | `/api/inventory/summary` | Unique equipment items per class |
+| GET | `/api/sessions`, `/api/sessions/{id}/tracks` | Sessions and the items observed in each |
+| GET | `/api/dataset/summary` | Dataset validation report |
+| WS | `/ws/stream` | Binary JPEG frames in, JSON frame results out |
 
-Frame result schema (shared by REST and WebSocket). Box coordinates are original-frame pixels:
+Telemetry and analytics:
+- **Telemetry:** the `/api/telemetry/*` and `/ws/telemetry` endpoints are documented in
+  [sensor-integration.md](docs/sensor-integration.md#api).
+- **Analytics:** the `/api/analytics/*` endpoints are documented in
+  [anomaly-detection.md](docs/anomaly-detection.md#data-model-and-api).
+
+Example frame result, shared by REST and WebSocket (box coordinates in original-frame pixels):
 
 ```json
 {
   "frame_id": 30, "timestamp": "2026-11-01T00:37:41.2", "device": "cpu",
   "fps": 16.8, "inference_ms": 59.4, "frame_width": 640, "frame_height": 480,
   "detections": [
-    { "track_id": 1, "class_id": 5, "class_name": "bus", "confidence": 0.95,
-      "bbox": { "x1": 2, "y1": 13, "x2": 639, "y2": 465 }, "component_type": null }
+    { "track_id": 1, "class_id": 6, "class_name": "radio_unit", "confidence": 0.91,
+      "bbox": { "x1": 112, "y1": 40, "x2": 388, "y2": 455 }, "component_type": "radio_unit",
+      "track_state": "active", "stable_class": "radio_unit", "class_consistency": 1.0,
+      "equipment_id": "RU-001@a1b2c3d4" }
   ]
 }
 ```
 
-WebSocket control messages: `{"type":"config","confidence":0.4,"iou":0.45,"image_size":416,"track":true}`
-and `{"type":"reset"}`.
+WebSocket control messages: `{"type": "config", "confidence": 0.4, "iou": 0.45, "image_size": 416, "track": true}`
+and `{"type": "reset"}`.
 
-## 5. CPU configuration and performance
+## Configuration
 
-All settings live in `backend/.env` (see `.env.example`):
+All settings are read from environment variables or `backend/.env` (see `backend/.env.example`). Secrets such as
+database URLs, API keys and MQTT credentials are only read from the environment and are never returned by the API.
 
-| Variable | Default | Notes |
+| Variable | Default | Description |
 |---|---|---|
-| `DEVICE` | `cpu` | only `cpu` is accepted; other values log a warning and fall back to CPU |
-| `DETECTION_MODEL` | `pretrained` | `pretrained` (COCO YOLO11n) or `custom` (fine-tuned 7-class model) |
-| `PRETRAINED_MODEL_PATH` / `CUSTOM_MODEL_PATH` | `models/pretrained/yolo11n.pt` / `models/custom/digital_twin_best.pt` | checkpoint for each choice |
-| `MODEL_FALLBACK_TO_PRETRAINED` | `false` | if `custom` can't load: `false` = degraded with an error; `true` = run pretrained and flag `fallback_active` |
-| `MODEL_PATH` | unset | explicit checkpoint override |
-| `CONFIDENCE_THRESHOLD` / `IOU_THRESHOLD` | 0.35 / 0.45 | request-level overrides supported |
-| `IMAGE_SIZE` | 416 | inference resolution; 320 is faster, 640 is more accurate |
-| `FRAME_SKIP` | 1 | process every Nth video frame |
-| `TORCH_THREADS` | 0 | 0 = PyTorch default |
-| `MAX_FRAME_DIM` | 1920 | larger frames are downscaled before inference; boxes are mapped back |
-| `MAX_VIDEO_MB` / `MAX_VIDEO_FRAMES` | 200 / 5000 | upload and processing caps |
-| `TELEMETRY_DATABASE_URL` | unset | PostgreSQL for telemetry; unset = SQLite dev fallback (`runtime/telemetry.db`) |
-| `TELEMETRY_INGEST_API_KEY` | unset | required by `POST /api/telemetry/ingest`; unset = HTTP ingestion closed |
-| `MQTT_ENABLED`, `MQTT_HOST`, … | off | MQTT adapter; all telemetry settings are listed in [docs/sensor-integration.md](docs/sensor-integration.md#configuration) |
-| `SIMULATOR_AUTOSTART` / `APP_ENV` | false / development | the simulator never starts by itself and is disabled in production |
+| `DEVICE` | `cpu` | Only `cpu` is supported |
+| `DETECTION_MODEL` | `pretrained` | `pretrained` (COCO YOLO11n) or `custom` |
+| `PRETRAINED_MODEL_PATH`, `CUSTOM_MODEL_PATH` | `models/pretrained/yolo11n.pt`, `models/custom/digital_twin_best.pt` | Checkpoint for each selection |
+| `MODEL_PATH` | unset | Explicit checkpoint override, e.g. `models/custom/digital_twin_v2.pt` |
+| `MODEL_FALLBACK_TO_PRETRAINED` | `false` | Load the pretrained model if the custom model cannot be loaded |
+| `CONFIDENCE_THRESHOLD`, `IOU_THRESHOLD` | `0.35`, `0.45` | Default thresholds; per-request overrides are supported |
+| `IMAGE_SIZE` | `416` | Inference resolution (320 is faster, 640 more accurate) |
+| `FRAME_SKIP` | `1` | Process every Nth video frame |
+| `TRACKER_CONFIG` | `configs/trackers/bts_bytetrack.yaml` | Tracker configuration; `bts_botsort.yaml` adds camera-motion compensation |
+| `TRACK_MIN_HITS` | `3` | Frames before a track is confirmed |
+| `TORCH_THREADS` | `0` | CPU threads for PyTorch (0 = PyTorch default) |
+| `MAX_VIDEO_MB`, `MAX_VIDEO_FRAMES` | `200`, `5000` | Upload and processing limits |
+| `TELEMETRY_DATABASE_URL` | unset | PostgreSQL connection; if unset, a local SQLite development database is used |
+| `TELEMETRY_INGEST_API_KEY` | unset | Required for HTTP telemetry ingestion; if unset, HTTP ingestion is disabled |
+| `MQTT_ENABLED`, `MQTT_HOST`, ... | disabled | MQTT adapter; see [sensor-integration.md](docs/sensor-integration.md#configuration) |
+| `SIMULATOR_AUTOSTART`, `APP_ENV` | `false`, `development` | The simulator never starts automatically and is disabled in production |
 
-How the backend stays responsive on CPU:
-- the model loads **once** at startup, and a warm-up pass absorbs the slow first call;
-- all inference runs in worker threads, never on the event loop;
-- a lock serialises calls into the shared model (Ultralytics predictors aren't thread-safe);
-- video jobs run on a single worker thread;
-- each stream or job has its **own ByteTrack instance**, so concurrent sessions can't corrupt each other's tracks;
-- skipped video frames are `grab()`bed but not decoded.
+## Performance
 
-**Measured on this development machine** (Intel i7-1255U, 16 GB RAM, YOLO11n, `IMAGE_SIZE=416`):
+Measured on the development machine (Intel Core i7-1255U, 16 GB RAM, CPU only), using 30 dataset images with
+`python -m app.vision.benchmark`:
 
-| Workload | Measured |
-|---|---|
-| Model load + warm-up | ~2.7–3.4 s |
-| First inference without warm-up | ~3.8 s |
-| Single image, steady state | ~40–110 ms |
-| 640×480 video, every frame, with tracking | ~10–16 FPS inference |
-| Browser webcam at 640 px over WebSocket | ~14 FPS end-to-end, ~17 FPS inference |
+| Model | 320 px | 416 px | 640 px |
+|---|---|---|---|
+| YOLO11n (COCO, pretrained) | 46.5 ms (21.5 FPS) | 57.4 ms (17.4 FPS) | 97.9 ms (10.2 FPS) |
+| `digital_twin_v2` (custom) | 44.3 ms (22.6 FPS) | 55.5 ms (18.0 FPS) | 98.8 ms (10.1 FPS) |
 
-Your numbers will differ. The dashboard always shows the live measured values. If throughput is too low,
-try `IMAGE_SIZE=320`, `FRAME_SKIP=2`, or a 480 px webcam send width (Settings page).
+**Other measurements:**
+- Tracking, lifecycle and identity add 0.3–1.5 ms per frame.
+- Process memory with a loaded model is about 0.7 GB.
+- A live webcam stream at 640 px reaches about 14 FPS end to end.
+- Anomaly analytics add less than 0.1% of one CPU core at live telemetry rates
+  ([anomaly-validation.md](docs/anomaly-validation.md#cpu-performance)).
 
-## 6. Tests
+**How the backend stays responsive on CPU:**
+- Inference runs in worker threads, never on the event loop.
+- A warm-up pass at startup absorbs the slow first inference.
+- Webcam streaming uses back-pressure: a new frame is sent only after the previous result arrives.
+
+**If throughput is too low:** reduce `IMAGE_SIZE` to 320 or increase `FRAME_SKIP`.
+
+## Testing
 
 ```powershell
 cd backend
 .venv\Scripts\python.exe -m pytest
 ```
 
-There are 227 tests (113 for vision, 17 for tracking lifecycle / identity / inventory / model management /
-pseudo-label training in `test_vision_lifecycle.py`, 24 for pseudo-labelling in `test_pseudo_label.py`, 33 for telemetry in
-`test_telemetry.py`, 40 for analytics in `test_analytics.py`; see [docs/sensor-integration.md](docs/sensor-integration.md#testing)
-and [docs/anomaly-detection.md](docs/anomaly-detection.md#testing)):
-- annotation review (`test_review_workflow.py`, `test_auto_annotate.py`): candidate import with class/coordinate/confidence
-  preservation, CVAT archive checks, status transitions and sign-off rules, reviewed-only export, review-manifest
-  validation (unreviewed or edited labels are caught), the training gate, split safeguards, YOLO import round trip,
-  the review API, and immutability of the dataset and batches;
-- dashboard statistics (`test_stats.py`): latency window, class ids, engine and source states, error handling,
-  and the additive API fields; readiness gate (`test_readiness.py`);
-- unit tests: CPU device policy, preprocessing, box scaling/clipping, video frame extraction, detection
-  parsing, ByteTrack ID persistence and session isolation, object registry, dataset validation;
-- integration tests against the **real YOLO11n model on CPU**: health, model info, image detection,
-  threshold handling, error codes (400/413/415/422/503), a full video job with tracking and annotated output,
-  the WebSocket stream, and degraded mode when the model file is missing;
-- training pipeline (`test_training_pipeline.py`): class mapping, audit (counts, corruption, near-duplicates),
-  annotation-kit configs, annotation validation and YOLO label parsing, group-aware deterministic splitting,
-  `data.yaml` generation, end-to-end preparation, training configuration and gate, checkpoint promotion;
-- custom model (`test_custom_model.py`): checkpoint selection, loading a 7-class checkpoint, class-name
-  mapping, REST/WebSocket/inventory compatibility, the missing-checkpoint error and the fallback.
+The suite contains 227 tests:
 
-The training and custom-model tests use synthetic fixtures in temporary folders: generated images, and a
-**randomly initialised** 7-class checkpoint used only to exercise code paths. The application itself never
-fabricates detections or metrics.
+| Area | Tests | Scope |
+|---|---|---|
+| Vision and training | 113 | Device policy, preprocessing, detection parsing, tracking, inventory, dataset audit and validation, splitting, training gate, annotation review workflow, custom-model loading, and integration tests against the real YOLO11n model on CPU |
+| Tracking, identity, models | 17 | Track lifecycle, session isolation, re-linking, inventory de-duplication, model versioning and switching, pseudo-label training path (`test_vision_lifecycle.py`) |
+| Pseudo-labelling | 24 | Fusion, filtering, outputs and provenance (`test_pseudo_label.py`) |
+| Telemetry | 33 | Ingestion, storage, alerts, MQTT adapter, simulator, API (`test_telemetry.py`) |
+| Analytics | 40 | Features, detectors, episodes, context rules, health, maintenance, API (`test_analytics.py`) |
 
-## 7. Custom component model (7 classes)
+Training and custom-model tests use synthetic fixtures in temporary directories. The application itself never
+fabricates detections, measurements or metrics.
 
-The classes are antenna, router, cable, battery, power_supply_unit, equipment_cabinet and radio_unit; the
-mapping is in `backend/app/training/taxonomy.py`. The collected dataset has **no human-reviewed bounding boxes
-yet**. A first model was trained on automatic pseudo-labels (see [section 8 of the training guide](docs/custom-model-training.md#8-training-on-automatic-pseudo-labels-2026-11-08)); the reviewed-label path below stays the route to real accuracy. Machine candidates for batch 1 are loaded into a local review tool:
+**Frontend checks:**
+
+```powershell
+cd frontend
+npm.cmd run build
+npm.cmd run lint
+```
+
+`build` runs the TypeScript compiler before the production build; `lint` runs oxlint.
+
+## Custom component model
+
+The model recognises seven classes:
+
+| ID | Class | ID | Class |
+|---|---|---|---|
+| 0 | antenna | 4 | power_supply_unit |
+| 1 | router | 5 | equipment_cabinet |
+| 2 | cable | 6 | radio_unit |
+| 3 | battery | | |
+
+The class mapping is defined in `backend/app/training/taxonomy.py`.
+
+**How the current model was trained.** No human-reviewed bounding boxes exist yet, so `digital_twin_v2` was
+trained on automatic pseudo-labels:
+- The pseudo-labels combine Grounding DINO, CLIP and visual prototypes.
+- 441 of the 543 images were usable.
+- Training took 28.6 minutes on CPU.
+
+On the held-out test split, the model reaches mAP50 0.45 measured against the pseudo-labels:
+- strongest on router, equipment cabinet and radio unit;
+- weak on battery, power supply unit and cable.
+
+This figure measures agreement with automatic labels and **is not an accuracy figure**. Real accuracy remains
+unknown until a human-reviewed test set exists. Details are in
+[custom-model-training.md](docs/custom-model-training.md#8-training-on-automatic-pseudo-labels-2026-11-08).
+
+**Safeguards on label provenance:**
+- **Reviewed labels only by default.** The training gate accepts datasets built from human-reviewed exports.
+- **Pseudo-label datasets need an explicit opt-in** (`--allow-pseudo`) and an intact label manifest.
+- **Each model carries a model card** recording its label source, metrics and limitations.
+
+To use a custom model:
+- **At runtime:** select it in Model Management.
+- **At startup:** set `MODEL_PATH=models/custom/digital_twin_v2.pt` in `backend/.env`.
+
+## Contributing annotation reviews
+
+Reviewing machine-generated candidate boxes is the most valuable contribution to the project. It is the only way to
+measure the model's real accuracy and to improve the weak classes. No machine-learning experience is required.
+
+### Setup
+
+Complete the backend installation above. Then recreate the review batches, which are copies of dataset images
+and are not versioned:
 
 ```powershell
 cd backend
-.venv\Scripts\python.exe -m app.training.review_tool serve --review ..\annotation\reviewed\batch_01   # http://127.0.0.1:8765
+.venv\Scripts\python.exe -m app.training.annotation_batch --name batch_01 --restage
+.venv\Scripts\python.exe -m app.training.annotation_batch --name batch_02 --restage
 ```
 
-Only images a person marks REVIEWED are exported. `prepare_dataset` and the training gate accept nothing else.
-Check whether training may start with `python -m app.training.readiness` (from `backend/`); it reports BLOCKED
-with the exact reasons until enough reviewed boxes exist.
+### Batches
 
-- [docs/phase2-progress-report.md](docs/phase2-progress-report.md): current status of the custom-model work.
-- [docs/bts-field-testing.md](docs/bts-field-testing.md): how the model will be tested on real BTS sites.
+Only one person should work on a batch at a time. A batch's review state is a single file
+(`annotation/reviewed/<batch>/review_state.json`), so concurrent edits conflict in Git.
 
-- [docs/dataset-audit.md](docs/dataset-audit.md): audit of the 543 images.
-- [docs/annotation-guide.md](docs/annotation-guide.md): how to annotate in CVAT or Label Studio using the kit in `annotation/`.
-- [docs/custom-model-training.md](docs/custom-model-training.md): validate → prepare → pilot → train → evaluate → `DETECTION_MODEL=custom`.
+| Batch | Images | Starting point |
+|---|---|---|
+| `batch_01` | 175 (25 per class) | Machine candidate boxes to verify and correct |
+| `batch_02` | 168 | No boxes; draw them |
 
-## 8. Future GPU migration (out of scope now)
+### Review session
 
+```powershell
+git pull
+cd backend
+.venv\Scripts\python.exe -m app.training.review_tool serve --review ..\annotation\reviewed\batch_01
+```
+
+Open http://127.0.0.1:8765, enter your name as reviewer, and review images. Changes are saved immediately. When
+finished, stop the server and commit the review state:
+
+```powershell
+cd ..
+git add annotation/reviewed
+git commit -m "Review batch_01: <number> images"
+git push
+```
+
+### Review guidelines
+
+1. **Dashed boxes are machine candidates.**
+   - If a box is correct, accept it (`A`).
+   - If its class is wrong, choose the correct class (`1`–`7`).
+   - If it fits loosely, adjust its corners.
+   - If no such object is there, delete it (`Del`).
+2. **Add every missed component.** Select the class under *New box class* and drag a box on the image.
+3. **Label every visible component**, not only the one the folder is named after. An open cabinet usually also
+   contains batteries, power supply units and cables.
+4. **Cables:** draw one box around a bundle that cannot be separated, and separate boxes for clearly distinct
+   cables.
+5. **When uncertain,** mark the box as uncertain (`U`), select *Needs second review* and add a note.
+6. **When the image is complete,** select *Mark REVIEWED* and confirm the checklist. An image with no relevant
+   components can be marked reviewed without boxes.
+
+| Key | Class | Appearance |
+|---|---|---|
+| 1 | antenna | Panel or mast antennas, usually white or grey, flat and tall |
+| 2 | router | Transmission or router chassis with ports and line cards |
+| 3 | cable | Feeder, jumper, power and fibre cables |
+| 4 | battery | Battery blocks or modules |
+| 5 | power_supply_unit | Rectifier or PSU shelves and modules |
+| 6 | equipment_cabinet | The complete indoor or outdoor cabinet enclosure |
+| 7 | radio_unit | RRUs and radio units: finned metal enclosures with connectors at the bottom |
+
+The full rules are in [annotation-guide.md](docs/annotation-guide.md#annotation-rules). A review typically takes
+1.5–3 minutes per image.
+
+To check progress:
+
+```powershell
+.venv\Scripts\python.exe -m app.training.review_tool status --review ..\annotation\reviewed\batch_01
+```
+
+## Known limitations
+
+- **Unknown model accuracy.** The custom model was trained and evaluated on automatic pseudo-labels; its real
+  accuracy is unknown, and it is weak on battery, power supply unit and cable.
+- **Tracking needs real footage.** Tracking and re-linking have been verified only on synthetic and panned-photo
+  sequences, because no BTS site video is available yet.
+- **Equipment identity is session-level only.** A permanent cross-session registry and RTSP site cameras exist
+  only as interfaces.
+- **No physical sensors connected.** Telemetry has been exercised with the simulator only.
+- **Analytics validated on simulated data only.** Anomaly detection and health scoring were tuned and validated on
+  simulated scenarios. No failure prediction is claimed without historical failure data.
+- **SQLite fallback.** Without `TELEMETRY_DATABASE_URL`, telemetry is stored in a local SQLite development
+  database rather than PostgreSQL.
+
+## Documentation
+
+| Document | Topic |
+|---|---|
+| [architecture.md](docs/architecture.md) | System architecture and design decisions |
+| [vision-tracking.md](docs/vision-tracking.md) | Tracking, lifecycle, equipment identity, inventory, model management |
+| [custom-model-training.md](docs/custom-model-training.md) | Dataset preparation, training, evaluation and results |
+| [automated-annotation.md](docs/automated-annotation.md) | Automatic pseudo-labelling pipeline |
+| [annotation-guide.md](docs/annotation-guide.md) | Annotation rules and review workflow |
+| [dataset-audit.md](docs/dataset-audit.md) | Audit of the 543 collected images |
+| [sensor-integration.md](docs/sensor-integration.md) | Telemetry ingestion, storage, alerts and simulator |
+| [anomaly-detection.md](docs/anomaly-detection.md) | Anomaly detection, health scoring and maintenance |
+| [anomaly-validation.md](docs/anomaly-validation.md) | Simulation validation and CPU performance of the analytics |
+| [bts-field-testing.md](docs/bts-field-testing.md) | Plan for testing on real BTS sites |
+| [phase2-progress-report.md](docs/phase2-progress-report.md) | Milestone progress report |
+
+### Future GPU support
+
+The architecture does not depend on the CPU. To enable a GPU later:
 1. Install a CUDA build of PyTorch in a separate environment.
 2. Add `"cuda"` to `SUPPORTED_DEVICES` in `backend/app/core/device.py`.
 3. Set `DEVICE=cuda`.
 
-No other code changes are required.
+## License
+
+Released under the MIT License. See [LICENSE](LICENSE).
