@@ -22,6 +22,8 @@ import { usePolling } from '../hooks/usePolling'
 import { ago, dateTime, duration, int, num, pct, time, titleCase } from '../lib/format'
 import { api } from '../services/api'
 import type { ClassCount, DetectionStats, Health, ModelInfo } from '../types/api'
+import { HealthOverview } from './overview/HealthOverview'
+import { SiteTelemetry } from './overview/SiteTelemetry'
 
 const AXIS = { stroke: 'var(--color-ink-3)', fontSize: 11, tickLine: false, axisLine: false } as const
 const tooltipStyle = {
@@ -219,7 +221,7 @@ export function Overview() {
     <>
       <PageHeader
         title="Overview"
-        subtitle="System status and detection activity. All figures are measured from real inference."
+        subtitle="System status, detection activity and site telemetry. Detection figures come from real inference; telemetry is labelled physical or simulated."
         actions={
           s?.session_started_at ? (
             <span className="text-xs text-ink-3">
@@ -360,6 +362,9 @@ export function Overview() {
 
         <ComponentDistribution model={m} counts={s?.class_counts ?? []} />
       </div>
+
+      <HealthOverview />
+      <SiteTelemetry />
 
       {!s && !stats.error && (
         <p className="mt-4 text-center text-xs text-ink-3">
