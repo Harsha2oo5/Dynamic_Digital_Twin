@@ -5,6 +5,10 @@ too few test instances or weak results, and saves the confusion matrix, PR/F1 cu
 batch predictions and annotated predictions for every image of the split under
 experiments/evaluation/<run>/.
 
+On a dataset built from pseudo-labels (`prepare_dataset --pseudo`) the reference boxes are automatic labels, so
+the same numbers measure AGREEMENT WITH PSEUDO-LABELS, not accuracy; metrics.json then carries
+`label_source: pseudo` and `metrics_meaning`, and the CLI prints them under that heading.
+
 Usage:
     python -m app.training.evaluate --model models/custom/digital_twin_best.pt \
         --data dataset/digital_twin_yolo/data.yaml --split test
@@ -27,6 +31,16 @@ WEAK_MAP50 = 0.5
 CONFUSION_PAIRS = [("antenna", "radio_unit"), ("router", "power_supply_unit"), ("battery", "power_supply_unit"),
                    ("equipment_cabinet", "battery"), ("equipment_cabinet", "power_supply_unit"),
                    ("equipment_cabinet", "router"), ("equipment_cabinet", "radio_unit")]
+
+
+def label_provenance(data: Path) -> dict:
+    """label_source of the dataset (from prepare_dataset's split_report.json) and what the metrics mean."""
+    cfg = yaml.safe_load(Path(data).read_text(encoding="utf-8")) or {}
+    report = Path(cfg.get("path", Path(data).parent)) / "split_report.json"
+    src = json.loads(report.read_text(encoding="utf-8")).get("label_source", "unknown") if report.is_file() else "unknown"
+    meaning = {"pseudo": "agreement with automatic pseudo-labels (NOT accuracy; no human-verified reference)",
+               "reviewed": "accuracy against human-reviewed labels"}.get(src, "unknown label provenance")
+    return {"label_source": src, "metrics_meaning": meaning}
 
 
 def f1_score(precision: float, recall: float) -> float:
@@ -111,6 +125,7 @@ def evaluate(model_path: Path, data: Path, split: str, imgsz: int, batch: int, s
             "mAP50-95": round(float(ap), 4),
         }
     summary["class_flags"] = class_flags(summary["per_class"])
+    summary.update(label_provenance(data))
     cm = getattr(metrics, "confusion_matrix", None)
     if cm is not None and getattr(cm, "matrix", None) is not None:
         summary["confusion"] = confusion_analysis(cm.matrix.tolist(), metrics.names)
@@ -138,6 +153,9 @@ def main() -> None:
     args = parser.parse_args()
 
     s = evaluate(args.model, args.data, args.split, args.imgsz, args.batch, not args.no_predictions)
+    print(f"Label source: {s['label_source']} -> metrics are {s['metrics_meaning']}")
+    if s["label_source"] == "pseudo":
+        print("=== Agreement with pseudo-labels (not accuracy) ===")
     print(json.dumps({k: s[k] for k in ("precision", "recall", "f1", "mAP50", "mAP50-95")}, indent=2))
     print(f"{'class':<20}{'n':>6}{'P':>8}{'R':>8}{'F1':>8}{'mAP50':>8}{'mAP50-95':>10}")
     for name, m in s["per_class"].items():

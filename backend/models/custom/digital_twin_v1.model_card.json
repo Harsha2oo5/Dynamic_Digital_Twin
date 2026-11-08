@@ -1,0 +1,96 @@
+{
+  "model": "digital_twin_v1",
+  "file": "digital_twin_v1.pt",
+  "sha256": "e3fe0494ec354f6a42680d17f09b3acefb03d0de0433d086c039e8ca0bbdebd4",
+  "created_at": "2026-11-08T20:09:35",
+  "architecture": "yolo11n",
+  "base_model": "C:\\Users\\harsh\\Desktop\\dynamic_digital_twin\\backend\\models\\pretrained\\yolo11n.pt",
+  "task": "detect",
+  "classes": {
+    "0": "antenna",
+    "1": "router",
+    "2": "cable",
+    "3": "battery",
+    "4": "power_supply_unit",
+    "5": "equipment_cabinet",
+    "6": "radio_unit"
+  },
+  "label_source": "pseudo",
+  "ground_truth": false,
+  "pseudo_run": "full_v1",
+  "pseudo_config_hash": "bdf7dbdff06f62c9",
+  "review_manifest": null,
+  "dataset": {
+    "data_yaml": "dataset\\digital_twin_pseudo_v1\\data.yaml",
+    "images": {
+      "train": 309,
+      "val": 88,
+      "test": 44
+    },
+    "instances_per_class": {
+      "antenna": {
+        "train": 90,
+        "val": 26,
+        "test": 17
+      },
+      "router": {
+        "train": 67,
+        "val": 22,
+        "test": 8
+      },
+      "cable": {
+        "train": 79,
+        "val": 22,
+        "test": 9
+      },
+      "battery": {
+        "train": 20,
+        "val": 10,
+        "test": 8
+      },
+      "power_supply_unit": {
+        "train": 95,
+        "val": 28,
+        "test": 10
+      },
+      "equipment_cabinet": {
+        "train": 140,
+        "val": 28,
+        "test": 17
+      },
+      "radio_unit": {
+        "train": 48,
+        "val": 12,
+        "test": 6
+      }
+    },
+    "seed": 42
+  },
+  "training": {
+    "run": "pilot_pseudo_v1",
+    "mode": "pilot",
+    "duration_s": 359.7,
+    "epochs_completed": 5,
+    "imgsz": 416,
+    "batch": 8,
+    "environment": {
+      "python": "3.13.5",
+      "torch": "2.9.1+cpu",
+      "ultralytics": "8.3.235",
+      "cpu": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel"
+    }
+  },
+  "validation_metrics": {
+    "precision": 0.4854,
+    "recall": 0.4106,
+    "mAP50": 0.3644,
+    "mAP50-95": 0.244
+  },
+  "metrics_meaning": "agreement with automatic pseudo-labels on the validation split, NOT accuracy against ground truth",
+  "limitations": [
+    "Trained and validated on automatic pseudo-labels (Grounding DINO + CLIP + visual prototypes); no human verified the labels. Real accuracy is unknown until a human-reviewed test set exists.",
+    "Systematic pseudo-label errors (e.g. confused look-alike classes) are learned by the model and are not visible in the validation metrics.",
+    "Pilot run (few epochs): not a production model."
+  ],
+  "version": 1
+}

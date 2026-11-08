@@ -10,9 +10,18 @@
 - Writes data.yaml with the seven taxonomy classes, a split manifest and a per-class report,
   then re-validates the output. An existing output directory is never overwritten.
 
+Pseudo-label mode (`--pseudo <run dir>`): builds the same split from an automatic pseudo-label run
+(app.training.pseudo_label). The run's pseudo_manifest.json must be intact (every label file matches its sha256)
+and only images the pipeline marked trainable are used. The dataset is stamped `label_source: pseudo`,
+`ground_truth: false` in split_report.json and in a marker file, so training, evaluation and the model card never
+present it as human-verified. The folder-name check of reviewed exports is not applied: folder names are not
+definitive labels.
+
 Usage:
     python -m app.training.prepare_dataset --labels ../annotation/exports/<export> \
         [--manifest ../annotation/manifest.csv] [--out dataset/digital_twin_yolo] [--seed 42]
+    python -m app.training.prepare_dataset --pseudo ../annotation/pseudo_labels/full_v1 \
+        --out dataset/digital_twin_pseudo_v1
 """
 
 import argparse
@@ -138,6 +147,72 @@ def split_limitations(assignment: dict[str, list[int]], groups: dict[int, list[d
     return blocking, warnings
 
 
+PSEUDO_DATASET_MARKER = "PSEUDO_LABELS_NOT_GROUND_TRUTH.txt"
+
+
+def check_pseudo_run(run_dir: Path, manifest: dict[str, dict]) -> tuple[dict[str, Path], dict, list[str]]:
+    """Verify a pseudo-label run. Returns (key -> label file, pseudo manifest, errors)."""
+    from app.training.pseudo_label.outputs import LABEL_SOURCE, MANIFEST, MARKER
+    from app.training.review_store import label_sha256
+
+    errors: list[str] = []
+    mpath = run_dir / MANIFEST
+    if not (run_dir / MARKER).is_file() or not mpath.is_file():
+        return {}, {}, [f"{run_dir} is not a pseudo-label run ({MARKER} / {MANIFEST} missing)"]
+    pm = json.loads(mpath.read_text(encoding="utf-8"))
+    if pm.get("label_source") != LABEL_SOURCE or pm.get("ground_truth") is not False:
+        errors.append(f"{MANIFEST}: label_source must be '{LABEL_SOURCE}' and ground_truth false")
+    classes = run_dir / "classes.txt"
+    if classes.is_file():
+        names = [ln.strip() for ln in classes.read_text(encoding="utf-8").splitlines() if ln.strip()]
+        if not names_match_taxonomy(names):
+            errors.append(f"classes.txt {names} does not match the taxonomy")
+    trainable = {k for k, e in pm.get("images", {}).items() if e.get("trainable")}
+    paired: dict[str, Path] = {}
+    for key in sorted(trainable):
+        e = pm["images"][key]
+        label = run_dir / "labels" / f"{key}.txt"
+        if key not in manifest:
+            errors.append(f"{key}: not in the annotation manifest")
+        elif not label.is_file():
+            errors.append(f"{label.name}: listed as trainable but missing")
+        elif label_sha256(label.read_text(encoding="utf-8")) != e.get("label_sha256"):
+            errors.append(f"{label.name}: content differs from {MANIFEST} (modified after generation)")
+        else:
+            boxes, box_errors, _ = read_label_file(label)
+            if box_errors:
+                errors += [f"{label.name}: {x}" for x in box_errors]
+            elif not boxes:
+                errors.append(f"{label.name}: trainable but empty")
+            else:
+                paired[key] = label
+    labels_dir = run_dir / "labels"
+    extra = ({p.stem for p in labels_dir.glob("*.txt")} - trainable) if labels_dir.is_dir() else set()
+    if extra:
+        errors.append(f"{len(extra)} label files are not listed as trainable in {MANIFEST}")
+    if not paired and not errors:
+        errors.append("no trainable pseudo-labelled images")
+    return paired, pm, errors
+
+
+def prepare_pseudo(run_dir: Path, manifest_path: Path, dataset_root: Path, out: Path, seed: int = 42,
+                   ratios=DEFAULT_RATIOS, strict: bool = True) -> dict:
+    if out.exists():
+        raise FileExistsError(f"Refusing to overwrite existing output directory: {out}")
+    manifest = read_manifest(manifest_path)
+    paired, pm, errors = check_pseudo_run(run_dir, manifest)
+    if errors:
+        raise ValueError(f"Pseudo-label run failed verification with {len(errors)} errors. First: {errors[0]}")
+    provenance = {"label_source": "pseudo", "ground_truth": False, "pseudo_run": pm.get("run"),
+                  "pseudo_run_dir": str(run_dir), "pseudo_config_hash": pm.get("config_hash"),
+                  "pseudo_models": pm.get("models"), "disclaimer": pm.get("disclaimer"), "review_manifest": None}
+    missing = [r["original_path"] for k, r in manifest.items() if k not in paired]
+    summary = _materialize(paired, manifest, dataset_root, out, seed, ratios, strict, missing, [], provenance)
+    (out / PSEUDO_DATASET_MARKER).write_text((pm.get("disclaimer") or "Pseudo-labels: not ground truth.") + "\n",
+                                             encoding="utf-8")
+    return summary
+
+
 def prepare(labels_dir: Path, manifest_path: Path, dataset_root: Path, out: Path, seed: int = 42,
             ratios=DEFAULT_RATIOS, require_review: bool = True, strict: bool = True) -> dict:
     """`require_review=False` / `strict=False` exist for unit tests of the split mechanics on tiny synthetic
@@ -149,12 +224,20 @@ def prepare(labels_dir: Path, manifest_path: Path, dataset_root: Path, out: Path
     if not report.ok:
         raise ValueError(f"Annotation validation failed with {len(report.errors)} errors; "
                          f"run validate_annotations for details. First: {report.errors[0]}")
+    provenance = {"label_source": "reviewed" if report.review_manifest else "unverified",
+                  "ground_truth": bool(report.review_manifest), "labels_dir": str(labels_dir),
+                  "review_manifest": report.review_manifest, "validation_warnings": len(report.warnings)}
+    return _materialize(report.paired, manifest, dataset_root, out, seed, ratios, strict, report.missing_labels,
+                        report.verified_negatives, provenance)
 
+
+def _materialize(paired: dict[str, Path], manifest: dict[str, dict], dataset_root: Path, out: Path, seed: int,
+                 ratios, strict: bool, missing: list[str], negatives: list[str], provenance: dict) -> dict:
     groups: dict[int, list[dict]] = defaultdict(list)
-    for key in report.paired:
+    for key in paired:
         groups[manifest[key]["near_duplicate_group"]].append(manifest[key])
     assignment = split_groups(groups, ratios, seed)
-    boxes_of = {key: [b.cls for b in read_label_file(label)[0]] for key, label in report.paired.items()}
+    boxes_of = {key: [b.cls for b in read_label_file(label)[0]] for key, label in paired.items()}
     blocking, limitation_warnings = split_limitations(assignment, groups, boxes_of)
     if strict and blocking:
         raise ValueError("Reviewed dataset is not ready for a train/val/test split: " + "; ".join(blocking))
@@ -173,7 +256,7 @@ def prepare(labels_dir: Path, manifest_path: Path, dataset_root: Path, out: Path
                 src = dataset_root / row["original_path"]
                 dst_name = row["key"] + Path(row["file_name"]).suffix.lower()
                 shutil.copy2(src, out / "images" / split / dst_name)
-                label = report.paired[row["key"]]
+                label = paired[row["key"]]
                 shutil.copyfile(label, out / "labels" / split / f"{row['key']}.txt")
                 boxes, _, _ = read_label_file(label)
                 images_per[split][row["folder_class_id"]] += 1
@@ -182,8 +265,8 @@ def prepare(labels_dir: Path, manifest_path: Path, dataset_root: Path, out: Path
                              "folder_class": row["folder_class_name"], "near_duplicate_group": gid,
                              "label_source": str(label)})
 
-    if report.verified_negatives:  # keys == output file stems
-        (out / VERIFIED_NEGATIVES).write_text("\n".join(report.verified_negatives) + "\n", encoding="utf-8")
+    if negatives:  # keys == output file stems
+        (out / VERIFIED_NEGATIVES).write_text("\n".join(negatives) + "\n", encoding="utf-8")
     with (out / "split_manifest.csv").open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
         w.writeheader()
@@ -193,15 +276,13 @@ def prepare(labels_dir: Path, manifest_path: Path, dataset_root: Path, out: Path
     summary = {
         "seed": seed,
         "ratios": dict(zip(SPLITS, ratios)),
-        "labels_dir": str(labels_dir),
+        **provenance,
         "images": {s: sum(images_per[s].values()) for s in SPLITS},
         "groups": {s: len(assignment[s]) for s in SPLITS},
         "images_per_folder_class": {CLASS_NAMES[c]: {s: images_per[s][c] for s in SPLITS} for c in CLASS_NAMES},
         "instances_per_class": {CLASS_NAMES[c]: {s: instances_per[s][c] for s in SPLITS} for c in CLASS_NAMES},
-        "excluded_unlabelled_images": len(report.missing_labels),
-        "verified_negative_images": len(report.verified_negatives),
-        "validation_warnings": len(report.warnings),
-        "review_manifest": report.review_manifest,
+        "excluded_unlabelled_images": len(missing),
+        "verified_negative_images": len(negatives),
         "limitations": limitation_warnings,
     }
     summary["post_build_problems"] = verify_prepared(out)
@@ -225,7 +306,9 @@ def main() -> None:
     from app.core.config import BACKEND_DIR, PROJECT_DIR, get_settings
 
     parser = argparse.ArgumentParser(description="Create the YOLO train/val/test dataset from validated annotations.")
-    parser.add_argument("--labels", type=Path, required=True, help="Annotation export directory (YOLO .txt labels)")
+    src = parser.add_mutually_exclusive_group(required=True)
+    src.add_argument("--labels", type=Path, help="Human-reviewed annotation export directory (YOLO .txt labels)")
+    src.add_argument("--pseudo", type=Path, help="Pseudo-label run directory (annotation/pseudo_labels/<run>)")
     parser.add_argument("--manifest", type=Path, default=PROJECT_DIR / "annotation" / "manifest.csv")
     parser.add_argument("--dataset", type=Path, default=None, help="Original dataset root (read-only)")
     parser.add_argument("--out", type=Path, default=BACKEND_DIR / "dataset" / "digital_twin_yolo")
@@ -237,10 +320,16 @@ def main() -> None:
     if args.out.resolve().is_relative_to(dataset.resolve()):
         sys.exit("Output directory must not be inside the original dataset")
     try:
-        summary = prepare(args.labels, args.manifest, dataset, args.out, args.seed, tuple(args.split))
+        if args.pseudo:
+            summary = prepare_pseudo(args.pseudo, args.manifest, dataset, args.out, args.seed, tuple(args.split))
+        else:
+            summary = prepare(args.labels, args.manifest, dataset, args.out, args.seed, tuple(args.split))
     except (FileExistsError, ValueError) as exc:
         sys.exit(str(exc))
     print_summary(summary)
+    if summary.get("label_source") == "pseudo":
+        print("NOTE: labels are automatic pseudo-labels (not ground truth); metrics on this dataset measure "
+              "agreement with pseudo-labels, not accuracy.")
     print(f"Wrote {args.out / 'data.yaml'}")
     sys.exit(1 if summary["post_build_problems"] else 0)
 

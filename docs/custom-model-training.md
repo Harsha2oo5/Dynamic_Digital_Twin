@@ -187,7 +187,77 @@ Then restart the backend. The model is loaded once at startup, on CPU.
 
 `MODEL_PATH=<file>` remains available as an explicit override.
 
-## 7. GPU later (no architecture change)
+## 8. Training on automatic pseudo-labels (2026-11-08)
+
+No human-reviewed boxes exist yet, so the first 7-class model was trained on the automatic pseudo-labels from
+`annotation/pseudo_labels/full_v1` ([automated-annotation.md](automated-annotation.md)). **The labels are not
+ground truth, so every number below is agreement with pseudo-labels, not accuracy.**
+
+```powershell
+python -m app.training.prepare_dataset --pseudo ..\annotation\pseudo_labels\full_v1 --out dataset\digital_twin_pseudo_v1
+python -m app.training.train --data dataset\digital_twin_pseudo_v1\data.yaml --allow-pseudo --pilot --imgsz 416 --batch 8 --promote-versioned
+python -m app.training.train --data dataset\digital_twin_pseudo_v1\data.yaml --allow-pseudo --epochs 30 --imgsz 416 --batch 8 --promote-versioned
+python -m app.training.evaluate --model models\custom\digital_twin_v2.pt --data dataset\digital_twin_pseudo_v1\data.yaml --split test --imgsz 416
+```
+
+**Safeguards:**
+- `prepare_dataset --pseudo` verifies every label against the run's `pseudo_manifest.json` (sha256) and uses only
+  images the pipeline marked trainable.
+- The same split is near-duplicate-group-aware and stratified. It does not apply the folder-name check of reviewed
+  exports, because folder names are not definitive labels.
+- The dataset is stamped `label_source: pseudo` and carries a marker file.
+- `train` refuses it without `--allow-pseudo`, and re-checks every label hash before it starts.
+- `evaluate` prints "Agreement with pseudo-labels (not accuracy)".
+- `--promote-versioned` writes `models/custom/digital_twin_vN.pt` with a model card that records the label source
+  and limitations.
+
+**Dataset:** 441 of the 543 images (102 excluded by the pseudo-labelling pipeline). The split is 309 train, 88
+val and 44 test images, with 1,030 boxes in total. Battery is the smallest class: 20 / 10 / 8 boxes.
+
+| Run | Epochs | Time (CPU) | Val mAP50 | Val mAP50-95 | Model |
+|---|---|---|---|---|---|
+| pilot | 5 | 6.0 min | 0.365 | 0.244 | `digital_twin_v1.pt` |
+| full (early stop at 27, best epoch 19) | 27 | 28.6 min | 0.502 | 0.383 | `digital_twin_v2.pt` |
+
+Per-epoch time was about 1 min at 416 px with batch 8, far below the earlier 2 h+ projection. Training ran with
+the backend's venv (Ultralytics 8.4); the pilot ran in the system Python (Ultralytics 8.3).
+
+**Test split (44 images; agreement with pseudo-labels):** P 0.45, R 0.41, mAP50 **0.445**, mAP50-95 0.342.
+
+| Class | Test boxes | mAP50 | Note |
+|---|---|---|---|
+| router | 8 | 0.79 | |
+| equipment_cabinet | 17 | 0.77 | |
+| radio_unit | 6 | 0.72 | |
+| antenna | 17 | 0.43 | some predicted as cable |
+| power_supply_unit | 10 | 0.22 | confused with cabinet and radio unit |
+| battery | 8 | 0.12 | 5 of 8 predicted as power_supply_unit |
+| cable | 9 | 0.08 | thin, fragmented boxes; confused with cabinet |
+
+Router, battery, cable and radio unit have fewer than 10 test boxes, so their numbers are unreliable.
+
+**What this means:**
+- The model learns the pseudo-labels' notion of the large, distinctive classes.
+- Battery vs PSU and cable are weak. The pseudo-labels themselves are least certain there (see the uncertainty
+  reasons in the pseudo-label report).
+- Systematic pseudo-label errors are learned by the model and are invisible in these metrics.
+- A small human-reviewed test set (for example about 50 images in the review tool) is the only way to measure
+  real accuracy, and the most valuable next step.
+
+**CPU inference** (benchmark `python -m app.vision.benchmark`, 30 dataset images):
+
+| Model | 320 px | 416 px | 640 px |
+|---|---|---|---|
+| yolo11n.pt (COCO) | 46.5 ms · 21.5 FPS | 57.4 ms · 17.4 FPS | 97.9 ms · 10.2 FPS |
+| digital_twin_v2.pt | 44.3 ms · 22.6 FPS | 55.5 ms · 18.0 FPS | 98.8 ms · 10.1 FPS |
+
+- Tracking, lifecycle and identity add 0.3–1.5 ms per frame.
+- Process memory after loading a model is about 0.7 GB.
+
+**Use it:** Model Management → *Use this model* (runtime switch, no restart), or `MODEL_PATH=models/custom/digital_twin_v2.pt`
+in `backend/.env` to make it the startup default.
+
+## 9. GPU later (no architecture change)
 
 1. Create a separate environment with a CUDA build of PyTorch.
 2. Add `"cuda"` to `SUPPORTED_DEVICES` in `backend/app/core/device.py`.
