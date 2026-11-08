@@ -1,0 +1,1 @@
+Pseudo-labels are generated automatically by Grounding DINO + CLIP (+ optional folder prior and MobileSAM). They are NOT ground truth. Agreement between models and consistency with folder names are not accuracy, precision, recall or mAP. No human has verified these labels.

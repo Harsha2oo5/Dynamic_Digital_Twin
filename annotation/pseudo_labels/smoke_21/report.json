@@ -1,0 +1,273 @@
+{
+  "disclaimer": "Pseudo-labels are generated automatically by Grounding DINO + CLIP (+ optional folder prior and MobileSAM). They are NOT ground truth. Agreement between models and consistency with folder names are not accuracy, precision, recall or mAP. No human has verified these labels.",
+  "run": "smoke_21",
+  "created_at": "2026-11-07T20:08:00",
+  "config_hash": "4a7066dfd40c9e48",
+  "detection_source": "stored:full_543_gdino_clip",
+  "folder_prior_boost": 2.0,
+  "use_sam": false,
+  "elapsed_s": 134.1,
+  "python_peak_mb": 155.6,
+  "failures": 0,
+  "images": 21,
+  "training_images": 16,
+  "excluded_images": 5,
+  "exclusion_reasons": {
+    "uncovered uncertain": 4,
+    "no accepted box": 1
+  },
+  "boxes": 93,
+  "boxes_by_tier": {
+    "ACCEPTED": 36,
+    "UNCERTAIN": 12,
+    "REJECTED": 45
+  },
+  "training_instances": 25,
+  "sam_refined_boxes": 0,
+  "per_class": {
+    "antenna": {
+      "accepted": 4,
+      "uncertain": 0,
+      "rejected": 5,
+      "accepted_in_training_images": 4,
+      "training_images_with_class": 3,
+      "final_confidence_accepted": {
+        "0.4-0.5": 0,
+        "0.5-0.6": 0,
+        "0.6-0.7": 0,
+        "0.7-0.8": 1,
+        "0.8-0.9": 1,
+        "0.9-1.0": 2
+      },
+      "median_final_confidence_accepted": 0.8712,
+      "median_detector_confidence_accepted": 0.3942,
+      "uncertain_reasons": {},
+      "rejected_reasons": {
+        "part_of_larger_object": 3,
+        "low_detector_conf": 1,
+        "too_small": 1
+      }
+    },
+    "router": {
+      "accepted": 7,
+      "uncertain": 2,
+      "rejected": 7,
+      "accepted_in_training_images": 5,
+      "training_images_with_class": 5,
+      "final_confidence_accepted": {
+        "0.4-0.5": 0,
+        "0.5-0.6": 3,
+        "0.6-0.7": 0,
+        "0.7-0.8": 1,
+        "0.8-0.9": 0,
+        "0.9-1.0": 3
+      },
+      "median_final_confidence_accepted": 0.7779,
+      "median_detector_confidence_accepted": 0.4918,
+      "uncertain_reasons": {
+        "low_final_conf": 2
+      },
+      "rejected_reasons": {
+        "part_of_larger_object": 4,
+        "background": 1,
+        "low_detector_conf": 2
+      }
+    },
+    "cable": {
+      "accepted": 9,
+      "uncertain": 4,
+      "rejected": 5,
+      "accepted_in_training_images": 6,
+      "training_images_with_class": 5,
+      "final_confidence_accepted": {
+        "0.4-0.5": 0,
+        "0.5-0.6": 1,
+        "0.6-0.7": 1,
+        "0.7-0.8": 1,
+        "0.8-0.9": 0,
+        "0.9-1.0": 6
+      },
+      "median_final_confidence_accepted": 0.9238,
+      "median_detector_confidence_accepted": 0.2849,
+      "uncertain_reasons": {
+        "low_final_conf": 4
+      },
+      "rejected_reasons": {
+        "low_detector_conf": 1,
+        "background": 3,
+        "too_small": 1
+      }
+    },
+    "battery": {
+      "accepted": 3,
+      "uncertain": 2,
+      "rejected": 12,
+      "accepted_in_training_images": 0,
+      "training_images_with_class": 0,
+      "final_confidence_accepted": {
+        "0.4-0.5": 0,
+        "0.5-0.6": 1,
+        "0.6-0.7": 1,
+        "0.7-0.8": 1,
+        "0.8-0.9": 0,
+        "0.9-1.0": 0
+      },
+      "median_final_confidence_accepted": 0.6548,
+      "median_detector_confidence_accepted": 0.3555,
+      "uncertain_reasons": {
+        "low_final_conf": 2
+      },
+      "rejected_reasons": {
+        "part_of_larger_object": 7,
+        "background": 3,
+        "too_small": 1,
+        "low_detector_conf": 1
+      }
+    },
+    "power_supply_unit": {
+      "accepted": 5,
+      "uncertain": 4,
+      "rejected": 8,
+      "accepted_in_training_images": 4,
+      "training_images_with_class": 4,
+      "final_confidence_accepted": {
+        "0.4-0.5": 0,
+        "0.5-0.6": 2,
+        "0.6-0.7": 1,
+        "0.7-0.8": 1,
+        "0.8-0.9": 1,
+        "0.9-1.0": 0
+      },
+      "median_final_confidence_accepted": 0.6177,
+      "median_detector_confidence_accepted": 0.539,
+      "uncertain_reasons": {
+        "low_final_conf": 3,
+        "flip_unstable": 1
+      },
+      "rejected_reasons": {
+        "part_of_larger_object": 5,
+        "low_detector_conf": 3
+      }
+    },
+    "equipment_cabinet": {
+      "accepted": 8,
+      "uncertain": 0,
+      "rejected": 2,
+      "accepted_in_training_images": 6,
+      "training_images_with_class": 3,
+      "final_confidence_accepted": {
+        "0.4-0.5": 0,
+        "0.5-0.6": 2,
+        "0.6-0.7": 1,
+        "0.7-0.8": 1,
+        "0.8-0.9": 3,
+        "0.9-1.0": 1
+      },
+      "median_final_confidence_accepted": 0.7983,
+      "median_detector_confidence_accepted": 0.3537,
+      "uncertain_reasons": {},
+      "rejected_reasons": {
+        "too_small": 1,
+        "low_detector_conf": 1
+      }
+    },
+    "radio_unit": {
+      "accepted": 0,
+      "uncertain": 0,
+      "rejected": 6,
+      "accepted_in_training_images": 0,
+      "training_images_with_class": 0,
+      "final_confidence_accepted": {
+        "0.4-0.5": 0,
+        "0.5-0.6": 0,
+        "0.6-0.7": 0,
+        "0.7-0.8": 0,
+        "0.8-0.9": 0,
+        "0.9-1.0": 0
+      },
+      "median_final_confidence_accepted": null,
+      "median_detector_confidence_accepted": null,
+      "uncertain_reasons": {},
+      "rejected_reasons": {
+        "part_of_larger_object": 2,
+        "background": 3,
+        "low_detector_conf": 1
+      }
+    }
+  },
+  "consistency": {
+    "note": "Consistency between automatic signals; NOT accuracy.",
+    "accepted_where_clip_top1_is_final": 0.8889,
+    "accepted_where_detector_class_is_final": 0.4444,
+    "accepted_where_folder_prior_was_decisive": 0.0,
+    "flip_stable_share_of_non_rejected": 0.8958,
+    "alt_prompt_stable_share_of_non_rejected": 0.7292,
+    "alt_prompt_stable_share_of_accepted": 0.8333,
+    "folder_class_among_labels_of_training_images": {
+      "power_supply_unit": {
+        "training_images_with_folder_class": 1,
+        "images": 3
+      },
+      "battery": {
+        "training_images_with_folder_class": 0,
+        "images": 3
+      },
+      "cable": {
+        "training_images_with_folder_class": 3,
+        "images": 3
+      },
+      "router": {
+        "training_images_with_folder_class": 2,
+        "images": 3
+      },
+      "equipment_cabinet": {
+        "training_images_with_folder_class": 2,
+        "images": 3
+      },
+      "antenna": {
+        "training_images_with_folder_class": 2,
+        "images": 3
+      },
+      "radio_unit": {
+        "training_images_with_folder_class": 0,
+        "images": 3
+      }
+    },
+    "folder_to_accepted_class_images": {
+      "power_supply_unit": {
+        "router": 2,
+        "power_supply_unit": 1
+      },
+      "battery": {
+        "router": 2,
+        "battery": 2,
+        "cable": 1,
+        "power_supply_unit": 1,
+        "equipment_cabinet": 1
+      },
+      "cable": {
+        "cable": 3,
+        "antenna": 1
+      },
+      "router": {
+        "power_supply_unit": 1,
+        "router": 2
+      },
+      "equipment_cabinet": {
+        "equipment_cabinet": 3,
+        "router": 1,
+        "battery": 1,
+        "power_supply_unit": 1
+      },
+      "antenna": {
+        "antenna": 2,
+        "cable": 3
+      },
+      "radio_unit": {
+        "power_supply_unit": 1,
+        "equipment_cabinet": 1
+      }
+    }
+  },
+  "mean_seconds_per_image": 6.325
+}

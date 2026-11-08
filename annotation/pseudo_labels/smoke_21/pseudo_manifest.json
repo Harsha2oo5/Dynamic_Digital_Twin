@@ -1,0 +1,186 @@
+{
+  "label_source": "pseudo",
+  "ground_truth": false,
+  "disclaimer": "Pseudo-labels are generated automatically by Grounding DINO + CLIP (+ optional folder prior and MobileSAM). They are NOT ground truth. Agreement between models and consistency with folder names are not accuracy, precision, recall or mAP. No human has verified these labels.",
+  "run": "smoke_21",
+  "created_at": "2026-11-07T20:08:00",
+  "config_hash": "4a7066dfd40c9e48",
+  "detection_source": "stored:full_543_gdino_clip",
+  "models": {
+    "detector": "IDEA-Research/grounding-dino-tiny",
+    "classifier": "openai/clip-vit-base-patch32",
+    "box_refiner": null
+  },
+  "folder_prior_boost": 2.0,
+  "images": {
+    "img_6429": {
+      "file": "IMG_6429.PNG",
+      "original_path": "Archive (4)/IMG_6429.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "73e148bd4eb265280d9f3eb72ec09d4034a52523b95f8c68b9cd67713674264e"
+    },
+    "img_6292": {
+      "file": "IMG_6292.PNG",
+      "original_path": "Archive (5)/IMG_6292.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "fcc5a689ccdff8692b67d2146705c6ad0004d8992fce262196c741cf37b3ebee"
+    },
+    "img_6523": {
+      "file": "IMG_6523.PNG",
+      "original_path": "Archive (6)/IMG_6523.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "d705af8f86906898b30eab617f14e26a1b25efd028d998858bb371e00f56b7bc"
+    },
+    "img_6354": {
+      "file": "IMG_6354.PNG",
+      "original_path": "Archive (7)/IMG_6354.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "abd9ab9ba1f45a730ac7572ce1c4337cac91a4e873578448d34398fa7f4e1420"
+    },
+    "screenshot_2026_10_06_233430": {
+      "file": "Screenshot 2026-10-06 233430.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-06 233430.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 5 (5% of the photo: final confidence 0.382 < 0.45)",
+      "accepted_boxes": 3,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_112112": {
+      "file": "Screenshot 2026-10-07 112112.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 112112.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "c42c9487b4f5111a448dc9abf3d2efc76b7d18c95bdbf241f881df320a571b35"
+    },
+    "screenshot_2026_10_07_130201": {
+      "file": "Screenshot 2026-10-07 130201.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 130201.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "6079ec938b9c22f37d40d981db709377a1669aee9bb5d407fc2b5d79a285ee15"
+    },
+    "img_6430": {
+      "file": "IMG_6430.PNG",
+      "original_path": "Archive (4)/IMG_6430.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d613e08511a1e26365d7f7aeb7c1ac641bebdb5d41d2a4049462609326b235f4"
+    },
+    "img_6293": {
+      "file": "IMG_6293.PNG",
+      "original_path": "Archive (5)/IMG_6293.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (72% of the photo: final confidence 0.405 < 0.45)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "img_6524": {
+      "file": "IMG_6524.PNG",
+      "original_path": "Archive (6)/IMG_6524.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "6b3e7b4b3b20811a068ad7eafab197bff94d68647a0175d795b74d29c0724048"
+    },
+    "img_6355": {
+      "file": "IMG_6355.PNG",
+      "original_path": "Archive (7)/IMG_6355.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "40b89f2d61814de5982cade3f8a76837b33380be7f1321a4e931db123e60ebf1"
+    },
+    "screenshot_2026_10_07_160806": {
+      "file": "Screenshot 2026-10-07 160806.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 160806.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "5a437996e045a731ad1f0aaf509387a7f593c3e42a6cb6d7687f1609a79919d7"
+    },
+    "screenshot_2026_10_07_112152": {
+      "file": "Screenshot 2026-10-07 112152.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 112152.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (68% of the photo: final confidence 0.437 < 0.45)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_130332": {
+      "file": "Screenshot 2026-10-07 130332.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 130332.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "60ca25bf53f3bd0f201ca1a9e10da7215d9e2b210b1df1a95a7e1b2e45a1a454"
+    },
+    "img_6431": {
+      "file": "IMG_6431.PNG",
+      "original_path": "Archive (4)/IMG_6431.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "998432fa2856c6ae199bcef2029546103041e7c9266c6323f6ed23aa12e63f4a"
+    },
+    "img_6294": {
+      "file": "IMG_6294.PNG",
+      "original_path": "Archive (5)/IMG_6294.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 7 (15% of the photo: final confidence 0.378 < 0.45)",
+      "accepted_boxes": 5,
+      "label_sha256": null
+    },
+    "img_6525": {
+      "file": "IMG_6525.PNG",
+      "original_path": "Archive (6)/IMG_6525.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "267ec32333c3ecac52d63fe97f035fa5299a671d84515e6dc6e49b1de98ae924"
+    },
+    "img_6356": {
+      "file": "IMG_6356.PNG",
+      "original_path": "Archive (7)/IMG_6356.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "c8d507ec0a308c4dd2082d11d0a720093523261131814bcdaccaab7d830a2d9f"
+    },
+    "screenshot_2026_10_07_160852": {
+      "file": "Screenshot 2026-10-07 160852.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 160852.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "99eedb064e4961ae485e35be69adb0be9d7aca7654ce5a83d3f7721ad40ca23b"
+    },
+    "screenshot_2026_10_07_112215": {
+      "file": "Screenshot 2026-10-07 112215.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 112215.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "b42c33cfa6fe9e1981a0205919ba4c5c2b7b9009be6df7c4d9cb3b0ca8575d6d"
+    },
+    "screenshot_2026_10_07_130405": {
+      "file": "Screenshot 2026-10-07 130405.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 130405.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    }
+  },
+  "failures": []
+}

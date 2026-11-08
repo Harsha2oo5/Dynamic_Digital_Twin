@@ -1,0 +1,1478 @@
+{
+  "disclaimer": "Weak-label diagnostics: folder names are image-level labels, not object-level ground truth. An image can show several components and a box can be a part, so these rates are NOT accuracy, precision, recall or mAP, and matching a folder does not prove a prediction is correct.",
+  "run": "full_543_gdino_clip",
+  "detections": 2432,
+  "stored": {
+    "metrics": {
+      "per_class": {
+        "antenna": {
+          "images": 100,
+          "primary_top1": 0.57,
+          "primary_top2": 0.83,
+          "primary_top3": 0.86,
+          "any_top1": 0.9,
+          "any_top3": 0.99,
+          "gdino_primary": 0.17,
+          "gdino_any": 0.74,
+          "box_level_top1": 0.4276,
+          "boxes": 449
+        },
+        "router": {
+          "images": 74,
+          "primary_top1": 0.8514,
+          "primary_top2": 0.9054,
+          "primary_top3": 0.9459,
+          "any_top1": 0.9324,
+          "any_top3": 0.973,
+          "gdino_primary": 0.1351,
+          "gdino_any": 0.4595,
+          "box_level_top1": 0.442,
+          "boxes": 276
+        },
+        "cable": {
+          "images": 44,
+          "primary_top1": 0.2727,
+          "primary_top2": 0.3636,
+          "primary_top3": 0.4091,
+          "any_top1": 0.5227,
+          "any_top3": 0.7273,
+          "gdino_primary": 0.0227,
+          "gdino_any": 0.4545,
+          "box_level_top1": 0.233,
+          "boxes": 176
+        },
+        "battery": {
+          "images": 62,
+          "primary_top1": 0.1935,
+          "primary_top2": 0.3226,
+          "primary_top3": 0.5,
+          "any_top1": 0.5323,
+          "any_top3": 0.9677,
+          "gdino_primary": 0.0,
+          "gdino_any": 0.629,
+          "box_level_top1": 0.1421,
+          "boxes": 366
+        },
+        "power_supply_unit": {
+          "images": 93,
+          "primary_top1": 0.2258,
+          "primary_top2": 0.6774,
+          "primary_top3": 0.871,
+          "any_top1": 0.7419,
+          "any_top3": 1.0,
+          "gdino_primary": 0.0323,
+          "gdino_any": 0.4624,
+          "box_level_top1": 0.2581,
+          "boxes": 465
+        },
+        "equipment_cabinet": {
+          "images": 70,
+          "primary_top1": 0.5429,
+          "primary_top2": 0.7714,
+          "primary_top3": 0.8143,
+          "any_top1": 0.8286,
+          "any_top3": 0.9857,
+          "gdino_primary": 0.7,
+          "gdino_any": 0.9714,
+          "box_level_top1": 0.2893,
+          "boxes": 394
+        },
+        "radio_unit": {
+          "images": 100,
+          "primary_top1": 0.18,
+          "primary_top2": 0.47,
+          "primary_top3": 0.69,
+          "any_top1": 0.24,
+          "any_top3": 0.85,
+          "gdino_primary": 0.05,
+          "gdino_any": 0.3,
+          "box_level_top1": 0.0948,
+          "boxes": 306
+        }
+      },
+      "overall": {
+        "primary_top1_micro": 0.407,
+        "primary_top1_macro": 0.4052,
+        "primary_top2_micro": 0.6446,
+        "primary_top2_macro": 0.6201,
+        "primary_top3_micro": 0.7587,
+        "primary_top3_macro": 0.7272,
+        "any_top1_micro": 0.674,
+        "any_top1_macro": 0.6711,
+        "any_top3_micro": 0.9392,
+        "any_top3_macro": 0.9277,
+        "gdino_primary_micro": 0.1565,
+        "gdino_primary_macro": 0.1586,
+        "gdino_any_micro": 0.5672,
+        "gdino_any_macro": 0.5738,
+        "images": 543
+      }
+    },
+    "confusion": {
+      "clip_primary": {
+        "antenna": {
+          "cable": 16,
+          "router": 9,
+          "antenna": 57,
+          "battery": 3,
+          "power_supply_unit": 6,
+          "radio_unit": 5,
+          "equipment_cabinet": 4
+        },
+        "router": {
+          "router": 63,
+          "equipment_cabinet": 3,
+          "battery": 1,
+          "power_supply_unit": 6,
+          "radio_unit": 1
+        },
+        "cable": {
+          "power_supply_unit": 3,
+          "cable": 12,
+          "antenna": 13,
+          "radio_unit": 4,
+          "router": 12
+        },
+        "battery": {
+          "router": 15,
+          "power_supply_unit": 16,
+          "radio_unit": 7,
+          "equipment_cabinet": 11,
+          "battery": 12,
+          "antenna": 1
+        },
+        "power_supply_unit": {
+          "router": 26,
+          "power_supply_unit": 21,
+          "equipment_cabinet": 28,
+          "radio_unit": 12,
+          "antenna": 2,
+          "battery": 4
+        },
+        "equipment_cabinet": {
+          "router": 17,
+          "equipment_cabinet": 38,
+          "power_supply_unit": 10,
+          "antenna": 1,
+          "battery": 3,
+          "cable": 1
+        },
+        "radio_unit": {
+          "power_supply_unit": 51,
+          "equipment_cabinet": 5,
+          "router": 13,
+          "radio_unit": 18,
+          "battery": 5,
+          "antenna": 7,
+          "cable": 1
+        }
+      },
+      "gdino_primary": {
+        "antenna": {
+          "antenna": 17,
+          "equipment_cabinet": 45,
+          "cable": 9,
+          "radio_unit": 3,
+          "router": 21,
+          "battery": 2,
+          "power_supply_unit": 3
+        },
+        "router": {
+          "equipment_cabinet": 53,
+          "router": 10,
+          "radio_unit": 8,
+          "power_supply_unit": 3
+        },
+        "cable": {
+          "equipment_cabinet": 29,
+          "antenna": 5,
+          "battery": 1,
+          "radio_unit": 2,
+          "router": 6,
+          "cable": 1
+        },
+        "battery": {
+          "equipment_cabinet": 50,
+          "router": 10,
+          "power_supply_unit": 1,
+          "antenna": 1
+        },
+        "power_supply_unit": {
+          "equipment_cabinet": 74,
+          "radio_unit": 4,
+          "router": 11,
+          "power_supply_unit": 3,
+          "antenna": 1
+        },
+        "equipment_cabinet": {
+          "router": 11,
+          "equipment_cabinet": 49,
+          "battery": 5,
+          "power_supply_unit": 3,
+          "antenna": 1,
+          "radio_unit": 1
+        },
+        "radio_unit": {
+          "equipment_cabinet": 85,
+          "antenna": 2,
+          "radio_unit": 5,
+          "router": 4,
+          "power_supply_unit": 2,
+          "cable": 1,
+          "battery": 1
+        }
+      }
+    },
+    "distributions": {
+      "antenna": {
+        "clip_top1_similarity": {
+          "n": 449,
+          "min": 0.2041,
+          "p25": 0.2513,
+          "median": 0.2718,
+          "p75": 0.2899,
+          "max": 0.3567,
+          "mean": 0.2703
+        },
+        "clip_margin_top1_top2": {
+          "n": 449,
+          "min": 0.0,
+          "p25": 0.0042,
+          "median": 0.0103,
+          "p75": 0.0219,
+          "max": 0.0733,
+          "mean": 0.0145
+        },
+        "gdino_confidence": {
+          "n": 449,
+          "min": 0.2504,
+          "p25": 0.2899,
+          "median": 0.3299,
+          "p75": 0.3862,
+          "max": 0.5711,
+          "mean": 0.3427
+        },
+        "near_tie_share_margin_lt_0.005": 0.3007
+      },
+      "router": {
+        "clip_top1_similarity": {
+          "n": 276,
+          "min": 0.2149,
+          "p25": 0.2697,
+          "median": 0.2918,
+          "p75": 0.3053,
+          "max": 0.3423,
+          "mean": 0.2862
+        },
+        "clip_margin_top1_top2": {
+          "n": 276,
+          "min": 0.0,
+          "p25": 0.0037,
+          "median": 0.0099,
+          "p75": 0.0288,
+          "max": 0.0616,
+          "mean": 0.0156
+        },
+        "gdino_confidence": {
+          "n": 276,
+          "min": 0.2501,
+          "p25": 0.2761,
+          "median": 0.33,
+          "p75": 0.411,
+          "max": 0.5849,
+          "mean": 0.3534
+        },
+        "near_tie_share_margin_lt_0.005": 0.3152
+      },
+      "cable": {
+        "clip_top1_similarity": {
+          "n": 176,
+          "min": 0.1955,
+          "p25": 0.2672,
+          "median": 0.2855,
+          "p75": 0.3015,
+          "max": 0.3487,
+          "mean": 0.2815
+        },
+        "clip_margin_top1_top2": {
+          "n": 176,
+          "min": 0.0,
+          "p25": 0.0032,
+          "median": 0.0091,
+          "p75": 0.0182,
+          "max": 0.0668,
+          "mean": 0.0123
+        },
+        "gdino_confidence": {
+          "n": 176,
+          "min": 0.2509,
+          "p25": 0.2723,
+          "median": 0.3051,
+          "p75": 0.3623,
+          "max": 0.5888,
+          "mean": 0.3298
+        },
+        "near_tie_share_margin_lt_0.005": 0.3295
+      },
+      "battery": {
+        "clip_top1_similarity": {
+          "n": 366,
+          "min": 0.1963,
+          "p25": 0.2615,
+          "median": 0.2829,
+          "p75": 0.3023,
+          "max": 0.3387,
+          "mean": 0.2809
+        },
+        "clip_margin_top1_top2": {
+          "n": 366,
+          "min": 0.0,
+          "p25": 0.0027,
+          "median": 0.0055,
+          "p75": 0.0103,
+          "max": 0.0492,
+          "mean": 0.0077
+        },
+        "gdino_confidence": {
+          "n": 366,
+          "min": 0.2506,
+          "p25": 0.2747,
+          "median": 0.315,
+          "p75": 0.3803,
+          "max": 0.5819,
+          "mean": 0.3394
+        },
+        "near_tie_share_margin_lt_0.005": 0.4617
+      },
+      "power_supply_unit": {
+        "clip_top1_similarity": {
+          "n": 465,
+          "min": 0.2078,
+          "p25": 0.2608,
+          "median": 0.2814,
+          "p75": 0.3031,
+          "max": 0.3413,
+          "mean": 0.2806
+        },
+        "clip_margin_top1_top2": {
+          "n": 465,
+          "min": 0.0,
+          "p25": 0.003,
+          "median": 0.0063,
+          "p75": 0.0128,
+          "max": 0.0603,
+          "mean": 0.009
+        },
+        "gdino_confidence": {
+          "n": 465,
+          "min": 0.2501,
+          "p25": 0.2778,
+          "median": 0.3134,
+          "p75": 0.3796,
+          "max": 0.5904,
+          "mean": 0.3433
+        },
+        "near_tie_share_margin_lt_0.005": 0.4194
+      },
+      "equipment_cabinet": {
+        "clip_top1_similarity": {
+          "n": 394,
+          "min": 0.2047,
+          "p25": 0.264,
+          "median": 0.2894,
+          "p75": 0.3079,
+          "max": 0.3574,
+          "mean": 0.2857
+        },
+        "clip_margin_top1_top2": {
+          "n": 394,
+          "min": 0.0,
+          "p25": 0.0029,
+          "median": 0.0067,
+          "p75": 0.0137,
+          "max": 0.0504,
+          "mean": 0.0098
+        },
+        "gdino_confidence": {
+          "n": 394,
+          "min": 0.2501,
+          "p25": 0.2732,
+          "median": 0.3075,
+          "p75": 0.3684,
+          "max": 0.6176,
+          "mean": 0.3339
+        },
+        "near_tie_share_margin_lt_0.005": 0.4036
+      },
+      "radio_unit": {
+        "clip_top1_similarity": {
+          "n": 306,
+          "min": 0.1948,
+          "p25": 0.259,
+          "median": 0.2818,
+          "p75": 0.3004,
+          "max": 0.3385,
+          "mean": 0.2782
+        },
+        "clip_margin_top1_top2": {
+          "n": 306,
+          "min": 0.0,
+          "p25": 0.0023,
+          "median": 0.0055,
+          "p75": 0.0111,
+          "max": 0.0491,
+          "mean": 0.0078
+        },
+        "gdino_confidence": {
+          "n": 306,
+          "min": 0.2505,
+          "p25": 0.2771,
+          "median": 0.3223,
+          "p75": 0.4177,
+          "max": 0.6063,
+          "mean": 0.3534
+        },
+        "near_tie_share_margin_lt_0.005": 0.4673
+      }
+    },
+    "size": {
+      "by_size": {
+        "tiny <5%": {
+          "boxes": 1078,
+          "top1_is_folder": 0.1475,
+          "clip_unknown": 0.1549
+        },
+        "small 5-20%": {
+          "boxes": 491,
+          "top1_is_folder": 0.2749,
+          "clip_unknown": 0.0305
+        },
+        "medium 20-60%": {
+          "boxes": 395,
+          "top1_is_folder": 0.4101,
+          "clip_unknown": 0.0127
+        },
+        "large >60%": {
+          "boxes": 468,
+          "top1_is_folder": 0.4573,
+          "clip_unknown": 0.0021
+        }
+      },
+      "primary_box_size": {
+        "medium 20-60%": 78,
+        "large >60%": 358,
+        "tiny <5%": 52,
+        "small 5-20%": 55
+      }
+    }
+  },
+  "clip_seconds": 919.7,
+  "sanity_top1_reproduced": 0.9901,
+  "prompts": {
+    "name_only": {
+      "aggregation": "mean",
+      "metrics": {
+        "per_class": {
+          "antenna": {
+            "images": 100,
+            "primary_top1": 0.29,
+            "primary_top2": 0.68,
+            "primary_top3": 0.84,
+            "any_top1": 0.65,
+            "any_top3": 0.99,
+            "gdino_primary": 0.17,
+            "gdino_any": 0.74,
+            "box_level_top1": 0.2561,
+            "boxes": 449
+          },
+          "router": {
+            "images": 74,
+            "primary_top1": 0.7838,
+            "primary_top2": 0.9054,
+            "primary_top3": 0.973,
+            "any_top1": 0.9054,
+            "any_top3": 1.0,
+            "gdino_primary": 0.1351,
+            "gdino_any": 0.4595,
+            "box_level_top1": 0.5362,
+            "boxes": 276
+          },
+          "cable": {
+            "images": 44,
+            "primary_top1": 0.2273,
+            "primary_top2": 0.2955,
+            "primary_top3": 0.4545,
+            "any_top1": 0.5455,
+            "any_top3": 0.7273,
+            "gdino_primary": 0.0227,
+            "gdino_any": 0.4545,
+            "box_level_top1": 0.2159,
+            "boxes": 176
+          },
+          "battery": {
+            "images": 62,
+            "primary_top1": 0.0645,
+            "primary_top2": 0.2258,
+            "primary_top3": 0.4516,
+            "any_top1": 0.4355,
+            "any_top3": 0.9355,
+            "gdino_primary": 0.0,
+            "gdino_any": 0.629,
+            "box_level_top1": 0.0984,
+            "boxes": 366
+          },
+          "power_supply_unit": {
+            "images": 93,
+            "primary_top1": 0.7204,
+            "primary_top2": 0.9677,
+            "primary_top3": 0.9785,
+            "any_top1": 0.9032,
+            "any_top3": 1.0,
+            "gdino_primary": 0.0323,
+            "gdino_any": 0.4624,
+            "box_level_top1": 0.4688,
+            "boxes": 465
+          },
+          "equipment_cabinet": {
+            "images": 70,
+            "primary_top1": 0.3143,
+            "primary_top2": 0.5857,
+            "primary_top3": 0.8,
+            "any_top1": 0.5286,
+            "any_top3": 1.0,
+            "gdino_primary": 0.7,
+            "gdino_any": 0.9714,
+            "box_level_top1": 0.1701,
+            "boxes": 394
+          },
+          "radio_unit": {
+            "images": 100,
+            "primary_top1": 0.07,
+            "primary_top2": 0.39,
+            "primary_top3": 0.73,
+            "any_top1": 0.11,
+            "any_top3": 0.84,
+            "gdino_primary": 0.05,
+            "gdino_any": 0.3,
+            "box_level_top1": 0.0392,
+            "boxes": 306
+          }
+        },
+        "overall": {
+          "primary_top1_micro": 0.3628,
+          "primary_top1_macro": 0.3529,
+          "primary_top2_micro": 0.6114,
+          "primary_top2_macro": 0.5786,
+          "primary_top3_micro": 0.7808,
+          "primary_top3_macro": 0.7468,
+          "any_top1_micro": 0.5801,
+          "any_top1_macro": 0.5826,
+          "any_top3_micro": 0.9392,
+          "any_top3_macro": 0.9275,
+          "gdino_primary_micro": 0.1565,
+          "gdino_primary_macro": 0.1586,
+          "gdino_any_micro": 0.5672,
+          "gdino_any_macro": 0.5738,
+          "images": 543
+        }
+      },
+      "split_half": [
+        0.3407,
+        0.365
+      ],
+      "decided": {
+        "unknown": 0.0954,
+        "uncertain": 0.2664,
+        "decided": 0.6382,
+        "median_margin": 0.009
+      },
+      "top1_changed_vs_original": 0.4659
+    },
+    "short_ensemble": {
+      "aggregation": "mean",
+      "metrics": {
+        "per_class": {
+          "antenna": {
+            "images": 100,
+            "primary_top1": 0.51,
+            "primary_top2": 0.81,
+            "primary_top3": 0.9,
+            "any_top1": 0.81,
+            "any_top3": 0.99,
+            "gdino_primary": 0.17,
+            "gdino_any": 0.74,
+            "box_level_top1": 0.3653,
+            "boxes": 449
+          },
+          "router": {
+            "images": 74,
+            "primary_top1": 0.7703,
+            "primary_top2": 0.8649,
+            "primary_top3": 0.973,
+            "any_top1": 0.8649,
+            "any_top3": 0.9865,
+            "gdino_primary": 0.1351,
+            "gdino_any": 0.4595,
+            "box_level_top1": 0.4638,
+            "boxes": 276
+          },
+          "cable": {
+            "images": 44,
+            "primary_top1": 0.2727,
+            "primary_top2": 0.4091,
+            "primary_top3": 0.5,
+            "any_top1": 0.6136,
+            "any_top3": 0.8409,
+            "gdino_primary": 0.0227,
+            "gdino_any": 0.4545,
+            "box_level_top1": 0.233,
+            "boxes": 176
+          },
+          "battery": {
+            "images": 62,
+            "primary_top1": 0.2097,
+            "primary_top2": 0.3871,
+            "primary_top3": 0.5484,
+            "any_top1": 0.629,
+            "any_top3": 0.9516,
+            "gdino_primary": 0.0,
+            "gdino_any": 0.629,
+            "box_level_top1": 0.1503,
+            "boxes": 366
+          },
+          "power_supply_unit": {
+            "images": 93,
+            "primary_top1": 0.3333,
+            "primary_top2": 0.7204,
+            "primary_top3": 0.8925,
+            "any_top1": 0.7419,
+            "any_top3": 0.9892,
+            "gdino_primary": 0.0323,
+            "gdino_any": 0.4624,
+            "box_level_top1": 0.3097,
+            "boxes": 465
+          },
+          "equipment_cabinet": {
+            "images": 70,
+            "primary_top1": 0.6143,
+            "primary_top2": 0.7714,
+            "primary_top3": 0.8,
+            "any_top1": 0.8286,
+            "any_top3": 0.9857,
+            "gdino_primary": 0.7,
+            "gdino_any": 0.9714,
+            "box_level_top1": 0.3249,
+            "boxes": 394
+          },
+          "radio_unit": {
+            "images": 100,
+            "primary_top1": 0.03,
+            "primary_top2": 0.42,
+            "primary_top3": 0.73,
+            "any_top1": 0.19,
+            "any_top3": 0.85,
+            "gdino_primary": 0.05,
+            "gdino_any": 0.3,
+            "box_level_top1": 0.085,
+            "boxes": 306
+          }
+        },
+        "overall": {
+          "primary_top1_micro": 0.3867,
+          "primary_top1_macro": 0.3915,
+          "primary_top2_micro": 0.6446,
+          "primary_top2_macro": 0.6261,
+          "primary_top3_micro": 0.7919,
+          "primary_top3_macro": 0.7634,
+          "any_top1_micro": 0.6575,
+          "any_top1_macro": 0.6683,
+          "any_top3_micro": 0.9466,
+          "any_top3_macro": 0.942,
+          "gdino_primary_micro": 0.1565,
+          "gdino_primary_macro": 0.1586,
+          "gdino_any_micro": 0.5672,
+          "gdino_any_macro": 0.5738,
+          "images": 543
+        }
+      },
+      "split_half": [
+        0.3783,
+        0.4046
+      ],
+      "decided": {
+        "unknown": 0.0625,
+        "uncertain": 0.3002,
+        "decided": 0.6373,
+        "median_margin": 0.0085
+      },
+      "top1_changed_vs_original": 0.3265
+    },
+    "original_ensemble": {
+      "aggregation": "mean",
+      "metrics": {
+        "per_class": {
+          "antenna": {
+            "images": 100,
+            "primary_top1": 0.57,
+            "primary_top2": 0.82,
+            "primary_top3": 0.86,
+            "any_top1": 0.9,
+            "any_top3": 0.99,
+            "gdino_primary": 0.17,
+            "gdino_any": 0.74,
+            "box_level_top1": 0.4276,
+            "boxes": 449
+          },
+          "router": {
+            "images": 74,
+            "primary_top1": 0.8514,
+            "primary_top2": 0.9054,
+            "primary_top3": 0.9459,
+            "any_top1": 0.9324,
+            "any_top3": 0.973,
+            "gdino_primary": 0.1351,
+            "gdino_any": 0.4595,
+            "box_level_top1": 0.4493,
+            "boxes": 276
+          },
+          "cable": {
+            "images": 44,
+            "primary_top1": 0.2727,
+            "primary_top2": 0.3636,
+            "primary_top3": 0.4091,
+            "any_top1": 0.5227,
+            "any_top3": 0.7273,
+            "gdino_primary": 0.0227,
+            "gdino_any": 0.4545,
+            "box_level_top1": 0.233,
+            "boxes": 176
+          },
+          "battery": {
+            "images": 62,
+            "primary_top1": 0.1935,
+            "primary_top2": 0.3065,
+            "primary_top3": 0.5,
+            "any_top1": 0.5323,
+            "any_top3": 0.9677,
+            "gdino_primary": 0.0,
+            "gdino_any": 0.629,
+            "box_level_top1": 0.1393,
+            "boxes": 366
+          },
+          "power_supply_unit": {
+            "images": 93,
+            "primary_top1": 0.2258,
+            "primary_top2": 0.6882,
+            "primary_top3": 0.871,
+            "any_top1": 0.7204,
+            "any_top3": 1.0,
+            "gdino_primary": 0.0323,
+            "gdino_any": 0.4624,
+            "box_level_top1": 0.2538,
+            "boxes": 465
+          },
+          "equipment_cabinet": {
+            "images": 70,
+            "primary_top1": 0.5571,
+            "primary_top2": 0.7714,
+            "primary_top3": 0.8143,
+            "any_top1": 0.8286,
+            "any_top3": 0.9857,
+            "gdino_primary": 0.7,
+            "gdino_any": 0.9714,
+            "box_level_top1": 0.2944,
+            "boxes": 394
+          },
+          "radio_unit": {
+            "images": 100,
+            "primary_top1": 0.17,
+            "primary_top2": 0.46,
+            "primary_top3": 0.69,
+            "any_top1": 0.23,
+            "any_top3": 0.84,
+            "gdino_primary": 0.05,
+            "gdino_any": 0.3,
+            "box_level_top1": 0.0948,
+            "boxes": 306
+          }
+        },
+        "overall": {
+          "primary_top1_micro": 0.407,
+          "primary_top1_macro": 0.4058,
+          "primary_top2_micro": 0.6409,
+          "primary_top2_macro": 0.6164,
+          "primary_top3_micro": 0.7587,
+          "primary_top3_macro": 0.7272,
+          "any_top1_micro": 0.6685,
+          "any_top1_macro": 0.6666,
+          "any_top3_micro": 0.9374,
+          "any_top3_macro": 0.9262,
+          "gdino_primary_micro": 0.1565,
+          "gdino_primary_macro": 0.1586,
+          "gdino_any_micro": 0.5672,
+          "gdino_any_macro": 0.5738,
+          "images": 543
+        }
+      },
+      "split_half": [
+        0.3832,
+        0.4285
+      ],
+      "decided": {
+        "unknown": 0.0773,
+        "uncertain": 0.3351,
+        "decided": 0.5876,
+        "median_margin": 0.0068
+      },
+      "top1_changed_vs_original": 0.0
+    },
+    "original_max": {
+      "aggregation": "max",
+      "metrics": {
+        "per_class": {
+          "antenna": {
+            "images": 100,
+            "primary_top1": 0.5,
+            "primary_top2": 0.79,
+            "primary_top3": 0.86,
+            "any_top1": 0.85,
+            "any_top3": 0.99,
+            "gdino_primary": 0.17,
+            "gdino_any": 0.74,
+            "box_level_top1": 0.3942,
+            "boxes": 449
+          },
+          "router": {
+            "images": 74,
+            "primary_top1": 0.8108,
+            "primary_top2": 0.8784,
+            "primary_top3": 0.9189,
+            "any_top1": 0.8649,
+            "any_top3": 0.973,
+            "gdino_primary": 0.1351,
+            "gdino_any": 0.4595,
+            "box_level_top1": 0.4275,
+            "boxes": 276
+          },
+          "cable": {
+            "images": 44,
+            "primary_top1": 0.2727,
+            "primary_top2": 0.3864,
+            "primary_top3": 0.4318,
+            "any_top1": 0.5909,
+            "any_top3": 0.7955,
+            "gdino_primary": 0.0227,
+            "gdino_any": 0.4545,
+            "box_level_top1": 0.25,
+            "boxes": 176
+          },
+          "battery": {
+            "images": 62,
+            "primary_top1": 0.2258,
+            "primary_top2": 0.4194,
+            "primary_top3": 0.5645,
+            "any_top1": 0.7903,
+            "any_top3": 0.9677,
+            "gdino_primary": 0.0,
+            "gdino_any": 0.629,
+            "box_level_top1": 0.2377,
+            "boxes": 366
+          },
+          "power_supply_unit": {
+            "images": 93,
+            "primary_top1": 0.4194,
+            "primary_top2": 0.828,
+            "primary_top3": 0.8925,
+            "any_top1": 0.7634,
+            "any_top3": 1.0,
+            "gdino_primary": 0.0323,
+            "gdino_any": 0.4624,
+            "box_level_top1": 0.271,
+            "boxes": 465
+          },
+          "equipment_cabinet": {
+            "images": 70,
+            "primary_top1": 0.6143,
+            "primary_top2": 0.7571,
+            "primary_top3": 0.8143,
+            "any_top1": 0.8429,
+            "any_top3": 0.9857,
+            "gdino_primary": 0.7,
+            "gdino_any": 0.9714,
+            "box_level_top1": 0.297,
+            "boxes": 394
+          },
+          "radio_unit": {
+            "images": 100,
+            "primary_top1": 0.16,
+            "primary_top2": 0.5,
+            "primary_top3": 0.7,
+            "any_top1": 0.26,
+            "any_top3": 0.87,
+            "gdino_primary": 0.05,
+            "gdino_any": 0.3,
+            "box_level_top1": 0.1242,
+            "boxes": 306
+          }
+        },
+        "overall": {
+          "primary_top1_micro": 0.4309,
+          "primary_top1_macro": 0.429,
+          "primary_top2_micro": 0.6759,
+          "primary_top2_macro": 0.6513,
+          "primary_top3_micro": 0.7698,
+          "primary_top3_macro": 0.7403,
+          "any_top1_micro": 0.6998,
+          "any_top1_macro": 0.7089,
+          "any_top3_micro": 0.9484,
+          "any_top3_macro": 0.9403,
+          "gdino_primary_micro": 0.1565,
+          "gdino_primary_macro": 0.1586,
+          "gdino_any_micro": 0.5672,
+          "gdino_any_macro": 0.5738,
+          "images": 543
+        }
+      },
+      "split_half": [
+        0.4165,
+        0.4415
+      ],
+      "decided": {
+        "unknown": 0.0806,
+        "uncertain": 0.2808,
+        "decided": 0.6386,
+        "median_margin": 0.0084
+      },
+      "top1_changed_vs_original": 0.3129
+    },
+    "detailed_ensemble": {
+      "aggregation": "mean",
+      "metrics": {
+        "per_class": {
+          "antenna": {
+            "images": 100,
+            "primary_top1": 0.59,
+            "primary_top2": 0.82,
+            "primary_top3": 0.91,
+            "any_top1": 0.9,
+            "any_top3": 0.99,
+            "gdino_primary": 0.17,
+            "gdino_any": 0.74,
+            "box_level_top1": 0.4098,
+            "boxes": 449
+          },
+          "router": {
+            "images": 74,
+            "primary_top1": 0.7703,
+            "primary_top2": 0.8919,
+            "primary_top3": 0.973,
+            "any_top1": 0.8514,
+            "any_top3": 0.9865,
+            "gdino_primary": 0.1351,
+            "gdino_any": 0.4595,
+            "box_level_top1": 0.4022,
+            "boxes": 276
+          },
+          "cable": {
+            "images": 44,
+            "primary_top1": 0.3864,
+            "primary_top2": 0.4545,
+            "primary_top3": 0.6136,
+            "any_top1": 0.7273,
+            "any_top3": 0.8409,
+            "gdino_primary": 0.0227,
+            "gdino_any": 0.4545,
+            "box_level_top1": 0.3693,
+            "boxes": 176
+          },
+          "battery": {
+            "images": 62,
+            "primary_top1": 0.3065,
+            "primary_top2": 0.5806,
+            "primary_top3": 0.9194,
+            "any_top1": 0.7258,
+            "any_top3": 1.0,
+            "gdino_primary": 0.0,
+            "gdino_any": 0.629,
+            "box_level_top1": 0.2186,
+            "boxes": 366
+          },
+          "power_supply_unit": {
+            "images": 93,
+            "primary_top1": 0.4839,
+            "primary_top2": 0.8172,
+            "primary_top3": 0.9677,
+            "any_top1": 0.7957,
+            "any_top3": 1.0,
+            "gdino_primary": 0.0323,
+            "gdino_any": 0.4624,
+            "box_level_top1": 0.3591,
+            "boxes": 465
+          },
+          "equipment_cabinet": {
+            "images": 70,
+            "primary_top1": 0.6,
+            "primary_top2": 0.7571,
+            "primary_top3": 0.7857,
+            "any_top1": 0.8,
+            "any_top3": 0.9857,
+            "gdino_primary": 0.7,
+            "gdino_any": 0.9714,
+            "box_level_top1": 0.2741,
+            "boxes": 394
+          },
+          "radio_unit": {
+            "images": 100,
+            "primary_top1": 0.1,
+            "primary_top2": 0.3,
+            "primary_top3": 0.59,
+            "any_top1": 0.22,
+            "any_top3": 0.7,
+            "gdino_primary": 0.05,
+            "gdino_any": 0.3,
+            "box_level_top1": 0.1111,
+            "boxes": 306
+          }
+        },
+        "overall": {
+          "primary_top1_micro": 0.4586,
+          "primary_top1_macro": 0.4624,
+          "primary_top2_micro": 0.6685,
+          "primary_top2_macro": 0.6602,
+          "primary_top3_micro": 0.8306,
+          "primary_top3_macro": 0.8228,
+          "any_top1_micro": 0.7035,
+          "any_top1_macro": 0.7172,
+          "any_top3_micro": 0.9263,
+          "any_top3_macro": 0.929,
+          "gdino_primary_micro": 0.1565,
+          "gdino_primary_macro": 0.1586,
+          "gdino_any_micro": 0.5672,
+          "gdino_any_macro": 0.5738,
+          "images": 543
+        }
+      },
+      "split_half": [
+        0.4641,
+        0.4605
+      ],
+      "decided": {
+        "unknown": 0.0868,
+        "uncertain": 0.2796,
+        "decided": 0.6336,
+        "median_margin": 0.0088
+      },
+      "top1_changed_vs_original": 0.3651
+    },
+    "detailed_max": {
+      "aggregation": "max",
+      "metrics": {
+        "per_class": {
+          "antenna": {
+            "images": 100,
+            "primary_top1": 0.6,
+            "primary_top2": 0.84,
+            "primary_top3": 0.9,
+            "any_top1": 0.97,
+            "any_top3": 0.98,
+            "gdino_primary": 0.17,
+            "gdino_any": 0.74,
+            "box_level_top1": 0.49,
+            "boxes": 449
+          },
+          "router": {
+            "images": 74,
+            "primary_top1": 0.8378,
+            "primary_top2": 0.9595,
+            "primary_top3": 0.9865,
+            "any_top1": 0.9054,
+            "any_top3": 1.0,
+            "gdino_primary": 0.1351,
+            "gdino_any": 0.4595,
+            "box_level_top1": 0.4638,
+            "boxes": 276
+          },
+          "cable": {
+            "images": 44,
+            "primary_top1": 0.2955,
+            "primary_top2": 0.3409,
+            "primary_top3": 0.4091,
+            "any_top1": 0.6591,
+            "any_top3": 0.8182,
+            "gdino_primary": 0.0227,
+            "gdino_any": 0.4545,
+            "box_level_top1": 0.2898,
+            "boxes": 176
+          },
+          "battery": {
+            "images": 62,
+            "primary_top1": 0.3387,
+            "primary_top2": 0.5323,
+            "primary_top3": 0.8387,
+            "any_top1": 0.6774,
+            "any_top3": 1.0,
+            "gdino_primary": 0.0,
+            "gdino_any": 0.629,
+            "box_level_top1": 0.2213,
+            "boxes": 366
+          },
+          "power_supply_unit": {
+            "images": 93,
+            "primary_top1": 0.4086,
+            "primary_top2": 0.7634,
+            "primary_top3": 0.914,
+            "any_top1": 0.828,
+            "any_top3": 0.9892,
+            "gdino_primary": 0.0323,
+            "gdino_any": 0.4624,
+            "box_level_top1": 0.3871,
+            "boxes": 465
+          },
+          "equipment_cabinet": {
+            "images": 70,
+            "primary_top1": 0.4857,
+            "primary_top2": 0.7286,
+            "primary_top3": 0.7714,
+            "any_top1": 0.7429,
+            "any_top3": 0.9857,
+            "gdino_primary": 0.7,
+            "gdino_any": 0.9714,
+            "box_level_top1": 0.236,
+            "boxes": 394
+          },
+          "radio_unit": {
+            "images": 100,
+            "primary_top1": 0.13,
+            "primary_top2": 0.3,
+            "primary_top3": 0.52,
+            "any_top1": 0.38,
+            "any_top3": 0.79,
+            "gdino_primary": 0.05,
+            "gdino_any": 0.3,
+            "box_level_top1": 0.1699,
+            "boxes": 306
+          }
+        },
+        "overall": {
+          "primary_top1_micro": 0.4438,
+          "primary_top1_macro": 0.4423,
+          "primary_top2_micro": 0.6538,
+          "primary_top2_macro": 0.6378,
+          "primary_top3_micro": 0.7808,
+          "primary_top3_macro": 0.7628,
+          "any_top1_micro": 0.7403,
+          "any_top1_macro": 0.7375,
+          "any_top3_micro": 0.9392,
+          "any_top3_macro": 0.9376,
+          "gdino_primary_micro": 0.1565,
+          "gdino_primary_macro": 0.1586,
+          "gdino_any_micro": 0.5672,
+          "gdino_any_macro": 0.5738,
+          "images": 543
+        }
+      },
+      "split_half": [
+        0.4505,
+        0.4339
+      ],
+      "decided": {
+        "unknown": 0.1118,
+        "uncertain": 0.2944,
+        "decided": 0.5938,
+        "median_margin": 0.0077
+      },
+      "top1_changed_vs_original": 0.4605
+    },
+    "all_ensemble": {
+      "aggregation": "mean",
+      "metrics": {
+        "per_class": {
+          "antenna": {
+            "images": 100,
+            "primary_top1": 0.61,
+            "primary_top2": 0.84,
+            "primary_top3": 0.9,
+            "any_top1": 0.92,
+            "any_top3": 0.99,
+            "gdino_primary": 0.17,
+            "gdino_any": 0.74,
+            "box_level_top1": 0.4321,
+            "boxes": 449
+          },
+          "router": {
+            "images": 74,
+            "primary_top1": 0.7973,
+            "primary_top2": 0.9324,
+            "primary_top3": 0.9865,
+            "any_top1": 0.8919,
+            "any_top3": 0.9865,
+            "gdino_primary": 0.1351,
+            "gdino_any": 0.4595,
+            "box_level_top1": 0.4493,
+            "boxes": 276
+          },
+          "cable": {
+            "images": 44,
+            "primary_top1": 0.2955,
+            "primary_top2": 0.4545,
+            "primary_top3": 0.5,
+            "any_top1": 0.6364,
+            "any_top3": 0.8409,
+            "gdino_primary": 0.0227,
+            "gdino_any": 0.4545,
+            "box_level_top1": 0.2955,
+            "boxes": 176
+          },
+          "battery": {
+            "images": 62,
+            "primary_top1": 0.2581,
+            "primary_top2": 0.4355,
+            "primary_top3": 0.7097,
+            "any_top1": 0.7258,
+            "any_top3": 0.9839,
+            "gdino_primary": 0.0,
+            "gdino_any": 0.629,
+            "box_level_top1": 0.1913,
+            "boxes": 366
+          },
+          "power_supply_unit": {
+            "images": 93,
+            "primary_top1": 0.3118,
+            "primary_top2": 0.7742,
+            "primary_top3": 0.9355,
+            "any_top1": 0.7097,
+            "any_top3": 0.9892,
+            "gdino_primary": 0.0323,
+            "gdino_any": 0.4624,
+            "box_level_top1": 0.286,
+            "boxes": 465
+          },
+          "equipment_cabinet": {
+            "images": 70,
+            "primary_top1": 0.6429,
+            "primary_top2": 0.7714,
+            "primary_top3": 0.8,
+            "any_top1": 0.8857,
+            "any_top3": 0.9857,
+            "gdino_primary": 0.7,
+            "gdino_any": 0.9714,
+            "box_level_top1": 0.3223,
+            "boxes": 394
+          },
+          "radio_unit": {
+            "images": 100,
+            "primary_top1": 0.07,
+            "primary_top2": 0.46,
+            "primary_top3": 0.63,
+            "any_top1": 0.18,
+            "any_top3": 0.74,
+            "gdino_primary": 0.05,
+            "gdino_any": 0.3,
+            "box_level_top1": 0.0784,
+            "boxes": 306
+          }
+        },
+        "overall": {
+          "primary_top1_micro": 0.4236,
+          "primary_top1_macro": 0.4265,
+          "primary_top2_micro": 0.6851,
+          "primary_top2_macro": 0.6669,
+          "primary_top3_micro": 0.8011,
+          "primary_top3_macro": 0.7802,
+          "any_top1_micro": 0.6943,
+          "any_top1_macro": 0.7071,
+          "any_top3_micro": 0.93,
+          "any_top3_macro": 0.9309,
+          "gdino_primary_micro": 0.1565,
+          "gdino_primary_macro": 0.1586,
+          "gdino_any_micro": 0.5672,
+          "gdino_any_macro": 0.5738,
+          "images": 543
+        }
+      },
+      "split_half": [
+        0.4191,
+        0.4339
+      ],
+      "decided": {
+        "unknown": 0.0641,
+        "uncertain": 0.3125,
+        "decided": 0.6234,
+        "median_margin": 0.008
+      },
+      "top1_changed_vs_original": 0.2315
+    }
+  },
+  "best_prompt_config": {
+    "name": "detailed_ensemble",
+    "selected_on": "half A (even-indexed images)",
+    "half_b_primary_top1_macro": 0.4605
+  },
+  "crops": [
+    {
+      "crop": "box + 0% padding",
+      "prompts": "original_ensemble",
+      "primary_top1_macro": 0.4125,
+      "primary_top3_macro": 0.7244,
+      "any_top1_macro": 0.676,
+      "box_level_top1": 0.2858
+    },
+    {
+      "crop": "box + 5% padding",
+      "prompts": "original_ensemble",
+      "primary_top1_macro": 0.4058,
+      "primary_top3_macro": 0.7272,
+      "any_top1_macro": 0.6666,
+      "box_level_top1": 0.2759
+    },
+    {
+      "crop": "box + 10% padding",
+      "prompts": "original_ensemble",
+      "primary_top1_macro": 0.4121,
+      "primary_top3_macro": 0.7365,
+      "any_top1_macro": 0.6765,
+      "box_level_top1": 0.2882
+    },
+    {
+      "crop": "box + 20% padding",
+      "prompts": "original_ensemble",
+      "primary_top1_macro": 0.4249,
+      "primary_top3_macro": 0.7405,
+      "any_top1_macro": 0.6793,
+      "box_level_top1": 0.3059
+    },
+    {
+      "crop": "whole photo (no box)",
+      "prompts": "original_ensemble",
+      "primary_top1_macro": 0.4749,
+      "primary_top3_macro": 0.7458,
+      "any_top1_macro": null,
+      "box_level_top1": null,
+      "per_class_top1": {
+        "antenna": 0.75,
+        "router": 0.9054,
+        "cable": 0.2955,
+        "battery": 0.1452,
+        "power_supply_unit": 0.2366,
+        "equipment_cabinet": 0.7714,
+        "radio_unit": 0.22
+      }
+    },
+    {
+      "crop": "box + 0% padding",
+      "prompts": "detailed_ensemble",
+      "primary_top1_macro": 0.4708,
+      "primary_top3_macro": 0.8141,
+      "any_top1_macro": 0.7239,
+      "box_level_top1": 0.3146
+    },
+    {
+      "crop": "box + 5% padding",
+      "prompts": "detailed_ensemble",
+      "primary_top1_macro": 0.4624,
+      "primary_top3_macro": 0.8228,
+      "any_top1_macro": 0.7172,
+      "box_level_top1": 0.308
+    },
+    {
+      "crop": "box + 10% padding",
+      "prompts": "detailed_ensemble",
+      "primary_top1_macro": 0.4627,
+      "primary_top3_macro": 0.8112,
+      "any_top1_macro": 0.7238,
+      "box_level_top1": 0.3174
+    },
+    {
+      "crop": "box + 20% padding",
+      "prompts": "detailed_ensemble",
+      "primary_top1_macro": 0.4848,
+      "primary_top3_macro": 0.8132,
+      "any_top1_macro": 0.7401,
+      "box_level_top1": 0.3322
+    },
+    {
+      "crop": "whole photo (no box)",
+      "prompts": "detailed_ensemble",
+      "primary_top1_macro": 0.4993,
+      "primary_top3_macro": 0.8353,
+      "any_top1_macro": null,
+      "box_level_top1": null,
+      "per_class_top1": {
+        "antenna": 0.76,
+        "router": 0.8784,
+        "cable": 0.4091,
+        "battery": 0.2419,
+        "power_supply_unit": 0.3871,
+        "equipment_cabinet": 0.7286,
+        "radio_unit": 0.09
+      }
+    }
+  ],
+  "examples": {
+    "clip_matches_folder": {
+      "file": "examples/clip_matches_folder.jpg",
+      "items": [
+        "antenna/Screenshot 2026-10-07 112215.png#0",
+        "Archive (7)/IMG_6354.PNG#0",
+        "Archive (6)/IMG_6524.PNG#0",
+        "Archive (5)/IMG_6301.PNG#0",
+        "Archive (4)/IMG_6432.PNG#0",
+        "Equipment Cabinet/Screenshot 2026-10-07 160806.png#0",
+        "radio unit/Screenshot 2026-10-07 130617.png#0",
+        "radio unit/Screenshot 2026-10-07 130641.png#0"
+      ]
+    },
+    "clip_disagrees_with_gdino": {
+      "file": "examples/clip_disagrees_with_gdino.jpg",
+      "items": [
+        "antenna/Screenshot 2026-10-07 112112.png#0",
+        "Archive (7)/IMG_6354.PNG#2",
+        "Archive (6)/IMG_6526.PNG#0",
+        "Archive (5)/IMG_6292.PNG#4",
+        "Archive (4)/IMG_6429.PNG#0",
+        "Equipment Cabinet/Screenshot 2026-10-06 233430.png#1",
+        "radio unit/Screenshot 2026-10-07 130201.png#0",
+        "radio unit/Screenshot 2026-10-07 130201.png#2"
+      ]
+    },
+    "near_identical_top2": {
+      "file": "examples/near_identical_top2.jpg",
+      "items": [
+        "antenna/Screenshot 2026-10-07 113620.png#5",
+        "Archive (7)/IMG_6355.PNG#1",
+        "Archive (6)/IMG_6525.PNG#3",
+        "Archive (5)/IMG_6292.PNG#2",
+        "Archive (4)/IMG_6431.PNG#3",
+        "Equipment Cabinet/Screenshot 2026-10-06 233430.png#3",
+        "radio unit/Screenshot 2026-10-07 130722.png#2",
+        "radio unit/Screenshot 2026-10-07 131056.png#2"
+      ]
+    },
+    "incomplete_object_small_box": {
+      "file": "examples/incomplete_object_small_box.jpg",
+      "items": [
+        "antenna/Screenshot 2026-10-07 112112.png#2",
+        "Archive (7)/IMG_6355.PNG#1",
+        "Archive (6)/IMG_6523.PNG#2",
+        "Archive (5)/IMG_6292.PNG#2",
+        "Archive (4)/IMG_6429.PNG#1",
+        "Equipment Cabinet/Screenshot 2026-10-06 233430.png#0",
+        "radio unit/Screenshot 2026-10-07 130201.png#2",
+        "radio unit/Screenshot 2026-10-07 130405.png#1"
+      ]
+    },
+    "prompt_changes_prediction": {
+      "file": "examples/prompt_changes_prediction.jpg",
+      "items": [
+        "antenna/Screenshot 2026-10-07 112215.png#0",
+        "Archive (7)/IMG_6354.PNG#0",
+        "Archive (6)/IMG_6523.PNG#0",
+        "Archive (5)/IMG_6292.PNG#0",
+        "Archive (4)/IMG_6430.PNG#0",
+        "Equipment Cabinet/Screenshot 2026-10-06 233430.png#0",
+        "radio unit/Screenshot 2026-10-07 130423.png#0",
+        "radio unit/Screenshot 2026-10-07 130459.png#0"
+      ]
+    }
+  }
+}

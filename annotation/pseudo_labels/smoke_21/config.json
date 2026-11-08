@@ -1,0 +1,186 @@
+{
+  "config_hash": "4a7066dfd40c9e48",
+  "dataset_root": "C:\\Users\\harsh\\Desktop\\dynamic_digital_twin\\digital twin project datasets",
+  "manifest": "C:\\Users\\harsh\\Desktop\\dynamic_digital_twin\\annotation\\manifest.csv",
+  "detections": "stored",
+  "stored_run": "C:\\Users\\harsh\\Desktop\\dynamic_digital_twin\\experiments\\zero_shot_bts\\runs\\full_543_gdino_clip",
+  "gdino_model": "IDEA-Research/grounding-dino-tiny",
+  "clip_model": "openai/clip-vit-base-patch32",
+  "sam_weights": "C:\\Users\\harsh\\Desktop\\dynamic_digital_twin\\experiments\\zero_shot_bts\\weights\\mobile_sam.pt",
+  "use_sam": false,
+  "gdino_short_side": 512,
+  "gdino_long_side": 896,
+  "letterbox_crop": true,
+  "box_threshold": 0.25,
+  "proposal_nms_iou": 0.5,
+  "gdino_prompts": {
+    "antenna": [
+      "telecom antenna",
+      "cellular antenna",
+      "panel antenna"
+    ],
+    "router": [
+      "network router",
+      "telecom router chassis"
+    ],
+    "cable": [
+      "coaxial cable",
+      "electrical cable",
+      "cable bundle"
+    ],
+    "battery": [
+      "backup battery",
+      "battery module"
+    ],
+    "power_supply_unit": [
+      "power supply unit",
+      "rectifier module"
+    ],
+    "equipment_cabinet": [
+      "equipment cabinet",
+      "outdoor telecom cabinet"
+    ],
+    "radio_unit": [
+      "remote radio unit",
+      "rru"
+    ]
+  },
+  "clip_prompts": {
+    "antenna": [
+      "a white panel sector antenna of a cellular base station",
+      "a tall flat telecom antenna mounted on a mast or rooftop",
+      "an omnidirectional or ceiling dome antenna with a coaxial connector",
+      "a BTS antenna used for mobile network coverage"
+    ],
+    "router": [
+      "a rack-mounted telecom router chassis with network ports and line cards",
+      "a cell site transmission router with fibre and ethernet interfaces",
+      "a carrier-grade network router used at a base station",
+      "a metal router box with many small network ports and status LEDs"
+    ],
+    "cable": [
+      "a coaxial feeder cable with a connector used in a base station",
+      "a bundle of black power and fibre cables",
+      "a jumper cable connecting telecom equipment",
+      "a coiled telecom cable on a white background"
+    ],
+    "battery": [
+      "a telecom backup battery module with positive and negative terminals",
+      "a lithium battery pack for base station power backup",
+      "a row of lead-acid batteries in a telecom cabinet",
+      "a rack-mounted battery unit with handles"
+    ],
+    "power_supply_unit": [
+      "a telecom rectifier power supply module",
+      "a DC power supply unit for a base station",
+      "telecom power distribution equipment with breakers",
+      "a power shelf with several hot-swappable rectifier modules and cooling fans"
+    ],
+    "equipment_cabinet": [
+      "a large outdoor telecom equipment cabinet with doors",
+      "a metal enclosure that houses base station equipment",
+      "an open telecom cabinet with racks of equipment inside",
+      "a standing indoor equipment rack cabinet"
+    ],
+    "radio_unit": [
+      "a remote radio unit used in a cellular base station",
+      "an outdoor telecom radio frequency unit",
+      "a BTS remote radio head with cooling fins",
+      "an RRU mounted near a cellular antenna"
+    ]
+  },
+  "clip_alt_prompts": {
+    "antenna": [
+      "a photo of a telecom panel antenna",
+      "a photo of a cellular base station antenna",
+      "a photo of a white sector antenna on a mast"
+    ],
+    "router": [
+      "a photo of a telecom network router with ports and line cards",
+      "a photo of a rack-mounted network router",
+      "a photo of a transmission router chassis"
+    ],
+    "cable": [
+      "a photo of a coaxial cable",
+      "a photo of a bundle of electrical cables",
+      "a photo of a feeder cable with a connector"
+    ],
+    "battery": [
+      "a photo of a telecom backup battery",
+      "a photo of a rack of battery modules",
+      "a photo of a lead-acid battery block"
+    ],
+    "power_supply_unit": [
+      "a photo of a telecom power supply unit",
+      "a photo of a rectifier module",
+      "a photo of a DC power shelf"
+    ],
+    "equipment_cabinet": [
+      "a photo of a telecom equipment cabinet",
+      "a photo of an outdoor base station cabinet",
+      "a photo of an open equipment enclosure"
+    ],
+    "radio_unit": [
+      "a photo of a remote radio unit",
+      "a photo of a finned metal RRU box with connectors",
+      "a photo of a base station radio unit"
+    ]
+  },
+  "clip_negatives": [
+    "a photo of a wall",
+    "a photo of the sky",
+    "a photo of a person",
+    "a photo of a tree",
+    "a screenshot of text",
+    "a photo of a floor",
+    "a blurry photo of nothing in particular",
+    "a photo of a cardboard box",
+    "a photo of a hand"
+  ],
+  "crop_padding": 0.2,
+  "clip_logit_scale": 100.0,
+  "clip_support_top_k": 3,
+  "background_margin": 0.0,
+  "w_clip": 1.0,
+  "w_gdino": 0.5,
+  "gdino_vote_smoothing": 0.05,
+  "folder_prior_boost": 2.0,
+  "folder_prior_full_area": 0.2,
+  "min_area_share": 0.003,
+  "tiny_area_share": 0.05,
+  "tiny_extra_confidence": 0.1,
+  "min_gdino_confidence": {
+    "antenna": 0.27,
+    "router": 0.27,
+    "cable": 0.27,
+    "battery": 0.27,
+    "power_supply_unit": 0.27,
+    "equipment_cabinet": 0.27,
+    "radio_unit": 0.27
+  },
+  "min_final_confidence": {
+    "antenna": 0.45,
+    "router": 0.45,
+    "cable": 0.45,
+    "battery": 0.45,
+    "power_supply_unit": 0.45,
+    "equipment_cabinet": 0.45,
+    "radio_unit": 0.45
+  },
+  "min_final_margin": 0.1,
+  "require_flip_stable": true,
+  "duplicate_iou": 0.6,
+  "conflict_iou": 0.8,
+  "part_containment": 0.85,
+  "part_max_area_ratio": 0.5,
+  "container_classes": [
+    "equipment_cabinet"
+  ],
+  "allowed_inside_any": [
+    "cable"
+  ],
+  "blocking_uncertain_area": 0.05,
+  "covered_iou": 0.5,
+  "preview_max_side": 900,
+  "write_previews": true
+}

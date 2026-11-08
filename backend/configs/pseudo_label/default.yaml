@@ -1,0 +1,48 @@
+# Pseudo-labelling configuration (backend/app/training/pseudo_label/config.py holds every key and its default).
+# Any key may be set here or on the command line: --set key=value (JSON values).
+# Pseudo-labels are NOT ground truth; these thresholds trade label quantity against label noise and are
+# chosen from automatic consistency signals, not from measured accuracy.
+
+detections: stored            # stored = reuse the zero-shot run's Grounding DINO boxes; live = run Grounding DINO
+crop_padding: 0.20            # best folder consistency in the diagnostics
+clip_logit_scale: 100.0
+clip_support_top_k: 3
+
+# fusion weights (log space)
+w_clip: 1.0
+w_gdino: 0.5                  # Grounding DINO's class is a weak signal (~16 % folder match on primary boxes)
+
+# soft folder prior; 1.0 switches it off. CLIP must still rank the class in its top-k.
+folder_prior_boost: 2.0
+folder_prior_full_area: 0.20
+
+min_area_share: 0.003
+tiny_area_share: 0.05
+tiny_extra_confidence: 0.10
+min_final_margin: 0.10
+require_flip_stable: true
+
+min_gdino_confidence:         # per class (detector score of the box)
+  antenna: 0.27
+  router: 0.27
+  cable: 0.27
+  battery: 0.27
+  power_supply_unit: 0.27
+  equipment_cabinet: 0.27
+  radio_unit: 0.27
+
+min_final_confidence:         # per class (fused class probability)
+  antenna: 0.45
+  router: 0.45
+  cable: 0.45
+  battery: 0.45
+  power_supply_unit: 0.45
+  equipment_cabinet: 0.45
+  radio_unit: 0.45
+
+# visual prototypes from CLIP image embeddings of whole-product boxes (leave-near-duplicate-group-out)
+use_prototypes: true
+w_proto: 2.0                  # chosen on the 70-image smoke sweep (see docs)
+proto_logit_scale: 30.0
+
+use_sam: false

@@ -12,6 +12,10 @@ backend/models/**/*.pt
 # Generated datasets and experiment outputs
 backend/dataset/*/
 experiments/*/
+# ...except the zero-shot experiment's code; its runs and downloaded weights stay local
+!experiments/zero_shot_bts/
+experiments/zero_shot_bts/runs/
+experiments/zero_shot_bts/weights/
 
 # Node
 frontend/node_modules/
@@ -30,3 +34,8 @@ annotation/candidates/*/previews/
 annotation/rejected/*/previews/
 annotation/candidates/*/contact_sheets/
 annotation/rejected/*/contact_sheets/
+# Pseudo-label runs: previews and the CLIP embedding cache are regenerable (labels, manifest, records, reports stay)
+annotation/pseudo_labels/*/previews/
+annotation/pseudo_labels/*/clip_cache.npz
+experiments/zero_shot_bts/diagnostics/cache/
+backend/models/anomaly/

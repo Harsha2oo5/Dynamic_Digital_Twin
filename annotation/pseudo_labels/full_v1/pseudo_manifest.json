@@ -1,0 +1,4362 @@
+{
+  "label_source": "pseudo",
+  "ground_truth": false,
+  "disclaimer": "Pseudo-labels are generated automatically by Grounding DINO + CLIP (+ optional folder prior and MobileSAM). They are NOT ground truth. Agreement between models and consistency with folder names are not accuracy, precision, recall or mAP. No human has verified these labels.",
+  "run": "full_v1",
+  "created_at": "2026-11-07T20:41:34",
+  "config_hash": "bdf7dbdff06f62c9",
+  "detection_source": "stored:full_543_gdino_clip",
+  "models": {
+    "detector": "IDEA-Research/grounding-dino-tiny",
+    "classifier": "openai/clip-vit-base-patch32",
+    "box_refiner": null
+  },
+  "folder_prior_boost": 2.0,
+  "images": {
+    "img_6429": {
+      "file": "IMG_6429.PNG",
+      "original_path": "Archive (4)/IMG_6429.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "73e148bd4eb265280d9f3eb72ec09d4034a52523b95f8c68b9cd67713674264e"
+    },
+    "img_6430": {
+      "file": "IMG_6430.PNG",
+      "original_path": "Archive (4)/IMG_6430.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "ba253347394bc81a2e35040fd0ef492fdcd085582580563bb347f3956c02aea6"
+    },
+    "img_6431": {
+      "file": "IMG_6431.PNG",
+      "original_path": "Archive (4)/IMG_6431.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "998432fa2856c6ae199bcef2029546103041e7c9266c6323f6ed23aa12e63f4a"
+    },
+    "img_6432": {
+      "file": "IMG_6432.PNG",
+      "original_path": "Archive (4)/IMG_6432.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "ae58d28c613c566132456d29190d0e1acc1cfbded306a6455ee31ebd72e64160"
+    },
+    "img_6433": {
+      "file": "IMG_6433.PNG",
+      "original_path": "Archive (4)/IMG_6433.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "16cacb78e791211760f2eb129a340f556842747a9aed95383f7c168f51f01d35"
+    },
+    "img_6434": {
+      "file": "IMG_6434.PNG",
+      "original_path": "Archive (4)/IMG_6434.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "ff077b04dcc55c3af43ce903cf1529a48ee122e30b475ad6511f776f7084bd28"
+    },
+    "img_6435": {
+      "file": "IMG_6435.PNG",
+      "original_path": "Archive (4)/IMG_6435.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "bee8febf2764f685ed734728de9496eec703edfb764bf55575ac48b3b42948d6"
+    },
+    "img_6436": {
+      "file": "IMG_6436.PNG",
+      "original_path": "Archive (4)/IMG_6436.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "b8699d789ad02de56ce40ed8500dbd88ba8890ab4c54a838c0b5d1321a56b176"
+    },
+    "img_6437": {
+      "file": "IMG_6437.PNG",
+      "original_path": "Archive (4)/IMG_6437.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "1b20c6c1757fb843d992213017b7b869d757efdf7c5525452ad09e1bdf2a01fd"
+    },
+    "img_6438": {
+      "file": "IMG_6438.PNG",
+      "original_path": "Archive (4)/IMG_6438.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "fc0a1c12e903fa39751d06c07515f4e8da94e08329bb51e13c10290ea197a964"
+    },
+    "img_6439": {
+      "file": "IMG_6439.PNG",
+      "original_path": "Archive (4)/IMG_6439.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "8f0f81c6c645f886e0ef7ab5ac2d10e273960ff0e42ecee4229e83db18fd1a32"
+    },
+    "img_6440": {
+      "file": "IMG_6440.PNG",
+      "original_path": "Archive (4)/IMG_6440.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "9504bb98520b585c5f1d7f6735b943f243adf4ce01635597e68a9d9ab43e78a9"
+    },
+    "img_6441": {
+      "file": "IMG_6441.PNG",
+      "original_path": "Archive (4)/IMG_6441.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "b076af8ff3ed0c7ebdab1d968f6732c4b68ce7874d34d17d68c4cb25f6679c0c"
+    },
+    "img_6442": {
+      "file": "IMG_6442.PNG",
+      "original_path": "Archive (4)/IMG_6442.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6443": {
+      "file": "IMG_6443.PNG",
+      "original_path": "Archive (4)/IMG_6443.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 3 (9% of the photo: no CLIP support: antenna is CLIP text rank 6 and not the top prototype (cable))",
+      "accepted_boxes": 4,
+      "label_sha256": null
+    },
+    "img_6444": {
+      "file": "IMG_6444.PNG",
+      "original_path": "Archive (4)/IMG_6444.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (5% of the photo: class changes to power_supply_unit on a flipped crop)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "img_6445": {
+      "file": "IMG_6445.PNG",
+      "original_path": "Archive (4)/IMG_6445.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 5,
+      "label_sha256": "5ea0a26f58830c2856b6e5ede11cdc382b1173ca6a9acda23d7e543bbeb0b6c6"
+    },
+    "img_6446": {
+      "file": "IMG_6446.PNG",
+      "original_path": "Archive (4)/IMG_6446.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "3e46f4666999f5dc5e3f0cb8476a6c4a9b3fc9d09d8120d4752ee72c5dc56b97"
+    },
+    "img_6447": {
+      "file": "IMG_6447.PNG",
+      "original_path": "Archive (4)/IMG_6447.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "78f2c0993709b434dabf4765f7a00d6a2f5033051ae4dbd180847e914210b2cb"
+    },
+    "img_6448": {
+      "file": "IMG_6448.PNG",
+      "original_path": "Archive (4)/IMG_6448.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "bad14dd8b6d5b71dba8284ddba1fe06d31969ddd1da8476b53a2f510f0c73b47"
+    },
+    "img_6449": {
+      "file": "IMG_6449.PNG",
+      "original_path": "Archive (4)/IMG_6449.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "7d83b96052c1e7c627f16fe46804a36320e3545ac390fc64f3623508f432521c"
+    },
+    "img_6450": {
+      "file": "IMG_6450.PNG",
+      "original_path": "Archive (4)/IMG_6450.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (32% of the photo: margin to battery 0.084 < 0.1)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "img_6451": {
+      "file": "IMG_6451.PNG",
+      "original_path": "Archive (4)/IMG_6451.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "c181dbc56caabbc96922fb0b87a06fe7e62af47b01f9b0a545c0706e225075cc"
+    },
+    "img_6452": {
+      "file": "IMG_6452.PNG",
+      "original_path": "Archive (4)/IMG_6452.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 3 (27% of the photo: final confidence 0.403 < 0.45)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "img_6453": {
+      "file": "IMG_6453.PNG",
+      "original_path": "Archive (4)/IMG_6453.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "95bfe689fdd00e5f5bcba7a20e5e139b245e9d4a01ffd6adaa058c1eeac0f342"
+    },
+    "img_6454": {
+      "file": "IMG_6454.PNG",
+      "original_path": "Archive (4)/IMG_6454.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6455": {
+      "file": "IMG_6455.PNG",
+      "original_path": "Archive (4)/IMG_6455.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "dc907db98e1320b9bba2e53d610b46aa925189cb9c72b9900d16ca3d730082de"
+    },
+    "img_6456": {
+      "file": "IMG_6456.PNG",
+      "original_path": "Archive (4)/IMG_6456.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "3fda83690e308a811e1dd91b81fdff5de92364f39c7bfbdaf860a2d7e5c67b57"
+    },
+    "img_6457": {
+      "file": "IMG_6457.PNG",
+      "original_path": "Archive (4)/IMG_6457.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6458": {
+      "file": "IMG_6458.PNG",
+      "original_path": "Archive (4)/IMG_6458.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "f15f28fb877757cfd4c40922015d27f51a44d856bcb2d6544f27b20639f1ba16"
+    },
+    "img_6459": {
+      "file": "IMG_6459.PNG",
+      "original_path": "Archive (4)/IMG_6459.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "42ce2aee31ff9bbb893e95fa117668c4fcf4abda7268d410e5157413793e9ea7"
+    },
+    "img_6460": {
+      "file": "IMG_6460.PNG",
+      "original_path": "Archive (4)/IMG_6460.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "68662d1fc24af8e85714762541734cd3901e8ead90b9b0353c4dae63db518840"
+    },
+    "img_6461": {
+      "file": "IMG_6461.PNG",
+      "original_path": "Archive (4)/IMG_6461.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "17c306afb24d8b457925dd2bf0dd02ab6657bf1997c0989d3337266d2ae148e8"
+    },
+    "img_6462": {
+      "file": "IMG_6462.PNG",
+      "original_path": "Archive (4)/IMG_6462.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "825e6be19932e935aa52a4d25281e9f93cb5f53dbbcea9dee55fb97e3ea754c6"
+    },
+    "img_6463": {
+      "file": "IMG_6463.PNG",
+      "original_path": "Archive (4)/IMG_6463.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "dd835a15a6663c36d153699f5e151e59eb43899ba65ec659613184c085b03e1b"
+    },
+    "img_6464": {
+      "file": "IMG_6464.PNG",
+      "original_path": "Archive (4)/IMG_6464.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "8863e426d87402103274e81320c9875ceb8435803c0bf578c2cf3ba2fdbdb2e7"
+    },
+    "img_6465": {
+      "file": "IMG_6465.PNG",
+      "original_path": "Archive (4)/IMG_6465.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "2a3be9f25d7ea8d7a3b0d019df1629e4953b8a5ae3f241c02e50bc85974134bc"
+    },
+    "img_6466": {
+      "file": "IMG_6466.PNG",
+      "original_path": "Archive (4)/IMG_6466.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 5,
+      "label_sha256": "25b1e12691bccf6ea5cfdb9cc1652b8579536f956f00f298375f8a2e5b9bafae"
+    },
+    "img_6467": {
+      "file": "IMG_6467.PNG",
+      "original_path": "Archive (4)/IMG_6467.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (99% of the photo: margin to equipment_cabinet 0.076 < 0.1)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "img_6468": {
+      "file": "IMG_6468.PNG",
+      "original_path": "Archive (4)/IMG_6468.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "90b7aad26b3d5d2640e8d9460b2db5010fbd0d87b0af55523d5e85db33857bdd"
+    },
+    "img_6469": {
+      "file": "IMG_6469.PNG",
+      "original_path": "Archive (4)/IMG_6469.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "a1dac568f3c5e92ab346db46fd97974814bd645f859c88d5c1d723e8e22a0f6f"
+    },
+    "img_6470": {
+      "file": "IMG_6470.PNG",
+      "original_path": "Archive (4)/IMG_6470.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 5,
+      "label_sha256": "ae03544904943e89abf1ff5fc2befd71630d6551c9ea26812c4deca2d46ff9e5"
+    },
+    "img_6471": {
+      "file": "IMG_6471.PNG",
+      "original_path": "Archive (4)/IMG_6471.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 5,
+      "label_sha256": "07f1be1e8189465cdfdf2f66a1074fcd0007e504e3bc8fd4e7a30232fa5a8f0a"
+    },
+    "img_6472": {
+      "file": "IMG_6472.PNG",
+      "original_path": "Archive (4)/IMG_6472.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "b6faf2662bc0f092687db6d6e78fd94f03d963490eeba7b1cc2f89f0ba6ab078"
+    },
+    "img_6473": {
+      "file": "IMG_6473.PNG",
+      "original_path": "Archive (4)/IMG_6473.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (5% of the photo: class changes to power_supply_unit on a flipped crop)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "img_6474": {
+      "file": "IMG_6474.PNG",
+      "original_path": "Archive (4)/IMG_6474.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d5b5cf8016057630d90905faf62eed29f45922027aa1c8860fce9dca5d597544"
+    },
+    "img_6475": {
+      "file": "IMG_6475.PNG",
+      "original_path": "Archive (4)/IMG_6475.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (39% of the photo: class changes to equipment_cabinet on a flipped crop)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "img_6476": {
+      "file": "IMG_6476.PNG",
+      "original_path": "Archive (4)/IMG_6476.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "8a195abb716ace1f1454c3242cac967ac362e61a311fdfb6c4829ec20412f9c5"
+    },
+    "img_6477": {
+      "file": "IMG_6477.PNG",
+      "original_path": "Archive (4)/IMG_6477.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "b58614844e8c332848c13aff589a0f4cb4880facb1f75fb4d5d15afbc8343340"
+    },
+    "img_6478": {
+      "file": "IMG_6478.PNG",
+      "original_path": "Archive (4)/IMG_6478.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 6,
+      "label_sha256": "d9ed95fdc8f85d9a6005a62b4713d981f88e9fb2344773813a48529749205c09"
+    },
+    "img_6479": {
+      "file": "IMG_6479.jpg",
+      "original_path": "Archive (4)/IMG_6479.jpg",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (23% of the photo: margin to power_supply_unit 0.082 < 0.1)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "img_6480": {
+      "file": "IMG_6480.PNG",
+      "original_path": "Archive (4)/IMG_6480.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (44% of the photo: final confidence 0.440 < 0.45)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "img_6481": {
+      "file": "IMG_6481.PNG",
+      "original_path": "Archive (4)/IMG_6481.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 3 (41% of the photo: class changes to router on a flipped crop)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "img_6482": {
+      "file": "IMG_6482.PNG",
+      "original_path": "Archive (4)/IMG_6482.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "a960e67298e7d70a0c957108f320254239e190300e4b397e82f0d5e2d153e4d6"
+    },
+    "img_6483": {
+      "file": "IMG_6483.PNG",
+      "original_path": "Archive (4)/IMG_6483.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "b333413989599df8943181c0a547c40d9300bef337d9fd93a59f312a6892db3a"
+    },
+    "img_6484": {
+      "file": "IMG_6484.PNG",
+      "original_path": "Archive (4)/IMG_6484.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "66462619cee51d24e0478e524e43a2a62607b5e5d97f77b7ad37ad59af0baf04"
+    },
+    "img_6485": {
+      "file": "IMG_6485.PNG",
+      "original_path": "Archive (4)/IMG_6485.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 5,
+      "label_sha256": "7801fedf211197d268bdbe15bd98251be5803bda6b6339a686580c2c64f85071"
+    },
+    "img_6486": {
+      "file": "IMG_6486.PNG",
+      "original_path": "Archive (4)/IMG_6486.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 3 (39% of the photo: class changes to power_supply_unit on a flipped crop)",
+      "accepted_boxes": 3,
+      "label_sha256": null
+    },
+    "img_6487": {
+      "file": "IMG_6487.PNG",
+      "original_path": "Archive (4)/IMG_6487.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "c9547c1ba95fbc9694a4ebe284ab7d5f52072681925b0e975ccdd7c4df680298"
+    },
+    "img_6488": {
+      "file": "IMG_6488.PNG",
+      "original_path": "Archive (4)/IMG_6488.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "1f4fe26c0c9c6cb25c981a03435243d5dd215542eedd602127b76f340c967e90"
+    },
+    "img_6489": {
+      "file": "IMG_6489.PNG",
+      "original_path": "Archive (4)/IMG_6489.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d2eecfbf48050b6acf1dbfb3d6d0ac270ce1509643c3ab8df560370a99e3fc25"
+    },
+    "img_6490": {
+      "file": "IMG_6490.PNG",
+      "original_path": "Archive (4)/IMG_6490.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "f0a96dfedea5576897ace7cc92bb74f415817f40b477d47cb3e6df21697d4f46"
+    },
+    "img_6491": {
+      "file": "IMG_6491.PNG",
+      "original_path": "Archive (4)/IMG_6491.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "ab19e5df224bfd4cb5b7028a31992a43fdffb153303acaa025e03967df7df811"
+    },
+    "img_6492": {
+      "file": "IMG_6492.PNG",
+      "original_path": "Archive (4)/IMG_6492.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "9e45808705afd1e774426bacec62c2ee73171b73e377d6edbe62a451399d501f"
+    },
+    "img_6493": {
+      "file": "IMG_6493.PNG",
+      "original_path": "Archive (4)/IMG_6493.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "36c50d91f1fa5e2d053e0fcbf3422495c050779f0955daa273bb8798fd259400"
+    },
+    "img_6494": {
+      "file": "IMG_6494.PNG",
+      "original_path": "Archive (4)/IMG_6494.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "333b1b94f44b26dd4ae831252a4f97e8f777978d992f70ebbde4a10cd46a7aa3"
+    },
+    "img_6495": {
+      "file": "IMG_6495.PNG",
+      "original_path": "Archive (4)/IMG_6495.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "0fb4ffbb052d19c8fcb0a27a5468daa27bc31ac05e29d25657343488619de62d"
+    },
+    "img_6496": {
+      "file": "IMG_6496.PNG",
+      "original_path": "Archive (4)/IMG_6496.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "55f167c9a79eed380bfb38db4ba32162b490e79e4fe618672cc58c476be1cc56"
+    },
+    "img_6497": {
+      "file": "IMG_6497.PNG",
+      "original_path": "Archive (4)/IMG_6497.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "58d4f8072029375612e207c3adac5e6fc62eaf25971ef5c26906a6fc925f8539"
+    },
+    "img_6498": {
+      "file": "IMG_6498.PNG",
+      "original_path": "Archive (4)/IMG_6498.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6499": {
+      "file": "IMG_6499.PNG",
+      "original_path": "Archive (4)/IMG_6499.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (90% of the photo: class changes to equipment_cabinet on a flipped crop)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "img_6500": {
+      "file": "IMG_6500.PNG",
+      "original_path": "Archive (4)/IMG_6500.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "2384fd1802ff96722dbf7c431970102d082c1ee378b14fb14a3698be5976c33f"
+    },
+    "img_6501": {
+      "file": "IMG_6501.PNG",
+      "original_path": "Archive (4)/IMG_6501.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "7937baf7e29199134c277f48159c36d15ce5e453cfc90c18d6045e57572eec15"
+    },
+    "img_6502": {
+      "file": "IMG_6502.PNG",
+      "original_path": "Archive (4)/IMG_6502.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "b8f22b1e5fd7a39c7e5bd683920cbdea835c319102031646728c5eb4b9507ba2"
+    },
+    "img_6503": {
+      "file": "IMG_6503.PNG",
+      "original_path": "Archive (4)/IMG_6503.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "555a070263742ee24a4dccc2f882b6e1c25562ed9b1496dd29cc08d431ec0afd"
+    },
+    "img_6504": {
+      "file": "IMG_6504.PNG",
+      "original_path": "Archive (4)/IMG_6504.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9282bd64e0a54cee0a1d76a6a9f371983d603c485a82dfa4487055fdbd880419"
+    },
+    "img_6505": {
+      "file": "IMG_6505.PNG",
+      "original_path": "Archive (4)/IMG_6505.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "404d4ca93723fd772e604963200da6e1cf7b22cf9946c1de9ddfe13248fcc78e"
+    },
+    "img_6506": {
+      "file": "IMG_6506.PNG",
+      "original_path": "Archive (4)/IMG_6506.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "c7a8bef2ab2e41a1201bcc71fe8b73e4618114f7608a45596826f8438ea1bb11"
+    },
+    "img_6507": {
+      "file": "IMG_6507.PNG",
+      "original_path": "Archive (4)/IMG_6507.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "4179c60cb022dd33299292bfa67ce79ade659683a458780a1cac5eb23a069dbc"
+    },
+    "img_6508": {
+      "file": "IMG_6508.PNG",
+      "original_path": "Archive (4)/IMG_6508.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "2efbe3d6a1fa67cef2fc3bbc91af02f276697ad662ca20ca21cd9d14ff0d0548"
+    },
+    "img_6509": {
+      "file": "IMG_6509.PNG",
+      "original_path": "Archive (4)/IMG_6509.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "30115fbf5cedd6673fd52b7da064f6d3653bece4039cce193d35d1ba9472a25d"
+    },
+    "img_6510": {
+      "file": "IMG_6510.PNG",
+      "original_path": "Archive (4)/IMG_6510.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "23ef69dbe50a28dc4080e4990d7f8997f0f40100b0a252c782b491f50a87beef"
+    },
+    "img_6511": {
+      "file": "IMG_6511.PNG",
+      "original_path": "Archive (4)/IMG_6511.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "ad53254bc3b994303ec582fbade8885f903c3f042c022177d98d3a46d7a94922"
+    },
+    "img_6512": {
+      "file": "IMG_6512.PNG",
+      "original_path": "Archive (4)/IMG_6512.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (98% of the photo: margin to power_supply_unit 0.084 < 0.1)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "img_6513": {
+      "file": "IMG_6513.PNG",
+      "original_path": "Archive (4)/IMG_6513.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (98% of the photo: class changes to router on a flipped crop)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "img_6514": {
+      "file": "IMG_6514.PNG",
+      "original_path": "Archive (4)/IMG_6514.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "64601f748f5efe4ced7b7e6ac27205820c9a0a3db7cea0a976baa307a485839a"
+    },
+    "img_6515": {
+      "file": "IMG_6515.PNG",
+      "original_path": "Archive (4)/IMG_6515.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "2539889b8d1c214d8a075883b265fa41fb38e236504b32ef67519999068baaef"
+    },
+    "img_6516": {
+      "file": "IMG_6516.PNG",
+      "original_path": "Archive (4)/IMG_6516.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (5% of the photo: class changes to power_supply_unit on a flipped crop)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "img_6517": {
+      "file": "IMG_6517.PNG",
+      "original_path": "Archive (4)/IMG_6517.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (39% of the photo: class changes to equipment_cabinet on a flipped crop)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "img_6519": {
+      "file": "IMG_6519.PNG",
+      "original_path": "Archive (4)/IMG_6519.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "22439a2b96d5f22adb9f1a822a938f50ce88e6f9e94ccab26cf895e4cdb91a43"
+    },
+    "img_6520": {
+      "file": "IMG_6520.PNG",
+      "original_path": "Archive (4)/IMG_6520.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "73e7169d96917cf04798b253abf30e9a6e242c101724fdd739906da0fc4f46a4"
+    },
+    "img_6521": {
+      "file": "IMG_6521.PNG",
+      "original_path": "Archive (4)/IMG_6521.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "a7f0aeb78793ce6d5ab202de8cd90bcfc93bc89f529cbd25b36899363239e5a4"
+    },
+    "img_6522": {
+      "file": "IMG_6522.PNG",
+      "original_path": "Archive (4)/IMG_6522.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "7d3e205f5711ac907f8818f98beca76a1ff31461254ebbf2aaa2633428a0e011"
+    },
+    "img_6292": {
+      "file": "IMG_6292.PNG",
+      "original_path": "Archive (5)/IMG_6292.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (96% of the photo: class changes to router on a flipped crop)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "img_6293": {
+      "file": "IMG_6293.PNG",
+      "original_path": "Archive (5)/IMG_6293.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "d27218180914faa09dbc8a80f0db9f80082ff86649a290f7ee656f324cab1fd4"
+    },
+    "img_6294": {
+      "file": "IMG_6294.PNG",
+      "original_path": "Archive (5)/IMG_6294.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (6% of the photo: margin to router 0.057 < 0.1)",
+      "accepted_boxes": 5,
+      "label_sha256": null
+    },
+    "img_6295": {
+      "file": "IMG_6295.PNG",
+      "original_path": "Archive (5)/IMG_6295.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "a3aae4ad74d340c8b2fae38e1656a79e5eb205f3ff9cfb6f24a536b677e26fe0"
+    },
+    "img_6296": {
+      "file": "IMG_6296.PNG",
+      "original_path": "Archive (5)/IMG_6296.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (21% of the photo: class changes to battery on a flipped crop)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "img_6297": {
+      "file": "IMG_6297.PNG",
+      "original_path": "Archive (5)/IMG_6297.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6298": {
+      "file": "IMG_6298.PNG",
+      "original_path": "Archive (5)/IMG_6298.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "a64712e14224a78d6a9c1cacb3f980a82fb75cdff79d8ecd98e622345d412b9f"
+    },
+    "img_6299": {
+      "file": "IMG_6299.PNG",
+      "original_path": "Archive (5)/IMG_6299.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6300": {
+      "file": "IMG_6300.PNG",
+      "original_path": "Archive (5)/IMG_6300.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 6,
+      "label_sha256": "e42895fc5fb98c069ddee1718e7e1e9f73c9b51fb7c18a14d6a4d26d6c16e862"
+    },
+    "img_6301": {
+      "file": "IMG_6301.PNG",
+      "original_path": "Archive (5)/IMG_6301.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6302": {
+      "file": "IMG_6302.PNG",
+      "original_path": "Archive (5)/IMG_6302.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "8986ae79ac369a511fa380cb71f2e200d9069ed45edad721debdd79831f532dc"
+    },
+    "img_6303": {
+      "file": "IMG_6303.PNG",
+      "original_path": "Archive (5)/IMG_6303.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "dd85951ab813828d8470c1801b903151dcb857875d83217fe4001f1f6808721d"
+    },
+    "img_6304": {
+      "file": "IMG_6304.PNG",
+      "original_path": "Archive (5)/IMG_6304.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6305": {
+      "file": "IMG_6305.PNG",
+      "original_path": "Archive (5)/IMG_6305.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6306": {
+      "file": "IMG_6306.PNG",
+      "original_path": "Archive (5)/IMG_6306.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "680e49c2d5bfe96a8f44783ed361b0204ab0ebce65e6a51b3d32a9b068afc3ef"
+    },
+    "img_6307": {
+      "file": "IMG_6307.PNG",
+      "original_path": "Archive (5)/IMG_6307.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "cd94128156cffcafb469a9aa6efe9201f27f472171c439d35da6c1e69244a49e"
+    },
+    "img_6308": {
+      "file": "IMG_6308.PNG",
+      "original_path": "Archive (5)/IMG_6308.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "d0d697de969b7432cbc3aa8e00f94125f07222fa0fef05fa65932932bf405dc0"
+    },
+    "img_6309": {
+      "file": "IMG_6309.PNG",
+      "original_path": "Archive (5)/IMG_6309.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6310": {
+      "file": "IMG_6310.PNG",
+      "original_path": "Archive (5)/IMG_6310.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (39% of the photo: margin to power_supply_unit 0.099 < 0.1)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "img_6311": {
+      "file": "IMG_6311.PNG",
+      "original_path": "Archive (5)/IMG_6311.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "54aa0d2db62321284dd4e42238fccea6a6db1c591a443b1c4e5b267f6b9b5418"
+    },
+    "img_6312": {
+      "file": "IMG_6312.PNG",
+      "original_path": "Archive (5)/IMG_6312.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "da1519db2fa5484b84f7e8b6f2b3d99236258bdb55c6283774246f9c4a95df6f"
+    },
+    "img_6313": {
+      "file": "IMG_6313.PNG",
+      "original_path": "Archive (5)/IMG_6313.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "680e49c2d5bfe96a8f44783ed361b0204ab0ebce65e6a51b3d32a9b068afc3ef"
+    },
+    "img_6314": {
+      "file": "IMG_6314.PNG",
+      "original_path": "Archive (5)/IMG_6314.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6315": {
+      "file": "IMG_6315.PNG",
+      "original_path": "Archive (5)/IMG_6315.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6316": {
+      "file": "IMG_6316.PNG",
+      "original_path": "Archive (5)/IMG_6316.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6317": {
+      "file": "IMG_6317.PNG",
+      "original_path": "Archive (5)/IMG_6317.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "0373b0635ced7aaf59c22303619bca1528fca223399ab7b65982a15b46b4905a"
+    },
+    "img_6318": {
+      "file": "IMG_6318.PNG",
+      "original_path": "Archive (5)/IMG_6318.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "56005f1f7efb54dbab0365208a126a70aa4d84aa98435e75d49e19f859f80720"
+    },
+    "img_6319": {
+      "file": "IMG_6319.PNG",
+      "original_path": "Archive (5)/IMG_6319.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "67e9a2f60e3e0da0ab384618691382264e32c6c7d943bc263e9d41e3f378aac2"
+    },
+    "img_6320": {
+      "file": "IMG_6320.PNG",
+      "original_path": "Archive (5)/IMG_6320.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "2d01c216d7b568a6af9143e4b6a3717fecb5b2bb7df96e361dd4b558b1842d6b"
+    },
+    "img_6321": {
+      "file": "IMG_6321.PNG",
+      "original_path": "Archive (5)/IMG_6321.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "0c0a66e6efed7bf9dd69fad16ad34b9fa9c60561d34ac4fe8b7197e123e8d982"
+    },
+    "img_6322": {
+      "file": "IMG_6322.PNG",
+      "original_path": "Archive (5)/IMG_6322.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "cfa1e30720beb5fa5998ce38c85a70e88ca7c1d2029012b2817342f33bd3e6da"
+    },
+    "img_6323": {
+      "file": "IMG_6323.PNG",
+      "original_path": "Archive (5)/IMG_6323.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "af5d1398139c8fd8aefbf1d1a64a516522605cc4e69bed349d37f5ce6558e736"
+    },
+    "img_6324": {
+      "file": "IMG_6324.PNG",
+      "original_path": "Archive (5)/IMG_6324.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "f412b84583ab18ddeda49ddef33a0579d0851e9a620eb090c5547049b8a81881"
+    },
+    "img_6325": {
+      "file": "IMG_6325.PNG",
+      "original_path": "Archive (5)/IMG_6325.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6326": {
+      "file": "IMG_6326.PNG",
+      "original_path": "Archive (5)/IMG_6326.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (12% of the photo: margin to cable 0.001 < 0.1)",
+      "accepted_boxes": 3,
+      "label_sha256": null
+    },
+    "img_6327": {
+      "file": "IMG_6327.PNG",
+      "original_path": "Archive (5)/IMG_6327.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (39% of the photo: class changes to antenna on a flipped crop)",
+      "accepted_boxes": 3,
+      "label_sha256": null
+    },
+    "img_6328": {
+      "file": "IMG_6328.PNG",
+      "original_path": "Archive (5)/IMG_6328.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "2c69bebbb2646b11840e6319eb1689f21285a6ca58f268afefac7c43f1a9082b"
+    },
+    "img_6329": {
+      "file": "IMG_6329.PNG",
+      "original_path": "Archive (5)/IMG_6329.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 8,
+      "label_sha256": "82ba5f8ca940bc8ea421dd282cd4b6795d3a4ceaf256facd4b4a49ab9bf0f76c"
+    },
+    "img_6330": {
+      "file": "IMG_6330.PNG",
+      "original_path": "Archive (5)/IMG_6330.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "34875309d3790b840395a182001c178ed896783a9b17e8eb9f2996932f771709"
+    },
+    "img_6331": {
+      "file": "IMG_6331.PNG",
+      "original_path": "Archive (5)/IMG_6331.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (6% of the photo: margin to router 0.057 < 0.1)",
+      "accepted_boxes": 5,
+      "label_sha256": null
+    },
+    "img_6332": {
+      "file": "IMG_6332.PNG",
+      "original_path": "Archive (5)/IMG_6332.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "b92dfbe3161f3a4a8ce1b2624c79b7e37f31d067c7c9cd95b36633d4bce5c584"
+    },
+    "img_6333": {
+      "file": "IMG_6333.PNG",
+      "original_path": "Archive (5)/IMG_6333.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6334": {
+      "file": "IMG_6334.PNG",
+      "original_path": "Archive (5)/IMG_6334.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "a91a65a9ba8e9e36e0ff2382982d83cce7a104c9b3a21ebc252eb6be91f6220e"
+    },
+    "img_6335": {
+      "file": "IMG_6335.PNG",
+      "original_path": "Archive (5)/IMG_6335.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (11% of the photo: final confidence 0.430 < 0.45)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "img_6336": {
+      "file": "IMG_6336.PNG",
+      "original_path": "Archive (5)/IMG_6336.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 10 (13% of the photo: final confidence 0.422 < 0.45)",
+      "accepted_boxes": 6,
+      "label_sha256": null
+    },
+    "img_6337": {
+      "file": "IMG_6337.PNG",
+      "original_path": "Archive (5)/IMG_6337.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (15% of the photo: final confidence 0.413 < 0.45)",
+      "accepted_boxes": 5,
+      "label_sha256": null
+    },
+    "img_6338": {
+      "file": "IMG_6338.PNG",
+      "original_path": "Archive (5)/IMG_6338.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "3c21544b8444ffaedca79981d1b116f4b1d102afa96ca0121271b37964758936"
+    },
+    "img_6339": {
+      "file": "IMG_6339.PNG",
+      "original_path": "Archive (5)/IMG_6339.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "a9d6601885a23045c72437b261d0d1829789e7e1471291c861ab10d7bba96586"
+    },
+    "img_6340": {
+      "file": "IMG_6340.PNG",
+      "original_path": "Archive (5)/IMG_6340.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (6% of the photo: margin to battery 0.038 < 0.1)",
+      "accepted_boxes": 4,
+      "label_sha256": null
+    },
+    "img_6341": {
+      "file": "IMG_6341.PNG",
+      "original_path": "Archive (5)/IMG_6341.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9e6d1d56d5b34e2668f46be76001f3704e1c494b38532cf899d18b319348b57c"
+    },
+    "img_6342": {
+      "file": "IMG_6342.PNG",
+      "original_path": "Archive (5)/IMG_6342.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "f3d310534e289db85f91a02b36210e7c435fa4f4d41302ad08be233032bd07f0"
+    },
+    "img_6343": {
+      "file": "IMG_6343.PNG",
+      "original_path": "Archive (5)/IMG_6343.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "ec2e9bbd7331d819188d58d29ea555da299ece5e29dcc692a4136037808301cd"
+    },
+    "img_6344": {
+      "file": "IMG_6344.PNG",
+      "original_path": "Archive (5)/IMG_6344.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "786f6e00793b0627fc6bfbcc6dd2ea9e8603e64dfcf5969fcae81ad1c2df3152"
+    },
+    "img_6345": {
+      "file": "IMG_6345.PNG",
+      "original_path": "Archive (5)/IMG_6345.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "a4b8e5820afce63d7b7a2abf0d2dfcf6c036954f9c52b50f331cbe4f13dc948b"
+    },
+    "img_6346": {
+      "file": "IMG_6346.PNG",
+      "original_path": "Archive (5)/IMG_6346.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 6,
+      "label_sha256": "cb0c2f27b8fb092544600a1fb3b434ac48873db28ce71b3e05051ecf9d164df8"
+    },
+    "img_6347": {
+      "file": "IMG_6347.PNG",
+      "original_path": "Archive (5)/IMG_6347.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "28ef93614d112d8cb9e843c4a72f5031d9d7f9d78b40ac970a92d7c92dfb50e4"
+    },
+    "img_6348": {
+      "file": "IMG_6348.PNG",
+      "original_path": "Archive (5)/IMG_6348.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (6% of the photo: final confidence 0.406 < 0.45)",
+      "accepted_boxes": 4,
+      "label_sha256": null
+    },
+    "img_6349": {
+      "file": "IMG_6349.PNG",
+      "original_path": "Archive (5)/IMG_6349.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "f7469476ba5519a71eb668305df70dbb1a679aa21336281779add2508afe7678"
+    },
+    "img_6350": {
+      "file": "IMG_6350.PNG",
+      "original_path": "Archive (5)/IMG_6350.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "86b89bff2e967ad3949ce9a92a5864c69df960cb3e35b0ef28652e21372db57a"
+    },
+    "img_6351": {
+      "file": "IMG_6351.PNG",
+      "original_path": "Archive (5)/IMG_6351.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "2fcc504680f394cbfff7f757ec631c18aa4ab764f714cb6d90871523a3f4ebc3"
+    },
+    "img_6352": {
+      "file": "IMG_6352.PNG",
+      "original_path": "Archive (5)/IMG_6352.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "ad0887b15b4058dc39a761f1df377744b55ceac4452dbeaacf2987db3dec6221"
+    },
+    "img_6353": {
+      "file": "IMG_6353.PNG",
+      "original_path": "Archive (5)/IMG_6353.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "3ae9718563dc305d8f8a7cfa9806754aebe3c30fa4c73b97e1384c24fb7f5a75"
+    },
+    "img_6523": {
+      "file": "IMG_6523.PNG",
+      "original_path": "Archive (6)/IMG_6523.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "558135154026c821acab4f64260e0dead43d6cf85067b8c38cfd9067816ce5a8"
+    },
+    "img_6524": {
+      "file": "IMG_6524.PNG",
+      "original_path": "Archive (6)/IMG_6524.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "6b3e7b4b3b20811a068ad7eafab197bff94d68647a0175d795b74d29c0724048"
+    },
+    "img_6525": {
+      "file": "IMG_6525.PNG",
+      "original_path": "Archive (6)/IMG_6525.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "267ec32333c3ecac52d63fe97f035fa5299a671d84515e6dc6e49b1de98ae924"
+    },
+    "img_6526": {
+      "file": "IMG_6526.PNG",
+      "original_path": "Archive (6)/IMG_6526.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9338b07b3269521621bba57348d304d8a370cf93ad6b3bc265adfa6f46a09dcc"
+    },
+    "img_6527": {
+      "file": "IMG_6527.PNG",
+      "original_path": "Archive (6)/IMG_6527.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9733b475009f32008d82d0bdc35abf5c3872c0c4f7bf093c7af610f62b256fad"
+    },
+    "img_6528": {
+      "file": "IMG_6528.PNG",
+      "original_path": "Archive (6)/IMG_6528.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "85ec6804b0dd19bd7c4e705ed0eac096a401d2f0297075e754e9414206a935a2"
+    },
+    "img_6530": {
+      "file": "IMG_6530.jpg",
+      "original_path": "Archive (6)/IMG_6530.jpg",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6531": {
+      "file": "IMG_6531.PNG",
+      "original_path": "Archive (6)/IMG_6531.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "85ec6804b0dd19bd7c4e705ed0eac096a401d2f0297075e754e9414206a935a2"
+    },
+    "img_6532": {
+      "file": "IMG_6532.PNG",
+      "original_path": "Archive (6)/IMG_6532.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "38da45418a2d36fe53ee15506a7f58f587c8629d5dd4f8dc6117b3509753a857"
+    },
+    "img_6533": {
+      "file": "IMG_6533.PNG",
+      "original_path": "Archive (6)/IMG_6533.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "ea80cb7285ef79dc4896dfc6162788ae8b579b32dee28e41802c5fc49c7546fa"
+    },
+    "img_6534": {
+      "file": "IMG_6534.PNG",
+      "original_path": "Archive (6)/IMG_6534.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6535": {
+      "file": "IMG_6535.PNG",
+      "original_path": "Archive (6)/IMG_6535.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "109b854b247afd4047980b72348b905efa015f5923fae7da5bb0d9d9a7577288"
+    },
+    "img_6536": {
+      "file": "IMG_6536.PNG",
+      "original_path": "Archive (6)/IMG_6536.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (39% of the photo: final confidence 0.337 < 0.45)",
+      "accepted_boxes": 5,
+      "label_sha256": null
+    },
+    "img_6537": {
+      "file": "IMG_6537.PNG",
+      "original_path": "Archive (6)/IMG_6537.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (52% of the photo: no CLIP support: equipment_cabinet is CLIP text rank 4 and not the top prototype (cable))",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "img_6538": {
+      "file": "IMG_6538.PNG",
+      "original_path": "Archive (6)/IMG_6538.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "1d479212ccadf8b540206fe7f522a29d719065b080a34343c2bc6c06e8d214a7"
+    },
+    "img_6539": {
+      "file": "IMG_6539.PNG",
+      "original_path": "Archive (6)/IMG_6539.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9eb25e20c8a8cef1c5fceb8f5e36158660496fd47c4f2eb00a1f900fee1bdebd"
+    },
+    "img_6540": {
+      "file": "IMG_6540.PNG",
+      "original_path": "Archive (6)/IMG_6540.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "0fa41f4ef87ac9f9603c49ccb05b4717820a5ca197b348bf562e1c50f7e1da58"
+    },
+    "img_6541": {
+      "file": "IMG_6541.PNG",
+      "original_path": "Archive (6)/IMG_6541.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "5f24615d527bc117c4a3de9bfa509c5d1982812f7fb5bd011102fc7647b9ffe4"
+    },
+    "img_6542": {
+      "file": "IMG_6542.PNG",
+      "original_path": "Archive (6)/IMG_6542.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9a4412edd3317201173c8389dcb3a3d5f47d7cdd6f9dfe94634c13e4e964daf3"
+    },
+    "img_6543": {
+      "file": "IMG_6543.PNG",
+      "original_path": "Archive (6)/IMG_6543.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "18aef18e5ee5298d9da5f4fa3bafe76cddca4d1e2ca42ea15d43c3b030685800"
+    },
+    "img_6544": {
+      "file": "IMG_6544.PNG",
+      "original_path": "Archive (6)/IMG_6544.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "fae680f7bd77a6d21775ebc9ef395cd3f6d6355398a5be12456b4bf40c952989"
+    },
+    "img_6545": {
+      "file": "IMG_6545.PNG",
+      "original_path": "Archive (6)/IMG_6545.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "f2b7b49dbddeb1ad84e2f15c448bb6dcae3175508455672191421a45c4565471"
+    },
+    "img_6546": {
+      "file": "IMG_6546.PNG",
+      "original_path": "Archive (6)/IMG_6546.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (6% of the photo: final confidence 0.373 < 0.45)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "img_6547": {
+      "file": "IMG_6547.PNG",
+      "original_path": "Archive (6)/IMG_6547.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 3 (46% of the photo: no CLIP support: equipment_cabinet is CLIP text rank 5 and not the top prototype (cable))",
+      "accepted_boxes": 3,
+      "label_sha256": null
+    },
+    "img_6548": {
+      "file": "IMG_6548.PNG",
+      "original_path": "Archive (6)/IMG_6548.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "e4d3c463796fbfcb8147cdfb3af610b2d23c3452c9b1597f8dfaa98a530090e9"
+    },
+    "img_6549": {
+      "file": "IMG_6549.PNG",
+      "original_path": "Archive (6)/IMG_6549.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "40ac90184afdc852b941c1b4b1c96f352578e5cfd1cb2b924fd39587c51037fb"
+    },
+    "img_6550": {
+      "file": "IMG_6550.PNG",
+      "original_path": "Archive (6)/IMG_6550.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "6ff93bc856f8ef0d210131fbd9c7552510485a0fc7ffb125cd5cca34ed7f32fb"
+    },
+    "img_6551": {
+      "file": "IMG_6551.PNG",
+      "original_path": "Archive (6)/IMG_6551.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9ce8f6ada049be446b59c98415e1ccb7503b3b1f02e183e6a4661b5d3c6dbf48"
+    },
+    "img_6552": {
+      "file": "IMG_6552.PNG",
+      "original_path": "Archive (6)/IMG_6552.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "f84aff708c950db20c695eb734aa0f3706d064c100cacba645260e18bcc7a02f"
+    },
+    "img_6553": {
+      "file": "IMG_6553.PNG",
+      "original_path": "Archive (6)/IMG_6553.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "b2cbb08815f875f8d3654d7de75539eff27e84bdf9c5d365c245a114602d4fc5"
+    },
+    "img_6554": {
+      "file": "IMG_6554.PNG",
+      "original_path": "Archive (6)/IMG_6554.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6555": {
+      "file": "IMG_6555.PNG",
+      "original_path": "Archive (6)/IMG_6555.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "005c66e7dd9329a201885f5a60ac6e942543f4a5064f01cb77c75ecfc79c5638"
+    },
+    "img_6556": {
+      "file": "IMG_6556.PNG",
+      "original_path": "Archive (6)/IMG_6556.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "2814027e8aca2263c3ef314846659195a11e2ffe7a9e2715e03e6037ffe1372b"
+    },
+    "img_6557": {
+      "file": "IMG_6557.PNG",
+      "original_path": "Archive (6)/IMG_6557.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "63945baf26626532483b219310481e215bca214da3021b18df88027f246da4e9"
+    },
+    "img_6558": {
+      "file": "IMG_6558.PNG",
+      "original_path": "Archive (6)/IMG_6558.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "08759e41b87ff25ddf13456a727a09713dae44f674d0fe297a44b3a156b51c2b"
+    },
+    "img_6559": {
+      "file": "IMG_6559.PNG",
+      "original_path": "Archive (6)/IMG_6559.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "5de6ddc5432fa6794e1bf900baecebe0ef78f3cfbec9b53c400dc377356d3470"
+    },
+    "img_6560": {
+      "file": "IMG_6560.jpg",
+      "original_path": "Archive (6)/IMG_6560.jpg",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 5,
+      "label_sha256": "1a279d3d5b11fc394e3e3ddc901ac816d7189956bc55dd8771bc5513539c7131"
+    },
+    "img_6561": {
+      "file": "IMG_6561.PNG",
+      "original_path": "Archive (6)/IMG_6561.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "58b979a3ce69d7fe13f4c2ff2c92c6ca77118912085c53806cca8a16ead54eaf"
+    },
+    "img_6562": {
+      "file": "IMG_6562.PNG",
+      "original_path": "Archive (6)/IMG_6562.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "6e72068d19c6ed7aef415077e2b5dfd6edfaa410394a15b1312a516a5b10615e"
+    },
+    "img_6563": {
+      "file": "IMG_6563.PNG",
+      "original_path": "Archive (6)/IMG_6563.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "b245c1af9b5f8d0c7e71a90346737ee0a675d6935236a015330b64a8b280c55b"
+    },
+    "img_6564": {
+      "file": "IMG_6564.PNG",
+      "original_path": "Archive (6)/IMG_6564.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "f5b4e562f563dbe743c3cf5a622815f098d5578b7b71e2936048d6877d748746"
+    },
+    "img_6565": {
+      "file": "IMG_6565.PNG",
+      "original_path": "Archive (6)/IMG_6565.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (52% of the photo: final confidence 0.348 < 0.45)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "img_6566": {
+      "file": "IMG_6566.PNG",
+      "original_path": "Archive (6)/IMG_6566.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d0bd670faa2bcd940d813563400982c004a05f1210630ab0a664724bac85e2b0"
+    },
+    "img_6567": {
+      "file": "IMG_6567.PNG",
+      "original_path": "Archive (6)/IMG_6567.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "aac7359fb0e85a29d4bdef0f10da419c4db59182f5c069df57063255cbe16377"
+    },
+    "img_6354": {
+      "file": "IMG_6354.PNG",
+      "original_path": "Archive (7)/IMG_6354.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "abd9ab9ba1f45a730ac7572ce1c4337cac91a4e873578448d34398fa7f4e1420"
+    },
+    "img_6355": {
+      "file": "IMG_6355.PNG",
+      "original_path": "Archive (7)/IMG_6355.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "40b89f2d61814de5982cade3f8a76837b33380be7f1321a4e931db123e60ebf1"
+    },
+    "img_6356": {
+      "file": "IMG_6356.PNG",
+      "original_path": "Archive (7)/IMG_6356.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "c8d507ec0a308c4dd2082d11d0a720093523261131814bcdaccaab7d830a2d9f"
+    },
+    "img_6357": {
+      "file": "IMG_6357.PNG",
+      "original_path": "Archive (7)/IMG_6357.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "0e289af08d42d3266fbe472cf8decd4f10ac7f27e28e5d3cce83c2ae040665d3"
+    },
+    "img_6358": {
+      "file": "IMG_6358.PNG",
+      "original_path": "Archive (7)/IMG_6358.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "eed48b8067a615a4857fffdc70e91917c6d138bc741aee91257be4b4e71be0da"
+    },
+    "img_6359": {
+      "file": "IMG_6359.PNG",
+      "original_path": "Archive (7)/IMG_6359.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "fc80a52a3a94e067a8822c36db26d9892775bf97a35a165a5877c73937de1596"
+    },
+    "img_6360": {
+      "file": "IMG_6360.PNG",
+      "original_path": "Archive (7)/IMG_6360.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "cecbba6f1f21aab60c998ad6a3a648658275ee7c299b9384c22d87203e644d92"
+    },
+    "img_6361": {
+      "file": "IMG_6361.PNG",
+      "original_path": "Archive (7)/IMG_6361.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "f21d56a65cba7f82c928dd7139626ad3d3e6aecac3ca44c8b5d0a05019acdddd"
+    },
+    "img_6363": {
+      "file": "IMG_6363.PNG",
+      "original_path": "Archive (7)/IMG_6363.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "2701cfd39453b109a06460c913e2f06a74e7cc3c816a5c4870879e1015673d12"
+    },
+    "img_6364": {
+      "file": "IMG_6364.PNG",
+      "original_path": "Archive (7)/IMG_6364.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "f102effcb6dfebdb8f76630c2f47155d2ef3f9e17c6923442301534df8dc140a"
+    },
+    "img_6365": {
+      "file": "IMG_6365.PNG",
+      "original_path": "Archive (7)/IMG_6365.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "cf16079911b0d138ed18aa82402befb7cd44c7dad788cf99a398abe07fc69646"
+    },
+    "img_6366": {
+      "file": "IMG_6366.PNG",
+      "original_path": "Archive (7)/IMG_6366.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "e34169bfe08498c4e042c477dfa78224724547f64de5dd8f58f8ce6acd8b8c60"
+    },
+    "img_6367": {
+      "file": "IMG_6367.PNG",
+      "original_path": "Archive (7)/IMG_6367.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9a81e9b97afe1a13b8c421af14adc33b7f5623e1af30afdb00df928a1a7905a8"
+    },
+    "img_6368": {
+      "file": "IMG_6368.PNG",
+      "original_path": "Archive (7)/IMG_6368.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "8464dec403344909dd754e66fd9ab71505e2984155ba8bab4587c306d70548f3"
+    },
+    "img_6369": {
+      "file": "IMG_6369.PNG",
+      "original_path": "Archive (7)/IMG_6369.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "5985bf390361ea47467db73936891ead9748b07013515db287386368e5be9754"
+    },
+    "img_6370": {
+      "file": "IMG_6370.PNG",
+      "original_path": "Archive (7)/IMG_6370.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "f5eea3e71e62a6ba0621f4fed5e2aad844804f27ceb5cd7b6f65aa0189052eec"
+    },
+    "img_6371": {
+      "file": "IMG_6371.PNG",
+      "original_path": "Archive (7)/IMG_6371.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "0b89178e3440ddd88119dc756860dde5e6453d7d86d915d49557255344ea3ed6"
+    },
+    "img_6372": {
+      "file": "IMG_6372.PNG",
+      "original_path": "Archive (7)/IMG_6372.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d29b9b03fca5d9d775d430b542adbd173b91ddb4584ecae3bdefb5647528184f"
+    },
+    "img_6373": {
+      "file": "IMG_6373.PNG",
+      "original_path": "Archive (7)/IMG_6373.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9f44638e274212d2e503247d1839a28427dfb23fc5961c7104f85cd35d776f1b"
+    },
+    "img_6374": {
+      "file": "IMG_6374.PNG",
+      "original_path": "Archive (7)/IMG_6374.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9386367cc8af33c3a7fb351b2fa98bb79800f8b536a9435b9660cc987508bca3"
+    },
+    "img_6375": {
+      "file": "IMG_6375.PNG",
+      "original_path": "Archive (7)/IMG_6375.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "4d2c53deab851facde5e52400f58e8dd7a5c32bb4da723dff23f31f707894ba1"
+    },
+    "img_6376": {
+      "file": "IMG_6376.PNG",
+      "original_path": "Archive (7)/IMG_6376.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9e3cb5560b043b33084dab877c5851e5b4704fee85fb4fcf027c184d703dfae6"
+    },
+    "img_6377": {
+      "file": "IMG_6377.PNG",
+      "original_path": "Archive (7)/IMG_6377.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "2298115e9047143f8ee87aec9c11608bbf6ac3e1fa4f8def982003a7b9c33a13"
+    },
+    "img_6378": {
+      "file": "IMG_6378.PNG",
+      "original_path": "Archive (7)/IMG_6378.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6379": {
+      "file": "IMG_6379.PNG",
+      "original_path": "Archive (7)/IMG_6379.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "561badef655c0af3a135111d6e192556ff1bd399fed7538deec710aff7140372"
+    },
+    "img_6380": {
+      "file": "IMG_6380.PNG",
+      "original_path": "Archive (7)/IMG_6380.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "a487d0a9c4a63ba6ee3598b72a98b4f29c41d92fea8ac9728b0ace28f39288e2"
+    },
+    "img_6381": {
+      "file": "IMG_6381.PNG",
+      "original_path": "Archive (7)/IMG_6381.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "683dd5d886787975754269254f9b60f8891c74bebe33315b18ae318d19e5dd5e"
+    },
+    "img_6382": {
+      "file": "IMG_6382.PNG",
+      "original_path": "Archive (7)/IMG_6382.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "3e8d4865f468eeea167026ebb50dfd9c8be325af22797c831a7ca77e2148fa41"
+    },
+    "img_6383": {
+      "file": "IMG_6383.PNG",
+      "original_path": "Archive (7)/IMG_6383.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "7cc262a1e4a51be8079a71adf5c670217a82a8a3a1d9f992f1659279c3448d31"
+    },
+    "img_6384": {
+      "file": "IMG_6384.PNG",
+      "original_path": "Archive (7)/IMG_6384.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "6f74fd5610ca9126f7ea46f70f1d21a3a5b8bd45795089050bcdf3d159b30a40"
+    },
+    "img_6385": {
+      "file": "IMG_6385.PNG",
+      "original_path": "Archive (7)/IMG_6385.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "be3749104b215a66e785933768b7faf31dacd4d7b6952e4f0b19c50a6a31c622"
+    },
+    "img_6386": {
+      "file": "IMG_6386.PNG",
+      "original_path": "Archive (7)/IMG_6386.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "18c053c2d450f3cf0262ce0d0636c6b16f0a7014f46ec54e191f69a71ef53888"
+    },
+    "img_6387": {
+      "file": "IMG_6387.PNG",
+      "original_path": "Archive (7)/IMG_6387.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "bacafa1cc674288c4421c2eab5ee9778c7e113ce0d5924e7a6936babdf00e541"
+    },
+    "img_6388": {
+      "file": "IMG_6388.PNG",
+      "original_path": "Archive (7)/IMG_6388.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "8396c5084f68ec87dfcdf1625f2e5d828ae4e715a1a930419ab4b95210484749"
+    },
+    "img_6389": {
+      "file": "IMG_6389.PNG",
+      "original_path": "Archive (7)/IMG_6389.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "769c555eeffa479338822a8a59707e19f7c6f47a0cc4559c2f7931a2a12e15ef"
+    },
+    "img_6390": {
+      "file": "IMG_6390.PNG",
+      "original_path": "Archive (7)/IMG_6390.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "6f74fd5610ca9126f7ea46f70f1d21a3a5b8bd45795089050bcdf3d159b30a40"
+    },
+    "img_6391": {
+      "file": "IMG_6391.PNG",
+      "original_path": "Archive (7)/IMG_6391.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "f75f7c63e813bd3d2f1f590076bad04bdc94b0322caa4652532dbdcc745454f9"
+    },
+    "img_6392": {
+      "file": "IMG_6392.PNG",
+      "original_path": "Archive (7)/IMG_6392.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "113d180b71ca8b32a56198bf59b0f1b824cb0406ae474308a1338eb01c128424"
+    },
+    "img_6393": {
+      "file": "IMG_6393.PNG",
+      "original_path": "Archive (7)/IMG_6393.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9cf493898cb6db6df61bada6de4f11ccde076d6734b11bd4bd553cd9ee855a0f"
+    },
+    "img_6394": {
+      "file": "IMG_6394.PNG",
+      "original_path": "Archive (7)/IMG_6394.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "a883898e5886a850153587fe967cada5f00e37de42b443c47dbc2ffbe8f3ac61"
+    },
+    "img_6395": {
+      "file": "IMG_6395.PNG",
+      "original_path": "Archive (7)/IMG_6395.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "1906013823ab45602f774df84b6db233a02cb0325e12efa685ebb056388b670f"
+    },
+    "img_6396": {
+      "file": "IMG_6396.PNG",
+      "original_path": "Archive (7)/IMG_6396.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (36% of the photo: class changes to power_supply_unit on a flipped crop)",
+      "accepted_boxes": 3,
+      "label_sha256": null
+    },
+    "img_6397": {
+      "file": "IMG_6397.PNG",
+      "original_path": "Archive (7)/IMG_6397.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "6b952991cc1c11847c2cf3a0206893a1f28801846d6a6ab9dade264bf01a0508"
+    },
+    "img_6398": {
+      "file": "IMG_6398.PNG",
+      "original_path": "Archive (7)/IMG_6398.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "e6b8e512e8c929ed636fdd4112278ee7764260d1048aa5f095fdfc921d6c8210"
+    },
+    "img_6399": {
+      "file": "IMG_6399.PNG",
+      "original_path": "Archive (7)/IMG_6399.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "3e0854a8dbc9cfeff4218bb1ce6a2fd41315870ae851d07366d0d354d45eea05"
+    },
+    "img_6400": {
+      "file": "IMG_6400.PNG",
+      "original_path": "Archive (7)/IMG_6400.PNG",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "img_6401": {
+      "file": "IMG_6401.PNG",
+      "original_path": "Archive (7)/IMG_6401.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "5e6d6ef9124cbff8ecc42a7ec1a6bd14b8f5ca6ad016a155d838d286cf63bb3d"
+    },
+    "img_6402": {
+      "file": "IMG_6402.PNG",
+      "original_path": "Archive (7)/IMG_6402.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "30d5991ec47482fff66ee0b5fdf4ecc076298288b4ea62685c116c4f40407d5d"
+    },
+    "img_6403": {
+      "file": "IMG_6403.PNG",
+      "original_path": "Archive (7)/IMG_6403.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9ffc880701b21be1b0151f7737edee887e47427164b6572f9ee3380106c787d9"
+    },
+    "img_6404": {
+      "file": "IMG_6404.PNG",
+      "original_path": "Archive (7)/IMG_6404.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "a4d342ffbe6d904fb36b55018f502e871d456598459ae92e2eed36a6fdb79131"
+    },
+    "img_6405": {
+      "file": "IMG_6405.PNG",
+      "original_path": "Archive (7)/IMG_6405.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "5dc4c62bc197a0d0f1af44862ea06ff9f0cd9a9be0f7195af8541727130759f5"
+    },
+    "img_6406": {
+      "file": "IMG_6406.PNG",
+      "original_path": "Archive (7)/IMG_6406.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "33520c2ca46388f4d274ec118531c1ca189a5c5f9296c534105e8e4a15fd8fc6"
+    },
+    "img_6407": {
+      "file": "IMG_6407.PNG",
+      "original_path": "Archive (7)/IMG_6407.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "29270867a73a645dab6cbb7124cdeb9945cac427ff8c5ec77eeadb38b7a77bec"
+    },
+    "img_6408": {
+      "file": "IMG_6408.PNG",
+      "original_path": "Archive (7)/IMG_6408.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (98% of the photo: final confidence 0.420 < 0.45)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "img_6409": {
+      "file": "IMG_6409.PNG",
+      "original_path": "Archive (7)/IMG_6409.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "a18b231e9013b8dd999bd9fde4c27f4bb0124614ac18d432299c20104578c1a3"
+    },
+    "img_6410": {
+      "file": "IMG_6410.PNG",
+      "original_path": "Archive (7)/IMG_6410.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "1c373f1a58b0916e0c10b834c8cf6ac8692500b6d6d2fc32e9ff6253daf5af0f"
+    },
+    "img_6411": {
+      "file": "IMG_6411.PNG",
+      "original_path": "Archive (7)/IMG_6411.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "739db25635d6ccebeff04e84b4e7c604527c5f30383a5a6379e3cb5606026780"
+    },
+    "img_6412": {
+      "file": "IMG_6412.PNG",
+      "original_path": "Archive (7)/IMG_6412.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "923f87596bd5ef47f255cc36b9d695d6c372711c177a83583a074d74e974e058"
+    },
+    "img_6413": {
+      "file": "IMG_6413.PNG",
+      "original_path": "Archive (7)/IMG_6413.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "cfffd01761dc61047cf6cd905a4cc5b00c478658e4e294d60e5fc7b4783ff5d3"
+    },
+    "img_6414": {
+      "file": "IMG_6414.PNG",
+      "original_path": "Archive (7)/IMG_6414.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (24% of the photo: final confidence 0.439 < 0.45)",
+      "accepted_boxes": 4,
+      "label_sha256": null
+    },
+    "img_6415": {
+      "file": "IMG_6415.PNG",
+      "original_path": "Archive (7)/IMG_6415.PNG",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (7% of the photo: class changes to antenna on a flipped crop)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "img_6416": {
+      "file": "IMG_6416.PNG",
+      "original_path": "Archive (7)/IMG_6416.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "aee7a58396301016d751b6a7cf12addddb27a49103ed8ae799e83147ecae8c3b"
+    },
+    "img_6417": {
+      "file": "IMG_6417.PNG",
+      "original_path": "Archive (7)/IMG_6417.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "0c837730caf22d1694dd782d15cd60d723944632ea80872e98a673ff7ff89506"
+    },
+    "img_6418": {
+      "file": "IMG_6418.PNG",
+      "original_path": "Archive (7)/IMG_6418.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "1f07c345809b77de4b7e61c641a6d1d5bd860ed51040f001d518a91cd4b3f0ab"
+    },
+    "img_6419": {
+      "file": "IMG_6419.PNG",
+      "original_path": "Archive (7)/IMG_6419.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "feb0786ac828c2ac7e0344eedfcfdb5f4ce831b18f31481371f2354b34256a79"
+    },
+    "img_6420": {
+      "file": "IMG_6420.PNG",
+      "original_path": "Archive (7)/IMG_6420.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "a75d6d613da361eedb684e6898b3fcca63da1370c2bc52a0016c71e599fe7e39"
+    },
+    "img_6421": {
+      "file": "IMG_6421.PNG",
+      "original_path": "Archive (7)/IMG_6421.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "2864f574ab70160c568beb303c5a4bcf5f4d23b95651861f5d8126292c3ea689"
+    },
+    "img_6422": {
+      "file": "IMG_6422.PNG",
+      "original_path": "Archive (7)/IMG_6422.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "aa55da7e1d0b51dc923c9b17f7b7efd60db7f263bcd79671004668f8d33a4b80"
+    },
+    "img_6423": {
+      "file": "IMG_6423.PNG",
+      "original_path": "Archive (7)/IMG_6423.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "e2ba2bb719d3f60d2b590f1fd3975e009237afe055c64d5028f5f270f2290d49"
+    },
+    "img_6424": {
+      "file": "IMG_6424.PNG",
+      "original_path": "Archive (7)/IMG_6424.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "1bc8b0411ad861a1f017cba05069ab05b3f673cd343ef32971cdfbe2513f7f0c"
+    },
+    "img_6425": {
+      "file": "IMG_6425.PNG",
+      "original_path": "Archive (7)/IMG_6425.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "7b153359e6ca38d13e17770d4e0e622c4ec6fed16056057962af1a31280563a7"
+    },
+    "img_6426": {
+      "file": "IMG_6426.PNG",
+      "original_path": "Archive (7)/IMG_6426.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "fdf3df727cf57a22ce251504969a781d7907df2d625b4d460aa0641076fd5432"
+    },
+    "img_6427": {
+      "file": "IMG_6427.PNG",
+      "original_path": "Archive (7)/IMG_6427.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d7f7122775570b9e7ac0cb5b1ee9c287b29b8c423a28039051a03d6e585f6ef2"
+    },
+    "img_6428": {
+      "file": "IMG_6428.PNG",
+      "original_path": "Archive (7)/IMG_6428.PNG",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "7b153359e6ca38d13e17770d4e0e622c4ec6fed16056057962af1a31280563a7"
+    },
+    "screenshot_2026_10_06_233430": {
+      "file": "Screenshot 2026-10-06 233430.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-06 233430.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "3d450a747a1c692822493e2ea286d1f848d1875fbeb3de695deb5ea4712d2113"
+    },
+    "screenshot_2026_10_07_160806": {
+      "file": "Screenshot 2026-10-07 160806.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 160806.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (11% of the photo: margin to equipment_cabinet 0.059 < 0.1)",
+      "accepted_boxes": 3,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_160852": {
+      "file": "Screenshot 2026-10-07 160852.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 160852.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "99eedb064e4961ae485e35be69adb0be9d7aca7654ce5a83d3f7721ad40ca23b"
+    },
+    "screenshot_2026_10_07_161052": {
+      "file": "Screenshot 2026-10-07 161052.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 161052.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 6,
+      "label_sha256": "4dc4be9d4b25a41e55e169a4f0c9f5ee667286717d214159bec4e605d195f9ff"
+    },
+    "screenshot_2026_10_07_161136": {
+      "file": "Screenshot 2026-10-07 161136.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 161136.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "7eb5d36fe4cdb709acb0387624efdfd8f128c5836c705dfb4b37590be59fb564"
+    },
+    "screenshot_2026_10_07_161206": {
+      "file": "Screenshot 2026-10-07 161206.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 161206.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (36% of the photo: margin to power_supply_unit 0.083 < 0.1)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_161228": {
+      "file": "Screenshot 2026-10-07 161228.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 161228.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "4230abee547baca232f70b909e662a1a1dea7be320822bbc7e71294811345aad"
+    },
+    "screenshot_2026_10_07_161322": {
+      "file": "Screenshot 2026-10-07 161322.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 161322.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "1f2269619ba27c513cb6e4737004dab99c208d28fa19030b61a50b50f2bfe53f"
+    },
+    "screenshot_2026_10_07_161352": {
+      "file": "Screenshot 2026-10-07 161352.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 161352.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 5,
+      "label_sha256": "c3bb4d8b9c463ed1a80063905a781fcca0d85460a615594315fdf1be7279e239"
+    },
+    "screenshot_2026_10_07_161508": {
+      "file": "Screenshot 2026-10-07 161508.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 161508.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "667cfbf31839d2c858cdfa5b8b0c723efa76b107e41bb1cd32a88f5e47a4c3fb"
+    },
+    "screenshot_2026_10_07_162604": {
+      "file": "Screenshot 2026-10-07 162604.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 162604.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 4 (6% of the photo: final confidence 0.415 < 0.45)",
+      "accepted_boxes": 6,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_162638": {
+      "file": "Screenshot 2026-10-07 162638.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 162638.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "ca6ba4679b2cf5928cb6d6b641e2cb99dab5b81985db9ac1fccdb3ff953094b9"
+    },
+    "screenshot_2026_10_07_162659": {
+      "file": "Screenshot 2026-10-07 162659.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 162659.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (12% of the photo: no CLIP support: equipment_cabinet is CLIP text rank 5 and not the top prototype (cable))",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_162728": {
+      "file": "Screenshot 2026-10-07 162728.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 162728.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "5cdbdd75866cb1065b271a47bacda88a4a4868ad2c96efa59b1a39047cbff7b4"
+    },
+    "screenshot_2026_10_07_162755": {
+      "file": "Screenshot 2026-10-07 162755.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 162755.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "7b95105b4b39b1e4c79331f6f8322a52ca14ca7ff7e44561afe83651727de65c"
+    },
+    "screenshot_2026_10_07_162820": {
+      "file": "Screenshot 2026-10-07 162820.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 162820.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 6,
+      "label_sha256": "7ac9c5b17ba852acd98ba4da7a43919015797140b47255d1fe9b13039b1b3f16"
+    },
+    "screenshot_2026_10_07_162839": {
+      "file": "Screenshot 2026-10-07 162839.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 162839.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 5,
+      "label_sha256": "a5bdb0ad9143a8903646844ba106b09b73958803bf420a024bbcf649a6997475"
+    },
+    "screenshot_2026_10_07_162855": {
+      "file": "Screenshot 2026-10-07 162855.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 162855.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d950340d572dde328132ccd8a69683e47225cafdc1bd7811a2ebe79ae0eca8d7"
+    },
+    "screenshot_2026_10_07_162917": {
+      "file": "Screenshot 2026-10-07 162917.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 162917.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (11% of the photo: margin to equipment_cabinet 0.093 < 0.1)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_162954": {
+      "file": "Screenshot 2026-10-07 162954.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 162954.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "8939695329e0c5aada5be609e9d69b45e5af6d819373d34e2f3bfdb35ee9c70d"
+    },
+    "screenshot_2026_10_07_163031": {
+      "file": "Screenshot 2026-10-07 163031.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163031.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "95408dcaaf8293f99dff40dae6e18d0b4fb705e941bd6b72ea839ba6ce468705"
+    },
+    "screenshot_2026_10_07_163112": {
+      "file": "Screenshot 2026-10-07 163112.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163112.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 4 (11% of the photo: class changes to cable on a flipped crop)",
+      "accepted_boxes": 3,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_163142": {
+      "file": "Screenshot 2026-10-07 163142.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163142.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "69e025b191d42c2b97d1e579e29b4a5bbdd073c32026b6c320a5bb54fe87fc45"
+    },
+    "screenshot_2026_10_07_163228": {
+      "file": "Screenshot 2026-10-07 163228.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163228.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9150894d96cb23cd2092c41cfe2360614dbbc99d0d9486fb32475e93002c502d"
+    },
+    "screenshot_2026_10_07_163300": {
+      "file": "Screenshot 2026-10-07 163300.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163300.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "0e16c20903c2528ca7a64db04a3528d20febcd3ddb08f00b2a009bbeca55047b"
+    },
+    "screenshot_2026_10_07_163352": {
+      "file": "Screenshot 2026-10-07 163352.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163352.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 8,
+      "label_sha256": "7cc0e3f7ee647828a2e725b6349ceb306cac4b8d8879ada05a90bc6f229c2343"
+    },
+    "screenshot_2026_10_07_163425": {
+      "file": "Screenshot 2026-10-07 163425.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163425.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 3 (19% of the photo: class changes to equipment_cabinet on a flipped crop)",
+      "accepted_boxes": 3,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_163456": {
+      "file": "Screenshot 2026-10-07 163456.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163456.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "1d1902f5ab1cb202992218abc809e9979073e2442f49f14a28dda7df2e0fa5b6"
+    },
+    "screenshot_2026_10_07_163544": {
+      "file": "Screenshot 2026-10-07 163544.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163544.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "cf8d977d5232f76a1607c90f1bcddf236efaed11e5add12dbc3d594b2f98c578"
+    },
+    "screenshot_2026_10_07_163606": {
+      "file": "Screenshot 2026-10-07 163606.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163606.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "c8336015b05008889b3b1c7c4a54da36a0fc5e730d3b3346fdd7435e0137f4a6"
+    },
+    "screenshot_2026_10_07_163648": {
+      "file": "Screenshot 2026-10-07 163648.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163648.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "69abdae5ad6d2c1f095184cec4c2b158f13fd2557e3e2cda85d22b665823363c"
+    },
+    "screenshot_2026_10_07_163718": {
+      "file": "Screenshot 2026-10-07 163718.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163718.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (11% of the photo: margin to router 0.045 < 0.1)",
+      "accepted_boxes": 7,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_163737": {
+      "file": "Screenshot 2026-10-07 163737.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163737.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "aef248607d0d9da60a911768f4c2380f269b6a321fe1ae5d99ebcb6ebb3742a2"
+    },
+    "screenshot_2026_10_07_163756": {
+      "file": "Screenshot 2026-10-07 163756.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163756.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "e4b8eab3f528636cf235d3147dcc330cfbf0820111837627d17d1f14828aa3b2"
+    },
+    "screenshot_2026_10_07_163816": {
+      "file": "Screenshot 2026-10-07 163816.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163816.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (95% of the photo: final confidence 0.376 < 0.45)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_163854": {
+      "file": "Screenshot 2026-10-07 163854.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163854.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "7c298e56507648a0f1ab3407e4f7e261bc881abf51eb783c94e58b981e767f9f"
+    },
+    "screenshot_2026_10_07_163911": {
+      "file": "Screenshot 2026-10-07 163911.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163911.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 5 (5% of the photo: class changes to antenna on a flipped crop)",
+      "accepted_boxes": 3,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_163929": {
+      "file": "Screenshot 2026-10-07 163929.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163929.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "6f03cd38024ecc97dc2940ebbd6b00d065a8ca3692d2d1526d53f738867381ef"
+    },
+    "screenshot_2026_10_07_163951": {
+      "file": "Screenshot 2026-10-07 163951.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 163951.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "41a9ae22dfa28c8ea1fbfc46b513c70dc61ac7e6b07f35e7b4226f6ec6775391"
+    },
+    "screenshot_2026_10_07_164013": {
+      "file": "Screenshot 2026-10-07 164013.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164013.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "7bf7b1260c8a301478ca96956fe446bb01ed2d2c1df168dcf296f7e373c68fb7"
+    },
+    "screenshot_2026_10_07_164057": {
+      "file": "Screenshot 2026-10-07 164057.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164057.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "3f0da859adb70bff2dde3ca02a5a6863e6b362c137d0ddbbadfec08024514719"
+    },
+    "screenshot_2026_10_07_164132": {
+      "file": "Screenshot 2026-10-07 164132.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164132.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "91fcbf0c88c0b78b1557dbb8cb33a68b07126188e7a5dcd8162b27202d87b617"
+    },
+    "screenshot_2026_10_07_164157": {
+      "file": "Screenshot 2026-10-07 164157.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164157.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "553e6e5bd4d822acea4a59a294d23561dd6374ce2cb2c013f598b64c02958647"
+    },
+    "screenshot_2026_10_07_164211": {
+      "file": "Screenshot 2026-10-07 164211.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164211.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 6,
+      "label_sha256": "c2daae32d017eed449d594f5bf5a1fd6b172ac728133c562f8071f9c43017d2a"
+    },
+    "screenshot_2026_10_07_164233": {
+      "file": "Screenshot 2026-10-07 164233.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164233.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (12% of the photo: final confidence 0.403 < 0.45)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_164313": {
+      "file": "Screenshot 2026-10-07 164313.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164313.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (22% of the photo: margin to router 0.060 < 0.1)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_164355": {
+      "file": "Screenshot 2026-10-07 164355.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164355.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "3cb89760b0f3bee90fca9d9e76444df88bc7516fbad6f547565e45140c92ceff"
+    },
+    "screenshot_2026_10_07_164431": {
+      "file": "Screenshot 2026-10-07 164431.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164431.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 6,
+      "label_sha256": "b37137bffdaa3b3cabb85eda326209c8e8fd8003cc3a537d21a9c73613a258c6"
+    },
+    "screenshot_2026_10_07_164450": {
+      "file": "Screenshot 2026-10-07 164450.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164450.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (6% of the photo: class changes to power_supply_unit on a flipped crop)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_164524": {
+      "file": "Screenshot 2026-10-07 164524.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164524.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "367e93077dec5defe6c495a1661065477ed332516869296ad4db8f433f29e54c"
+    },
+    "screenshot_2026_10_07_164559": {
+      "file": "Screenshot 2026-10-07 164559.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164559.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 6,
+      "label_sha256": "acec3e4932efadf461088d4ba1cc51061420293706eab8d0441be2b371107c70"
+    },
+    "screenshot_2026_10_07_164622": {
+      "file": "Screenshot 2026-10-07 164622.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164622.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 4 (7% of the photo: class changes to router on a flipped crop)",
+      "accepted_boxes": 4,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_164649": {
+      "file": "Screenshot 2026-10-07 164649.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164649.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "fe15420e8bb92e5b656c5f0f65d09d3c0e4bde833979089b548b4cf95a115d33"
+    },
+    "screenshot_2026_10_07_164711": {
+      "file": "Screenshot 2026-10-07 164711.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164711.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 6,
+      "label_sha256": "959524c9eed396d73a226765cc31dcb4b07138a7e622635a1827a66464aaf8c0"
+    },
+    "screenshot_2026_10_07_164730": {
+      "file": "Screenshot 2026-10-07 164730.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164730.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (47% of the photo: margin to equipment_cabinet 0.072 < 0.1)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_164804": {
+      "file": "Screenshot 2026-10-07 164804.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164804.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "b14d1512684830bbbda65f97db192a075e3483bc7d3c885b9ca17885741ae107"
+    },
+    "screenshot_2026_10_07_164821": {
+      "file": "Screenshot 2026-10-07 164821.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164821.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "769beaa39c2800452d903796d41319f1aa96d1ab7dad5ba8a7548221bb17d890"
+    },
+    "screenshot_2026_10_07_164852": {
+      "file": "Screenshot 2026-10-07 164852.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164852.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9d03218b32d910a94cdcdb5cab70ff627c08a9acc6b4785a1d98ed9c73a9c658"
+    },
+    "screenshot_2026_10_07_164925": {
+      "file": "Screenshot 2026-10-07 164925.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164925.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "8babc82f1ff886abcc393eba2aef7604c7dd65f6a078cbd339e6770348435dfb"
+    },
+    "screenshot_2026_10_07_164939": {
+      "file": "Screenshot 2026-10-07 164939.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 164939.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 5 (19% of the photo: class changes to equipment_cabinet on a flipped crop)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_165015": {
+      "file": "Screenshot 2026-10-07 165015.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 165015.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "b268b7682a1ebf2e94a3d24e126c03d9ce12ec00c9be6774ace481f007acfd55"
+    },
+    "screenshot_2026_10_07_165034": {
+      "file": "Screenshot 2026-10-07 165034.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 165034.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "734f97a5e378540a3e40a90180896886428ae3e43d9312f196f71add87214f9d"
+    },
+    "screenshot_2026_10_07_165054": {
+      "file": "Screenshot 2026-10-07 165054.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 165054.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "e37bf60dcf4640c6f1ecb8bbf94e51cc465d6dda27b35304a0091148a3ca3812"
+    },
+    "screenshot_2026_10_07_165139": {
+      "file": "Screenshot 2026-10-07 165139.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 165139.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "7d41689ebd789f838e404bf40721ee5f5c41d786eff9c8ba72776eb08ea8cca7"
+    },
+    "screenshot_2026_10_07_165203": {
+      "file": "Screenshot 2026-10-07 165203.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 165203.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (46% of the photo: margin to power_supply_unit 0.033 < 0.1)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_165310": {
+      "file": "Screenshot 2026-10-07 165310.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 165310.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 4 (25% of the photo: class changes to equipment_cabinet on a flipped crop)",
+      "accepted_boxes": 4,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_165330": {
+      "file": "Screenshot 2026-10-07 165330.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 165330.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "7160f1a6b518ff36174795c2a89a2e97bde643b71808a2fe17e87ddcc0c1f83f"
+    },
+    "screenshot_2026_10_07_165423": {
+      "file": "Screenshot 2026-10-07 165423.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 165423.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "ce45ba98cf300874c810a1b7a808c9bc73ddcdbd233c639ceb25c2a3f3d8de32"
+    },
+    "screenshot_2026_10_07_165453": {
+      "file": "Screenshot 2026-10-07 165453.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 165453.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (10% of the photo: final confidence 0.440 < 0.45)",
+      "accepted_boxes": 4,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_165947": {
+      "file": "Screenshot 2026-10-07 165947.png",
+      "original_path": "Equipment Cabinet/Equipment Cabinet/Screenshot 2026-10-07 165947.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "5b84de1ad0b7ebb54edaee44414e0e9019e6fd141307c70a01e152d3b01f3a98"
+    },
+    "screenshot_2026_10_07_112112": {
+      "file": "Screenshot 2026-10-07 112112.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 112112.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "e949a31b4387f95987a51c20fb4fc1cd4baa7e00c323b3202a5ffbdf1439e9ac"
+    },
+    "screenshot_2026_10_07_112152": {
+      "file": "Screenshot 2026-10-07 112152.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 112152.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "a8201455fd58e30375345dbc5b745de827e23344f2e6a0e7ef0a664d1b02da36"
+    },
+    "screenshot_2026_10_07_112215": {
+      "file": "Screenshot 2026-10-07 112215.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 112215.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "7031367e09bd925ee6334f042a2b50ec959cf27dca2f7dd55ceb643b8b1f164c"
+    },
+    "screenshot_2026_10_07_112903": {
+      "file": "Screenshot 2026-10-07 112903.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 112903.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "e9ecded3d8e01f24a40ecf916a1855de020649ee0170b6967d865a9e15076c12"
+    },
+    "screenshot_2026_10_07_112942": {
+      "file": "Screenshot 2026-10-07 112942.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 112942.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d94c4602bd5d445422b496a8bf4d1c6736e5f8c078783611e7d5fa77d4344d97"
+    },
+    "screenshot_2026_10_07_113105": {
+      "file": "Screenshot 2026-10-07 113105.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 113105.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "c2781c002e8c069a6a48c917649cb4cceba53163faba4c5b69247644eb4dca6c"
+    },
+    "screenshot_2026_10_07_113144": {
+      "file": "Screenshot 2026-10-07 113144.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 113144.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "79dd33487fb3b9bc32a31c7578e36f10d6ca6e1f5a3ddaebe9c72d94fd7a4f4e"
+    },
+    "screenshot_2026_10_07_113544": {
+      "file": "Screenshot 2026-10-07 113544.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 113544.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "6080afc51953a0b36ec6be1224c4e1df2b8f02c748beb3183dd2387274c2d906"
+    },
+    "screenshot_2026_10_07_113620": {
+      "file": "Screenshot 2026-10-07 113620.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 113620.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "176b41cc17093aeb7fcd8ea1bc64f6e30c6d2f3cf3d055a0ddc0cb84ab1adbf8"
+    },
+    "screenshot_2026_10_07_113656": {
+      "file": "Screenshot 2026-10-07 113656.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 113656.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "fb14a7f156cf33d2f9136af755f6e1cc82026b9d5ac4b0cfc33571be4c119303"
+    },
+    "screenshot_2026_10_07_113725": {
+      "file": "Screenshot 2026-10-07 113725.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 113725.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "8c372850d572eeabfed45c38193c0e8e86dddff24ccc54b1036e8d3556adf245"
+    },
+    "screenshot_2026_10_07_113810": {
+      "file": "Screenshot 2026-10-07 113810.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 113810.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "941e7db0dc877dfb5e441702a1ef030b56aafcb3d2a99fddd5e88ccea538b2dc"
+    },
+    "screenshot_2026_10_07_113956": {
+      "file": "Screenshot 2026-10-07 113956.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 113956.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "7d9c5f5e8ede54be8e06493bb4c2bffcfe9f6bd28316063b73b31740a629a092"
+    },
+    "screenshot_2026_10_07_114047": {
+      "file": "Screenshot 2026-10-07 114047.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 114047.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "f4884b4ba3050eba6ddfab0432af3235b5ddd42035f82f22e3e5b48a0586305b"
+    },
+    "screenshot_2026_10_07_114133": {
+      "file": "Screenshot 2026-10-07 114133.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 114133.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "44974c2c5d5cb2a8327df3483de342b935a4c40bfed0cc19213cf0ac152c5cc9"
+    },
+    "screenshot_2026_10_07_114201": {
+      "file": "Screenshot 2026-10-07 114201.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 114201.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "2d8bbfdd7ecd8ec92790556fbdd75d4294968f638e8a1fd9f085866876b73f8c"
+    },
+    "screenshot_2026_10_07_115133": {
+      "file": "Screenshot 2026-10-07 115133.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 115133.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "b48b32613659dd5638a83fd91d090632e53fbfb955745a42581f8b98d6409709"
+    },
+    "screenshot_2026_10_07_115241": {
+      "file": "Screenshot 2026-10-07 115241.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 115241.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "e1d370bd5b782357a8227b9e53487b565ba97467d91222feb889c52fd47cd2f7"
+    },
+    "screenshot_2026_10_07_115329": {
+      "file": "Screenshot 2026-10-07 115329.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 115329.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "f01f56def0cb769b4dc33731bca2ee96b7b0f9ec57bd4ae0871c0e640248c20d"
+    },
+    "screenshot_2026_10_07_115356": {
+      "file": "Screenshot 2026-10-07 115356.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 115356.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "4fb8a4c8b009e3d8880e5694e1a0c69b088cdac376eec8626dd63886edf34766"
+    },
+    "screenshot_2026_10_07_115424": {
+      "file": "Screenshot 2026-10-07 115424.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 115424.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "4ec4f10736540984deac764e3c16832bc7a21e8998c28617417585dc6581b5cc"
+    },
+    "screenshot_2026_10_07_115537": {
+      "file": "Screenshot 2026-10-07 115537.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 115537.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "ba2e1ffc982c3672840506f2aab4b8a7f5b43344e9e576939cb39eb57e4222b7"
+    },
+    "screenshot_2026_10_07_115639": {
+      "file": "Screenshot 2026-10-07 115639.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 115639.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "43c868abbe5ab1aba166356b2fab8027128576010df9351d62a2a29f3c182329"
+    },
+    "screenshot_2026_10_07_115706": {
+      "file": "Screenshot 2026-10-07 115706.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 115706.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d29e2806649e274ea38dec3fcda3d2efbc61752b3b5b663d9122a618a4466c54"
+    },
+    "screenshot_2026_10_07_115750": {
+      "file": "Screenshot 2026-10-07 115750.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 115750.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "918d9913f6506bf4c7a747e50ca514ce772b507cd750311f0b6d6f826aba69c5"
+    },
+    "screenshot_2026_10_07_115814": {
+      "file": "Screenshot 2026-10-07 115814.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 115814.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "ef9b8cc93d45f96ca9a8288650d3547ca005cabb3940aa71ebb3ceec16ad78fc"
+    },
+    "screenshot_2026_10_07_115927": {
+      "file": "Screenshot 2026-10-07 115927.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 115927.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "ff17caceb510c5790f2266aa99465f2608957c0e29a6de5d76f73a5aa9ed4679"
+    },
+    "screenshot_2026_10_07_120218": {
+      "file": "Screenshot 2026-10-07 120218.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 120218.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "84f9d654e87aded72e7072d6cb0ba679d8360c45c05630391b558af5a6a794ca"
+    },
+    "screenshot_2026_10_07_120253": {
+      "file": "Screenshot 2026-10-07 120253.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 120253.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "af933b104fe2b87dbe7cc01e0d106908be43627f453be38603c9e987677786fe"
+    },
+    "screenshot_2026_10_07_120344": {
+      "file": "Screenshot 2026-10-07 120344.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 120344.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "23b0dcab009be7301145337f4ec9017f0c54b2a70ccab986079958edf58e3cfd"
+    },
+    "screenshot_2026_10_07_120427": {
+      "file": "Screenshot 2026-10-07 120427.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 120427.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_120511": {
+      "file": "Screenshot 2026-10-07 120511.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 120511.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "568d75ca26152fff32c4b3182c46954dc554fe0a203da83985397a70a00e6783"
+    },
+    "screenshot_2026_10_07_120610": {
+      "file": "Screenshot 2026-10-07 120610.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 120610.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "6002b2dd17a47110b5e092d7b04558e4526cdb874aa189753fb875e45e1819b2"
+    },
+    "screenshot_2026_10_07_120627": {
+      "file": "Screenshot 2026-10-07 120627.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 120627.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "1791a1a271bf4ac608257af72978fdd94affa7b59440b7023ea7c78b36e8d14f"
+    },
+    "screenshot_2026_10_07_120715": {
+      "file": "Screenshot 2026-10-07 120715.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 120715.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "28ed6a9ce8dafc3bbdc91c03a422a5b9689387d88df511fc13eecd1b67a6f5c8"
+    },
+    "screenshot_2026_10_07_120734": {
+      "file": "Screenshot 2026-10-07 120734.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 120734.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "803faf3304cd989cc593d813117a48a1c90016857598efe59b44d0ef0abf3003"
+    },
+    "screenshot_2026_10_07_120808": {
+      "file": "Screenshot 2026-10-07 120808.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 120808.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "bad725793db3ec6a1f470fbba7cb3008066e74b30a2fa3b6cdcf1383447c83ca"
+    },
+    "screenshot_2026_10_07_120906": {
+      "file": "Screenshot 2026-10-07 120906.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 120906.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "b61f7a2455644f832a45781b31986c4e72566fb6fd4083aa6685b8edff4e060d"
+    },
+    "screenshot_2026_10_07_120926": {
+      "file": "Screenshot 2026-10-07 120926.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 120926.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (64% of the photo: margin to power_supply_unit 0.043 < 0.1)",
+      "accepted_boxes": 2,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_120952": {
+      "file": "Screenshot 2026-10-07 120952.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 120952.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_121020": {
+      "file": "Screenshot 2026-10-07 121020.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 121020.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "03a330c9a1a7db52d4e2da6cbdef391617150857d6e92c85f0695473d04d182b"
+    },
+    "screenshot_2026_10_07_121130": {
+      "file": "Screenshot 2026-10-07 121130.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 121130.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "8066e5094bdaf33435f8bcae0ff439f2df53722341b93936b95a903ead3c72a1"
+    },
+    "screenshot_2026_10_07_121218": {
+      "file": "Screenshot 2026-10-07 121218.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 121218.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "c63e82791a12e799807046a48c05e7b43c414cd8dac851de8f9f47be8902e876"
+    },
+    "screenshot_2026_10_07_121403": {
+      "file": "Screenshot 2026-10-07 121403.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 121403.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_121519": {
+      "file": "Screenshot 2026-10-07 121519.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 121519.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9d1f48250a3d0a5cebf459842853528230f271c8dd9b16155ddf64fb828b6d51"
+    },
+    "screenshot_2026_10_07_121636": {
+      "file": "Screenshot 2026-10-07 121636.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 121636.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "5d15eaee5f6e6d8897e1e3e8a7e2ef183620893096b8003460794eaa96b7f761"
+    },
+    "screenshot_2026_10_07_121711": {
+      "file": "Screenshot 2026-10-07 121711.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 121711.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "ea7ad731a3d8fe1b0153c8106111216f146cef1b0ec4b8458c5f684b49c9aaf2"
+    },
+    "screenshot_2026_10_07_121729": {
+      "file": "Screenshot 2026-10-07 121729.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 121729.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "7031367e09bd925ee6334f042a2b50ec959cf27dca2f7dd55ceb643b8b1f164c"
+    },
+    "screenshot_2026_10_07_121922": {
+      "file": "Screenshot 2026-10-07 121922.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 121922.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "b9f2779903e2ff2349ed76a8ada76e97a8f7d195da7d0027b1a8a90d52e1c7dd"
+    },
+    "screenshot_2026_10_07_121942": {
+      "file": "Screenshot 2026-10-07 121942.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 121942.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "78de440b557b04157af8e4019dab3fde6aea79fda36cf4ac77073f8c7c77bc4b"
+    },
+    "screenshot_2026_10_07_122010": {
+      "file": "Screenshot 2026-10-07 122010.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 122010.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "6744230688f2197e1a9fa5e64888f049f8e8da4dd11c276a82484bd47017c36e"
+    },
+    "screenshot_2026_10_07_122033": {
+      "file": "Screenshot 2026-10-07 122033.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 122033.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "c30a7fa6bb92211a4b70158837664f215811d635f720a8ba1a7115eb858b3d05"
+    },
+    "screenshot_2026_10_07_122136": {
+      "file": "Screenshot 2026-10-07 122136.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 122136.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "1b58865a27d48b116d565ab7ddd38b051cf6313ff3f0d5c800df5ade98a8ff01"
+    },
+    "screenshot_2026_10_07_122213": {
+      "file": "Screenshot 2026-10-07 122213.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 122213.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d98db51a73d607606c6037eeb30045edc73fd1986c55a19e370492842c816a67"
+    },
+    "screenshot_2026_10_07_122310": {
+      "file": "Screenshot 2026-10-07 122310.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 122310.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "482ca5154807dfbb509bbe2c905f58eba525e30393183542d5e9be73d545261e"
+    },
+    "screenshot_2026_10_07_122333": {
+      "file": "Screenshot 2026-10-07 122333.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 122333.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "f275c876fc507117cf620025cf2b999956c5c63f0fce80401a3fd2bac51dfc3f"
+    },
+    "screenshot_2026_10_07_122415": {
+      "file": "Screenshot 2026-10-07 122415.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 122415.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "b375e0093079f0e008f94eabd1051e637aa6a410356ea7f2a9139866dbd7a3e6"
+    },
+    "screenshot_2026_10_07_122544": {
+      "file": "Screenshot 2026-10-07 122544.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 122544.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "a3e08757be42d02ada9f00a41f452bc80c00db204b00a199818a1bde50d945ec"
+    },
+    "screenshot_2026_10_07_122609": {
+      "file": "Screenshot 2026-10-07 122609.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 122609.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "e7749c72b95df7a3c67d21e22cbdd2724255f3a54e3b07c5f628f0e1f8299171"
+    },
+    "screenshot_2026_10_07_122656": {
+      "file": "Screenshot 2026-10-07 122656.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 122656.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "a69e81068ccb3273ea4ee2e1b15d836978b2f1750a6efbad5c27261f64fa0b57"
+    },
+    "screenshot_2026_10_07_122830": {
+      "file": "Screenshot 2026-10-07 122830.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 122830.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "95eba207beafe9a0be918a63ef828e164716cac6bb606baa5971aec049a35886"
+    },
+    "screenshot_2026_10_07_123020": {
+      "file": "Screenshot 2026-10-07 123020.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 123020.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "ff17cf4897e4c6c016f118867863886a1a6ec652f58df0a3896838a9df50fe08"
+    },
+    "screenshot_2026_10_07_123043": {
+      "file": "Screenshot 2026-10-07 123043.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 123043.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "efaf5efcd47d0cec666c7822a2c3332365039052b58b614e38d2d4129f043517"
+    },
+    "screenshot_2026_10_07_123157": {
+      "file": "Screenshot 2026-10-07 123157.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 123157.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d1d0146e85aa52568192b5d6d58944da62bb781b8a5fe9bea1eead261443eafa"
+    },
+    "screenshot_2026_10_07_123322": {
+      "file": "Screenshot 2026-10-07 123322.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 123322.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "2de311fb2873b1e8b418423245d2f483cff7dfa96db5f727854ef4eca38ca30e"
+    },
+    "screenshot_2026_10_07_123404": {
+      "file": "Screenshot 2026-10-07 123404.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 123404.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "e665a878ffdaa9ffb60264d025a276cfb7e9dfb4a34151d0db015fe6138c07a3"
+    },
+    "screenshot_2026_10_07_123426": {
+      "file": "Screenshot 2026-10-07 123426.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 123426.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_123451": {
+      "file": "Screenshot 2026-10-07 123451.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 123451.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "5089e5b00b510f9d12fcabc8c8df288b722a2b708cd6fa29e18b66550636279d"
+    },
+    "screenshot_2026_10_07_123547": {
+      "file": "Screenshot 2026-10-07 123547.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 123547.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d3c39e3205e45ef0c6b0334feb50c509728c4da57478dd19420e826f1d5bb716"
+    },
+    "screenshot_2026_10_07_123613": {
+      "file": "Screenshot 2026-10-07 123613.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 123613.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "bf6cb0399dae3b8788f0a3df4ff409a4dca44ce5d9fa56eaf7d71266d8b519c4"
+    },
+    "screenshot_2026_10_07_123701": {
+      "file": "Screenshot 2026-10-07 123701.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 123701.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "ebc6cb1fa7feb223cbc8401490b4933e307d51b62ecc80a34db3793a0fab677c"
+    },
+    "screenshot_2026_10_07_123819": {
+      "file": "Screenshot 2026-10-07 123819.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 123819.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "575bb7790d58438ca7fe16cd06c02f7ac226ee42d0876b8599670cb38c1c1acd"
+    },
+    "screenshot_2026_10_07_123842": {
+      "file": "Screenshot 2026-10-07 123842.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 123842.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "c4a96ea14e4025e679d2f70412b6ce1d2b4bd6c64c87b7f355b58bfbdc37b90d"
+    },
+    "screenshot_2026_10_07_123943": {
+      "file": "Screenshot 2026-10-07 123943.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 123943.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "b7b98d76f295c9d9d6a2042e83b1aba0155c91460276034f720e785a833abdd7"
+    },
+    "screenshot_2026_10_07_124006": {
+      "file": "Screenshot 2026-10-07 124006.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 124006.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d93d44965095aa85bfaecaa9f9372e56e0ccf26112a12110d6e91122c045eda1"
+    },
+    "screenshot_2026_10_07_124025": {
+      "file": "Screenshot 2026-10-07 124025.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 124025.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (9% of the photo: class changes to cable on a flipped crop)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_124158": {
+      "file": "Screenshot 2026-10-07 124158.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 124158.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "1ee59daac85a1c8b3b1c678299d3e0c2e09493782291a81fe4246a0677051db8"
+    },
+    "screenshot_2026_10_07_124310": {
+      "file": "Screenshot 2026-10-07 124310.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 124310.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "1b38328c37eb818f7ab52a003cc0ecc1a7aa0aa7678068c693fcbed063bdf33f"
+    },
+    "screenshot_2026_10_07_124405": {
+      "file": "Screenshot 2026-10-07 124405.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 124405.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "2df1829494870f0ab03a46cc8b3fc3c5ff63c19e69bfccd834fb088879383424"
+    },
+    "screenshot_2026_10_07_124454": {
+      "file": "Screenshot 2026-10-07 124454.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 124454.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "397ba47157c205fd551d56b1f3cc40823d27b384c6d8d3c1987bcc0e3bfdfbe7"
+    },
+    "screenshot_2026_10_07_124510": {
+      "file": "Screenshot 2026-10-07 124510.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 124510.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "5950cd9650f8b5027b744fafa257734c83f475ecfa16b426b767b5521be06e45"
+    },
+    "screenshot_2026_10_07_124527": {
+      "file": "Screenshot 2026-10-07 124527.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 124527.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 3,
+      "label_sha256": "475efb7b3539c854eb4d7f4d3b393ef9c125e7d2bc47cb57aa222fb610ccd1b8"
+    },
+    "screenshot_2026_10_07_124558": {
+      "file": "Screenshot 2026-10-07 124558.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 124558.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "947ff4cf06d069230a783de0c2796b6e85fea63910e3cb27282ff2e9fb4bdb1a"
+    },
+    "screenshot_2026_10_07_124619": {
+      "file": "Screenshot 2026-10-07 124619.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 124619.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "aab3ceb1040546a7fc5ab31d9d9826eae7ca32245a1edf3cfe77da99a7ae44dd"
+    },
+    "screenshot_2026_10_07_124743": {
+      "file": "Screenshot 2026-10-07 124743.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 124743.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "b387bbfa2046c55be74f65bb97226ed2edacfdaf12d361601d64a5d36520f0d9"
+    },
+    "screenshot_2026_10_07_124815": {
+      "file": "Screenshot 2026-10-07 124815.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 124815.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "49f75ed05e819f1b2c0c90ab2dbfd3af056e6543ad663b873c6881012598d028"
+    },
+    "screenshot_2026_10_07_124858": {
+      "file": "Screenshot 2026-10-07 124858.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 124858.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "a144a683e42b459d7d5da48f66ed5013e7eefc4c792bcc491ed7c29db151e20e"
+    },
+    "screenshot_2026_10_07_125009": {
+      "file": "Screenshot 2026-10-07 125009.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 125009.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "15b025d7ccf2eb6ccc74e063f262dfba7cbfe62f8c86e98f76f01f977b190e1d"
+    },
+    "screenshot_2026_10_07_125031": {
+      "file": "Screenshot 2026-10-07 125031.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 125031.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "162c8bbb14ee7048a9b53ec397e25f2bd5eb1c4eecc0ae2571cddf9d4579f0a2"
+    },
+    "screenshot_2026_10_07_125130": {
+      "file": "Screenshot 2026-10-07 125130.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 125130.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "33561beeaf6a8888f763d5f8dce47f4b1d042ddaf2a5aea68bcba3cc99516a65"
+    },
+    "screenshot_2026_10_07_125319": {
+      "file": "Screenshot 2026-10-07 125319.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 125319.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "2e0f5085be35e65ecd94d6cde47396fe8112046924f12625ad727928710a8ea9"
+    },
+    "screenshot_2026_10_07_125342": {
+      "file": "Screenshot 2026-10-07 125342.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 125342.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9bc5a46feebe41f7ef4e4bfa001bec2c5c2d8ef0b9154f015510d77fc33e0078"
+    },
+    "screenshot_2026_10_07_125417": {
+      "file": "Screenshot 2026-10-07 125417.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 125417.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "bb286c263767da970c9f171df54064694fda7af25c130148a0177c7e4a2b73d0"
+    },
+    "screenshot_2026_10_07_125444": {
+      "file": "Screenshot 2026-10-07 125444.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 125444.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "59a823f250d517e6e6f2d0774a6e7f311e6b4073ed51a2bbd566b6164e4473a7"
+    },
+    "screenshot_2026_10_07_125500": {
+      "file": "Screenshot 2026-10-07 125500.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 125500.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "4ca7a9af1ef5d78c97f6b98b833da608f39b831f722585407d26f7562683c64e"
+    },
+    "screenshot_2026_10_07_125532": {
+      "file": "Screenshot 2026-10-07 125532.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 125532.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9fdf11ae7e26b90a81d25215d259894a4bd2b17f0a1be6f7488c67e95a3adddd"
+    },
+    "screenshot_2026_10_07_125639": {
+      "file": "Screenshot 2026-10-07 125639.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 125639.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "ccb5d0e5278baa492ad7a3c1af41cd0690a8efcc12f1d1469b6c011fa18c4a2f"
+    },
+    "screenshot_2026_10_07_125720": {
+      "file": "Screenshot 2026-10-07 125720.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 125720.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "6bfc452a6b779de7d8d3a5787207f97e686b52249f2a60dc432212110b8ba303"
+    },
+    "screenshot_2026_10_07_125838": {
+      "file": "Screenshot 2026-10-07 125838.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 125838.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "37e89e0e01dd6cd586a4ffb272fd51e52696fc03005326af362d9461e7199342"
+    },
+    "screenshot_2026_10_07_125858": {
+      "file": "Screenshot 2026-10-07 125858.png",
+      "original_path": "antenna/antenna/Screenshot 2026-10-07 125858.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "2e2ca15129d81e03504c5f81fa302c357e8a380a76d8375d63352782acc5ed7e"
+    },
+    "screenshot_2026_10_07_130201": {
+      "file": "Screenshot 2026-10-07 130201.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 130201.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_130332": {
+      "file": "Screenshot 2026-10-07 130332.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 130332.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "60ca25bf53f3bd0f201ca1a9e10da7215d9e2b210b1df1a95a7e1b2e45a1a454"
+    },
+    "screenshot_2026_10_07_130405": {
+      "file": "Screenshot 2026-10-07 130405.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 130405.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 2 (41% of the photo: class changes to battery on a flipped crop)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_130423": {
+      "file": "Screenshot 2026-10-07 130423.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 130423.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_130459": {
+      "file": "Screenshot 2026-10-07 130459.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 130459.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (17% of the photo: margin to radio_unit 0.066 < 0.1)",
+      "accepted_boxes": 3,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_130522": {
+      "file": "Screenshot 2026-10-07 130522.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 130522.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "4d6440bf3d381cdd074532f26fcf08ebaab89c2b58c49b292592a8f38c1e71e4"
+    },
+    "screenshot_2026_10_07_130600": {
+      "file": "Screenshot 2026-10-07 130600.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 130600.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "dfbd638811f1fdfa41e3da3e8db72403dfb1d0e3a0ebc82aa05f4ec9e7e936fe"
+    },
+    "screenshot_2026_10_07_130617": {
+      "file": "Screenshot 2026-10-07 130617.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 130617.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "8ade4c6834b00500b98c605e5301935cc9d1df684154ace975a382d4f67a0f4b"
+    },
+    "screenshot_2026_10_07_130641": {
+      "file": "Screenshot 2026-10-07 130641.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 130641.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "278fbdcb746cef85f695a988b08ad63a7d8f9a997454dd65a939d5d962e22581"
+    },
+    "screenshot_2026_10_07_130722": {
+      "file": "Screenshot 2026-10-07 130722.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 130722.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "0138f6887c215a94572a334f64c397e280a37e07e8ea83125d362388ebec5413"
+    },
+    "screenshot_2026_10_07_130932": {
+      "file": "Screenshot 2026-10-07 130932.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 130932.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "b64605ea68025f833d693ef4e414b1159f22b6a3c22116fdc28dcdfc9360181c"
+    },
+    "screenshot_2026_10_07_131006": {
+      "file": "Screenshot 2026-10-07 131006.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131006.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "6d45fa02691ba19705f3264a0c5c7c32a5f44942cd0c3f148a7b9c5c7221deba"
+    },
+    "screenshot_2026_10_07_131020": {
+      "file": "Screenshot 2026-10-07 131020.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131020.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_131056": {
+      "file": "Screenshot 2026-10-07 131056.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131056.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "dc5a7a00e72085f19e3428321fda24689f7b27aa70d169c66fe05eb653c8e53d"
+    },
+    "screenshot_2026_10_07_131124": {
+      "file": "Screenshot 2026-10-07 131124.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131124.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "6d5f094800176dcdab7a64428a91705a23bf910b73f875f5da098408063f429f"
+    },
+    "screenshot_2026_10_07_131150": {
+      "file": "Screenshot 2026-10-07 131150.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131150.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "3118a6ab7e5de54efa207b2eede0963505a7db07ce5d1f3ea7bc8aa35e7e5eb1"
+    },
+    "screenshot_2026_10_07_131213": {
+      "file": "Screenshot 2026-10-07 131213.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131213.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "d5b88c012d27eb1f9c40b526406ae3b8bf16e34541b2c1da8f689b30aa58d0d0"
+    },
+    "screenshot_2026_10_07_131240": {
+      "file": "Screenshot 2026-10-07 131240.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131240.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "0cdf53ec617b9d29a8e8f5802f540b658d3775319c4acf98dca18787243ff5e6"
+    },
+    "screenshot_2026_10_07_131315": {
+      "file": "Screenshot 2026-10-07 131315.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131315.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "c4e0bca4aac80919542f9727cc7dee8f54207e838703f61d6f67a111eee63aaf"
+    },
+    "screenshot_2026_10_07_131337": {
+      "file": "Screenshot 2026-10-07 131337.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131337.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d862a191c9251824b98764845d9932962dad4e453e9ddf1977f7746babc0be9b"
+    },
+    "screenshot_2026_10_07_131357": {
+      "file": "Screenshot 2026-10-07 131357.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131357.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "5a269c42cafb7d13fa2a68e6cf79ceeea83e78bc0cf0a9b38362cf2f0cbdad34"
+    },
+    "screenshot_2026_10_07_131417": {
+      "file": "Screenshot 2026-10-07 131417.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131417.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "ba49745323c64b6813875f5b73d3f75d84f1cc22602323a50e885c69706c0ffd"
+    },
+    "screenshot_2026_10_07_131459": {
+      "file": "Screenshot 2026-10-07 131459.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131459.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "891bdff353d2919f567b0351d56985a62985457e0fb7e8f08b6460f60a9e4ed1"
+    },
+    "screenshot_2026_10_07_131518": {
+      "file": "Screenshot 2026-10-07 131518.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131518.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "33b61deddf5999520df5275af32dec45f5b422f44f05aeac703b8e8f5daf1d0b"
+    },
+    "screenshot_2026_10_07_131537": {
+      "file": "Screenshot 2026-10-07 131537.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131537.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "1632ded70d4ec736f6aac07a32a520fbd7e41686b33d68475a44940009e95ef5"
+    },
+    "screenshot_2026_10_07_131618": {
+      "file": "Screenshot 2026-10-07 131618.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131618.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_131640": {
+      "file": "Screenshot 2026-10-07 131640.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131640.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "c84eedabead923e866ba48eea2b5297c95bfa4848f0c301064a7b091dd896440"
+    },
+    "screenshot_2026_10_07_131707": {
+      "file": "Screenshot 2026-10-07 131707.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131707.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "f0fc176b59d5229fafe79c839e7b104bd8fa407907818e7181750a502245ce0e"
+    },
+    "screenshot_2026_10_07_131728": {
+      "file": "Screenshot 2026-10-07 131728.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131728.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "d2899d2e8bc04c31b0743147d5255874bcd78a2c5788088419988939d07c67a1"
+    },
+    "screenshot_2026_10_07_131748": {
+      "file": "Screenshot 2026-10-07 131748.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131748.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (97% of the photo: class changes to radio_unit on a flipped crop)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_131806": {
+      "file": "Screenshot 2026-10-07 131806.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131806.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_131826": {
+      "file": "Screenshot 2026-10-07 131826.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131826.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "b15acdf778286c077f5cf0d94d038b2a13cf3dc531b814cce1ba16f31fc740da"
+    },
+    "screenshot_2026_10_07_131929": {
+      "file": "Screenshot 2026-10-07 131929.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 131929.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "58272489c8acc9571178df5ae750f31a8d8b602729fa085ac8308b9913b1a422"
+    },
+    "screenshot_2026_10_07_132006": {
+      "file": "Screenshot 2026-10-07 132006.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132006.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "55eae6cc94dac83ace338e152a6433d8924b219e8c9af33b7485e7366f915810"
+    },
+    "screenshot_2026_10_07_132021": {
+      "file": "Screenshot 2026-10-07 132021.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132021.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_132041": {
+      "file": "Screenshot 2026-10-07 132041.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132041.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d55852271455f634f7a2de66b21bfa346b9d38ef663545a9ee8f74414b089a25"
+    },
+    "screenshot_2026_10_07_132057": {
+      "file": "Screenshot 2026-10-07 132057.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132057.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "2bee9c88cd3eb5088a2d25cff0a6f5b48bc14093a3300dd8705475ce6df9c178"
+    },
+    "screenshot_2026_10_07_132115": {
+      "file": "Screenshot 2026-10-07 132115.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132115.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "e21d5540eda6584ca7627be8bcbad71d743af7a83075b8556fb29654038b60c1"
+    },
+    "screenshot_2026_10_07_132137": {
+      "file": "Screenshot 2026-10-07 132137.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132137.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "f010f968efb7220d0065c215606587cf9d1ac958e8af949fe64c4bb182181a04"
+    },
+    "screenshot_2026_10_07_132159": {
+      "file": "Screenshot 2026-10-07 132159.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132159.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_132234": {
+      "file": "Screenshot 2026-10-07 132234.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132234.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "a02eb836cda59d465ae6ec774c890fd8f918dabea2364a28c5b744db204e1778"
+    },
+    "screenshot_2026_10_07_132300": {
+      "file": "Screenshot 2026-10-07 132300.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132300.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "a652d712e03e4a3043724675a5a11fb5fe358ab6bad4719376935f36f6ad2f62"
+    },
+    "screenshot_2026_10_07_132327": {
+      "file": "Screenshot 2026-10-07 132327.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132327.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_132347": {
+      "file": "Screenshot 2026-10-07 132347.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132347.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "e4305032090fb91c9498ab9d4d4d5a8a7d3f315812c86f861727432cc92d496a"
+    },
+    "screenshot_2026_10_07_132410": {
+      "file": "Screenshot 2026-10-07 132410.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132410.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "7790378d5ad977ff33229875f56110bc7844bce505f58afe9ad3a7057686f6ca"
+    },
+    "screenshot_2026_10_07_132427": {
+      "file": "Screenshot 2026-10-07 132427.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132427.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "568544919121c2ba01488fe6932fd503bd65e2b123847023a8fe8a45007fb002"
+    },
+    "screenshot_2026_10_07_132449": {
+      "file": "Screenshot 2026-10-07 132449.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132449.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9eb0f1c07def89daf8d3cbc5f6876d1defaa041b178efd52676c2c5bb1477199"
+    },
+    "screenshot_2026_10_07_132507": {
+      "file": "Screenshot 2026-10-07 132507.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132507.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "df2d240549dde4fd72bde106fcae982b84d8652ac493f547b514c1d9ef5bf1a7"
+    },
+    "screenshot_2026_10_07_132538": {
+      "file": "Screenshot 2026-10-07 132538.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132538.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 0 (95% of the photo: class changes to cable on a flipped crop)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_132604": {
+      "file": "Screenshot 2026-10-07 132604.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 132604.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_140523": {
+      "file": "Screenshot 2026-10-07 140523.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 140523.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "c79ea47ef0338e595f49f80411f8392eda8c634ea470497d5a9f31ac14adf581"
+    },
+    "screenshot_2026_10_07_140544": {
+      "file": "Screenshot 2026-10-07 140544.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 140544.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "b1e917025186bc9223c4e66dad39da7157cf98fcf70335b028060aee15e07a22"
+    },
+    "screenshot_2026_10_07_140615": {
+      "file": "Screenshot 2026-10-07 140615.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 140615.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "9af09e5778c899f34b55cbe244ed6fb3d8fed23eb3eb5c0b896c65a864ddd8ff"
+    },
+    "screenshot_2026_10_07_140653": {
+      "file": "Screenshot 2026-10-07 140653.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 140653.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "cd8e1b4981c8b5463f35fb153d91939750616ba3b85ec0917d2d2457c287d3b8"
+    },
+    "screenshot_2026_10_07_140729": {
+      "file": "Screenshot 2026-10-07 140729.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 140729.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "0ef5d690cf467ae35a47c9efd2fd5594730c4dab15d0bd17fba4d8ff02a1eec6"
+    },
+    "screenshot_2026_10_07_140749": {
+      "file": "Screenshot 2026-10-07 140749.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 140749.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "ebac45b8e161b8d375539e39b56faac1218969ba02b3a29c0ffcd3b0149bff39"
+    },
+    "screenshot_2026_10_07_140809": {
+      "file": "Screenshot 2026-10-07 140809.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 140809.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_140830": {
+      "file": "Screenshot 2026-10-07 140830.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 140830.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "c4240a550e97feba2bc04ed23c90b630df16f0d44489633978f57fa2c29b8b35"
+    },
+    "screenshot_2026_10_07_140927": {
+      "file": "Screenshot 2026-10-07 140927.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 140927.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_141004": {
+      "file": "Screenshot 2026-10-07 141004.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141004.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "8499d03a43c28848342b005d41f1beb6a59de9ea92e3ad500945f407a97f0cc6"
+    },
+    "screenshot_2026_10_07_141021": {
+      "file": "Screenshot 2026-10-07 141021.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141021.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "6161bf8b42e76da9ee41dbaeef72fba520e62959ab68d825daa163cd2a1bd135"
+    },
+    "screenshot_2026_10_07_141040": {
+      "file": "Screenshot 2026-10-07 141040.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141040.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "28d0d3bdbba4a1cf4f3da482b81b506412451242aaf91aaad3b7fd085e586ff5"
+    },
+    "screenshot_2026_10_07_141059": {
+      "file": "Screenshot 2026-10-07 141059.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141059.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "7e7100dff1519d44c925b8a20ba5c3950b9bea61e08db5cc0b88cf985c5f8f24"
+    },
+    "screenshot_2026_10_07_141137": {
+      "file": "Screenshot 2026-10-07 141137.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141137.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "8caf1955342dde5b38e7c4fc03d679eb2c4945ef5f675666f0299714ba29989b"
+    },
+    "screenshot_2026_10_07_141208": {
+      "file": "Screenshot 2026-10-07 141208.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141208.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "22ee86465fd7a4b2b6c326248a7a816f8065b5b4c8b10ab24c4fe3a0ee5750ae"
+    },
+    "screenshot_2026_10_07_141234": {
+      "file": "Screenshot 2026-10-07 141234.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141234.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "3fb4d36839c2ce6fa3e5826a8618f26376fd7ef4c52c5b924e827e464029424d"
+    },
+    "screenshot_2026_10_07_141252": {
+      "file": "Screenshot 2026-10-07 141252.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141252.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "deb3947de7d4b1fb8be10451833963380daeecbf449dc4f90065e47baaa181ab"
+    },
+    "screenshot_2026_10_07_141356": {
+      "file": "Screenshot 2026-10-07 141356.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141356.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "289d2774236f42f463f5dbb6d7995bb8d7033f676d9328a4af3f7902cc0e241a"
+    },
+    "screenshot_2026_10_07_141416": {
+      "file": "Screenshot 2026-10-07 141416.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141416.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "5fa0f41035f093941d36cbc8a304368107debd58efcc0fab88de69ca87423d99"
+    },
+    "screenshot_2026_10_07_141441": {
+      "file": "Screenshot 2026-10-07 141441.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141441.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "a46ca7620ea79729e674ee22d0ae46780749fec7538f2c4aba1759df2be1bed6"
+    },
+    "screenshot_2026_10_07_141530": {
+      "file": "Screenshot 2026-10-07 141530.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141530.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "30d352a22ae0309ea45e6544feff470c2aca974c8b72424d8c2372c9221e1589"
+    },
+    "screenshot_2026_10_07_141607": {
+      "file": "Screenshot 2026-10-07 141607.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141607.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "2c515a9919d201fe15e2188471d58b3e3e92696e5abdd86d5433bb69df74268e"
+    },
+    "screenshot_2026_10_07_141626": {
+      "file": "Screenshot 2026-10-07 141626.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141626.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "14edb0c158dc96491cb6dc26babdd6d6266692d9feef3184033a88992660de56"
+    },
+    "screenshot_2026_10_07_141646": {
+      "file": "Screenshot 2026-10-07 141646.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141646.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "949f4dceac7227b74540e3634ba0a13303feb9fbfbf05f7f5dced5cae8df6598"
+    },
+    "screenshot_2026_10_07_141711": {
+      "file": "Screenshot 2026-10-07 141711.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141711.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "42a05c95a383001ccd3915494a3c2f4c72905ac82f8c0db82e75c144cccc3006"
+    },
+    "screenshot_2026_10_07_141743": {
+      "file": "Screenshot 2026-10-07 141743.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141743.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "bdb8ac9313e00a3a565bd88f58808997544e92a2d952e10234184bfa6b07d21d"
+    },
+    "screenshot_2026_10_07_141811": {
+      "file": "Screenshot 2026-10-07 141811.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141811.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "629fd0aac38b38484d655315d5589629937c0f71d7f74c825506aa0db3c234bc"
+    },
+    "screenshot_2026_10_07_141835": {
+      "file": "Screenshot 2026-10-07 141835.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141835.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_141934": {
+      "file": "Screenshot 2026-10-07 141934.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141934.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "56cb50fae372b2e2fa67ea7d47eed98d80374140fce73555413cdce5e1d2da60"
+    },
+    "screenshot_2026_10_07_141954": {
+      "file": "Screenshot 2026-10-07 141954.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 141954.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 4,
+      "label_sha256": "96de8a6fb238b450163368e6e614c48c485ecaabf21b8036e745d5735b492f33"
+    },
+    "screenshot_2026_10_07_142029": {
+      "file": "Screenshot 2026-10-07 142029.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 142029.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "7660c03d86ccff6bf0219de9c306a9720b6cf2a2baa78323b5c899a1d69a7b7b"
+    },
+    "screenshot_2026_10_07_142110": {
+      "file": "Screenshot 2026-10-07 142110.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 142110.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "015cc56e728bf2e0ccda6c890caf8414721d3d3a39e69b3d9dcd3be598e9c906"
+    },
+    "screenshot_2026_10_07_142134": {
+      "file": "Screenshot 2026-10-07 142134.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 142134.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "bcc04f86583b566b764857ccc243e2cb0f1a1f1a2548e8a56c0a6a8d6ce04fe0"
+    },
+    "screenshot_2026_10_07_142155": {
+      "file": "Screenshot 2026-10-07 142155.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 142155.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "43c5f5e2f9cb73998af32ddd762c24180c1af20e5ab139806d812d6025885b80"
+    },
+    "screenshot_2026_10_07_152634": {
+      "file": "Screenshot 2026-10-07 152634.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 152634.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "d3fc82d849780057c7f7d29b0bbc32d06490d3128d0c950c1aa1270e357d2dec"
+    },
+    "screenshot_2026_10_07_152708": {
+      "file": "Screenshot 2026-10-07 152708.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 152708.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "b79cf0dbc3256ef4b1ba98434d3dcb5d4602c376375987624db818476dfe485b"
+    },
+    "screenshot_2026_10_07_152734": {
+      "file": "Screenshot 2026-10-07 152734.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 152734.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "0ffc4917d3c7694ac6ccad726168b64429533e1f992c382e044dc4edb12afea4"
+    },
+    "screenshot_2026_10_07_152754": {
+      "file": "Screenshot 2026-10-07 152754.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 152754.png",
+      "trainable": false,
+      "exclusion_reason": "uncovered uncertain box 1 (7% of the photo: final confidence 0.392 < 0.45)",
+      "accepted_boxes": 1,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_154512": {
+      "file": "Screenshot 2026-10-07 154512.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 154512.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_154535": {
+      "file": "Screenshot 2026-10-07 154535.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 154535.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "0403302e8a04ab4715e4a5817fc6b60b6642609291177159997b300de3acefd7"
+    },
+    "screenshot_2026_10_07_154600": {
+      "file": "Screenshot 2026-10-07 154600.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 154600.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "f2458a29060c9d14f3ff85921721a3b6597dc1c35c85478a0b6e6c6fecb36d43"
+    },
+    "screenshot_2026_10_07_154638": {
+      "file": "Screenshot 2026-10-07 154638.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 154638.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "2498add6e5088f12551f828e1228b3b1fe13d577e4fe8393548c8963d825fd9d"
+    },
+    "screenshot_2026_10_07_154700": {
+      "file": "Screenshot 2026-10-07 154700.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 154700.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "1ea21a984f3d9901e37fb156dabe0bfce277dfc91aaf5319218059c0df5893d1"
+    },
+    "screenshot_2026_10_07_154725": {
+      "file": "Screenshot 2026-10-07 154725.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 154725.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 2,
+      "label_sha256": "fb6161f7f0dd862c8b1e3dbec7f379199fe2ef913606209f768140435aa1acfd"
+    },
+    "screenshot_2026_10_07_154756": {
+      "file": "Screenshot 2026-10-07 154756.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 154756.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "ec754dea140d7da1e2199ecaf05056ae6f4990e7a26639dfa5b8a85b26d951fd"
+    },
+    "screenshot_2026_10_07_154817": {
+      "file": "Screenshot 2026-10-07 154817.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 154817.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "cfeafdc2a989a0d9ede46fd7c831d8d0efaac777901fda37cb6f58e5923e20ce"
+    },
+    "screenshot_2026_10_07_154845": {
+      "file": "Screenshot 2026-10-07 154845.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 154845.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    },
+    "screenshot_2026_10_07_154903": {
+      "file": "Screenshot 2026-10-07 154903.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 154903.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "1677efcb6965271b0d4f9a27d208e44c71c71f2d73312a1247e86b320a7f2927"
+    },
+    "screenshot_2026_10_07_154923": {
+      "file": "Screenshot 2026-10-07 154923.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 154923.png",
+      "trainable": true,
+      "exclusion_reason": null,
+      "accepted_boxes": 1,
+      "label_sha256": "0f586108cf6c892d09e71c6cbadde8d3aefa76b911b3140ed76216914044d1b0"
+    },
+    "screenshot_2026_10_07_155002": {
+      "file": "Screenshot 2026-10-07 155002.png",
+      "original_path": "radio unit/radio unit/Screenshot 2026-10-07 155002.png",
+      "trainable": false,
+      "exclusion_reason": "no accepted box",
+      "accepted_boxes": 0,
+      "label_sha256": null
+    }
+  },
+  "failures": []
+}

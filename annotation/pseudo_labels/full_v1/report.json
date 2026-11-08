@@ -1,0 +1,334 @@
+{
+  "disclaimer": "Pseudo-labels are generated automatically by Grounding DINO + CLIP (+ optional folder prior and MobileSAM). They are NOT ground truth. Agreement between models and consistency with folder names are not accuracy, precision, recall or mAP. No human has verified these labels.",
+  "run": "full_v1",
+  "created_at": "2026-11-07T20:41:34",
+  "config_hash": "bdf7dbdff06f62c9",
+  "detection_source": "stored:full_543_gdino_clip",
+  "scores": "clip:live",
+  "folder_prior_boost": 2.0,
+  "use_sam": false,
+  "use_prototypes": true,
+  "prototype_anchors": {
+    "antenna": 99,
+    "router": 70,
+    "cable": 39,
+    "battery": 61,
+    "power_supply_unit": 93,
+    "equipment_cabinet": 68,
+    "radio_unit": 100
+  },
+  "elapsed_s": 777.4,
+  "failures": 0,
+  "images": 543,
+  "training_images": 441,
+  "excluded_images": 102,
+  "exclusion_reasons": {
+    "no accepted box": 39,
+    "uncovered uncertain": 63
+  },
+  "boxes": 2432,
+  "boxes_by_tier": {
+    "ACCEPTED": 918,
+    "UNCERTAIN": 175,
+    "REJECTED": 1339
+  },
+  "training_instances": 762,
+  "sam_refined_boxes": 0,
+  "per_class": {
+    "antenna": {
+      "accepted": 140,
+      "uncertain": 16,
+      "rejected": 347,
+      "accepted_in_training_images": 133,
+      "training_images_with_class": 121,
+      "final_confidence_accepted": {
+        "0.4-0.5": 0,
+        "0.5-0.6": 1,
+        "0.6-0.7": 13,
+        "0.7-0.8": 9,
+        "0.8-0.9": 12,
+        "0.9-1.0": 105
+      },
+      "median_final_confidence_accepted": 0.9941,
+      "median_detector_confidence_accepted": 0.3704,
+      "uncertain_reasons": {
+        "no_clip_support": 1,
+        "low_final_conf": 6,
+        "flip_unstable": 8,
+        "low_margin": 1
+      },
+      "rejected_reasons": {
+        "part_of_larger_object": 244,
+        "too_small": 13,
+        "background": 27,
+        "low_detector_conf": 63
+      }
+    },
+    "router": {
+      "accepted": 105,
+      "uncertain": 13,
+      "rejected": 86,
+      "accepted_in_training_images": 97,
+      "training_images_with_class": 95,
+      "final_confidence_accepted": {
+        "0.4-0.5": 1,
+        "0.5-0.6": 5,
+        "0.6-0.7": 4,
+        "0.7-0.8": 6,
+        "0.8-0.9": 12,
+        "0.9-1.0": 77
+      },
+      "median_final_confidence_accepted": 0.9879,
+      "median_detector_confidence_accepted": 0.4608,
+      "uncertain_reasons": {
+        "low_final_conf": 9,
+        "flip_unstable": 3,
+        "low_margin": 1
+      },
+      "rejected_reasons": {
+        "low_detector_conf": 21,
+        "part_of_larger_object": 65
+      }
+    },
+    "cable": {
+      "accepted": 143,
+      "uncertain": 22,
+      "rejected": 553,
+      "accepted_in_training_images": 110,
+      "training_images_with_class": 87,
+      "final_confidence_accepted": {
+        "0.4-0.5": 0,
+        "0.5-0.6": 7,
+        "0.6-0.7": 14,
+        "0.7-0.8": 10,
+        "0.8-0.9": 27,
+        "0.9-1.0": 85
+      },
+      "median_final_confidence_accepted": 0.9568,
+      "median_detector_confidence_accepted": 0.3164,
+      "uncertain_reasons": {
+        "low_final_conf": 18,
+        "flip_unstable": 4
+      },
+      "rejected_reasons": {
+        "part_of_larger_object": 216,
+        "background": 147,
+        "low_detector_conf": 171,
+        "too_small": 19
+      }
+    },
+    "battery": {
+      "accepted": 60,
+      "uncertain": 23,
+      "rejected": 102,
+      "accepted_in_training_images": 38,
+      "training_images_with_class": 23,
+      "final_confidence_accepted": {
+        "0.4-0.5": 2,
+        "0.5-0.6": 4,
+        "0.6-0.7": 7,
+        "0.7-0.8": 9,
+        "0.8-0.9": 20,
+        "0.9-1.0": 18
+      },
+      "median_final_confidence_accepted": 0.8478,
+      "median_detector_confidence_accepted": 0.3625,
+      "uncertain_reasons": {
+        "low_final_conf": 13,
+        "flip_unstable": 7,
+        "low_margin": 3
+      },
+      "rejected_reasons": {
+        "part_of_larger_object": 69,
+        "background": 6,
+        "low_detector_conf": 27
+      }
+    },
+    "power_supply_unit": {
+      "accepted": 157,
+      "uncertain": 54,
+      "rejected": 116,
+      "accepted_in_training_images": 133,
+      "training_images_with_class": 94,
+      "final_confidence_accepted": {
+        "0.4-0.5": 5,
+        "0.5-0.6": 20,
+        "0.6-0.7": 21,
+        "0.7-0.8": 31,
+        "0.8-0.9": 29,
+        "0.9-1.0": 51
+      },
+      "median_final_confidence_accepted": 0.8099,
+      "median_detector_confidence_accepted": 0.3922,
+      "uncertain_reasons": {
+        "low_final_conf": 26,
+        "low_margin": 12,
+        "flip_unstable": 16
+      },
+      "rejected_reasons": {
+        "part_of_larger_object": 60,
+        "low_detector_conf": 55,
+        "background": 1
+      }
+    },
+    "equipment_cabinet": {
+      "accepted": 240,
+      "uncertain": 33,
+      "rejected": 58,
+      "accepted_in_training_images": 185,
+      "training_images_with_class": 93,
+      "final_confidence_accepted": {
+        "0.4-0.5": 2,
+        "0.5-0.6": 18,
+        "0.6-0.7": 19,
+        "0.7-0.8": 21,
+        "0.8-0.9": 25,
+        "0.9-1.0": 155
+      },
+      "median_final_confidence_accepted": 0.9438,
+      "median_detector_confidence_accepted": 0.3648,
+      "uncertain_reasons": {
+        "flip_unstable": 7,
+        "low_final_conf": 13,
+        "low_margin": 8,
+        "no_clip_support": 5
+      },
+      "rejected_reasons": {
+        "low_detector_conf": 37,
+        "part_of_larger_object": 16,
+        "background": 3,
+        "too_small": 2
+      }
+    },
+    "radio_unit": {
+      "accepted": 73,
+      "uncertain": 14,
+      "rejected": 77,
+      "accepted_in_training_images": 66,
+      "training_images_with_class": 65,
+      "final_confidence_accepted": {
+        "0.4-0.5": 3,
+        "0.5-0.6": 8,
+        "0.6-0.7": 11,
+        "0.7-0.8": 11,
+        "0.8-0.9": 12,
+        "0.9-1.0": 28
+      },
+      "median_final_confidence_accepted": 0.8453,
+      "median_detector_confidence_accepted": 0.4239,
+      "uncertain_reasons": {
+        "low_margin": 7,
+        "low_final_conf": 6,
+        "flip_unstable": 1
+      },
+      "rejected_reasons": {
+        "too_small": 2,
+        "low_detector_conf": 20,
+        "part_of_larger_object": 53,
+        "background": 2
+      }
+    }
+  },
+  "consistency": {
+    "note": "Consistency between automatic signals; NOT accuracy.",
+    "accepted_where_clip_top1_is_final": 0.7342,
+    "accepted_where_detector_class_is_final": 0.3508,
+    "accepted_where_folder_prior_was_decisive": 0.0207,
+    "accepted_where_prototype_top1_is_final": 0.7277,
+    "flip_stable_share_of_non_rejected": 0.9167,
+    "alt_prompt_stable_share_of_non_rejected": 0.8463,
+    "alt_prompt_stable_share_of_accepted": 0.9009,
+    "folder_class_among_labels_of_training_images": {
+      "power_supply_unit": {
+        "training_images_with_folder_class": 44,
+        "images": 93
+      },
+      "battery": {
+        "training_images_with_folder_class": 16,
+        "images": 62
+      },
+      "cable": {
+        "training_images_with_folder_class": 32,
+        "images": 44
+      },
+      "router": {
+        "training_images_with_folder_class": 62,
+        "images": 74
+      },
+      "equipment_cabinet": {
+        "training_images_with_folder_class": 48,
+        "images": 70
+      },
+      "antenna": {
+        "training_images_with_folder_class": 93,
+        "images": 100
+      },
+      "radio_unit": {
+        "training_images_with_folder_class": 60,
+        "images": 100
+      }
+    },
+    "folder_to_accepted_class_images": {
+      "power_supply_unit": {
+        "router": 15,
+        "power_supply_unit": 58,
+        "cable": 12,
+        "equipment_cabinet": 26,
+        "radio_unit": 1,
+        "antenna": 3,
+        "battery": 4
+      },
+      "battery": {
+        "battery": 26,
+        "equipment_cabinet": 24,
+        "cable": 16,
+        "power_supply_unit": 21,
+        "router": 2,
+        "antenna": 4,
+        "radio_unit": 1
+      },
+      "cable": {
+        "cable": 33,
+        "antenna": 4,
+        "equipment_cabinet": 8,
+        "router": 3,
+        "radio_unit": 3,
+        "battery": 2,
+        "power_supply_unit": 2
+      },
+      "router": {
+        "power_supply_unit": 4,
+        "router": 65,
+        "equipment_cabinet": 4,
+        "antenna": 3,
+        "radio_unit": 2,
+        "cable": 4,
+        "battery": 1
+      },
+      "equipment_cabinet": {
+        "router": 13,
+        "equipment_cabinet": 66,
+        "battery": 4,
+        "cable": 27,
+        "power_supply_unit": 13,
+        "antenna": 17
+      },
+      "antenna": {
+        "antenna": 94,
+        "cable": 8,
+        "router": 1,
+        "equipment_cabinet": 2
+      },
+      "radio_unit": {
+        "equipment_cabinet": 1,
+        "power_supply_unit": 17,
+        "radio_unit": 62,
+        "cable": 8,
+        "battery": 1,
+        "antenna": 3,
+        "router": 3
+      }
+    }
+  },
+  "mean_seconds_per_image": 1.34
+}

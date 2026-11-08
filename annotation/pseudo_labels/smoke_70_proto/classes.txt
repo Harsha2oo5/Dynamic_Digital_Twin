@@ -1,0 +1,7 @@
+antenna
+router
+cable
+battery
+power_supply_unit
+equipment_cabinet
+radio_unit
