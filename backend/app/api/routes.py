@@ -3,8 +3,9 @@ import uuid
 from pathlib import Path
 
 import cv2
-from fastapi import APIRouter, Depends, File, Form, HTTPException, Request, UploadFile, status
+from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, Request, UploadFile, status
 from fastapi.responses import FileResponse, Response
+from pydantic import BaseModel
 from starlette.concurrency import run_in_threadpool
 
 from app.camera.video_stream import IMAGE_EXTENSIONS, VIDEO_EXTENSIONS, VideoSource, decode_image
@@ -13,12 +14,16 @@ from app.schemas.detection import (
     DetectionStats,
     HealthResponse,
     ImageDetectionResponse,
+    InventorySummary,
+    ModelEntry,
     ModelInfo,
+    SessionInfo,
     TrackedObject,
     VideoJobResults,
     VideoJobStatus,
 )
 from app.services.detection_service import DetectionService
+from app.services.model_manager import ModelSelectionError
 from app.services.video_jobs import VideoJob
 from app.vision.visualization import draw_detections, encode_jpeg_base64
 
@@ -71,6 +76,30 @@ def list_models(service: DetectionService = Depends(get_service)):
     return service.list_checkpoints()
 
 
+@router.get("/model/versions", response_model=list[ModelEntry])
+def model_versions(service: DetectionService = Depends(get_service)):
+    """All checkpoints with version, label source and model card."""
+    return service.models.entries()
+
+
+class ModelSelectRequest(BaseModel):
+    model_id: str
+
+
+@router.post("/model/select", response_model=ModelEntry)
+async def select_model(body: ModelSelectRequest, service: DetectionService = Depends(get_service)):
+    """Switch the detection model at runtime (no restart). On failure the current model stays active."""
+    try:
+        return await run_in_threadpool(service.models.select, body.model_id)
+    except ModelSelectionError as exc:
+        raise HTTPException(422, str(exc)) from exc
+
+
+@router.get("/model/performance")
+def model_performance(service: DetectionService = Depends(get_service)):
+    return service.models.performance()
+
+
 @router.get("/config")
 def runtime_config(service: DetectionService = Depends(get_service)):
     s = service.settings
@@ -85,6 +114,7 @@ def runtime_config(service: DetectionService = Depends(get_service)):
         "frame_skip": s.frame_skip,
         "max_frame_dim": s.max_frame_dim,
         "tracker": s.tracker_config,
+        "track_min_hits": s.track_min_hits,
         "max_video_mb": s.max_video_mb,
         "max_video_frames": s.max_video_frames,
         "max_image_mb": s.max_image_mb,
@@ -248,11 +278,33 @@ def detection_stats(service: DetectionService = Depends(get_service)):
 
 
 @router.get("/objects", response_model=list[TrackedObject])
-def list_objects(service: DetectionService = Depends(get_service)):
-    return service.registry.list_objects()
+def list_objects(status_filter: str | None = Query(None, alias="status"), class_name: str | None = Query(None, alias="class"),
+                 session: str | None = None, service: DetectionService = Depends(get_service)):
+    return service.registry.list_objects(status=status_filter, class_name=class_name, session=session)
 
 
-@router.get("/objects/{object_id}", response_model=TrackedObject)
+@router.get("/inventory/summary", response_model=InventorySummary)
+def inventory_summary(service: DetectionService = Depends(get_service)):
+    """Class-wise counts of unique equipment items (session-level identity, not permanent IDs)."""
+    return service.registry.summary()
+
+
+@router.get("/sessions", response_model=list[SessionInfo])
+def list_sessions(service: DetectionService = Depends(get_service)):
+    return service.registry.sessions()
+
+
+@router.get("/sessions/{session_id}/tracks", response_model=list[TrackedObject])
+def session_tracks(session_id: str, service: DetectionService = Depends(get_service)):
+    """Every equipment item observed in one session, including lost / removed ones."""
+    items = service.registry.list_objects(session=session_id)
+    if not items and not any(session_id in (s.source_id, s.source_id.split(":", 1)[-1])
+                             for s in service.registry.sessions()):
+        raise HTTPException(status.HTTP_404_NOT_FOUND, f"Unknown session {session_id}")
+    return items
+
+
+@router.get("/objects/{object_id:path}", response_model=TrackedObject)
 def get_object(object_id: str, service: DetectionService = Depends(get_service)):
     obj = service.registry.get(object_id)
     if obj is None:

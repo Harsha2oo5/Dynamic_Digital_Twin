@@ -19,7 +19,6 @@ from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from starlette.concurrency import run_in_threadpool
 
 from app.camera.video_stream import InvalidMediaError, decode_image
-from app.vision.tracker import ObjectTracker
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
@@ -35,12 +34,12 @@ async def stream(ws: WebSocket):
     session_id = uuid.uuid4().hex[:8]
     params = {"confidence": s.confidence_threshold, "iou": s.iou_threshold, "image_size": s.image_size}
     source_type = "webcam"
-    tracker = ObjectTracker(service.tracker_args)
+    tracker = service.new_tracking_session(session_id, frame_rate=s.stream_frame_rate)
     track_enabled = True
     source_id = f"{source_type}:{session_id}"
     frame_id = 0
 
-    service.source_started(source_id, f"Webcam stream ({session_id})")
+    service.source_started(source_id, f"Webcam stream ({session_id})", tracker)
     await ws.send_json({"type": "ready", "session_id": session_id, "device": service.device, **params})
     logger.info("WebSocket session %s connected", session_id)
     try:
@@ -67,7 +66,8 @@ async def stream(ws: WebSocket):
                         source_type = cmd["source"]
                         source_id = f"{source_type}:{session_id}"
                         tracker.reset()
-                        service.source_started(source_id, cmd.get("label") or f"{source_type.title()} stream ({session_id})")
+                        service.source_started(source_id, cmd.get("label") or
+                                               f"{source_type.title()} stream ({session_id})", tracker)
                 continue
 
             data = message.get("bytes")

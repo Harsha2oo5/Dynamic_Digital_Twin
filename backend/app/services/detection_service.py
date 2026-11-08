@@ -20,6 +20,7 @@ from app.training.dataset_validator import validate_dataset
 from app.training.taxonomy import CLASS_NAMES, FOLDER_TO_CLASS, names_match_taxonomy
 from app.vision.detector import Detector, infer_model_type
 from app.vision.processor import FrameProcessor
+from app.vision.track_manager import TrackingSession
 from app.vision.tracker import load_tracker_args
 
 logger = logging.getLogger(__name__)
@@ -39,7 +40,7 @@ class DetectionService:
         self.detector = Detector(self.model_path, self.device, settings.max_frame_dim, settings.max_detections)
         self.classifier: ComponentClassifier | None = None
         self.fallback_reason: str | None = None  # set when the custom model failed and pretrained was loaded
-        self.tracker_args = load_tracker_args(settings.tracker_config)
+        self.tracker_args = load_tracker_args(self.tracker_config_path(settings))
 
         self.stats = StatsCollector()
         self.registry = ObjectRegistry(lost_after_s=settings.track_lost_after_s)
@@ -52,6 +53,15 @@ class DetectionService:
         )
         self._dataset_cache: dict | None = None
         self._dataset_lock = threading.Lock()
+        from app.services.model_manager import ModelManager
+
+        self.models = ModelManager(self)
+
+    @staticmethod
+    def tracker_config_path(settings: Settings) -> str:
+        """A path relative to backend/ (configs/trackers/...) or an Ultralytics built-in name (bytetrack.yaml)."""
+        local = settings.resolve(Path(settings.tracker_config))
+        return str(local) if local.is_file() else settings.tracker_config
 
     # lifecycle -------------------------------------------------------------
     def startup(self) -> None:
@@ -84,6 +94,11 @@ class DetectionService:
     def new_processor(self, tracker=None) -> FrameProcessor:
         return FrameProcessor(self.detector, self.classifier, tracker)
 
+    def new_tracking_session(self, session_id: str, frame_rate: float = 10.0) -> TrackingSession:
+        """Tracker + lifecycle + session equipment identity for one stream / video."""
+        return TrackingSession(self.tracker_args, session_id, self.detector.names, frame_rate=frame_rate,
+                               min_hits=self.settings.track_min_hits)
+
     def record(self, source_id: str, source_type: str, result: FrameResult) -> None:
         self.stats.record(result, source_id)
         self.registry.update(source_id, source_type, result)
@@ -91,9 +106,9 @@ class DetectionService:
     def record_error(self, source_id: str | None, message: str) -> None:
         self.stats.record_error(message, source_id)
 
-    def source_started(self, source_id: str, label: str) -> None:
+    def source_started(self, source_id: str, label: str, tracking: TrackingSession | None = None) -> None:
         self.stats.source_started(source_id, label)
-        self.registry.source_started(source_id)
+        self.registry.source_started(source_id, label=label, tracking=tracking)
 
     def source_stopped(self, source_id: str) -> None:
         self.stats.source_stopped(source_id)

@@ -35,7 +35,11 @@ class Settings(BaseSettings):
 
     # Video / tracking
     frame_skip: int = Field(1, ge=1)  # process every Nth frame
-    tracker_config: str = "bytetrack.yaml"
+    # Tuned tracker config (relative to backend/) or an Ultralytics built-in name; configs/trackers/bts_botsort.yaml
+    # adds camera-motion compensation for handheld footage.
+    tracker_config: str = "configs/trackers/bts_bytetrack.yaml"
+    track_min_hits: int = Field(3, ge=1)
+    stream_frame_rate: float = Field(8.0, gt=0)  # expected processed fps of live streams (scales tracker buffers)  # frames before a track is confirmed (new -> active)
     max_video_mb: int = Field(200, ge=1)
     max_video_frames: int = Field(5000, ge=1)  # cap on processed frames per video job
     max_video_jobs: int = Field(10, ge=1)  # finished jobs kept in memory before eviction

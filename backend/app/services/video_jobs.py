@@ -19,7 +19,6 @@ import cv2
 from app.camera.video_stream import VideoSource
 from app.schemas.detection import FrameResult, VideoJobStatus
 from app.vision.processor import FrameProcessor
-from app.vision.tracker import ObjectTracker
 from app.vision.visualization import draw_detections
 
 if TYPE_CHECKING:
@@ -134,8 +133,10 @@ class VideoJobManager:
             job.upload_path.unlink(missing_ok=True)
             return
         job.status = "processing"
-        self.service.source_started(source_id, f"Video: {job.filename}")
-        processor = FrameProcessor(self.service.detector, self.service.classifier, ObjectTracker(self.service.tracker_args))
+        processed_fps = (job.video_fps or 25.0) / job.frame_skip
+        tracking = self.service.new_tracking_session(job.job_id, frame_rate=processed_fps)
+        self.service.source_started(source_id, f"Video: {job.filename}", tracking)
+        processor = FrameProcessor(self.service.detector, self.service.classifier, tracking)
         try:
             with VideoSource(job.upload_path) as src:
                 if self.save_annotated:
@@ -154,7 +155,9 @@ class VideoJobManager:
                     if job.frames_processed >= self.max_frames:
                         logger.info("Job %s reached max_video_frames=%d", job.job_id, self.max_frames)
                         break
-                    result = processor.process(frame, frame_id=index, conf=job.conf, iou=job.iou, imgsz=job.imgsz)
+                    # lifecycle clock = video time, so timeouts mean the same whatever the CPU speed
+                    result = processor.process(frame, frame_id=index, conf=job.conf, iou=job.iou, imgsz=job.imgsz,
+                                               session_time=index / (job.video_fps or 25.0))
                     job.results.append(result)
                     job.frames_processed += 1
                     self.service.record(source_id, "video", result)

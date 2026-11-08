@@ -20,6 +20,16 @@ class Detection(BaseModel):
     confidence: float
     bbox: BBox
     component_type: str | None = Field(None, description="Set only when a custom component model is loaded")
+    # tracking lifecycle / identity (additive; None when tracking is off)
+    track_state: Literal["new", "active", "lost", "removed"] | None = Field(
+        None, description="new = tentative (not yet confirmed), active = confirmed and visible")
+    stable_class: str | None = Field(None, description="Confidence-weighted class vote over the whole track")
+    class_consistency: float | None = Field(None, description="Share of the track's votes for stable_class (0..1)")
+    smoothed_confidence: float | None = None
+    track_age_s: float | None = None
+    equipment_id: str | None = Field(
+        None, description="Session-level equipment ID (stable across tracker ID changes within ONE session); "
+                          "NOT a permanent component ID")
 
 
 class FrameResult(BaseModel):
@@ -163,7 +173,8 @@ class DetectionStats(BaseModel):
 
 
 class TrackedObject(BaseModel):
-    object_id: str = Field(description="Observation ID = source + temporary track ID. Not a physical component ID.")
+    object_id: str = Field(description="Observation ID = source + session equipment ID (or temporary track ID). "
+                                       "Not a permanent physical component ID.")
     source_id: str
     source_type: Literal["webcam", "video", "image"]
     track_id: int | None
@@ -180,3 +191,46 @@ class TrackedObject(BaseModel):
     last_bbox: BBox
     frame_width: int
     frame_height: int
+    # identity / lifecycle (additive)
+    equipment_id: str | None = None
+    track_ids: list[int] = Field(default_factory=list, description="Tracker IDs linked to this item in its session")
+    track_state: Literal["new", "active", "lost", "removed"] | None = None
+    class_consistency: float | None = None
+    duration_s: float | None = Field(None, description="last_seen - first_seen")
+    relinked: int = Field(0, description="Times the item was re-linked after its tracker ID changed")
+
+
+class SessionInfo(BaseModel):
+    source_id: str
+    source_type: str
+    label: str | None = None
+    live: bool
+    started_at: datetime | None
+    last_seen: datetime | None
+    equipment_items: int
+    active_items: int
+    observations: int
+    class_counts: dict[str, int]
+    tracking: dict[str, int] = Field(default_factory=dict,
+                                     description="Lifecycle counters of the session's tracker (live sessions only)")
+
+
+class InventorySummary(BaseModel):
+    note: str
+    total_items: int
+    active_items: int
+    by_class: list[dict]
+    sessions: int
+
+
+class ModelEntry(BaseModel):
+    model_id: str = Field(description="Path relative to the models directory, e.g. custom/digital_twin_v1.pt")
+    name: str
+    model_type: Literal["pretrained", "custom", "unknown"]
+    version: int | None = None
+    label_source: str | None = Field(None, description="reviewed | pseudo | coco | unknown")
+    ground_truth: bool | None = None
+    size_mb: float
+    active: bool
+    has_model_card: bool
+    model_card: dict | None = None

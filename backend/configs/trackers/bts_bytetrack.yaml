@@ -1,0 +1,10 @@
+# ByteTrack tuned for BTS equipment (static objects, handheld camera, CPU frame rates of 3-15 fps).
+# track_buffer is in frames at the reference rate of 30 fps; ObjectTracker passes the real processed frame rate,
+# so Ultralytics scales the buffer to time: lost tracks are kept ~track_buffer/30 s whatever the frame skip.
+tracker_type: bytetrack
+track_high_thresh: 0.30   # equipment detections are mostly confident; keeps clutter out of the first stage
+track_low_thresh: 0.10
+new_track_thresh: 0.35   # fewer spurious tracks from one-frame false positives
+track_buffer: 90         # ~3 s: equipment often leaves the frame briefly when the phone pans
+match_thresh: 0.85       # tolerant association: low fps means larger box displacement between frames
+fuse_score: True
