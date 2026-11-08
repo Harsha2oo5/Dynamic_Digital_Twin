@@ -10,10 +10,12 @@ equipment health and flags degradation trends for inspection, all in one React d
 | Image / video / webcam ingestion (OpenCV, browser camera) | ✅ |
 | Object detection (pretrained YOLO11n, CPU) | ✅ |
 | Bounding boxes, class names, confidence | ✅ |
-| Multi-object tracking (ByteTrack, per-session state) | ✅ |
+| Multi-object tracking (tuned ByteTrack / BoT-SORT, per-session state), track lifecycle, class voting | ✅ ([docs/vision-tracking.md](docs/vision-tracking.md)) |
+| Session-level equipment identity with re-linking; inventory with one row per item, sessions, class summary | ✅ checked on synthetic sequences; IDs are not permanent |
 | Overview dashboard: backend / engine / source / model health, latency window, component distribution | ✅ |
 | Annotation review tool (browser, human sign-off, audit log, reviewed-only export) | ✅ |
-| Custom 7-class component model (fine-tuned YOLO) | 🧩 automated pseudo-labels generated for 441/543 images ([docs/automated-annotation.md](docs/automated-annotation.md)); training on them not run yet |
+| Custom 7-class component model (fine-tuned YOLO) | 🧩 `digital_twin_v2.pt` trained on automatic pseudo-labels (441/543 images): test mAP50 0.45 **as agreement with pseudo-labels, not accuracy**; weak on battery, PSU and cable ([docs/custom-model-training.md](docs/custom-model-training.md#8-training-on-automatic-pseudo-labels-2026-11-08)) |
+| Model versions with model cards, runtime model switching | ✅ |
 | Sensor registry, equipment identity, telemetry ingestion (HTTP, MQTT), PostgreSQL storage, live dashboard, threshold alerts | ✅ ([docs/sensor-integration.md](docs/sensor-integration.md)); demonstrated with the labelled simulator, no physical sensors connected yet |
 | Telemetry simulator (battery, PSU, cabinet, router, radio units, site) | ✅ clearly labelled SIMULATED everywhere |
 | Anomaly detection (robust statistics, Holt forecast, Isolation Forest), explainable equipment health, trend-based maintenance recommendations | ✅ ([docs/anomaly-detection.md](docs/anomaly-detection.md)); validated on simulated scenarios only ([docs/anomaly-validation.md](docs/anomaly-validation.md)) |
@@ -125,7 +127,7 @@ dynamic_digital_twin/
 │   │   └── training/         taxonomy, audit, annotation kit/validation, pseudo_label/, prepare, train, evaluate
 │   ├── configs/              pseudo_label/, telemetry/ (thresholds, simulator), analytics/anomaly.yaml
 │   ├── models/pretrained/    yolo11n.pt
-│   ├── models/custom/        digital_twin_best.pt goes here after fine-tuning
+│   ├── models/custom/        digital_twin_vN.pt + model cards (train --promote-versioned)
 │   ├── dataset/              generated YOLO datasets (train/val/test)
 │   ├── tests/                pytest suite
 │   └── requirements.txt
@@ -210,10 +212,11 @@ backend, set `BACKEND_URL` for the dev proxy, or `VITE_API_BASE` for a productio
     Only one frame is in flight at a time, so the CPU never builds a backlog. Threshold changes apply live, and
     **Reset IDs** restarts tracking.
   - Controls: confidence, IoU (NMS), inference resolution, frame skip (video), tracking on/off (webcam).
-- **Object Inventory**: every tracked object, with ID, class, confidence, first/last seen, frames seen
-  and status (active / lost / snapshot). Click a row for details and its last position.
-- **Model Management**: the loaded model, its type, checkpoint, device, thresholds and load status, plus
-  the available checkpoints and the model's class list.
+- **Object Inventory**: one row per equipment item identified in a session (e.g. `RU-003`), with class and class
+  consistency, confidence, duration, observations, lifecycle (new / active / lost / removed) and status, plus
+  per-class totals and a session list. Click a row for details, tracker IDs and re-links.
+- **Model Management**: model versions with label source (reviewed / pseudo / COCO) and model card, a
+  **Use this model** switch that takes effect without a restart, runtime performance, and the class list.
 - **Dataset Management**: a read-only scan of the collected dataset (counts, formats, resolutions,
   annotation status, issues).
 - **Settings**: client defaults (stored in the browser) and the backend's runtime configuration.
@@ -232,8 +235,9 @@ backend, set `BACKEND_URL` for the dev proxy, or `VITE_API_BASE` for a productio
 - Telemetry values from stale or offline sensors are shown as *last known* with their age, and every simulated value
   carries a **SIMULATED** badge.
 
-> **Tracking IDs are temporary.** They identify a visual track within one stream or video only. They are not
-> permanent physical component IDs; the object ID shown in the inventory is `source:track_id`.
+> **IDs are not permanent.** Tracker IDs are temporary. Equipment IDs (`RU-003@<session>`) are stable within one
+> stream or video, surviving tracker-ID changes through re-linking, but the same item in another session gets
+> another ID. A permanent component registry is a later milestone.
 
 ## 4. API
 
@@ -251,7 +255,9 @@ backend, set `BACKEND_URL` for the dev proxy, or `VITE_API_BASE` for a productio
 | GET | `/api/detect/video/{id}/frames/{n}` | annotated JPEG of the n-th processed frame |
 | POST | `/api/detect/video/{id}/cancel` | cancel a job |
 | GET | `/api/detection/stats` | aggregate statistics |
-| GET / DELETE | `/api/objects`, `/api/objects/{id}` | object inventory |
+| GET / DELETE | `/api/objects?status=&class=&session=`, `/api/objects/{id}` | equipment inventory |
+| GET | `/api/inventory/summary`, `/api/sessions`, `/api/sessions/{id}/tracks` | class totals, sessions, per-session items |
+| GET / POST | `/api/model/versions`, `/api/model/select`, `/api/model/performance` | model versions + cards, runtime switch, performance |
 | GET | `/api/dataset/summary?refresh=` | dataset validation report |
 | WS | `/ws/stream` | binary JPEG frames in → `FrameResult` JSON out |
 | * | `/api/telemetry/...`, WS `/ws/telemetry` | sensors, equipment, ingestion, latest/history, alerts, simulator; see [docs/sensor-integration.md](docs/sensor-integration.md#api) |
@@ -323,7 +329,8 @@ cd backend
 .venv\Scripts\python.exe -m pytest
 ```
 
-There are 210 tests (113 for vision, 24 for pseudo-labelling in `test_pseudo_label.py`, 33 for telemetry in
+There are 227 tests (113 for vision, 17 for tracking lifecycle / identity / inventory / model management /
+pseudo-label training in `test_vision_lifecycle.py`, 24 for pseudo-labelling in `test_pseudo_label.py`, 33 for telemetry in
 `test_telemetry.py`, 40 for analytics in `test_analytics.py`; see [docs/sensor-integration.md](docs/sensor-integration.md#testing)
 and [docs/anomaly-detection.md](docs/anomaly-detection.md#testing)):
 - annotation review (`test_review_workflow.py`, `test_auto_annotate.py`): candidate import with class/coordinate/confidence
@@ -351,7 +358,7 @@ fabricates detections or metrics.
 
 The classes are antenna, router, cable, battery, power_supply_unit, equipment_cabinet and radio_unit; the
 mapping is in `backend/app/training/taxonomy.py`. The collected dataset has **no human-reviewed bounding boxes
-yet**, so training is blocked until they exist. Machine candidates for batch 1 are loaded into a local review tool:
+yet**. A first model was trained on automatic pseudo-labels (see [section 8 of the training guide](docs/custom-model-training.md#8-training-on-automatic-pseudo-labels-2026-11-08)); the reviewed-label path below stays the route to real accuracy. Machine candidates for batch 1 are loaded into a local review tool:
 
 ```powershell
 cd backend

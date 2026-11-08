@@ -8,12 +8,16 @@
  Video   ──multipart────►  POST /detect/video ─┘        │
                                     (VideoJobManager,    ├─ preprocessing  (validate, downscale huge frames)
                                      1 worker thread)    ├─ Detector       (shared YOLO, lock-serialised, CPU)
-                                                         ├─ ObjectTracker  (own ByteTrack per session)
+                                                         ├─ TrackingSession (own per stream / video job)
+                                                         │    ObjectTracker (ByteTrack / BoT-SORT)
+                                                         │    → TrackManager (lifecycle, class vote)
+                                                         │    → EquipmentIdentity (session IDs, re-link)
                                                          └─ ComponentClassifier (custom models only)
                                                                 │ FrameResult
                                          StatsCollector ◄───────┤
                                          ObjectRegistry ◄───────┘
- Overview / Inventory  ◄── polling REST ── /detection/stats, /objects
+ Overview / Inventory  ◄── polling REST ── /detection/stats, /objects, /inventory/summary, /sessions
+ Model Management      ◄── REST ── /model/versions, /model/select (ModelManager: runtime switch)
 ```
 
 Design decisions:
@@ -29,8 +33,15 @@ Design decisions:
   using `requestVideoFrameCallback` where available.
 - **Webcam back-pressure.** The browser sends a frame only after the previous result arrives, so throughput
   adapts to CPU speed without queueing latency.
-- **Tracking IDs ≠ component IDs.** The inventory keys observations by `source:track_id`. A permanent
-  component registry (with physical identity, sensors and telemetry) belongs to a later milestone.
+- **Tracking IDs ≠ equipment IDs ≠ component IDs.** The tracker's IDs are temporary. A confirmed track gets a
+  *session-level* equipment ID (`RU-003@<session>`) that survives tracker-ID changes through re-linking, and the
+  inventory keys items by `source:equipment_id`. A permanent component registry (physical identity across sessions,
+  linked to sensors and telemetry) belongs to a later milestone. Details: [vision-tracking.md](vision-tracking.md).
+- **Model switching without restart.** `ModelManager` loads a selected checkpoint in a worker thread and swaps the
+  shared detector reference only after a successful load; in-flight frames finish on the old model.
+- **Label provenance travels with the model.** Datasets record `label_source` (reviewed / pseudo). The training
+  gate refuses pseudo-label datasets without `--allow-pseudo`, and the model card shown in the dashboard states what
+  the validation metrics mean.
 
 ## Telemetry (Milestone 2)
 

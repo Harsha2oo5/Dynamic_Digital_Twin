@@ -169,3 +169,23 @@ Details: [sensor-integration.md](sensor-integration.md).
 | Real-world validation | **Pending**: needs physical telemetry and, for failure prediction, failure history |
 
 Details: [anomaly-detection.md](anomaly-detection.md), [anomaly-validation.md](anomaly-validation.md).
+
+### Vision completion: pseudo-label training, tracking lifecycle, identity, inventory (2026-11-08)
+
+| Item | Status |
+|---|---|
+| `prepare_dataset --pseudo` (manifest hash check, group-aware split, `label_source: pseudo`) | Implemented, tested; built `digital_twin_pseudo_v1` (309/88/44) |
+| Training gate accepts pseudo datasets only with `--allow-pseudo` and intact labels; versioned promotion with model card | Implemented, tested |
+| Pilot (5 epochs, 6 min) → `digital_twin_v1.pt`; full run (27 epochs, 28.6 min, early stop) → `digital_twin_v2.pt` | Executed. Val mAP50 0.50, test mAP50 0.45: **agreement with pseudo-labels, not accuracy** |
+| Evaluation labels pseudo-label metrics as agreement | Implemented |
+| Model manager: versions + model cards, runtime switch (`POST /api/model/select`), failed load keeps the current model | Implemented, tested |
+| Tuned ByteTrack + optional BoT-SORT (camera-motion compensation), time-scaled buffers | Implemented, tested |
+| Track lifecycle (new/active/lost/removed), class voting, smoothed confidence | Implemented, tested |
+| Session-level equipment identity with re-linking (class + position + colour histogram) | Implemented, tested on synthetic sequences; **no real site footage yet** |
+| Inventory keyed by equipment identity; `/api/inventory/summary`, `/api/sessions`, `/api/sessions/{id}/tracks`, filters | Implemented, tested |
+| Dashboard: Overview equipment block, live overlay states and counters, Inventory and Model Management redesigned | Implemented; build passes |
+| CPU benchmark (`app.vision.benchmark`) | 416 px: 55 ms / 18 FPS (custom) vs 57 ms (COCO); tracking ≤ 1.5 ms/frame |
+| Real accuracy | **Unknown**: needs a human-reviewed test set |
+| Permanent (cross-session) component identity, RTSP cameras | Interfaces only (`PersistentEquipmentRegistry`, `FrameSource`) |
+
+Details: [custom-model-training.md](custom-model-training.md#8-training-on-automatic-pseudo-labels-2026-11-08), [vision-tracking.md](vision-tracking.md).
