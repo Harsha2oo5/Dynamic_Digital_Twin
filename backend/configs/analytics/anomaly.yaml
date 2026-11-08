@@ -1,0 +1,181 @@
+# Anomaly detection, health scoring and predictive maintenance (backend/app/analytics).
+# The active version of this file is stored in the database (anomaly_configs) and can be replaced through
+# PUT /api/analytics/config; this file is the default seeded at first start.
+#
+# Scores are in "threshold units": 1.0 = the detector's threshold, 2.0 = twice as far. They are NOT probabilities.
+
+grid_s: 60                    # readings are averaged into 1-minute buckets of measurement time
+baseline_buckets: 360         # rolling baseline: the last 6 h of buckets
+min_history_buckets: 60       # warm-up: a metric is not scored before 1 h of history
+short_buckets: 10             # rate-of-change span: 10 minutes
+max_gap_buckets: 5            # a longer gap (sensor silent) resets the forecast and blocks rate-of-change across it
+anomalous_share_relearn: 0.5  # flagged buckets are kept out of the baseline unless they are more than half of it
+                              # (then the shift has become the new normal)
+
+severity: {warning: 1.0, critical: 2.0}
+
+episode:
+  min_consecutive: 2          # evaluations at or above 1.0 before an anomaly opens (filters single-bucket blips)
+  clear_level: 0.7            # the condition ends after `clear_after` evaluations below this score
+  clear_after: 5
+  cooldown_s: 1800            # a recurrence within 30 min re-opens the same anomaly instead of creating a new one
+  auto_resolve: true          # resolve automatically when the condition ends (operators can also resolve)
+
+detectors:                    # defaults; categories may override per metric
+  robust_z: {threshold: 6.0}            # |x - rolling median| / (1.4826 * MAD)
+  iqr: {k: 3.0}                         # distance beyond Q1 - k*IQR / Q3 + k*IQR, in IQR units / k
+  rate_of_change: {threshold: 6.0}      # robust z of the 10-minute change against the baseline's 10-minute changes
+  forecast_residual: {alpha: 0.3, beta: 0.05, threshold: 6.0}   # Holt one-step forecast error vs residual spread
+  transitions: {max_per_window: 10}     # state metrics: changes within the baseline window (5 open/close cycles)
+  isolation_forest: {quantile: 0.999}   # threshold = this quantile of training anomaly scores
+
+# Per-metric detector parameters that replace the defaults above. Metrics with a strong daily cycle (traffic-driven
+# power, temperatures) need a higher robust-z threshold because the 6-h median lags the cycle; the validation run showed
+# normal evening power drops of 6-8 robust SD, while injected faults were > 15.
+detector_overrides:
+  power_consumption: {robust_z: {threshold: 10.0}}
+  internal_temperature: {robust_z: {threshold: 8.0}}
+  battery_temperature: {robust_z: {threshold: 8.0}}
+  temperature: {robust_z: {threshold: 8.0}}
+  ambient_temperature: {robust_z: {threshold: 8.0}}
+
+# Smallest spread used to scale deviations, per metric (canonical units). Prevents flat signals (e.g. a constant
+# state of health) from turning measurement noise into huge scores.
+scale_floor:
+  battery_voltage: 0.15
+  battery_current: 1.0
+  battery_temperature: 0.5
+  state_of_charge: 1.0
+  state_of_health: 1.0
+  input_voltage: 3.0
+  output_voltage: 0.15
+  output_current: 1.0
+  power_consumption: 10.0
+  supply_voltage: 0.15
+  temperature: 0.7
+  internal_temperature: 0.7
+  humidity: 3.0
+  ambient_temperature: 0.7
+  ambient_humidity: 3.0
+  vswr: 0.03
+  rssi: 2.0
+
+categories:
+  battery:
+    metrics:
+      battery_voltage: [robust_z, rate_of_change, forecast_residual]
+      battery_temperature: [robust_z, rate_of_change]
+      battery_current: [robust_z, forecast_residual]
+      state_of_charge: [rate_of_change]
+    # Discharge during a mains outage, and the recharge afterwards, are expected behaviour.
+    recharge_expected: [battery_voltage, battery_current, state_of_charge, battery_temperature]
+    multivariate: [battery_voltage, battery_current, battery_temperature]
+  power_supply_unit:
+    metrics:
+      output_voltage: [robust_z, forecast_residual, iqr]
+      output_current: [robust_z]
+      power_consumption: [robust_z, rate_of_change]
+      temperature: [robust_z, rate_of_change]
+      input_voltage: [robust_z]
+    mains_outage_expected: [input_voltage, output_voltage]               # only while mains is lost
+    recharge_expected: [output_current, power_consumption, temperature]  # also while the battery recharges
+    multivariate: [output_voltage, output_current, power_consumption, temperature]
+  equipment_cabinet:
+    metrics:
+      internal_temperature: [robust_z, rate_of_change]
+      humidity: [robust_z, rate_of_change]
+      door_open: [transitions]
+      fan_status: [transitions]
+    multivariate: [internal_temperature, humidity]
+  router:
+    metrics:
+      temperature: [robust_z, rate_of_change]
+      power_consumption: [robust_z, rate_of_change, forecast_residual]
+      supply_voltage: [robust_z]
+      network_available: [transitions]
+    mains_outage_expected: [supply_voltage]
+    multivariate: [temperature, power_consumption]
+  radio_unit:
+    metrics:
+      temperature: [robust_z, rate_of_change]
+      power_consumption: [robust_z, rate_of_change, forecast_residual]
+      supply_voltage: [robust_z]
+      vswr: [robust_z, rate_of_change]
+      rssi: [robust_z]
+      network_available: [transitions]
+    mains_outage_expected: [supply_voltage]
+    multivariate: [temperature, power_consumption]
+  # Antennas and cables have no sensors on this site. Configured for when VSWR / RF sensors are installed;
+  # nothing is evaluated (or invented) without readings.
+  antenna:
+    metrics:
+      vswr: [robust_z, rate_of_change]
+  cable:
+    metrics:
+      vswr: [robust_z, rate_of_change]
+  site:
+    metrics:
+      ambient_temperature: [robust_z, rate_of_change]
+      ambient_humidity: [robust_z]
+
+context:
+  # mains_outage_expected metrics: not flagged while mains is lost.
+  # recharge_expected metrics: also not flagged while the battery recharges after an outage (charging detected from
+  # battery_state / battery_current > charge_current_a), plus recharge_settle_s, at least min_after_restore_s and at
+  # most after_mains_restored_s after mains returns.
+  after_mains_restored_s: 21600
+  min_after_restore_s: 1800
+  recharge_settle_s: 3600
+  charge_current_a: 2.0
+
+health:
+  lookback_h: 24
+  half_life_h: 6                  # an anomaly's penalty halves every 6 h after it was last active
+  anomaly_penalty: {warning: 12, critical: 30}
+  max_anomaly_penalty: 45         # per anomaly
+  duration_penalty_per_h: 4       # extra penalty per hour an anomaly stayed active (capped at 3 h)
+  recurrence_penalty: 3           # per re-occurrence of the same anomaly
+  alert_penalty: {warning: 8, critical: 20}          # active threshold alerts (communication alerts excluded)
+  recommendation_penalty: {low: 0, medium: 5, high: 10}
+  bands: {healthy: 85, warning: 65, degraded: 40}    # score >= band; below 'degraded' = critical
+  min_coverage: 0.5               # share of the equipment's configured metrics with fresh, warmed-up data
+  snapshot_every_s: 300
+
+maintenance:
+  run_every_s: 900
+  window_h: 168                   # trend window: 7 days of hourly medians
+  min_span_h: 48                  # shorter histories give no trend recommendation
+  min_points: 36
+  trends:                         # metric -> direction that indicates degradation, minimum slope per day
+    battery:
+      battery_temperature: {direction: increasing, min_slope_per_day: 0.5,
+                            action: "Inspect battery ventilation and string balance; check for cells running hot"}
+      battery_voltage: {direction: decreasing, min_slope_per_day: 0.2, only_when_mains: true,
+                        action: "Run a battery capacity test; check float voltage and cell voltages"}
+      state_of_health: {direction: decreasing, min_slope_per_day: 0.2,
+                        action: "Plan a battery capacity test; review the replacement schedule"}
+    power_supply_unit:
+      temperature: {direction: increasing, min_slope_per_day: 0.5,
+                    action: "Inspect rectifier fans and air filters; check module load sharing"}
+      output_voltage: {direction: decreasing, min_slope_per_day: 0.1, only_when_mains: true,
+                       action: "Check rectifier output calibration and module alarms"}
+    equipment_cabinet:
+      internal_temperature: {direction: increasing, min_slope_per_day: 0.5,
+                             action: "Inspect cabinet cooling (fans, heat exchanger, filters, door seals)"}
+      humidity: {direction: increasing, min_slope_per_day: 2.0,
+                 action: "Inspect door seals and drainage for moisture ingress"}
+    router:
+      temperature: {direction: increasing, min_slope_per_day: 0.7, action: "Check router airflow and fan trays"}
+      power_consumption: {direction: increasing, min_slope_per_day: 3.0,
+                          action: "Review router load and line-card power; compare with the vendor's specification"}
+    radio_unit:
+      temperature: {direction: increasing, min_slope_per_day: 0.7,
+                    action: "Inspect the radio unit's heat sink and mounting for blocked airflow or sun exposure"}
+      power_consumption: {direction: increasing, min_slope_per_day: 10.0,
+                          action: "Compare radio unit power with traffic; inspect the PA and feeder (VSWR)"}
+      vswr: {direction: increasing, min_slope_per_day: 0.02,
+             action: "Inspect feeder, jumpers and connectors for water ingress or damage"}
+  anomaly_frequency:              # anomaly counts in the last 24 h vs the average day before
+    min_last_24h: 3
+    ratio: 2.0
+    action: "Recurring abnormal behaviour: schedule an on-site inspection of this equipment"

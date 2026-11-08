@@ -1,5 +1,6 @@
 """FastAPI entrypoint.  Run:  uvicorn app.main:app --host 127.0.0.1 --port 8000"""
 
+import asyncio
 import logging
 from contextlib import asynccontextmanager
 
@@ -8,11 +9,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from starlette.concurrency import run_in_threadpool
 
-from app.api import routes, websocket
+from app.analytics.service import AnalyticsService
+from app.api import analytics_routes, routes, telemetry_routes, websocket
 from app.camera.video_stream import InvalidMediaError
 from app.core.config import Settings, get_settings
 from app.core.logging import setup_logging
 from app.services.detection_service import DetectionService
+from app.telemetry.service import TelemetryService
 from app.vision.detector import ModelNotLoadedError
 
 logger = logging.getLogger(__name__)
@@ -27,7 +30,17 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         service = DetectionService(settings)
         await run_in_threadpool(service.startup)  # model loads once; failures leave the API up in "degraded" mode
         app.state.service = service
+        # telemetry is independent of the vision model: a database problem disables only the telemetry endpoints
+        telemetry = TelemetryService(settings)
+        telemetry.hub.bind_loop(asyncio.get_running_loop())
+        await run_in_threadpool(telemetry.start)
+        app.state.telemetry = telemetry
+        analytics = AnalyticsService(telemetry)  # anomaly detection, health, maintenance (needs telemetry)
+        await run_in_threadpool(analytics.start)
+        app.state.analytics = analytics
         yield
+        await run_in_threadpool(analytics.stop)
+        await run_in_threadpool(telemetry.stop)  # stops the simulator, MQTT and the watchdog
         service.shutdown()
 
     app = FastAPI(title="Dynamic Digital Twin API", version="0.1.0", lifespan=lifespan)
@@ -36,6 +49,9 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     )
     app.include_router(routes.router)
     app.include_router(websocket.router)
+    app.include_router(telemetry_routes.router)
+    app.include_router(telemetry_routes.ws_router)
+    app.include_router(analytics_routes.router)
 
     @app.exception_handler(InvalidMediaError)
     async def invalid_media(_: Request, exc: InvalidMediaError):

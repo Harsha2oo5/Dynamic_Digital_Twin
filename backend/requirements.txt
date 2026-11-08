@@ -14,6 +14,16 @@ pydantic>=2.7
 pydantic-settings>=2.3
 pyyaml>=6.0
 
+# telemetry (sensor integration)
+sqlalchemy>=2.0
+psycopg[binary]>=3.2   # PostgreSQL driver
+alembic>=1.13          # schema migrations
+paho-mqtt>=2.1         # MQTT adapter
+
+# anomaly detection (CPU)
+scikit-learn>=1.5      # Isolation Forest (pulls scipy, joblib)
+scipy>=1.11            # Theil-Sen slope, Kendall trend test
+
 # tests
 pytest>=8.0
 httpx>=0.27
