@@ -48,27 +48,104 @@ selects CUDA, even when a GPU is present (`backend/app/core/device.py`).
 
 ## Architecture
 
-```
- Browser (React dashboard)                     Backend (FastAPI, CPU)
- ─────────────────────────                     ──────────────────────
- Webcam  ── JPEG frames ──►  WS /ws/stream ─────┐
- Image   ── multipart ────►  POST /api/detect/image ─┤──► FrameProcessor (one per session / request)
- Video   ── multipart ────►  POST /api/detect/video ─┘      ├─ Detector (shared YOLO model, CPU)
-                                                            ├─ TrackingSession (tracker, lifecycle, identity)
-                                                            └─ ComponentClassifier
-                                                                   │
-                                     StatsCollector, ObjectRegistry ◄┘
- Sensors ── HTTP / MQTT ──►  Telemetry ingestion ──► PostgreSQL / SQLite ──► Analytics engine
-                                                                              (anomalies, health, maintenance)
- Dashboard ◄── REST polling and WebSocket events ── /api/*, /ws/telemetry
+### System overview
+
+```mermaid
+flowchart LR
+    subgraph sources["Data sources"]
+        cam["Webcam<br/>(browser camera)"]
+        files["Images and<br/>video files"]
+        sensors["Site sensors<br/>(HTTP, MQTT)"]
+        sim["Telemetry simulator<br/>(development only)"]
+    end
+
+    subgraph backend["FastAPI backend (CPU only)"]
+        direction TB
+        subgraph vision["Vision"]
+            fp["Frame processor"]
+            reg["Equipment inventory"]
+            mm["Model manager"]
+        end
+        subgraph telemetry["Telemetry"]
+            ing["Ingestion and<br/>validation"]
+            alerts["Threshold and<br/>communication alerts"]
+        end
+        subgraph analytics["Analytics"]
+            eng["Anomaly engine"]
+            health["Health index and<br/>maintenance trends"]
+        end
+        hub["Event hub"]
+    end
+
+    db[("PostgreSQL<br/>(SQLite in development)")]
+    models[("Model registry<br/>checkpoints and model cards")]
+    ui["React dashboard"]
+
+    cam -- "JPEG frames, WS /ws/stream" --> fp
+    files -- "POST /api/detect/*" --> fp
+    sensors --> ing
+    sim --> ing
+    fp --> reg
+    mm -- "active model" --> fp
+    models --> mm
+    ing --> db
+    ing --> alerts
+    ing -- "measurements" --> eng
+    eng --> health
+    eng --> db
+    health --> db
+    alerts --> hub
+    eng --> hub
+    ing --> hub
+    hub -- "WS /ws/telemetry" --> ui
+    reg -- "REST /api/*" --> ui
+    db -- "REST /api/telemetry, /api/analytics" --> ui
 ```
 
-Key design decisions:
-- **Shared model.** The model loads once and is shared, with access serialised by a lock.
-- **Per-session tracking.** Every stream and video job owns its own tracking state.
-- **Coordinates.** All box coordinates are original-frame pixels.
-- **Provenance.** The provenance of training labels (human-reviewed or automatic) travels with every dataset and
-  model.
+### Vision pipeline (per frame)
+
+Every stream and every video job owns its own tracking session, so concurrent sessions never share state. The
+detection model is loaded once and shared, with access serialised by a lock.
+
+```mermaid
+flowchart LR
+    frame["Frame"] --> pre["Preprocessing<br/>validate, downscale"]
+    pre --> det["Detector<br/>YOLO11n or custom 7-class model"]
+    det --> trk["Tracker<br/>ByteTrack or BoT-SORT"]
+    subgraph session["Tracking session (one per stream or video)"]
+        trk --> life["Track lifecycle<br/>new, active, lost, removed"]
+        life --> vote["Class voting and<br/>confidence smoothing"]
+        vote --> ident["Session equipment identity<br/>re-linking by class, position, appearance"]
+    end
+    ident --> result["Frame result<br/>boxes, classes, track state, equipment ID"]
+    result --> inv["Inventory<br/>one entry per item"]
+    result --> stats["Detection statistics"]
+    result --> client["REST / WebSocket client"]
+```
+
+### Model training workflow (offline)
+
+```mermaid
+flowchart LR
+    data[("Collected images<br/>(read-only)")] --> pseudo["Pseudo-labelling<br/>Grounding DINO + CLIP + prototypes"]
+    data --> review["Human review tool"]
+    pseudo --> prep["Dataset preparation<br/>hash checks, group-aware split"]
+    review --> prep
+    prep --> gate{"Training gate<br/>label provenance"}
+    gate -- "reviewed labels, or pseudo-labels with explicit opt-in" --> train["YOLO fine-tuning<br/>(CPU)"]
+    train --> card["Versioned checkpoint<br/>and model card"]
+    card --> reg[("Model registry")]
+```
+
+**Key design decisions:**
+- **Shared model.** The detection model loads once at startup. Inference runs in worker threads, never on the
+  event loop.
+- **Per-session tracking.** Each stream and video job has its own tracker, lifecycle and identity state.
+- **Coordinates.** All box coordinates are original-frame pixels. The dashboard maps them to the displayed media.
+- **Live analytics.** The anomaly engine consumes measurements as they are ingested and publishes anomalies and
+  health changes through the event hub.
+- **Provenance.** Each dataset and each model records whether its labels were human-reviewed or automatic. The
+  dashboard shows this in the model card.
 
 Further detail is in [docs/architecture.md](docs/architecture.md).
 
