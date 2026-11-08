@@ -1,7 +1,9 @@
-# Dynamic Digital Twin — Vision Console (Milestone 1)
+# Dynamic Digital Twin: BTS Vision and Telemetry Console
 
-A CPU-only computer-vision application that detects objects in images, videos and a laptop webcam with
-YOLO11n, tracks them across frames with ByteTrack, and shows the results in a React dashboard.
+A CPU-only monitoring console for telecom base-station (BTS) sites. It detects and tracks equipment in images,
+videos and a laptop webcam (YOLO11n + ByteTrack), and collects operational telemetry from sensors (HTTP, MQTT or a
+built-in simulator) with live updates, history and threshold alerts. An analytics layer detects anomalies, scores
+equipment health and flags degradation trends for inspection, all in one React dashboard.
 
 | Capability | Status |
 |---|---|
@@ -11,8 +13,11 @@ YOLO11n, tracks them across frames with ByteTrack, and shows the results in a Re
 | Multi-object tracking (ByteTrack, per-session state) | ✅ |
 | Overview dashboard: backend / engine / source / model health, latency window, component distribution | ✅ |
 | Annotation review tool (browser, human sign-off, audit log, reviewed-only export) | ✅ |
-| Custom 7-class component model (fine-tuned YOLO) | 🧩 pipeline, gates and model switch ready; **blocked on human review of the annotation batches** (0 / 343 images reviewed) |
-| Sensors, telemetry, anomaly detection, 3D | ⏳ later milestones |
+| Custom 7-class component model (fine-tuned YOLO) | 🧩 automated pseudo-labels generated for 441/543 images ([docs/automated-annotation.md](docs/automated-annotation.md)); training on them not run yet |
+| Sensor registry, equipment identity, telemetry ingestion (HTTP, MQTT), PostgreSQL storage, live dashboard, threshold alerts | ✅ ([docs/sensor-integration.md](docs/sensor-integration.md)); demonstrated with the labelled simulator, no physical sensors connected yet |
+| Telemetry simulator (battery, PSU, cabinet, router, radio units, site) | ✅ clearly labelled SIMULATED everywhere |
+| Anomaly detection (robust statistics, Holt forecast, Isolation Forest), explainable equipment health, trend-based maintenance recommendations | ✅ ([docs/anomaly-detection.md](docs/anomaly-detection.md)); validated on simulated scenarios only ([docs/anomaly-validation.md](docs/anomaly-validation.md)) |
+| 3D | ⏳ later milestone |
 
 > **Helping with annotation review?** Skip to [Helping with annotation review](#helping-with-annotation-review).
 > It takes about 15 minutes to set up, and no ML experience is needed.
@@ -115,7 +120,10 @@ dynamic_digital_twin/
 │   │   ├── services/         detection service, stats, object registry, video jobs
 │   │   ├── api/              REST routes + WebSocket
 │   │   ├── schemas/          Pydantic models (the JSON contract)
-│   │   └── training/         taxonomy, audit, annotation kit/validation, prepare, train, evaluate, predict
+│   │   ├── telemetry/        sensor registry, ingestion, storage (SQLAlchemy + Alembic), alerts, MQTT, simulator
+│   │   ├── analytics/        features, detectors, anomaly engine, health, maintenance, training, validation
+│   │   └── training/         taxonomy, audit, annotation kit/validation, pseudo_label/, prepare, train, evaluate
+│   ├── configs/              pseudo_label/, telemetry/ (thresholds, simulator), analytics/anomaly.yaml
 │   ├── models/pretrained/    yolo11n.pt
 │   ├── models/custom/        digital_twin_best.pt goes here after fine-tuning
 │   ├── dataset/              generated YOLO datasets (train/val/test)
@@ -209,6 +217,20 @@ backend, set `BACKEND_URL` for the dev proxy, or `VITE_API_BASE` for a productio
 - **Dataset Management**: a read-only scan of the collected dataset (counts, formats, resolutions,
   annotation status, issues).
 - **Settings**: client defaults (stored in the browser) and the backend's runtime configuration.
+- **Equipment Monitoring**: each registered equipment item (stable IDs such as `BAT-001`) with its sensors, live
+  readings, connection status and active conditions, plus a site environment/power card.
+- **Sensor Management**: register sensors, associate them with equipment, see status and latest readings, and
+  start or stop the simulator and its scenarios (mains outage, sensor dropout, open door, fan failure, heat wave).
+- **Telemetry Analytics**: history charts for 15 min to 7 days (only for metrics that have data) and sensor availability.
+- **Alerts**: active conditions with acknowledgement, alert history and the configured threshold rules.
+- **Equipment Health**: explainable 0–100 health index per equipment item with its penalty breakdown, coverage, data
+  quality and a 24 h trend (unknown when data is insufficient).
+- **Anomaly Monitoring**: live anomaly feed and records with evidence; acknowledge and resolve.
+- **Predictive Maintenance**: degradation trends and recurring anomalies with evidence levels and supporting charts.
+- **Equipment details** (`#details/<id>`): visual links, identity, sensors, telemetry history, anomalies, health and
+  recommendations in one view.
+- Telemetry values from stale or offline sensors are shown as *last known* with their age, and every simulated value
+  carries a **SIMULATED** badge.
 
 > **Tracking IDs are temporary.** They identify a visual track within one stream or video only. They are not
 > permanent physical component IDs; the object ID shown in the inventory is `source:track_id`.
@@ -232,6 +254,8 @@ backend, set `BACKEND_URL` for the dev proxy, or `VITE_API_BASE` for a productio
 | GET / DELETE | `/api/objects`, `/api/objects/{id}` | object inventory |
 | GET | `/api/dataset/summary?refresh=` | dataset validation report |
 | WS | `/ws/stream` | binary JPEG frames in → `FrameResult` JSON out |
+| * | `/api/telemetry/...`, WS `/ws/telemetry` | sensors, equipment, ingestion, latest/history, alerts, simulator; see [docs/sensor-integration.md](docs/sensor-integration.md#api) |
+| * | `/api/analytics/...` | health, anomalies (ack/resolve), maintenance recommendations, configuration, models; see [docs/anomaly-detection.md](docs/anomaly-detection.md#data-model-and-api) |
 
 Frame result schema (shared by REST and WebSocket). Box coordinates are original-frame pixels:
 
@@ -266,6 +290,10 @@ All settings live in `backend/.env` (see `.env.example`):
 | `TORCH_THREADS` | 0 | 0 = PyTorch default |
 | `MAX_FRAME_DIM` | 1920 | larger frames are downscaled before inference; boxes are mapped back |
 | `MAX_VIDEO_MB` / `MAX_VIDEO_FRAMES` | 200 / 5000 | upload and processing caps |
+| `TELEMETRY_DATABASE_URL` | unset | PostgreSQL for telemetry; unset = SQLite dev fallback (`runtime/telemetry.db`) |
+| `TELEMETRY_INGEST_API_KEY` | unset | required by `POST /api/telemetry/ingest`; unset = HTTP ingestion closed |
+| `MQTT_ENABLED`, `MQTT_HOST`, … | off | MQTT adapter; all telemetry settings are listed in [docs/sensor-integration.md](docs/sensor-integration.md#configuration) |
+| `SIMULATOR_AUTOSTART` / `APP_ENV` | false / development | the simulator never starts by itself and is disabled in production |
 
 How the backend stays responsive on CPU:
 - the model loads **once** at startup, and a warm-up pass absorbs the slow first call;
@@ -295,7 +323,9 @@ cd backend
 .venv\Scripts\python.exe -m pytest
 ```
 
-There are 113 tests:
+There are 210 tests (113 for vision, 24 for pseudo-labelling in `test_pseudo_label.py`, 33 for telemetry in
+`test_telemetry.py`, 40 for analytics in `test_analytics.py`; see [docs/sensor-integration.md](docs/sensor-integration.md#testing)
+and [docs/anomaly-detection.md](docs/anomaly-detection.md#testing)):
 - annotation review (`test_review_workflow.py`, `test_auto_annotate.py`): candidate import with class/coordinate/confidence
   preservation, CVAT archive checks, status transitions and sign-off rules, reviewed-only export, review-manifest
   validation (unreviewed or edited labels are caught), the training gate, split safeguards, YOLO import round trip,

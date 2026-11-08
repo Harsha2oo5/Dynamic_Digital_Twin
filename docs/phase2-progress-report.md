@@ -116,3 +116,56 @@ Prepared so that training can start as soon as reviews exist:
    .venv\Scripts\python.exe -m app.training.evaluate --model experiments\training\<run>\weights\best.pt --data dataset\digital_twin_yolo\data.yaml --split test
    ```
 4. Then use the pilot model for `batch_02` candidates (`--mode custom`), and review again.
+
+---
+
+## 2026-11-07: direction change to automated labelling, and the telemetry milestone
+
+### Automated pseudo-labelling (vision milestone, phases B–C)
+
+The project switched from human review to fully automated pseudo-labels. The human-review path and its gates are
+unchanged; pseudo-labels have their own clearly labelled path.
+
+| Item | Status |
+|---|---|
+| `app/training/pseudo_label/` (Grounding DINO regions → CLIP text + visual prototypes → fusion → tiers → suppression), config `configs/pseudo_label/default.yaml` | Implemented, tested (24 tests) |
+| Full run `annotation/pseudo_labels/full_v1` | Executed: 441/543 images usable, 762 label instances; **not ground truth, not human-checked** |
+| `prepare_dataset --pseudo`, pseudo-aware training gate, model card with `label_source: pseudo` | **Pending** |
+| Pilot training (5 epochs, about 20–30 min), evaluation as "agreement with pseudo-labels" | **Pending**, needs approval |
+| Tracking upgrade (lifecycle, class voting, session identity), inventory and dashboard upgrades | **Pending** |
+
+Details and per-class numbers: [automated-annotation.md](automated-annotation.md).
+
+### Sensor integration and telemetry (Milestone 2)
+
+| Item | Status |
+|---|---|
+| Sensor registry, stable equipment identity, manual visual links | Implemented, tested |
+| Ingestion pipeline (validation, unit normalisation, duplicates, out-of-order, plausibility, registry and channel checks) | Implemented, tested |
+| HTTP ingestion with API key; MQTT adapter (paho-mqtt) | Implemented, tested (MQTT with a mocked client; **no broker installed**) |
+| PostgreSQL schema with Alembic migration, time-series indexes (BRIN on PostgreSQL), retention | Implemented; **runs on the SQLite fallback until `TELEMETRY_DATABASE_URL` is set** |
+| Connection watchdog (online/stale/offline), communication alerts, availability | Implemented, tested |
+| Threshold alerts (YAML rules, hysteresis, for_s, escalation, acknowledgement) | Implemented, tested |
+| Simulator (physical site model, scenarios, backfill), labelled SIMULATED end to end | Implemented, tested; 24 h backfill ≈ 55 s |
+| WebSocket `/ws/telemetry` and dashboard pages (Overview section, Equipment Monitoring, Sensor Management, Telemetry Analytics, Alerts) | Implemented; frontend build passes |
+| Modbus | Interface only (needs register maps) |
+| Physical sensors | **None connected**; every telemetry value shown so far is simulated |
+
+Tests: backend **170 passed** (113 vision + 24 pseudo-label + 33 telemetry). Frontend `npm run build` passes.
+Details: [sensor-integration.md](sensor-integration.md).
+
+### Anomaly detection, health and predictive maintenance (Milestone 3, 2026-11-08)
+
+| Item | Status |
+|---|---|
+| Features on a 1-min grid (gaps, robust rolling statistics, rate of change, Holt forecast) shared by training and inference | Implemented, tested |
+| Detectors: robust z, IQR, rate of change, forecast residual, state transitions; Isolation Forest per category (scikit-learn). One-Class SVM evaluated and not implemented (documented) | Implemented, tested |
+| Real-time engine: context rules (outage / recharge), de-duplicated episodes, auto-resolve, re-open within cooldown, restart-safe | Implemented, tested |
+| Explainable health index (0–100, unknown on insufficient data, data quality separate) with 5-min history | Implemented, tested |
+| Trend-based maintenance (Theil–Sen + Kendall, evidence levels, no failure dates), anomaly-frequency check | Implemented, tested |
+| Migration 0002, `/api/analytics/*`, WebSocket events, versioned configuration, model registry, offline training | Implemented, tested |
+| Dashboard: Overview health block, Equipment Health, Anomaly Monitoring, Predictive Maintenance, Equipment details | Implemented; build passes |
+| Simulation validation (7 days, 6 injected scenarios) | Executed: 6/6 on seed 7 and on unseen seed 11; 2 and 1 false alarms per 7 days. **Simulated only** |
+| Real-world validation | **Pending**: needs physical telemetry and, for failure prediction, failure history |
+
+Details: [anomaly-detection.md](anomaly-detection.md), [anomaly-validation.md](anomaly-validation.md).

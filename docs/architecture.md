@@ -1,4 +1,4 @@
-# Architecture (Milestone 1)
+# Architecture
 
 ```
  Browser (React)                                   Backend (FastAPI, CPU)
@@ -31,3 +31,34 @@ Design decisions:
   adapts to CPU speed without queueing latency.
 - **Tracking IDs ≠ component IDs.** The inventory keys observations by `source:track_id`. A permanent
   component registry (with physical identity, sensors and telemetry) belongs to a later milestone.
+
+## Telemetry (Milestone 2)
+
+```
+ HTTP POST /api/telemetry/ingest ─┐
+ MQTT bts/<site>/<sensor>/telemetry ─┼─► IngestionPipeline ─► TelemetryStore ─► PostgreSQL (SQLite dev fallback)
+ Simulator (thread, SIM- devices) ─┘        │   validate · normalise · de-duplicate · order
+                                             ├─► latest-value cache ─► GET /api/telemetry/latest
+                                             ├─► AlertEngine (thresholds.yaml) ─► alerts
+                                             └─► TelemetryHub ─► WS /ws/telemetry ─► dashboard (one shared socket)
+ Watchdog thread: sensor online/stale/offline, communication alerts, retention purge
+```
+
+- **Equipment identity** lives in the telemetry database (`equipment` table, stable operator IDs). Visual tracks
+  stay session-scoped. A track can be linked to equipment only by an explicit operator action
+  (`equipment_visual_links`), never automatically.
+- Telemetry starts after the vision service and is isolated from it: a database failure disables only the telemetry
+  endpoints.
+- Details: [sensor-integration.md](sensor-integration.md).
+
+## Analytics (Milestone 3)
+
+```
+IngestionPipeline ─(listener: new in-order good readings)─► AnalyticsEngine
+   1-min buckets per (equipment, sensor, metric) ─► detectors ─► context ─► anomaly episodes ─► anomalies table
+AnalyticsService worker ─► health (30 s) ─► snapshots (5 min) · maintenance trends (15 min) ─► recommendations
+events: WS /ws/telemetry {"type": "anomaly" | "health" | "recommendation"}
+```
+
+Training (`app.analytics.train`) and validation (`app.analytics.validate`) are offline commands that reuse the same
+feature code. Details: [anomaly-detection.md](anomaly-detection.md).
